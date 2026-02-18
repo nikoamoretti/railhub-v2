@@ -11,56 +11,71 @@ interface SearchParams {
 }
 
 async function getFacilities(searchParams: SearchParams) {
-  const where: any = { status: 'ACTIVE' }
-  
-  if (searchParams.q) {
-    where.OR = [
-      { name: { contains: searchParams.q, mode: 'insensitive' } },
-      { location: { city: { contains: searchParams.q, mode: 'insensitive' } } },
-      { location: { state: { contains: searchParams.q, mode: 'insensitive' } } },
-    ]
+  try {
+    const where: any = { status: 'ACTIVE' }
+    
+    if (searchParams.q) {
+      where.OR = [
+        { name: { contains: searchParams.q, mode: 'insensitive' } },
+        { location: { city: { contains: searchParams.q, mode: 'insensitive' } } },
+        { location: { state: { contains: searchParams.q, mode: 'insensitive' } } },
+      ]
+    }
+    
+    if (searchParams.state) {
+      where.location = { ...where.location, state: searchParams.state }
+    }
+    
+    if (searchParams.type) {
+      where.type = searchParams.type.toUpperCase()
+    }
+    
+    const facilities = await prisma.facility.findMany({
+      where,
+      include: {
+        location: true,
+        capabilities: true,
+        categories: { include: { category: true } },
+        railroads: { include: { railroad: true } },
+      },
+      take: 100,
+      orderBy: { name: 'asc' },
+    })
+    
+    return facilities
+  } catch (error) {
+    console.error('Database error:', error)
+    return []
   }
-  
-  if (searchParams.state) {
-    where.location = { ...where.location, state: searchParams.state }
-  }
-  
-  if (searchParams.type) {
-    where.type = searchParams.type.toUpperCase()
-  }
-  
-  const facilities = await prisma.facility.findMany({
-    where,
-    include: {
-      location: true,
-      capabilities: true,
-      categories: { include: { category: true } },
-      railroads: { include: { railroad: true } },
-    },
-    take: 100,
-    orderBy: { name: 'asc' },
-  })
-  
-  return facilities
 }
 
 async function getStats() {
-  const [transloadCount, storageCount, totalCount] = await Promise.all([
-    prisma.facility.count({ where: { type: 'TRANSLOAD', status: 'ACTIVE' } }),
-    prisma.facility.count({ where: { type: 'STORAGE', status: 'ACTIVE' } }),
-    prisma.facility.count({ where: { status: 'ACTIVE' } }),
-  ])
-  
-  return { transloadCount, storageCount, totalCount }
+  try {
+    const [transloadCount, storageCount, totalCount] = await Promise.all([
+      prisma.facility.count({ where: { type: 'TRANSLOAD', status: 'ACTIVE' } }),
+      prisma.facility.count({ where: { type: 'STORAGE', status: 'ACTIVE' } }),
+      prisma.facility.count({ where: { status: 'ACTIVE' } }),
+    ])
+    
+    return { transloadCount, storageCount, totalCount }
+  } catch (error) {
+    console.error('Stats error:', error)
+    return { transloadCount: 0, storageCount: 0, totalCount: 0 }
+  }
 }
 
 async function getStates() {
-  const locations = await prisma.location.findMany({
-    select: { state: true },
-    distinct: ['state'],
-    orderBy: { state: 'asc' },
-  })
-  return locations.map(l => l.state).filter(Boolean) as string[]
+  try {
+    const locations = await prisma.location.findMany({
+      select: { state: true },
+      distinct: ['state'],
+      orderBy: { state: 'asc' },
+    })
+    return locations.map(l => l.state).filter(Boolean) as string[]
+  } catch (error) {
+    console.error('States error:', error)
+    return []
+  }
 }
 
 interface PageProps {
@@ -108,7 +123,8 @@ export default async function Home({ searchParams }: PageProps) {
           
           {facilities.length === 0 && (
             <div className="text-center py-12 text-gray-500">
-              No facilities found. Try adjusting your search.
+              <p>No facilities found. Try adjusting your search.</p>
+              <p className="text-sm mt-2">Or <a href="/import" className="text-blue-600 hover:underline">import data</a> to get started.</p>
             </div>
           )}
         </div>
