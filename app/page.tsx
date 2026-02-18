@@ -26,7 +26,7 @@ async function getFacilities(searchParams: SearchParams) {
   }
   
   if (searchParams.type) {
-    facilities = facilities.filter(f => f.type === searchParams.type.toUpperCase())
+    facilities = facilities.filter(f => f.type === searchParams.type?.toUpperCase())
   }
   
   return facilities.slice(0, 100)
