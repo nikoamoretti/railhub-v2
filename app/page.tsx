@@ -6,7 +6,7 @@ import { Stats } from '@/components/stats'
 
 // Read JSON data at build time
 const facilitiesData = JSON.parse(
-  readFileSync(join(process.cwd(), 'data', 'facilities.json'), 'utf-8')
+  readFileSync(join(process.cwd(), 'public', 'facilities.json'), 'utf-8')
 )
 
 interface SearchParams {
