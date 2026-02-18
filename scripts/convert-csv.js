@@ -51,6 +51,15 @@ function parseHazmat(hazString) {
   return hazString === 'Yes'
 }
 
+function cleanDescription(desc) {
+  if (!desc) return null
+  // Remove "This is a Commtrex Verified location." and variants
+  return desc
+    .replace(/This is a Commtrex Verified location\./gi, '')
+    .replace(/This is a Commtrex Verified location/gi, '')
+    .trim()
+}
+
 function parse24_7(hours) {
   // Check if any day has "Open 24 hours"
   return [hours.hours_mon, hours.hours_tue, hours.hours_wed, 
@@ -70,8 +79,8 @@ function convertTransloadRow(row, index) {
     phone: row.phone && row.phone !== 'none provided' ? row.phone : null,
     email: null,
     website: row.url,
-    description: row.description,
-    about: row.about || null,
+    description: cleanDescription(row.description),
+    about: cleanDescription(row.about),
     location: {
       street_address: row.street_address && row.street_address !== 'none provided' ? row.street_address : null,
       city: row.city,
@@ -123,8 +132,8 @@ function convertStorageRow(row, index) {
     phone: row.phone || null,
     email: null,
     website: row.url,
-    description: row.about || null,
-    about: row.about || null,
+    description: cleanDescription(row.about),
+    about: cleanDescription(row.about),
     location: {
       street_address: null,
       city: row.city,
