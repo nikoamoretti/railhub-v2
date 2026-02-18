@@ -37,9 +37,11 @@ async function getFacilities(searchParams: SearchParams) {
 }
 
 function getStats() {
-  const transload = facilitiesData.filter((f: any) => f.type === 'TRANSLOAD').length
-  const storage = facilitiesData.filter((f: any) => f.type === 'STORAGE').length
-  return { transloadCount: transload, storageCount: storage, totalCount: facilitiesData.length }
+  const counts: { [key: string]: number } = {}
+  facilitiesData.forEach((f: any) => {
+    counts[f.type] = (counts[f.type] || 0) + 1
+  })
+  return { counts, totalCount: facilitiesData.length }
 }
 
 function getStates(): string[] {

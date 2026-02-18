@@ -7,6 +7,49 @@ interface SearchFiltersProps {
   states: string[]
 }
 
+// All facility types with display labels
+const FACILITY_TYPES = [
+  { value: 'TRANSLOAD', label: 'Transload' },
+  { value: 'STORAGE', label: 'Storage' },
+  { value: 'TEAM_TRACK', label: 'Team Track' },
+  { value: 'BULK_TRANSFER', label: 'Bulk Transfer' },
+  { value: 'REPAIR_SHOP', label: 'Repair Shop' },
+  { value: 'INTERMODAL', label: 'Intermodal' },
+  { value: 'TANK_WASH', label: 'Tank Wash' },
+  { value: 'MANUFACTURING', label: 'Manufacturing' },
+  { value: 'SHORTLINE', label: 'Shortline Railroad' },
+  { value: 'PRIVATESIDING', label: 'Private Siding' },
+  { value: 'WAREHOUSING', label: 'Warehousing' },
+  { value: 'LINING', label: 'Lining/Coating' },
+  { value: 'CUSTOMS', label: 'Customs Broker' },
+  { value: 'SCALE', label: 'Scale/Weigh Station' },
+  { value: 'TRANSLOADING', label: 'Transloading Operator' },
+  { value: 'INSPECTION', label: 'Inspection Service' },
+  { value: 'MOBILEREPAIR', label: 'Mobile Repair' },
+  { value: 'DRAYAGE', label: 'Drayage' },
+  { value: 'LEASING', label: 'Leasing Company' },
+  { value: 'CARBUILDER', label: 'Car Builder' },
+  { value: 'PARTS', label: 'Parts Supplier' },
+  { value: 'SIGNAL', label: 'Signal Contractor' },
+  { value: 'MANAGEMENT', label: 'Management Company' },
+  { value: 'BROKER', label: 'Broker' },
+  { value: 'FREIGHTFORWARDER', label: 'Freight Forwarder' },
+  { value: 'ENGINEERING', label: 'Engineering/Construction' },
+  { value: 'CHASSIS', label: 'Chassis Provider' },
+  { value: 'LOCOMOTIVESHOP', label: 'Locomotive Shop' },
+  { value: 'LOCOMOTIVELEASING', label: 'Locomotive Leasing' },
+  { value: 'SWITCHING', label: 'Switching Railroad' },
+  { value: 'TMS', label: 'TMS Platform' },
+  { value: 'FUMIGATION', label: 'Fumigation' },
+  { value: 'DEMURRAGE', label: 'Demurrage Consulting' },
+  { value: 'TRACKING', label: 'Tracking Platform' },
+  { value: 'EDI', label: 'EDI Provider' },
+  { value: 'FLEETMGMT', label: 'Fleet Management' },
+  { value: 'LOADPLAN', label: 'Load Planning' },
+  { value: 'YARDMGMT', label: 'Yard Management' },
+  { value: 'DEMURRAGESOFT', label: 'Demurrage Software' },
+]
+
 export function SearchFilters({ states }: SearchFiltersProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -58,9 +101,10 @@ export function SearchFilters({ states }: SearchFiltersProps) {
           onChange={(e) => setType(e.target.value)}
           className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
         >
-          <option value="">All Types</option>
-          <option value="transload">Transload</option>
-          <option value="storage">Storage</option>
+          <option value="">All Types ({FACILITY_TYPES.length})</option>
+          {FACILITY_TYPES.map((t) => (
+            <option key={t.value} value={t.value.toLowerCase()}>{t.label}</option>
+          ))}
         </select>
         
         <button
