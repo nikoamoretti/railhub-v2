@@ -1,0 +1,216 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Facility {
+  id          String   @id @default(cuid())
+  externalId  String?  @map("external_id")
+  name        String
+  type        FacilityType
+  status      Status   @default(ACTIVE)
+  
+  // Location
+  location    Location?
+  
+  // Contact
+  phone       String?
+  email       String?
+  website     String?
+  
+  // Descriptions
+  description String?  @db.Text
+  about       String?  @db.Text
+  
+  // Capabilities
+  capabilities Capability?
+  
+  // Relations
+  categories  FacilityCategory[]
+  railroads   FacilityRailroad[]
+  dataSource  DataSource? @relation(fields: [dataSourceId], references: [id])
+  dataSourceId String?
+  
+  // Metadata
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  
+  @@index([type])
+  @@index([status])
+  @@index([name])
+  @@map("facilities")
+}
+
+model Location {
+  id          String   @id @default(cuid())
+  facilityId  String   @unique @map("facility_id")
+  facility    Facility @relation(fields: [facilityId], references: [id], onDelete: Cascade)
+  
+  streetAddress String? @map("street_address")
+  city        String
+  state       String
+  zipCode     String?  @map("zip_code")
+  country     String   @default("US")
+  
+  // Geo coordinates
+  latitude    Float?
+  longitude   Float?
+  
+  @@index([state])
+  @@index([city])
+  @@index([latitude, longitude])
+  @@map("locations")
+}
+
+model Capability {
+  id          String   @id @default(cuid())
+  facilityId  String   @unique @map("facility_id")
+  facility    Facility @relation(fields: [facilityId], references: [id], onDelete: Cascade)
+  
+  // Capacity
+  trackCapacity       Int?    @map("track_capacity")
+  railcarSpotCount    Int?    @map("railcar_spot_count")
+  
+  // Certifications
+  hazmatCertified     Boolean @default(false) @map("hazmat_certified")
+  foodGrade           Boolean @default(false) @map("food_grade")
+  kosherCertified     Boolean @default(false) @map("kosher_certified")
+  
+  // Features
+  hasScale            Boolean @default(false) @map("has_scale")
+  hasRailcarStorage   Boolean @default(false) @map("has_railcar_storage")
+  is247               Boolean @default(false) @map("is_24_7")
+  
+  // Weight restrictions
+  weightRestricted263k Boolean @default(false) @map("weight_restricted_263k")
+  weightRestricted286k Boolean @default(false) @map("weight_restricted_286k")
+  
+  // Equipment & Storage (JSON for flexibility)
+  equipmentList       Json?   @map("equipment_list")
+  storageOptions      Json?   @map("storage_options")
+  transferModes       Json?   @map("transfer_modes")
+  productTypes        Json?   @map("product_types")
+  
+  // Hours
+  hoursMonday         String? @map("hours_monday")
+  hoursTuesday        String? @map("hours_tuesday")
+  hoursWednesday      String? @map("hours_wednesday")
+  hoursThursday       String? @map("hours_thursday")
+  hoursFriday         String? @map("hours_friday")
+  hoursSaturday       String? @map("hours_saturday")
+  hoursSunday         String? @map("hours_sunday")
+  
+  @@map("capabilities")
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  type        CategoryType
+  
+  facilities  FacilityCategory[]
+  
+  @@index([type])
+  @@map("categories")
+}
+
+model FacilityCategory {
+  facilityId  String   @map("facility_id")
+  categoryId  String   @map("category_id")
+  
+  facility    Facility @relation(fields: [facilityId], references: [id], onDelete: Cascade)
+  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  
+  @@id([facilityId, categoryId])
+  @@map("facility_categories")
+}
+
+model Railroad {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  code        String?  @unique
+  
+  facilities  FacilityRailroad[]
+  
+  @@map("railroads")
+}
+
+model FacilityRailroad {
+  facilityId  String   @map("facility_id")
+  railroadId  String   @map("railroad_id")
+  
+  daysOfWeek  Json?    @map("days_of_week")
+  notes       String?
+  
+  facility    Facility @relation(fields: [facilityId], references: [id], onDelete: Cascade)
+  railroad    Railroad @relation(fields: [railroadId], references: [id], onDelete: Cascade)
+  
+  @@id([facilityId, railroadId])
+  @@map("facility_railroads")
+}
+
+model DataSource {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String?
+  url         String?
+  
+  lastImportAt DateTime? @map("last_import_at")
+  recordCount  Int      @default(0) @map("record_count")
+  
+  facilities  Facility[]
+  importLogs  ImportLog[]
+  
+  createdAt   DateTime @default(now()) @map("created_at")
+  
+  @@map("data_sources")
+}
+
+model ImportLog {
+  id          String   @id @default(cuid())
+  dataSourceId String  @map("data_source_id")
+  dataSource  DataSource @relation(fields: [dataSourceId], references: [id], onDelete: Cascade)
+  
+  recordsImported Int   @map("records_imported")
+  recordsUpdated  Int   @map("records_updated")
+  recordsFailed   Int   @map("records_failed")
+  
+  status      ImportStatus
+  errorMessage String?   @map("error_message")
+  
+  startedAt   DateTime  @map("started_at")
+  completedAt DateTime? @map("completed_at")
+  
+  @@index([dataSourceId])
+  @@index([status])
+  @@map("import_logs")
+}
+
+enum FacilityType {
+  TRANSLOAD
+  STORAGE
+}
+
+enum Status {
+  ACTIVE
+  INACTIVE
+  PENDING
+}
+
+enum CategoryType {
+  PRODUCT
+  SERVICE
+  EQUIPMENT
+  CERTIFICATION
+}
+
+enum ImportStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+}
