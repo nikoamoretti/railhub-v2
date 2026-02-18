@@ -72,10 +72,36 @@ function isValidRailroad(name: string): boolean {
 }
 
 export function FacilityCard({ facility }: FacilityCardProps) {
-  const typeLabel = facility.type === 'TRANSLOAD' ? 'Transload' : 'Storage'
-  const typeColor = facility.type === 'TRANSLOAD' 
-    ? 'bg-blue-100 text-blue-800' 
-    : 'bg-green-100 text-green-800'
+  const TYPE_LABELS: { [key: string]: string } = {
+    TRANSLOAD: 'Transload', STORAGE: 'Storage', TEAM_TRACK: 'Team Track',
+    BULK_TRANSFER: 'Bulk Transfer', REPAIR_SHOP: 'Repair Shop', INTERMODAL: 'Intermodal',
+    TANK_WASH: 'Tank Wash', MANUFACTURING: 'Manufacturing', SHORTLINE: 'Shortline',
+    PRIVATESIDING: 'Private Siding', WAREHOUSING: 'Warehousing', LINING: 'Lining',
+    CUSTOMS: 'Customs', SCALE: 'Scale', TRANSLOADING: 'Transloading',
+    INSPECTION: 'Inspection', MOBILEREPAIR: 'Mobile Repair', DRAYAGE: 'Drayage',
+    LEASING: 'Leasing', CARBUILDER: 'Car Builder', PARTS: 'Parts',
+    SIGNAL: 'Signal', MANAGEMENT: 'Management', BROKER: 'Broker',
+    FREIGHTFORWARDER: 'Freight Forwarder', ENGINEERING: 'Engineering', CHASSIS: 'Chassis',
+    LOCOMOTIVESHOP: 'Locomotive Shop', LOCOMOTIVELEASING: 'Locomotive Leasing',
+    SWITCHING: 'Switching', TMS: 'TMS', FUMIGATION: 'Fumigation',
+    DEMURRAGE: 'Demurrage', TRACKING: 'Tracking', EDI: 'EDI',
+    FLEETMGMT: 'Fleet Mgmt', LOADPLAN: 'Load Planning', YARDMGMT: 'Yard Mgmt',
+    DEMURRAGESOFT: 'Demurrage Soft',
+  }
+  
+  const TYPE_COLORS: { [key: string]: string } = {
+    TRANSLOAD: 'bg-blue-100 text-blue-800',
+    STORAGE: 'bg-green-100 text-green-800',
+    REPAIR_SHOP: 'bg-orange-100 text-orange-800',
+    TEAM_TRACK: 'bg-purple-100 text-purple-800',
+    TANK_WASH: 'bg-cyan-100 text-cyan-800',
+    INTERMODAL: 'bg-indigo-100 text-indigo-800',
+    BULK_TRANSFER: 'bg-yellow-100 text-yellow-800',
+    MANUFACTURING: 'bg-pink-100 text-pink-800',
+  }
+  
+  const typeLabel = TYPE_LABELS[facility.type] || facility.type
+  const typeColor = TYPE_COLORS[facility.type] || 'bg-gray-100 text-gray-800'
   
   // Get valid railroads only
   const validRailroads = facility.railroads

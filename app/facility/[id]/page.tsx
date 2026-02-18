@@ -77,7 +77,62 @@ export default async function FacilityPage({ params }: PageProps) {
     notFound()
   }
   
-  const typeLabel = facility.type === 'TRANSLOAD' ? 'Transload' : 'Storage'
+  const TYPE_LABELS: { [key: string]: string } = {
+  TRANSLOAD: 'Transload',
+  STORAGE: 'Storage',
+  TEAM_TRACK: 'Team Track',
+  BULK_TRANSFER: 'Bulk Transfer',
+  REPAIR_SHOP: 'Repair Shop',
+  INTERMODAL: 'Intermodal',
+  TANK_WASH: 'Tank Wash',
+  MANUFACTURING: 'Manufacturing',
+  SHORTLINE: 'Shortline Railroad',
+  PRIVATESIDING: 'Private Siding',
+  WAREHOUSING: 'Warehousing',
+  LINING: 'Lining/Coating',
+  CUSTOMS: 'Customs Broker',
+  SCALE: 'Scale Station',
+  TRANSLOADING: 'Transloading Operator',
+  INSPECTION: 'Inspection Service',
+  MOBILEREPAIR: 'Mobile Repair',
+  DRAYAGE: 'Drayage',
+  LEASING: 'Leasing Company',
+  CARBUILDER: 'Car Builder',
+  PARTS: 'Parts Supplier',
+  SIGNAL: 'Signal Contractor',
+  MANAGEMENT: 'Management Company',
+  BROKER: 'Broker',
+  FREIGHTFORWARDER: 'Freight Forwarder',
+  ENGINEERING: 'Engineering',
+  CHASSIS: 'Chassis Provider',
+  LOCOMOTIVESHOP: 'Locomotive Shop',
+  LOCOMOTIVELEASING: 'Locomotive Leasing',
+  SWITCHING: 'Switching Railroad',
+  TMS: 'TMS Platform',
+  FUMIGATION: 'Fumigation',
+  DEMURRAGE: 'Demurrage Consulting',
+  TRACKING: 'Tracking Platform',
+  EDI: 'EDI Provider',
+  FLEETMGMT: 'Fleet Management',
+  LOADPLAN: 'Load Planning',
+  YARDMGMT: 'Yard Management',
+  DEMURRAGESOFT: 'Demurrage Software',
+}
+
+const typeLabel = TYPE_LABELS[facility.type] || facility.type
+const typeColorClass = facility.type === 'TRANSLOAD' 
+  ? 'bg-blue-200 text-blue-900'
+  : facility.type === 'STORAGE'
+  ? 'bg-green-200 text-green-900'
+  : facility.type === 'REPAIR_SHOP'
+  ? 'bg-orange-200 text-orange-900'
+  : facility.type === 'TEAM_TRACK'
+  ? 'bg-purple-200 text-purple-900'
+  : facility.type === 'TANK_WASH'
+  ? 'bg-cyan-200 text-cyan-900'
+  : facility.type === 'INTERMODAL'
+  ? 'bg-indigo-200 text-indigo-900'
+  : 'bg-gray-200 text-gray-900'
   const validRailroads = facility.railroads
     ?.map((r: any) => r.railroad?.name)
     ?.filter((name: string) => isValidRailroad(name)) || []
@@ -94,11 +149,7 @@ export default async function FacilityPage({ params }: PageProps) {
             ← Back to Directory
           </Link>
           <div className="flex items-center gap-3">
-            <span className={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${
-              facility.type === 'TRANSLOAD' 
-                ? 'bg-blue-200 text-blue-900' 
-                : 'bg-green-200 text-green-900'
-            }`}>
+            <span className={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${typeColorClass}`}>
               {typeLabel}
             </span>
           </div>
