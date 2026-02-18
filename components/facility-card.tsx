@@ -1,16 +1,7 @@
 'use client'
 
-import { Facility, Location, Capability, Category, Railroad } from '@prisma/client'
-
-interface FacilityWithRelations extends Facility {
-  location: Location | null
-  capabilities: Capability | null
-  categories: { category: Category }[]
-  railroads: { railroad: Railroad; daysOfWeek: any; notes: string | null }[]
-}
-
 interface FacilityCardProps {
-  facility: FacilityWithRelations
+  facility: any
 }
 
 export function FacilityCard({ facility }: FacilityCardProps) {
@@ -82,23 +73,23 @@ export function FacilityCard({ facility }: FacilityCardProps) {
       )}
       
       {/* Railroads */}
-      {facility.railroads.length > 0 && (
+      {facility.railroads?.length > 0 && (
         <div className="mt-3 text-sm text-gray-600">
           <span className="font-medium">🚃 Railroads:</span>{' '}
-          {facility.railroads.slice(0, 3).map(r => r.railroad.name).join(', ')}
+          {facility.railroads.slice(0, 3).map((r: any) => r.railroad?.name).filter(Boolean).join(', ')}
           {facility.railroads.length > 3 && ` +${facility.railroads.length - 3} more`}
         </div>
       )}
       
       {/* Categories */}
-      {facility.categories.length > 0 && (
+      {facility.categories?.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-1">
-          {facility.categories.slice(0, 5).map(({ category }) => (
+          {facility.categories.slice(0, 5).map(({ category }: any, idx: number) => (
             <span 
-              key={category.id}
+              key={idx}
               className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded border"
             >
-              {category.name}
+              {category?.name}
             </span>
           ))}
           {facility.categories.length > 5 && (
