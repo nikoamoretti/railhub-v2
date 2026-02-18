@@ -1,13 +1,7 @@
-import { readFileSync } from 'fs'
-import { join } from 'path'
+import facilitiesData from './data'
 import { SearchFilters } from '@/components/search-filters'
 import { FacilityCard } from '@/components/facility-card'
 import { Stats } from '@/components/stats'
-
-// Read JSON data at build time
-const facilitiesData = JSON.parse(
-  readFileSync(join(process.cwd(), 'public', 'facilities.json'), 'utf-8')
-)
 
 interface SearchParams {
   q?: string
@@ -20,7 +14,7 @@ async function getFacilities(searchParams: SearchParams) {
   
   if (searchParams.q) {
     const q = searchParams.q.toLowerCase()
-    facilities = facilities.filter(f => 
+    facilities = facilities.filter((f: any) => 
       f.name?.toLowerCase().includes(q) ||
       f.location?.city?.toLowerCase().includes(q) ||
       f.location?.state?.toLowerCase().includes(q)
@@ -28,11 +22,11 @@ async function getFacilities(searchParams: SearchParams) {
   }
   
   if (searchParams.state) {
-    facilities = facilities.filter(f => f.location?.state === searchParams.state)
+    facilities = facilities.filter((f: any) => f.location?.state === searchParams.state)
   }
   
   if (searchParams.type) {
-    facilities = facilities.filter(f => f.type === searchParams.type?.toUpperCase())
+    facilities = facilities.filter((f: any) => f.type === searchParams.type?.toUpperCase())
   }
   
   return facilities.slice(0, 100)
@@ -76,7 +70,7 @@ export default async function Home({ searchParams }: PageProps) {
         <div className="mt-8">
           <p className="text-gray-600 mb-4">Showing {facilities.length} facilities</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {facilities.map((facility) => (
+            {facilities.map((facility: any) => (
               <FacilityCard key={facility.id} facility={facility} />
             ))}
           </div>
