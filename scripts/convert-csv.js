@@ -96,6 +96,15 @@ function parse24_7(hours) {
     .some(h => h && h.includes('24 hours'))
 }
 
+function parseList(str) {
+  if (!str || str === 'none provided') return []
+  return str.split(';').map(s => s.trim()).filter(Boolean)
+}
+
+function parseYesNo(str) {
+  return str === 'Yes'
+}
+
 function convertTransloadRow(row, index) {
   const id = `transload-${row.id || index}`
   
@@ -124,15 +133,20 @@ function convertTransloadRow(row, index) {
       railcar_spot_count: null,
       hazmat_certified: parseHazmat(row.hazmat_handling),
       food_grade: row.product_types && row.product_types.includes('Food Grade'),
-      kosher_certified: false,
+      kosher_certified: parseYesNo(row.kosher_certification),
       has_scale: row.equipment && row.equipment.includes('Scale'),
       has_railcar_storage: row.storage_options && row.storage_options.includes('Railcar'),
       is_24_7: parse24_7(row),
-      weight_restricted_263k: false,
-      weight_restricted_286k: false,
+      weight_restricted_263k: parseYesNo(row.weight_restricted_263k),
+      weight_restricted_286k: parseYesNo(row.weight_restricted_286k),
       equipment_list: parseEquipment(row.equipment),
       storage_options: row.storage_options && row.storage_options !== '--' ? row.storage_options.split(',').map(s => s.trim()) : null,
       transfer_modes: parseTransferModes(row.transfer_modes),
+      security_features: parseList(row.security_features),
+      cities_served: parseList(row.cities_served),
+      heating_capabilities: parseYesNo(row.heating_capabilities),
+      onsite_railcar_storage: parseYesNo(row.onsite_railcar_storage),
+      onsite_scale: parseYesNo(row.onsite_scale),
       product_types: parseProductTypes(row.product_types),
       hours_monday: row.hours_mon,
       hours_tuesday: row.hours_tue,

@@ -196,6 +196,21 @@ export default async function FacilityPage({ params }: PageProps) {
                   {facility.capabilities.is_24_7 && (
                     <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">24/7</span>
                   )}
+                  {facility.capabilities.heating_capabilities && (
+                    <span className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">Heating</span>
+                  )}
+                  {facility.capabilities.onsite_railcar_storage && (
+                    <span className="text-xs bg-indigo-100 text-indigo-800 px-2 py-1 rounded">Onsite Storage</span>
+                  )}
+                  {facility.capabilities.onsite_scale && (
+                    <span className="text-xs bg-pink-100 text-pink-800 px-2 py-1 rounded">Onsite Scale</span>
+                  )}
+                  {facility.capabilities.weight_restricted_263k && (
+                    <span className="text-xs bg-gray-200 text-gray-800 px-2 py-1 rounded">263k Limit</span>
+                  )}
+                  {facility.capabilities.weight_restricted_286k && (
+                    <span className="text-xs bg-gray-200 text-gray-800 px-2 py-1 rounded">286k Limit</span>
+                  )}
                 </div>
               </div>
             </div>
@@ -254,6 +269,34 @@ export default async function FacilityPage({ params }: PageProps) {
                   <li key={idx} className="text-gray-700">• {eq}</li>
                 ))}
               </ul>
+            </div>
+          )}
+
+          {/* Security Features */}
+          {facility.capabilities?.security_features?.length > 0 && (
+            <div className="bg-white rounded-xl shadow-sm border p-6">
+              <h2 className="text-xl font-semibold mb-4">🔒 Security Features</h2>
+              <div className="flex flex-wrap gap-2">
+                {facility.capabilities.security_features.map((feature: string, idx: number) => (
+                  <span key={idx} className="px-3 py-1 bg-red-50 text-red-800 rounded-full text-sm">
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Cities Served */}
+          {facility.capabilities?.cities_served?.length > 0 && (
+            <div className="bg-white rounded-xl shadow-sm border p-6 md:col-span-2">
+              <h2 className="text-xl font-semibold mb-4">🏙️ Cities Served</h2>
+              <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto">
+                {facility.capabilities.cities_served.map((city: string, idx: number) => (
+                  <span key={idx} className="px-2 py-1 bg-gray-50 text-gray-700 rounded text-sm">
+                    {city}
+                  </span>
+                ))}
+              </div>
             </div>
           )}
 
