@@ -4,23 +4,29 @@ import { FacilityCard } from '@/components/facility-card'
 import { SearchFilters } from '@/components/search-filters'
 import { Stats } from '@/components/stats'
 
-async function getFacilities(searchParams: { [key: string]: string | string[] | undefined }) {
+interface SearchParams {
+  q?: string
+  state?: string
+  type?: string
+}
+
+async function getFacilities(searchParams: SearchParams) {
   const where: any = { status: 'ACTIVE' }
   
   if (searchParams.q) {
     where.OR = [
-      { name: { contains: String(searchParams.q), mode: 'insensitive' } },
-      { location: { city: { contains: String(searchParams.q), mode: 'insensitive' } } },
-      { location: { state: { contains: String(searchParams.q), mode: 'insensitive' } } },
+      { name: { contains: searchParams.q, mode: 'insensitive' } },
+      { location: { city: { contains: searchParams.q, mode: 'insensitive' } } },
+      { location: { state: { contains: searchParams.q, mode: 'insensitive' } } },
     ]
   }
   
   if (searchParams.state) {
-    where.location = { ...where.location, state: String(searchParams.state) }
+    where.location = { ...where.location, state: searchParams.state }
   }
   
   if (searchParams.type) {
-    where.type = String(searchParams.type).toUpperCase()
+    where.type = searchParams.type.toUpperCase()
   }
   
   const facilities = await prisma.facility.findMany({
@@ -54,16 +60,17 @@ async function getStates() {
     distinct: ['state'],
     orderBy: { state: 'asc' },
   })
-  return locations.map(l => l.state)
+  return locations.map(l => l.state).filter(Boolean) as string[]
 }
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) {
+interface PageProps {
+  searchParams: Promise<SearchParams>
+}
+
+export default async function Home({ searchParams }: PageProps) {
+  const params = await searchParams
   const [facilities, stats, states] = await Promise.all([
-    getFacilities(searchParams),
+    getFacilities(params),
     getStats(),
     getStates(),
   ])
