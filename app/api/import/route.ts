@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     const records = parse(content, {
       columns: true,
       skip_empty_lines: true,
-    })
+    }) as Record<string, string>[]
     
     // Get or create data source
     let dataSource = await prisma.dataSource.findUnique({

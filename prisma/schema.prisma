@@ -9,7 +9,7 @@ datasource db {
 
 model Facility {
   id          String   @id @default(cuid())
-  externalId  String?  @map("external_id")
+  externalId  String?  @unique @map("external_id")
   name        String
   type        FacilityType
   status      Status   @default(ACTIVE)
