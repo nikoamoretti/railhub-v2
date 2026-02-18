@@ -38,7 +38,36 @@ function parseTransferModes(modesString) {
 
 function parseEquipment(equipString) {
   if (!equipString || equipString === 'none provided') return []
-  return equipString.split(';').map(e => e.trim()).filter(Boolean)
+  
+  // First, normalize semicolons
+  let normalized = equipString
+  
+  // Fix concatenated patterns - insert semicolon before Title-Case patterns
+  // Pattern: lowercase or space followed by capital letter that starts an equipment name
+  // e.g., "TruckCross-Dock" → "Truck; Cross-Dock"
+  // e.g., "EndRamp" → "End; Ramp"
+  // e.g., "RailDock" → "Rail; Dock"
+  
+  // Common equipment patterns that start with capital letters
+  const equipmentPatterns = [
+    'Conveyor', 'Crane', 'Cross-Dock', 'Dock', 'Forklift', 'Loader', 'Pump',
+    'Scale', 'Silo', 'Tanks', 'Telehandler', 'Locomotive', 'Railcar', 'Mobile',
+    'Gantry', 'Magnet', 'Pipe', 'Switch', 'Vacu-Lift', 'Walinga', 'Ramp'
+  ]
+  
+  // Create a regex that matches any of these patterns preceded by lowercase or end of word
+  const pattern = new RegExp('(?<=[a-z0-9])(' + equipmentPatterns.join('|') + ')', 'g')
+  normalized = normalized.replace(pattern, '; $1')
+  
+  // Also fix cases like "Truck to RailDock" → "Truck to Rail; Dock"
+  const pattern2 = /(?<=[a-z0-9])(Cross-Dock|Dock|Forklift|Loader|Pump|Silo|Tanks|Telehandler|Locomotive|Railcar|Mobile|Gantry|Magnet|Pipe|Switch|Ramp)/g
+  normalized = normalized.replace(pattern2, '; $1')
+  
+  // Clean up double semicolons and split
+  return normalized
+    .split(';')
+    .map(e => e.trim())
+    .filter(Boolean)
 }
 
 function parseTrackCapacity(capString) {
