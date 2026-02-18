@@ -1,7 +1,13 @@
-import facilitiesData from '@/data/facilities.json'
+import { readFileSync } from 'fs'
+import { join } from 'path'
 import { SearchFilters } from '@/components/search-filters'
 import { FacilityCard } from '@/components/facility-card'
 import { Stats } from '@/components/stats'
+
+// Read JSON data at build time
+const facilitiesData = JSON.parse(
+  readFileSync(join(process.cwd(), 'data', 'facilities.json'), 'utf-8')
+)
 
 interface SearchParams {
   q?: string
@@ -33,13 +39,13 @@ async function getFacilities(searchParams: SearchParams) {
 }
 
 function getStats() {
-  const transload = facilitiesData.filter(f => f.type === 'TRANSLOAD').length
-  const storage = facilitiesData.filter(f => f.type === 'STORAGE').length
+  const transload = facilitiesData.filter((f: any) => f.type === 'TRANSLOAD').length
+  const storage = facilitiesData.filter((f: any) => f.type === 'STORAGE').length
   return { transloadCount: transload, storageCount: storage, totalCount: facilitiesData.length }
 }
 
-function getStates() {
-  const states = [...new Set(facilitiesData.map(f => f.location?.state).filter(Boolean))]
+function getStates(): string[] {
+  const states = [...new Set(facilitiesData.map((f: any) => f.location?.state).filter(Boolean))] as string[]
   return states.sort()
 }
 
