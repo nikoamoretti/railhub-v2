@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Railhub - Free Rail Freight Directory",
-  description: "Find transload, team track, and railcar storage facilities across North America. 11,000+ locations with railroad, capacity, and service details.",
+  description: "Find transload, team track, and railcar storage facilities across North America. 7,900+ locations with railroad, capacity, and service details.",
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased" style={{ backgroundColor: '#1a1a1a', color: '#ffffff' }}>
+      <body className="antialiased">
         {children}
       </body>
     </html>

@@ -8,6 +8,8 @@ interface SearchParams {
   q?: string
   state?: string
   type?: string
+  railroad?: string
+  sort?: string
   page?: string
 }
 
@@ -33,6 +35,37 @@ async function getFacilities(searchParams: SearchParams) {
     facilities = facilities.filter((f: any) => f.type === searchParams.type?.toUpperCase())
   }
 
+  if (searchParams.railroad) {
+    const rr = searchParams.railroad.toLowerCase()
+    facilities = facilities.filter((f: any) =>
+      f.railroads?.some((r: any) => {
+        const name = r.railroad?.name?.toLowerCase() ?? ''
+        return name === rr || name.includes(rr) || rr.includes(name)
+      })
+    )
+  }
+
+  if (searchParams.sort) {
+    const sort = searchParams.sort
+    facilities = [...facilities].sort((a: any, b: any) => {
+      switch (sort) {
+        case 'name_asc':
+          return (a.name || '').localeCompare(b.name || '')
+        case 'name_desc':
+          return (b.name || '').localeCompare(a.name || '')
+        case 'state':
+          return (a.location?.state || '').localeCompare(b.location?.state || '')
+        case 'capacity_desc': {
+          const capA = a.capabilities?.track_capacity || 0
+          const capB = b.capabilities?.track_capacity || 0
+          return capB - capA
+        }
+        default:
+          return 0
+      }
+    })
+  }
+
   return facilities
 }
 
@@ -49,6 +82,18 @@ function getStates(): string[] {
   return states.sort()
 }
 
+function getRailroads(): string[] {
+  const names = new Set<string>()
+  for (const f of facilitiesData as any[]) {
+    if (!f.railroads) continue
+    for (const r of f.railroads) {
+      const name = r.railroad?.name
+      if (name && name.length >= 2) names.add(name)
+    }
+  }
+  return [...names].sort()
+}
+
 interface PageProps {
   searchParams: Promise<SearchParams>
 }
@@ -57,15 +102,15 @@ export default async function Home({ searchParams }: PageProps) {
   const params = await searchParams
   const allFacilities = await getFacilities(params)
 
-  const currentPage = Math.max(1, parseInt(params.page || '1', 10))
+  const rawPage = parseInt(params.page || '1', 10)
+  const currentPage = isNaN(rawPage) ? 1 : Math.max(1, rawPage)
   const totalPages = Math.ceil(allFacilities.length / ITEMS_PER_PAGE)
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
   const facilities = allFacilities.slice(startIndex, startIndex + ITEMS_PER_PAGE)
 
-  const [stats, states] = await Promise.all([
-    getStats(),
-    getStates(),
-  ])
+  const stats = getStats()
+  const states = getStates()
+  const railroads = getRailroads()
 
   return (
     <main className="min-h-screen">
@@ -78,7 +123,7 @@ export default async function Home({ searchParams }: PageProps) {
           <h1 className="text-4xl sm:text-5xl font-bold mb-3">
             <span aria-hidden="true">🚂 </span>Railhub
           </h1>
-          <p className="text-lg opacity-90 mb-6" style={{ color: '#c0c0c0' }}>Free Rail Freight Directory</p>
+          <p className="text-lg opacity-90 mb-6" style={{ color: 'var(--text-secondary)' }}>Free Rail Freight Directory</p>
           <Stats {...stats} />
         </div>
       </header>
@@ -86,6 +131,7 @@ export default async function Home({ searchParams }: PageProps) {
       <div className="max-w-7xl mx-auto px-4 py-6">
         <SearchFilters
           states={states}
+          railroads={railroads}
           totalResults={facilitiesData.length}
           filteredResults={allFacilities.length}
         />
@@ -98,11 +144,25 @@ export default async function Home({ searchParams }: PageProps) {
           </div>
 
           {facilities.length === 0 && (
-            <div className="text-center py-16">
-              <p className="text-lg mb-2" style={{ color: '#c0c0c0' }}>No facilities found</p>
-              <p className="text-sm mb-4" style={{ color: '#808080' }}>
+            <div className="text-center py-20">
+              <div className="text-5xl mb-4" aria-hidden="true">🔍</div>
+              <p className="text-lg font-medium mb-2" style={{ color: 'var(--text-primary)' }}>No facilities found</p>
+              <p className="text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
                 Try removing some filters or searching a different term.
               </p>
+              <div className="flex flex-wrap justify-center gap-2 text-sm">
+                <span style={{ color: 'var(--text-muted)' }}>Popular:</span>
+                {['Transload', 'Storage', 'Texas', 'Ohio', 'BNSF'].map((term) => (
+                  <a
+                    key={term}
+                    href={`/?q=${encodeURIComponent(term)}`}
+                    className="px-3 py-1 rounded-full transition hover:opacity-80"
+                    style={{ background: 'var(--accent-muted)', color: 'var(--accent-text)', border: '1px solid var(--accent-border)' }}
+                  >
+                    {term}
+                  </a>
+                ))}
+              </div>
             </div>
           )}
 

@@ -45,7 +45,7 @@ export function Stats({ counts, totalCount }: StatsProps) {
   }
 
   return (
-    <div className="flex flex-wrap justify-center gap-3 mt-8" role="group" aria-label="Filter by facility type">
+    <div className="stats-bar flex flex-wrap justify-center gap-3 mt-8" role="group" aria-label="Filter by facility type">
       {topTypes.map(([type, count]) => {
         const isActive = activeType === type.toLowerCase()
         return (
@@ -54,16 +54,16 @@ export function Stats({ counts, totalCount }: StatsProps) {
             onClick={() => handleBadgeClick(type)}
             className="backdrop-blur rounded-lg px-5 py-3 transition-all duration-150 cursor-pointer border"
             style={{
-              backgroundColor: isActive ? 'rgba(230, 81, 0, 0.25)' : 'rgba(45, 45, 45, 0.8)',
-              borderColor: isActive ? '#e65100' : 'transparent',
+              backgroundColor: isActive ? 'var(--accent-muted)' : 'var(--bg-overlay)',
+              borderColor: isActive ? 'var(--accent)' : 'transparent',
             }}
             aria-pressed={isActive}
             title={`Filter by ${TYPE_LABELS[type] || type}`}
           >
-            <div className="text-2xl font-bold" style={{ color: isActive ? '#ff7043' : '#e65100' }}>
+            <div className="text-2xl font-bold" style={{ color: isActive ? 'var(--accent-text)' : 'var(--accent)' }}>
               {count.toLocaleString()}
             </div>
-            <div className="text-xs" style={{ color: isActive ? '#ffffff' : '#a0a0a0' }}>
+            <div className="text-xs" style={{ color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
               {TYPE_LABELS[type] || type.replace(/_/g, ' ')}
             </div>
           </button>
@@ -73,14 +73,14 @@ export function Stats({ counts, totalCount }: StatsProps) {
         onClick={handleTotalClick}
         className="backdrop-blur rounded-lg px-5 py-3 border-2 transition-all duration-150 cursor-pointer"
         style={{
-          backgroundColor: !activeType ? 'rgba(230, 81, 0, 0.2)' : 'rgba(45, 45, 45, 0.8)',
-          borderColor: !activeType ? 'rgba(230, 81, 0, 0.5)' : 'transparent',
+          backgroundColor: !activeType ? 'var(--accent-muted)' : 'var(--bg-overlay)',
+          borderColor: !activeType ? 'var(--accent-border)' : 'transparent',
         }}
         aria-pressed={!activeType}
         title="Show all facilities"
       >
-        <div className="text-2xl font-bold" style={{ color: '#ffffff' }}>{totalCount.toLocaleString()}</div>
-        <div className="text-xs" style={{ color: '#a0a0a0' }}>Total Locations</div>
+        <div className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>{totalCount.toLocaleString()}</div>
+        <div className="text-xs" style={{ color: 'var(--text-secondary)' }}>Total Locations</div>
       </button>
     </div>
   )

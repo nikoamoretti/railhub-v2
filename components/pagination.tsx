@@ -21,15 +21,15 @@ function pageHref(params: Record<string, string | undefined>, page: number) {
 }
 
 const btnStyle = {
-  backgroundColor: '#2d2d2d',
-  borderColor: '#3d3d3d',
-  color: '#ffffff',
+  backgroundColor: 'var(--bg-overlay)',
+  borderColor: 'var(--border-default)',
+  color: 'var(--text-primary)',
 }
 
 const btnDisabledStyle = {
-  backgroundColor: '#1f1f1f',
-  borderColor: '#2a2a2a',
-  color: '#555555',
+  backgroundColor: 'var(--bg-input)',
+  borderColor: 'var(--border-subtle)',
+  color: 'var(--text-muted)',
 }
 
 export function Pagination({ currentPage, totalPages, searchParams }: PaginationProps) {
@@ -93,7 +93,7 @@ export function Pagination({ currentPage, totalPages, searchParams }: Pagination
       <div className="flex items-center gap-1">
         {getPageNumbers().map((page, idx) =>
           page === '...' ? (
-            <span key={`dots-${idx}`} className="px-2 py-2 text-sm" style={{ color: '#666' }}>
+            <span key={`dots-${idx}`} className="px-2 py-2 text-sm" style={{ color: 'var(--text-muted)' }}>
               ...
             </span>
           ) : (
@@ -102,7 +102,7 @@ export function Pagination({ currentPage, totalPages, searchParams }: Pagination
               href={pageHref(searchParams, page)}
               className="px-3 py-2 border rounded-lg text-sm transition hover:opacity-80"
               style={page === currentPage
-                ? { backgroundColor: '#e65100', borderColor: '#e65100', color: '#ffffff' }
+                ? { backgroundColor: 'var(--accent)', borderColor: 'var(--accent)', color: '#ffffff' }
                 : btnStyle
               }
               aria-label={`Go to page ${page}`}
@@ -146,7 +146,7 @@ export function Pagination({ currentPage, totalPages, searchParams }: Pagination
           onChange={(e) => setJumpValue(e.target.value)}
           placeholder="Page #"
           className="w-20 px-2 py-2 border rounded-lg text-sm text-center focus:ring-2 focus:outline-none"
-          style={{ backgroundColor: '#1a1a1a', borderColor: '#3d3d3d', color: '#ffffff' }}
+          style={{ backgroundColor: 'var(--bg-input)', borderColor: 'var(--border-default)', color: 'var(--text-primary)' }}
         />
         <button
           type="submit"
