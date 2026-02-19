@@ -1,0 +1,317 @@
+[
+  {
+    "slug": "car-hire-rates",
+    "title": "Car Hire Rates and Per Diem Compensation",
+    "topic": "Car Hire",
+    "summary": "Car hire is the compensation paid by one railroad to another — or to a private car owner — for the use of foreign equipment on its lines. Rates are established by the AAR and are assessed on an hourly basis once a car leaves the home road. Understanding car hire is critical for private car owners evaluating the economics of releasing cars to the rail network.",
+    "sections": [
+      {
+        "heading": "What Is Car Hire?",
+        "content": "Car hire is the system by which railroads compensate each other for the use of cars that belong to another entity. When a railroad operates a car that it does not own — whether owned by another railroad or by a private party — it pays a daily or hourly hire rate to the car's owner. This system allows the North American freight car fleet to flow freely across railroad boundaries without requiring prior bilateral agreements for every interchange.\n\nCar hire rates are determined through the AAR's Car Hire Agreement and associated mileage allowances. The rate structure has two components: a time element (compensation for each hour the car is on a foreign road) and a mileage element (compensation per mile the car travels on the foreign road). The time element reflects the opportunity cost to the car owner of having their equipment away from home, while the mileage element approximates wear and maintenance cost recovery."
+      },
+      {
+        "heading": "Rate Determination and AAR Schedule",
+        "content": "The AAR publishes the Car Hire and Mileage Allowance schedules, which are updated periodically to reflect changes in capital costs, maintenance costs, and general economic conditions. Rates are stratified by car type — tank cars, covered hoppers, boxcars, gondolas, and flatcars each have distinct rate schedules — because their capital costs and maintenance profiles differ substantially.\n\nFor private cars (those owned by shippers or leasing companies rather than a railroad), the car owner negotiates a separate per diem agreement with the railroads that will handle their cars, or defaults to the published AAR schedule. Private car owners typically seek rates that cover their capital carrying cost (depreciation and interest) plus a contribution to maintenance, since maintenance responsibility also shifts to the using railroad during the time the car is on their line."
+      },
+      {
+        "heading": "Billing and Settlement",
+        "content": "Car hire is billed and settled through the AAR's Freight Car Accounting (FCA) system, which tracks car movements via automatic equipment identification (AEI) readers at interchange points and yards. Each railroad reports its car movements, and the FCA system calculates net car hire obligations between roads, with settlements occurring on a monthly cycle.\n\nPrivate car owners receive their car hire income through the railroad that is reporting the car on its line, or through a car hire management agent who interfaces with the AAR settlement system on their behalf. Owners of large private fleets often use specialized software to reconcile FCA statements against their own car tracking records and identify underpayments or reporting errors."
+      }
+    ],
+    "aarRuleRef": "AAR Car Hire Agreement, Circular OT-10"
+  },
+  {
+    "slug": "per-diem-charges",
+    "title": "Per Diem Charges and Free Time at Origin and Destination",
+    "topic": "Car Hire",
+    "summary": "Per diem is the daily charge a railroad assesses when its freight cars are held at a shipper's or consignee's facility beyond the allowed free time. It is the shipper-facing equivalent of car hire, reflecting the railroad's cost of having equipment idle rather than cycling productively through the network. Per diem rules are published in each railroad's tariff.",
+    "sections": [
+      {
+        "heading": "Free Time Allowances",
+        "content": "Each railroad publishes a demurrage tariff that specifies the free time allowance — the number of days a car may be held at a shipper's facility for loading, or at a consignee's facility for unloading, without incurring charges. Standard free time on most Class I railroads is 24 to 48 hours from the time of placement (or constructive placement, if the track is occupied).\n\nFree time policies vary by railroad and may also vary by car type, commodity, or the terms of a negotiated contract. Some railroads offer extended free time for specific industries (e.g., fertilizer during planting season) or for facilities with documented throughput constraints. Shippers should review the specific tariff items applicable to their origin and destination locations rather than assuming a standard applies."
+      },
+      {
+        "heading": "Constructive Placement",
+        "content": "Constructive placement is a critical concept that many shippers underestimate. If a railroad attempts to place a car at a shipper's facility but cannot do so because the track is occupied or blocked, the railroad may issue a constructive placement notice. From that moment, the free time clock begins running — even though the car is not yet physically at the facility.\n\nThis rule exists to prevent shippers from deliberately keeping their tracks full to avoid taking delivery of cars. In practice, it means that a shipper receiving a notice of constructive placement must act quickly to clear their track and accept the car. Disputes over constructive placement timing are one of the most common sources of demurrage billing disagreements."
+      },
+      {
+        "heading": "Credit and Debit Systems",
+        "content": "Some railroad demurrage tariffs use a credit-and-debit system in which cars released before the expiration of their free time accumulate credits that can offset demurrage charges on other cars within the same billing period. For example, if a shipper releases a car 12 hours early, that 12-hour credit can reduce the demurrage owed on a car that was held 12 hours too long.\n\nThe credit-and-debit system benefits high-volume shippers with variable unloading throughput, because it provides operational flexibility. However, credits typically expire at the end of the billing period and cannot be carried forward. Shippers operating under this system should monitor their running credit/debit balance and adjust unloading schedules accordingly."
+      }
+    ],
+    "aarRuleRef": "AAR Circular OT-10, Rule 4"
+  },
+  {
+    "slug": "mileage-allowances",
+    "title": "Mileage Allowances for Private Cars",
+    "topic": "Car Hire",
+    "summary": "Mileage allowances are per-mile compensation payments made by railroads to private freight car owners in recognition that private equipment traveling on railroad track contributes to track wear and maintenance cost. They complement the time-based car hire rate and are a meaningful revenue stream for owners of large private fleets, partially offsetting maintenance expenses.",
+    "sections": [
+      {
+        "heading": "How Mileage Allowances Work",
+        "content": "When a private or foreign-owned car moves loaded on a railroad's line, the operating railroad pays the car owner a mileage allowance for each mile traveled. These allowances are specified in the AAR Mileage Allowance schedule, differentiated by car type. The allowance rates are set to approximate the marginal track wear attributable to freight car movement, ensuring that the using railroad contributes to the car owner's maintenance costs.\n\nMileage allowances are generally higher for heavier cars (tank cars, covered hoppers at maximum gross weight) than for lighter cars, reflecting the greater track impact of heavy axle loads. Cars traveling empty typically earn no mileage allowance, or a reduced rate, since empty cars produce less track wear and their movement is essentially a repositioning cost."
+      },
+      {
+        "heading": "Interaction with Freight Rates",
+        "content": "For shippers who own or lease their own cars, mileage allowances interact directly with freight rate negotiations. A railroad offering a shipper-furnished equipment rate will quote a rate that is lower than the railroad-furnished equipment rate by an amount roughly equal to the car hire and equipment cost the railroad avoids. But the shipper also receives mileage allowance income on loaded movements, which further improves the economics of private car ownership.\n\nThe net economics of private car ownership depend on the capital cost of the cars, maintenance cost (which shifts back to the owner between uses), mileage allowance income, car hire income from loaded foreign road movements, and the differential in linehaul rates. For high-volume shippers with predictable round-trip utilization, private car ownership can generate significant savings over a multi-year horizon."
+      },
+      {
+        "heading": "Reporting and Verification",
+        "content": "Mileage allowance payments are based on actual car miles as reported by each railroad to the AAR's car accounting system. Private car owners should verify that mileage payments received match their own car tracking records, as AEI reader gaps or reporting errors can result in underpayment. Owners of large fleets typically reconcile mileage statements monthly against GPS tracking, waybill data, or railroad car tracing records."
+      }
+    ],
+    "aarRuleRef": "AAR Mileage Allowance Circular"
+  },
+  {
+    "slug": "defect-responsibility",
+    "title": "Defect Responsibility and Pre-Interchange Inspection",
+    "topic": "Maintenance",
+    "summary": "When a car is transferred from one railroad to another at interchange, both parties have a defined window to inspect the car and either accept it or reject it for defects. The rules governing this process determine which railroad is financially responsible for repairing defects found after interchange — making accurate and timely inspection a significant financial matter for both delivering and receiving roads.",
+    "sections": [
+      {
+        "heading": "The Interchange Inspection Window",
+        "content": "The AAR Interchange Rules require that the receiving railroad inspect incoming cars within a specified time window — typically 4 hours at a yard where carmen (car inspectors) are on duty, or a reasonable time at unstaffed locations. During this window, the receiving railroad must identify and document any defects present on the car at the time of interchange. Defects not found or reported within this window may become the financial responsibility of the receiving railroad if they are discovered later on its line.\n\nThe interchange inspection is conducted by certified car inspectors (carmen) who examine mechanical components: brakes, wheels, trucks, couplers, draft gear, and car body integrity. Inspectors use the FRA's pre-revenue service inspection standards and the AAR's Field Manual of the AAR Interchange Rules as their reference documents for determining whether a defect is pre-existing or occurred after interchange."
+      },
+      {
+        "heading": "Defect Classification and Financial Responsibility",
+        "content": "The AAR Field Manual classifies defects by their severity and by the rules that govern their repair. A defect that was present on a car at the time it was accepted at interchange is the delivering railroad's financial responsibility, even if the repair is performed by the receiving railroad or a third-party shop. Conversely, a defect that occurred on the receiving railroad's line — due to a derailment, rough switching, or normal wear — is that railroad's responsibility.\n\nWhen a defect is discovered mid-route — not at the point of interchange — the determination of responsibility depends on whether the defect could have been present and undetectable at interchange (a latent defect) or clearly occurred after interchange. Latent defects, such as internal wheel flaws that only manifest as a visible flat spot after additional service, are subject to specialized rules that may apportion responsibility between the two roads."
+      },
+      {
+        "heading": "Documentation and Dispute Process",
+        "content": "All defects found at interchange must be documented on an Inspection Card (often called a Bad Order card or AAR Form BP-1), which records the car initial and number, the nature of each defect, the inspector's certification, and the date and time of inspection. This documentation is the primary evidence used in any subsequent billing dispute between railroads.\n\nDisputes over defect responsibility are handled through the AAR's Mechanical Division arbitration process. Either party may file a claim asserting that the other road should bear the repair cost. The arbitration panel reviews inspection records, car history, and the nature of the defect to assign responsibility. Decisions are binding under the AAR Interchange Agreement."
+      }
+    ],
+    "aarRuleRef": "AAR Field Manual Rule 107, Rule 1"
+  },
+  {
+    "slug": "running-repairs",
+    "title": "Running Repairs: Roadside and En-Route Maintenance",
+    "topic": "Maintenance",
+    "summary": "Running repairs are minor maintenance actions performed on a car while it is en route or at an intermediate yard, allowing it to continue to its destination without being removed from service for a full shop visit. The railroad performing the running repair bills the car owner or the responsible road for the cost of parts and labor according to AAR-published rate schedules.",
+    "sections": [
+      {
+        "heading": "Definition and Scope of Running Repairs",
+        "content": "Running repairs include minor mechanical corrections that can be performed at a yard or roadside location without specialized shop equipment. Examples include replacing a worn brake shoe, repairing a defective hand brake mechanism, securing a loose draft gear follower, or replacing a defective angle cock on an air brake line. These repairs are classified as 'running repairs' because they keep the car running — in service — rather than diverting it to a repair shop.\n\nThe AAR maintains a schedule of standardized repair codes (called 'BAD' codes — Bad Appearance or Defect codes) and associated labor and material rates for running repairs. This schedule ensures that when one railroad performs a running repair on another road's car, the billing is standardized and predictable, reducing disputes over labor rates and parts pricing."
+      },
+      {
+        "heading": "Billing Between Railroads",
+        "content": "When a railroad performs a running repair on a car it does not own, it may bill the car's owner or the responsible railroad for the cost. The bill references the specific AAR repair code, the number of labor hours at the published rate, and the cost of any replaced parts. The responsible party has the right to inspect the repair records and audit the charges before paying.\n\nFor private car owners, running repair billings from multiple railroads can accumulate quickly for a large fleet. Effective fleet management includes auditing repair bills against car inspection records to verify that billed repairs were actually performed, that parts charges are at schedule rates, and that the billed defects were not pre-existing conditions that should have been caught at the last full inspection."
+      },
+      {
+        "heading": "Repair Authorization Thresholds",
+        "content": "Railroads have internal thresholds for how much a running repair may cost before a shop visit is required. If a car needs more extensive work than can be done roadside — for example, a wheel with a condemned flat spot that cannot be returned to service with a running repair — the car must be sent to a car repair shop (CRS) for heavy repair. The decision to bad-order a car for shop repair versus performing a running repair rests with the certified car inspector on-site."
+      }
+    ],
+    "aarRuleRef": "AAR Field Manual Rule 95, AAR Bad Order Repair Codes"
+  },
+  {
+    "slug": "heavy-repairs-shop-standards",
+    "title": "Heavy Repairs and Car Repair Shop Standards",
+    "topic": "Maintenance",
+    "summary": "Heavy repairs are major maintenance actions that require specialized shop facilities and equipment — wheel truing, truck rebuilding, tank car lining replacement, or structural body repairs. The AAR certifies car repair shops, and repair work must be performed to AAR specifications. The railroad or car owner that bears responsibility for the defect must pay the shop bill.",
+    "sections": [
+      {
+        "heading": "What Constitutes a Heavy Repair",
+        "content": "A heavy repair is any maintenance action that cannot be safely or effectively performed at a yard with mobile equipment. The most common heavy repair categories include: wheel set replacement or wheel truing (requires a wheel press and truing lathe), truck rebuilding or bolster replacement, draft gear replacement requiring drop-bottom pit equipment, tank car interior cleaning and relining, structural weld repairs to car body or underframe components, and complete air brake overhaul.\n\nThe AAR's Field Manual specifies which repairs must be performed at certified shops versus which can be performed in the field. Performing a shop-grade repair in the field — or performing it incorrectly — can result in the repair being rejected at the next inspection, creating liability exposure for the performing road."
+      },
+      {
+        "heading": "AAR-Certified Repair Shops",
+        "content": "Car repair shops must be certified by the AAR to perform specific categories of work on interchange equipment. Certification requires demonstrated facilities, tooling, inspector qualifications, and quality control procedures. Shops are certified separately for different work categories: M-1001 certification covers general freight cars; tank car shops require separate qualifications under the AAR Manual of Standards and Recommended Practices Section C-III.\n\nThe AAR publishes a directory of certified shops accessible to all member railroads and private car owners. When a car is diverted to a certified shop, the shop provides a detailed work order identifying all repairs performed, parts used, and labor hours. This documentation is the basis for billing the responsible party."
+      },
+      {
+        "heading": "Billing Disputes and Appeals",
+        "content": "Heavy repair billing disputes between railroads are common, particularly when the causal railroad (the one whose operations caused the damage) disputes the necessity or extent of repairs. The AAR's Mechanical Division provides an arbitration process for these disputes, with a panel reviewing shop records, car history, and inspection documentation.\n\nPrivate car owners have the right to inspect their cars at certified shops and to approve or contest repair work orders above certain dollar thresholds. Large fleet owners often employ fleet management firms that specialize in auditing shop bills, negotiating rates, and managing the repair authorization process."
+      }
+    ],
+    "aarRuleRef": "AAR Field Manual Rule 95, AAR Manual of Standards Section C-III"
+  },
+  {
+    "slug": "wheel-standards",
+    "title": "Wheel and Axle Standards for Interchange Service",
+    "topic": "Maintenance",
+    "summary": "Wheels are the most safety-critical component of a freight car and are subject to the most detailed AAR and FRA inspection standards. Wheels found to be out of tolerance — due to wear, flat spots, shelling, or thermal damage — must be removed from service before the car can continue in interchange. Wheel failures are a leading cause of derailments and are treated with zero tolerance.",
+    "sections": [
+      {
+        "heading": "Wheel Condemning Criteria",
+        "content": "The AAR Field Manual and FRA regulations specify precise condemning limits for freight car wheels. Key criteria include: rim thickness (minimum 1 inch for standard wheels), flange height (maximum 1.5 inches), flange thickness (minimum 0.875 inch), vertical flange (wheel tread vertical deviation), and flat spots (a flat spot exceeding 2.5 inches in length, or 2 flat spots within 5 inches of each other, condemns the wheel).\n\nThermal damage — caused by brake shoe heat during long descents — is a particularly serious defect that may not be visually obvious but creates internal material flaws. Inspectors look for discoloration, heat checking (surface cracking), and shelling (loss of tread material) as indicators of thermal damage. A thermally damaged wheel may pass visual inspection but fail under load, making calibrated gauge measurements essential."
+      },
+      {
+        "heading": "Wayside Detection Technology",
+        "content": "Modern railroads use automated wayside detection systems to screen every wheel on every car passing a detector location. Hot bearing detectors (HBDs) measure axle bearing temperature via infrared sensor; bearings above a threshold temperature trigger a mandatory setout. Wheel impact load detectors (WILDs) measure the dynamic force each wheel exerts on the rail as the car passes at speed; wheels producing impacts above the condemning threshold are flagged for inspection.\n\nWayside detectors have dramatically reduced the incidence of in-service wheel failures and bearing-related derailments. Data from detectors is transmitted to railroad operations centers in real time, allowing dispatchers to set out suspect cars at the next available siding before the next yard inspection."
+      },
+      {
+        "heading": "Wheel Exchange and AAR Billing",
+        "content": "When a car is set out for a condemned wheel, the railroad performing the wheel change may bill the car owner or responsible road for the cost of the replacement wheelset, labor, and any shop charges. Wheelset prices are published in the AAR price schedule and adjusted periodically. A wheel exchange on the road — pulling a wheelset from a spare car or shop stock — follows the same billing rules as other running and heavy repairs, with documentation required for each component replaced."
+      }
+    ],
+    "aarRuleRef": "AAR Field Manual Rule 41, FRA 49 CFR Part 215"
+  },
+  {
+    "slug": "lading-damage-liability",
+    "title": "Lading Damage: Liability Rules and Claim Procedures",
+    "topic": "Liability",
+    "summary": "When freight is damaged in transit, the railroad responsible for the damage has a legal obligation to compensate the shipper under the Carmack Amendment and applicable tariff rules. Determining which railroad caused the damage — and therefore which bears the financial liability — requires documentation, route analysis, and sometimes car inspection. Filing a timely and complete claim is essential to recovery.",
+    "sections": [
+      {
+        "heading": "The Carmack Amendment Framework",
+        "content": "The Carmack Amendment (49 U.S.C. § 11706) is the federal statute governing liability for loss and damage of freight moving in interstate commerce by rail. Under Carmack, the delivering carrier (the railroad that delivers the car to the consignee) is liable for loss or damage that occurred anywhere in the transportation chain — even if the damage occurred on another railroad's line. The delivering carrier then has the right to recover from whichever intermediate carrier actually caused the damage.\n\nThis 'single carrier' liability model simplifies the claim process for shippers: rather than determining which railroad in a multi-carrier route caused the damage, the shipper need only file a claim against the delivering road. The delivering road bears the burden of proving that the damage occurred on another railroad's segment if it wishes to pass the claim back."
+      },
+      {
+        "heading": "Documenting Damage at Delivery",
+        "content": "The moment of delivery is the most important evidence-gathering opportunity for a shipper with a damage claim. When a consignee notices visible damage — a leaking tank car, a collapsed boxcar door, product contamination — they must note the damage on the delivery receipt before releasing the car. A 'clear' delivery receipt (signed without noting damage) creates a strong presumption that the goods were delivered in good condition, significantly complicating a subsequent claim.\n\nFor concealed damage discovered after unloading, the claimant must file a timely notice of claim — typically within 9 months of delivery under standard rail tariff provisions. The car should be held in its post-delivery condition, photographs taken, and a railroad claims inspector invited to inspect the car and lading before any disposal or clean-up. Failure to preserve evidence is a common reason legitimate claims are partially or fully denied."
+      },
+      {
+        "heading": "Claim Filing Requirements",
+        "content": "A valid lading damage claim must include: a statement of the nature of the loss or damage, the amount of the claim, and supporting documentation (original bill of lading, freight invoice, inspection report, invoices for the damaged goods, and photographs). Claims must be filed within 9 months of delivery (or the date the claimant reasonably discovered the damage) under the terms of most rail tariffs and the Carmack Amendment.\n\nRailroads have 30 days to acknowledge receipt of a claim and 120 days to pay, deny, or make a settlement offer. If the railroad declines to pay, the claimant has 2 years from the date of the denial to file suit. Claims that are not filed within the time limits are generally barred, regardless of their merits."
+      }
+    ],
+    "aarRuleRef": "AAR Circular OT-5, 49 U.S.C. § 11706"
+  },
+  {
+    "slug": "car-damage-liability",
+    "title": "Car Damage Liability Between Railroads",
+    "topic": "Liability",
+    "summary": "When a freight car is damaged while on a railroad's line — due to a derailment, rough switching, or equipment failure — the operating railroad is generally responsible for the repair cost. The AAR Interchange Rules and AAR Field Manual govern how damage is assessed, documented, and billed between railroads, and how disputes are resolved through the Mechanical Division arbitration process.",
+    "sections": [
+      {
+        "heading": "Causal Road Responsibility",
+        "content": "The foundational principle of car damage liability between railroads is that the railroad on whose line the damage occurred — the 'causal road' — bears financial responsibility for the cost of repair. This includes damage from derailments, collisions, switching impacts, or any other event traceable to the railroad's operations. The causal road is responsible regardless of whether the car is owned by that railroad, another railroad, or a private party.\n\nDetermining the causal road requires establishing where the damage occurred and what caused it. This is straightforward in the case of a reported derailment or switching accident, where the location is documented and the cause is investigated. It is more complex for damage discovered at a shop or at interchange that may have accumulated incrementally over multiple movements."
+      },
+      {
+        "heading": "Damage Assessment and Shop Bills",
+        "content": "When a car is found damaged at interchange or in a yard, a bad-order card is written identifying the damage and its probable cause. If the damage requires shop repair, the shop prepares a work order itemizing the repair cost. The causal road is billed by the repairing road at AAR schedule rates for labor and at actual cost for parts.\n\nThe receiving road at interchange has a limited window to identify and reject cars with damage that would make the receiving road responsible under the 'clean interchange' principle. A car accepted at interchange in good condition becomes the receiving road's responsibility for any subsequent damage, which is why interchange inspections are thorough and documented."
+      },
+      {
+        "heading": "Arbitration and Appeals",
+        "content": "Disputes over car damage liability are resolved through the AAR Mechanical Division's Car Damage Committee arbitration process. Either the billing road or the billed road may file for arbitration. The committee reviews the inspection records, bad-order documentation, car history, and any photographic evidence to determine which railroad is responsible and for what share of the repair cost.\n\nMajor derailments involving significant fleet damage may trigger a separate investigation process outside the standard Car Damage Committee, particularly if FRA is involved or if the damage involves a release of hazardous materials requiring regulatory reporting."
+      }
+    ],
+    "aarRuleRef": "AAR Field Manual Rule 107, AAR Car Damage Rules"
+  },
+  {
+    "slug": "derailment-responsibility",
+    "title": "Derailment Responsibility and Investigation Protocols",
+    "topic": "Liability",
+    "summary": "Derailments are the most serious operational incidents in freight rail, carrying potential for significant property damage, personal injury, environmental harm, and regulatory liability. The railroad on whose track and under whose operational control the derailment occurred is presumptively responsible for the resulting costs. Investigation protocols are prescribed by FRA regulations and AAR rules.",
+    "sections": [
+      {
+        "heading": "Immediate Notification and Regulatory Reporting",
+        "content": "Any derailment must be reported to the railroad's operating center immediately. FRA regulations (49 CFR Part 225) require formal reporting of 'reportable accidents' — those meeting specific thresholds of damage cost, injury, or hazmat release — to the FRA within 30 days via Form FRA F 6180.54. Derailments involving hazardous material releases triggering emergency response require immediate notification to the National Response Center (NRC) under PHMSA regulations.\n\nState environmental agencies may also require notification if the derailment causes soil or water contamination. A hazmat release from a tank car can trigger multi-agency response and potentially long-term remediation liability that dwarfs the cost of the derailment itself."
+      },
+      {
+        "heading": "Investigation Process",
+        "content": "The derailed railroad conducts a post-accident investigation to determine the cause — track condition, equipment defect, operational error, or a combination. The investigation team includes mechanical, engineering, and operations personnel, and for serious derailments, the railroad's risk management and legal staff. Physical evidence (rail sections, wheel and truck components, event recorder data, video from locomotive-mounted cameras) is preserved and analyzed.\n\nThe National Transportation Safety Board (NTSB) may conduct an independent investigation for significant accidents, particularly those involving fatalities, major hazmat releases, or systemic safety issues. NTSB investigations are thorough and public, and their findings carry significant weight in subsequent liability litigation and regulatory proceedings."
+      },
+      {
+        "heading": "Liability Allocation",
+        "content": "The railroad on whose track a derailment occurs is presumptively liable for all direct costs: car repair, lading damage, environmental cleanup, track and structure repair, and third-party bodily injury claims. If the derailment was caused or contributed to by a defective car supplied by another road or private owner, the causal road may seek contribution from the car's owner or the railroad that supplied the defective car.\n\nCar owners (private parties with cars in the derailed train) file claims against the railroad for their equipment damage and for the value of any lost lading. These claims proceed under the Carmack Amendment framework for lading and under the AAR Car Damage Rules for equipment, with the option to litigate in federal court if the administrative process does not produce a satisfactory resolution."
+      }
+    ],
+    "aarRuleRef": "FRA 49 CFR Part 225, AAR Field Manual Rule 107"
+  },
+  {
+    "slug": "hazmat-interchange",
+    "title": "Hazardous Materials Interchange Requirements",
+    "topic": "Safety",
+    "summary": "Hazardous materials moving in rail freight are subject to a comprehensive regulatory regime under the Hazardous Materials Regulations (HMR, 49 CFR Parts 171-180) and the AAR's Emergency Handling Instructions. Cars loaded with hazmat must be properly classified, packaged, marked, labeled, placarded, and documented before any railroad may accept them for interchange. Acceptance of an improperly prepared hazmat car creates regulatory and financial liability for the accepting railroad.",
+    "sections": [
+      {
+        "heading": "Classification and Proper Shipping Names",
+        "content": "The first step in shipping hazardous materials by rail is correct classification under the DOT hazardous materials table (49 CFR § 172.101). Each hazardous material is assigned a hazard class and division (e.g., Class 3 flammable liquids, Division 2.1 flammable gases, Class 8 corrosives), a UN number (a 4-digit identifier), and a Proper Shipping Name (PSN) that must appear on shipping papers and on the car itself.\n\nMisclassification is one of the most common hazmat compliance failures and can result in a car being inappropriately routed through populated areas, placed near incompatible materials in a yard, or handled without proper emergency response preparation. Railroads have the right to refuse a hazmat car that is not properly classified or documented, and they exercise that right."
+      },
+      {
+        "heading": "Tank Car Specification Requirements",
+        "content": "Hazardous liquid and gas commodities must be shipped in tank cars that meet the specification required by the HMR for that specific material. The required specification depends on the chemical's hazard characteristics: vapor pressure, corrosivity, flammability, toxicity, and quantity. The shipper bears primary responsibility for ensuring the car specification is appropriate for the commodity being loaded.\n\nThe AAR's Specifications for Tank Cars (AAR Circular OT-55) provides detailed tables matching commodities to tank car specifications. Railroads have car routing systems that check the loaded commodity and car specification against the OT-55 requirements before accepting the car for movement. Cars found to have a specification mismatch — a commodity loaded in an inappropriate car — must be set out and corrected before proceeding."
+      },
+      {
+        "heading": "Placard and Documentation Requirements at Interchange",
+        "content": "A hazmat car must arrive at interchange with proper placards displayed on all four sides of the car, identifying the hazard class (and UN number for certain materials). The delivering railroad must provide the receiving railroad with a train consist or hazmat list identifying the position of hazmat cars in the train, their car initials and numbers, the proper shipping name, hazard class, and UN number.\n\nThe AAR's Standard for the Interchange of Trains requires that hazmat cars be placed in the train at a safe distance from locomotives, occupied cabooses, and other sensitive equipment. Specific placement rules apply to certain classes of hazmat — for example, poisonous-by-inhalation (PIH) materials have strict placement requirements that the train crew must verify before departure."
+      }
+    ],
+    "aarRuleRef": "AAR OT-55, 49 CFR Parts 172-173, AAR Circular OT-5"
+  },
+  {
+    "slug": "air-brake-testing",
+    "title": "Air Brake Testing Standards for Interchange",
+    "topic": "Safety",
+    "summary": "Air brakes are the primary safety system on every freight car, and federal regulations require that cars entering interchange have properly functioning brakes. Brake testing must be performed before a train departs, and cars found with brake defects must be removed from service until repaired. Failure to conduct required brake tests is one of the most frequently cited FRA violations.",
+    "sections": [
+      {
+        "heading": "Pre-Departure Brake Tests",
+        "content": "FRA regulations (49 CFR Part 232) require a full initial terminal air brake test before a train departs from a terminal or classification yard. This test verifies that the brakes apply and release on every car in the train. A certified conductor or qualified mechanical employee must perform a visual inspection of each car's brake cylinder to confirm brake application, and then verify release after the brake pipe is recharged.\n\nIn addition to the initial terminal test, a set-out and pick-up test (also called a running brake test or continuity test) must be performed when cars are added to or removed from an existing train at an intermediate location. This shorter test verifies brake continuity through the added or remaining cars. Brake test results must be recorded on the train's brake test record card."
+      },
+      {
+        "heading": "Single Car Testing",
+        "content": "Single car air brake tests are performed when a car enters service for the first time, returns from a repair shop, or is found with a brake defect. The single car test verifies the performance of all components in the car's brake system: brake valve, brake cylinder, piston travel, brake shoe condition, and reservoir integrity. Single car tests require a calibrated test device and must be performed by a qualified mechanical employee.\n\nCars that fail a single car test must be bad-ordered and sent to a repair facility. A car with an inoperative brake is not permitted in interchange service under any circumstances, even if the car is otherwise mechanically sound."
+      },
+      {
+        "heading": "Roller Bearing and Brake Shoe Requirements",
+        "content": "Brake shoes must meet minimum thickness requirements — cars with shoes worn below the condemning limit must be bad-ordered for shoe replacement before continuing in service. The AAR and FRA have aligned condemning criteria that inspectors use during pre-departure inspections. Composite brake shoes, which have largely replaced older cast iron shoes on new equipment, have different wear characteristics and different condemning criteria.\n\nCars entering interchange must also have properly functioning end-of-car cushioning equipment (where applicable) and correctly set brake cylinder piston travel. Piston travel outside the specified range results in either insufficient braking force (travel too long) or brake drag and wheel heating (travel too short), both of which create safety risks."
+      }
+    ],
+    "aarRuleRef": "FRA 49 CFR Part 232, AAR Field Manual Rule 6"
+  },
+  {
+    "slug": "coupler-standards",
+    "title": "Coupler and Draft Gear Standards",
+    "topic": "Safety",
+    "summary": "Couplers are the mechanical connection between freight cars in a train, transmitting both the buff (compression) and draft (tension) forces that occur during train operations. The AAR specifies the coupler types, dimensions, and material standards required for interchange service, and cars with defective or non-standard couplers may not enter interchange. Coupler failures can cause train separations, collisions, and derailments.",
+    "sections": [
+      {
+        "heading": "Standard Coupler Types and Compatibility",
+        "content": "The North American standard for freight car couplers is the AAR E-type knuckle coupler, with the F-type (rotary) coupler used on cars designed for rotary dumping. All interchange cars must be equipped with couplers that are compatible with the AAR standard, ensuring that any two cars from any railroad can be coupled together without special adapters or tools.\n\nCoupler height is critical for safe train operation. If coupled cars have mismatched coupler heights, the coupling will transmit forces at an angle, creating a tendency for cars to 'climb' over each other during dynamic loading — a leading cause of jackknifing and derailment. The AAR specifies a maximum coupler height difference of 3 inches between coupled cars, with tighter tolerances on longer or heavier trains."
+      },
+      {
+        "heading": "Knuckle and Coupler Inspection Criteria",
+        "content": "Inspectors examine couplers for cracked or broken knuckles, worn coupler heads (which reduce the engagement depth between coupled cars), defective coupler lock mechanisms, and worn or damaged pintles. A cracked knuckle is a condemning defect — the car must be bad-ordered and the knuckle replaced before the car returns to service. Knuckle cracks are not always visible to the naked eye, and some railroads use magnetic particle inspection at major terminals to detect subsurface cracks.\n\nDraft gear — the spring and friction absorber system behind the coupler — must have adequate travel to absorb buff and draft forces without bottoming out. Draft gear that is bottomed out transmits shock forces directly to the car body structure, causing structural damage over time. Worn or broken draft gear springs and broken draft gear components are condemning defects."
+      },
+      {
+        "heading": "Couple Impact Speed Limits",
+        "content": "The AAR and FRA limit the speed at which cars may be coupled in switching operations to protect both equipment and lading. Standard coupling speed limits are 4 mph for cars carrying hazardous materials and 6 mph for other cars, though specific car types and lading may have lower limits. Violations of coupling speed limits are a significant source of lading damage claims — high-impact couplings can cause product shifting, container damage, and breakage even without visible structural damage to the car."
+      }
+    ],
+    "aarRuleRef": "AAR Field Manual Rule 14, FRA 49 CFR Part 215.127"
+  },
+  {
+    "slug": "interchange-inspection",
+    "title": "Interchange Inspection Procedures and Acceptance",
+    "topic": "Operations",
+    "summary": "The interchange inspection is the formal process by which a delivering railroad and receiving railroad transfer responsibility for freight cars at a junction point. The receiving railroad's car inspectors examine each car in the train for defects, and the receiving road either accepts the car or places it on a bad-order list. The process is documented in writing and creates the record used for any subsequent liability dispute.",
+    "sections": [
+      {
+        "heading": "Inspection Process and Personnel",
+        "content": "Interchange inspections are performed by AAR-certified carmen (car inspectors) employed by the receiving railroad. Inspectors walk both sides of the train, examining each car's mechanical components at eye level and with flashlights for underframe inspection. The inspection must be completed within the time windows specified in the AAR Interchange Rules — typically 4 hours at a staffed yard or a reasonable time at remote interchange locations.\n\nEach inspector carries a copy of the AAR Field Manual, gauges for measuring wheel and coupler dimensions, and chalk or paint for marking defects on car bodies. Found defects are recorded on an Inspection Card, which documents the car initial and number, the specific defect (using AAR defect codes), and the inspector's name and certification number."
+      },
+      {
+        "heading": "Bad-Order Process at Interchange",
+        "content": "When an inspector finds a condemning defect on a car, the car is placed on a 'bad-order' list and cannot be accepted into interchange service in its current condition. The delivering railroad is notified that the specific car has been rejected. The delivering railroad then has the option to perform a running repair at the interchange location (if the defect is minor enough to be addressed roadside) or to route the car to a repair shop.\n\nCars that are bad-ordered at interchange represent a financial dispute in the making — the delivering railroad may dispute whether the defect existed when the car left its line, or may dispute the condemning criteria applied. Having calibrated gauges and certified inspectors perform the inspection is essential to documenting the finding in a form that will withstand arbitration."
+      },
+      {
+        "heading": "Clean Interchange Acceptance",
+        "content": "When a car is accepted at interchange without any noted defects, the receiving railroad assumes operational responsibility. Any defects found subsequently on the receiving road's line are presumptively the receiving road's responsibility — either defects that developed on that railroad's line, or latent defects that were not detectable at the time of interchange inspection.\n\nRailroads with high-volume interchange points use AEI readers, automated mechanical inspection systems (AMIS), and sometimes ultrasonic wheel testing equipment to supplement visual inspection. These technologies allow faster and more consistent detection of defects that human inspectors might miss, reducing the number of defective cars that enter interchange service undetected."
+      }
+    ],
+    "aarRuleRef": "AAR Interchange Rules, Rule 1"
+  },
+  {
+    "slug": "car-tracing-reporting",
+    "title": "Car Tracing, Reporting, and Equipment Management",
+    "topic": "Operations",
+    "summary": "Car tracing is the system by which car owners, shippers, and railroads track the location and status of freight cars as they move through the network. Modern car tracing relies on a combination of AEI readers, EDI message exchanges, and railroad-operated web portals. Accurate and timely car location data is essential for managing car supply, planning unloading operations, and identifying cars that have been misrouted or lost in the system.",
+    "sections": [
+      {
+        "heading": "AEI Technology and UMLER",
+        "content": "Automatic Equipment Identification (AEI) is the backbone of modern freight car tracking. Each freight car carries an AEI tag — a passive RFID transponder mounted on both sides of the car — that transmits the car's initial (reporting mark) and number when it passes an AEI reader. The North American network has thousands of AEI reader locations at major yards, interchange points, and wayside locations, providing near-continuous location updates as a car moves through the system.\n\nAll freight cars registered for interchange service are listed in the Universal Machine Language Equipment Register (UMLER), the AAR's master database of equipment specifications. UMLER records include the car's mechanical dimensions, weight limits, equipment type, and ownership information. Railroads query UMLER to verify that a car is registered for interchange service and to obtain its specifications before loading."
+      },
+      {
+        "heading": "EDI Messaging and Visibility",
+        "content": "The AAR's Railinc subsidiary operates the EDI messaging system through which railroads exchange car location information. Key transaction sets include: the 404 (Rail Carrier Shipment Information, the rail equivalent of a BOL), the 414 (Rail Carhire Settlement), and the 417 (Rail Carrier Waybill Interchange). These transactions are exchanged in near-real time as cars move between railroads, creating a continuous record of each car's location and status.\n\nShippers and car owners access car tracing information through railroad-operated web portals (e.g., BNSF's ShipmentConnect, UP's Customer Portal) or through third-party visibility platforms that aggregate data from multiple railroads. The Railinc Umler/ShipCSX/ETA platforms provide cross-railroad visibility for owners of cars that move across multiple railroads."
+      },
+      {
+        "heading": "Mis-Routing and Lost Car Procedures",
+        "content": "Despite sophisticated tracking systems, freight cars are occasionally misrouted — sent to the wrong destination due to switching errors, waybill entry mistakes, or yard communication failures. When a shipper or car owner identifies that a car is not moving toward its destination, they should contact the railroad's customer service team immediately with the car initial, number, and last known location.\n\nRailroads have a Tracer process for locating cars that have not been located via AEI for an extended period. The Tracer system queries all railroad systems for any recorded movement of the car and reaches out to connecting railroads and yards where the car was last known to be located. Cars that have been misrouted are typically returned to the correct routing within 24-48 hours of the error being identified, though lading-specific service failures may not be recoverable if time-sensitive."
+      }
+    ],
+    "aarRuleRef": "AAR Circular OT-10, UMLER System Manual"
+  }
+]

@@ -1,0 +1,1171 @@
+[
+  {
+    "slug": "demurrage",
+    "term": "Demurrage",
+    "definition": "A charge assessed by a railroad against a shipper or consignee for detaining a railcar beyond the allowed free time at a loading or unloading facility. Demurrage incentivizes rapid car turnover and compensates the railroad for lost car utility. It is distinct from detention, which applies to equipment held at non-railroad locations.",
+    "category": "Operations",
+    "relatedTerms": ["detention", "free-time", "constructive-placement", "actual-placement", "per-diem"]
+  },
+  {
+    "slug": "detention",
+    "term": "Detention",
+    "definition": "A charge levied when intermodal equipment such as chassis or containers is held beyond the allowed free time at a shipper or consignee's facility. Detention applies specifically to intermodal assets at non-railroad locations, differentiating it from demurrage. Both charges encourage efficient equipment utilization.",
+    "category": "Operations",
+    "relatedTerms": ["demurrage", "free-time", "chassis", "intermodal-container"]
+  },
+  {
+    "slug": "dwell-time",
+    "term": "Dwell Time",
+    "definition": "The total elapsed time a railcar or intermodal unit spends at a terminal, yard, or customer facility without moving toward its destination. Excessive dwell time reduces network velocity and car utilization. Railroads track dwell as a key performance indicator alongside train speed.",
+    "category": "Operations",
+    "relatedTerms": ["demurrage", "classification-yard", "car-hire", "velocity"]
+  },
+  {
+    "slug": "interchange",
+    "term": "Interchange",
+    "definition": "The transfer of freight cars and the accompanying waybills between two connecting railroads at a junction point. Interchange rules, governed by AAR circulars, define responsibilities for car condition, billing, and liability. It is the mechanism that enables single-bill, multi-railroad shipments across the North American network.",
+    "category": "Operations",
+    "relatedTerms": ["waybill", "foreign-car", "home-car", "aar", "car-hire"]
+  },
+  {
+    "slug": "classification-yard",
+    "term": "Classification Yard",
+    "definition": "A large rail facility where cars from inbound trains are sorted and grouped by destination to build outbound trains. Cars may be sorted using hump switching, flat switching, or a combination of both. Classification yards are the central nodes of the carload network.",
+    "category": "Operations",
+    "relatedTerms": ["hump-yard", "flat-switching", "blocking", "consist", "manifest-train"]
+  },
+  {
+    "slug": "hump-yard",
+    "term": "Hump Yard",
+    "definition": "A classification yard where cars are pushed over an elevated hump and allowed to roll by gravity into designated classification tracks. Retarders control car speed during descent to prevent damage from collisions. Hump yards dramatically increase sorting throughput compared to flat switching.",
+    "category": "Operations",
+    "relatedTerms": ["classification-yard", "flat-switching", "blocking", "retarder"]
+  },
+  {
+    "slug": "flat-switching",
+    "term": "Flat Switching",
+    "definition": "A method of classifying cars in a yard where a locomotive pushes or pulls cars onto the correct track without the aid of a hump. Flat switching is slower than hump operations but is used at smaller yards or for fragile lading. It requires more locomotive movements and crew time per car sorted.",
+    "category": "Operations",
+    "relatedTerms": ["hump-yard", "classification-yard", "switching-charge"]
+  },
+  {
+    "slug": "blocking",
+    "term": "Blocking",
+    "definition": "The process of grouping railcars destined for the same or nearby destinations together within a train so they can be set out as a single cut without additional classification. A blocking plan defines how a railroad arranges cars to minimize intermediate switching. Effective blocking reduces terminal dwell and improves network efficiency.",
+    "category": "Operations",
+    "relatedTerms": ["classification-yard", "consist", "manifest-train", "cut"]
+  },
+  {
+    "slug": "cut",
+    "term": "Cut",
+    "definition": "A group of railcars coupled together that are moved as a single unit during switching or train assembly. Cuts are the basic unit of yard switching operations. The number of cuts in a switch list defines the complexity of a local or yard job.",
+    "category": "Operations",
+    "relatedTerms": ["blocking", "flat-switching", "local-train"]
+  },
+  {
+    "slug": "consist",
+    "term": "Consist",
+    "definition": "The complete list of equipment making up a train, including locomotives and each railcar in order, with car numbers, commodities, weights, and destinations. A consist document (also called a train list) travels with the train and is transmitted electronically ahead of arrival. Consists are essential for safety planning and crew briefings.",
+    "category": "Operations",
+    "relatedTerms": ["blocking", "manifest-train", "waybill", "dpu"]
+  },
+  {
+    "slug": "manifest-train",
+    "term": "Manifest Train",
+    "definition": "A train carrying a mixed assortment of carload freight bound for multiple destinations, as opposed to a unit train. Manifest trains typically undergo classification at intermediate yards to set out and pick up cars. They are the backbone of the carload business and handle the broadest variety of commodities.",
+    "category": "Operations",
+    "relatedTerms": ["unit-train", "intermodal-train", "classification-yard", "consist", "blocking"]
+  },
+  {
+    "slug": "unit-train",
+    "term": "Unit Train",
+    "definition": "A train composed entirely of cars carrying the same commodity between a single origin and a single destination, running as a dedicated shuttle. Unit trains eliminate intermediate classification, reducing transit time and cost. Common examples include coal trains, grain trains, and crude oil trains.",
+    "category": "Operations",
+    "relatedTerms": ["manifest-train", "intermodal-train", "through-train"]
+  },
+  {
+    "slug": "intermodal-train",
+    "term": "Intermodal Train",
+    "definition": "A high-priority train carrying intermodal containers or trailers on flatcars, typically operating on expedited schedules to compete with long-haul trucking. Intermodal trains generally run at higher speeds and have priority over manifest trains in most railroad operating plans. They serve as the interface between the rail and trucking networks.",
+    "category": "Operations",
+    "relatedTerms": ["unit-train", "cofc", "tofc", "well-car", "intermodal-terminal"]
+  },
+  {
+    "slug": "through-train",
+    "term": "Through Train",
+    "definition": "A train that operates between two terminals without performing intermediate switching or classification work. Through trains maximize velocity by eliminating station stops and yard entries. They are distinct from local trains, which serve intermediate customers.",
+    "category": "Operations",
+    "relatedTerms": ["local-train", "manifest-train", "unit-train"]
+  },
+  {
+    "slug": "local-train",
+    "term": "Local Train",
+    "definition": "A train that serves individual customers along a branch line or industrial corridor, spotting empty cars and pulling loaded cars. Locals are typically the only rail service connecting small shippers to the broader network. They operate at lower speeds and cover fewer miles per day than through or intermodal trains.",
+    "category": "Operations",
+    "relatedTerms": ["through-train", "spotting", "pulling", "branch-line", "industrial-spur"]
+  },
+  {
+    "slug": "spotting",
+    "term": "Spotting",
+    "definition": "The act of placing a railcar at a specific loading or unloading position at a customer's facility. A car is considered spotted when it is in position and available for the shipper's use. The date and time of spotting often marks the beginning of free time for demurrage purposes.",
+    "category": "Operations",
+    "relatedTerms": ["pulling", "actual-placement", "constructive-placement", "demurrage", "local-train"]
+  },
+  {
+    "slug": "pulling",
+    "term": "Pulling",
+    "definition": "The act of retrieving a loaded or empty car from a customer's facility after loading or unloading is complete. The shipper or consignee typically notifies the railroad when a car is ready to be pulled. Delays in pulling can result in congestion at customer facilities.",
+    "category": "Operations",
+    "relatedTerms": ["spotting", "release", "local-train"]
+  },
+  {
+    "slug": "bad-order",
+    "term": "Bad Order",
+    "definition": "A railcar that has been removed from service because it has a mechanical defect, damage, or other condition that makes it unsafe or unsuitable to move loaded. Bad-ordered cars are set out at a repair facility until they are inspected and restored to serviceable condition. The term is used as both a noun and a verb in railroad operations.",
+    "category": "Operations",
+    "relatedTerms": ["rip-track", "car-hire", "air-brake", "coupler"]
+  },
+  {
+    "slug": "rip-track",
+    "term": "RIP Track",
+    "definition": "A Repair In Place track where bad-ordered cars are sent for inspection and mechanical repair. RIP tracks are typically located within or adjacent to classification yards and staffed by carmen. The term originally stood for Repair In Place, reflecting that repairs are done with the car on the track.",
+    "category": "Operations",
+    "relatedTerms": ["bad-order", "classification-yard"]
+  },
+  {
+    "slug": "car-hire",
+    "term": "Car Hire",
+    "definition": "A compensation system under which a railroad pays a daily or mileage-based fee to the car owner when using foreign-owned or privately owned equipment. Car hire rates are established under AAR rules and are intended to recover the owner's fixed and variable car costs. The system balances car supply across the national rail network.",
+    "category": "Operations",
+    "relatedTerms": ["per-diem", "foreign-car", "private-car", "system-car", "interchange"]
+  },
+  {
+    "slug": "per-diem",
+    "term": "Per Diem",
+    "definition": "A daily charge paid by one railroad to another, or to a private car owner, for the use of freight equipment beyond a specified time. Per diem is a subset of car hire charges and is calculated on a calendar-day basis. High per diem rates incentivize railroads to return foreign cars promptly.",
+    "category": "Operations",
+    "relatedTerms": ["car-hire", "demurrage", "foreign-car", "interchange"]
+  },
+  {
+    "slug": "constructive-placement",
+    "term": "Constructive Placement",
+    "definition": "A railroad industry practice where a car is deemed to have been placed at a customer facility for purposes of calculating free time, even though physical placement is not possible due to congestion or other conditions at the facility. Constructive placement notices are sent to the shipper or consignee to begin the demurrage clock. It protects railroads from liability for delays caused by customer-side congestion.",
+    "category": "Operations",
+    "relatedTerms": ["actual-placement", "demurrage", "free-time", "spotting"]
+  },
+  {
+    "slug": "actual-placement",
+    "term": "Actual Placement",
+    "definition": "The physical positioning of a railcar at a shipper's or consignee's loading or unloading spot, as opposed to constructive placement. Actual placement occurs when the car is in position and accessible for the customer's use. The date and time of actual placement is recorded and used to calculate demurrage.",
+    "category": "Operations",
+    "relatedTerms": ["constructive-placement", "spotting", "demurrage", "free-time"]
+  },
+  {
+    "slug": "release",
+    "term": "Release",
+    "definition": "The formal notification given by a shipper or consignee to a railroad that a car has been loaded or unloaded and is ready to be pulled. Release marks the end of the customer's responsibility for the car and triggers the railroad's obligation to retrieve it. The release time is used to compute dwell and demurrage.",
+    "category": "Operations",
+    "relatedTerms": ["pulling", "spotting", "demurrage", "empty-return"]
+  },
+  {
+    "slug": "empty-return",
+    "term": "Empty Return",
+    "definition": "The process of repositioning an empty railcar after it has been unloaded, either back to the car owner, to a new loading point, or to a storage location. Empty movements generate no revenue and are a significant cost component for railroads. Optimization of empty returns is a key factor in fleet management.",
+    "category": "Operations",
+    "relatedTerms": ["release", "car-hire", "private-car", "system-car"]
+  },
+  {
+    "slug": "private-car",
+    "term": "Private Car",
+    "definition": "A railcar owned by a shipper, leasing company, or third party rather than by a railroad. Private cars are used by the owner to transport their own goods or are leased to shippers for dedicated use. The owning railroad receives car hire when private cars travel on foreign lines.",
+    "category": "Operations",
+    "relatedTerms": ["system-car", "foreign-car", "home-car", "car-hire", "per-diem"]
+  },
+  {
+    "slug": "system-car",
+    "term": "System Car",
+    "definition": "A railcar owned by the railroad on whose tracks it currently operates. System cars are available for general loading and are managed as part of the railroad's own fleet. When system cars travel on another railroad, they become foreign cars and earn car hire for the owning road.",
+    "category": "Operations",
+    "relatedTerms": ["private-car", "foreign-car", "home-car", "car-hire"]
+  },
+  {
+    "slug": "foreign-car",
+    "term": "Foreign Car",
+    "definition": "A railcar that is operating on a railroad other than the one that owns it. Foreign cars generate car hire obligations from the operating railroad to the owning railroad. Railroads track foreign car counts carefully to manage their hire obligations and fleet balance.",
+    "category": "Operations",
+    "relatedTerms": ["home-car", "system-car", "private-car", "car-hire", "interchange"]
+  },
+  {
+    "slug": "home-car",
+    "term": "Home Car",
+    "definition": "A railcar that is currently on the railroad that owns it. Home cars generate no car hire for the owning railroad. Returning a car to its home road eliminates the daily hire expense.",
+    "category": "Operations",
+    "relatedTerms": ["foreign-car", "system-car", "car-hire", "per-diem"]
+  },
+  {
+    "slug": "reconsignment",
+    "term": "Reconsignment",
+    "definition": "A change in the consignee, destination, or routing of a shipment after the original bill of lading has been issued but before final delivery. Reconsignment allows shippers to redirect freight in transit to meet changing market conditions. A charge is typically assessed by the railroad for processing a reconsignment.",
+    "category": "Operations",
+    "relatedTerms": ["diversion", "bill-of-lading", "waybill", "consignee"]
+  },
+  {
+    "slug": "diversion",
+    "term": "Diversion",
+    "definition": "A change in the routing of a shipment while it is in transit, redirecting it over a different line or through a different gateway. Diversion differs from reconsignment in that the destination may remain the same while the route changes. Both are subject to railroad tariff rules and may require additional charges.",
+    "category": "Operations",
+    "relatedTerms": ["reconsignment", "waybill", "bill-of-lading", "transit-privilege"]
+  },
+  {
+    "slug": "transit-privilege",
+    "term": "Transit Privilege",
+    "definition": "A tariff provision that allows a shipper to stop a shipment in transit for processing, storage, or further manufacture, and then continue the shipment to final destination at a through rate. Common transit privileges include milling-in-transit for grain and fabrication-in-transit for steel. Transit privileges encourage shippers to use rail for value-added processing steps.",
+    "category": "Operations",
+    "relatedTerms": ["reconsignment", "diversion", "tariff", "commodity-rate"]
+  },
+  {
+    "slug": "mileage-equalization",
+    "term": "Mileage Equalization",
+    "definition": "A ratemaking technique that compensates for the difference in actual rail mileage between a short-route and long-route railroad by adjusting the rate division. It ensures that each railroad in a joint rate receives a fair share based on the miles it hauls the freight. Mileage equalization promotes competitive routing over multiple rail paths.",
+    "category": "Operations",
+    "relatedTerms": ["linehaul", "rate", "interchange"]
+  },
+  {
+    "slug": "reciprocal-switching",
+    "term": "Reciprocal Switching",
+    "definition": "An arrangement under which two or more competing railroads agree to switch each other's cars to and from industries served exclusively by the other, enabling shippers on one railroad to access the other's main line at a published switching charge. Reciprocal switching is a form of competitive access and is sometimes mandated by the STB. It is particularly important for shippers on short lines or in terminal areas.",
+    "category": "Operations",
+    "relatedTerms": ["competitive-access", "switching-charge", "stb", "bottleneck-routing"]
+  },
+  {
+    "slug": "competitive-access",
+    "term": "Competitive Access",
+    "definition": "The ability of a shipper to use more than one railroad for a given movement, either through reciprocal switching, trackage rights, or geographic proximity to competing lines. Competitive access is a key factor in rate negotiations and is central to rail regulatory policy. Shippers with competitive access generally obtain lower rates than captive shippers.",
+    "category": "Operations",
+    "relatedTerms": ["reciprocal-switching", "bottleneck-routing", "stb", "shipper-complaint"]
+  },
+  {
+    "slug": "bottleneck-routing",
+    "term": "Bottleneck Routing",
+    "definition": "A routing situation where a shipper must use a particular railroad for some portion of a movement because no competitive alternative exists for that segment, giving that railroad pricing leverage. The bottleneck carrier can set rates for the captive segment independently of competitive pressures. STB rules allow bottleneck shippers to challenge rates through rate cases.",
+    "category": "Operations",
+    "relatedTerms": ["competitive-access", "stb", "rate-case", "captive-shipper"]
+  },
+  {
+    "slug": "accessorial-charges",
+    "term": "Accessorial Charges",
+    "definition": "Additional fees charged by a railroad for services beyond the basic point-to-point transportation, such as reconsignment, storage, demurrage, special handling, or fuel surcharges. Accessorials can significantly increase the total cost of a shipment above the base linehaul rate. Shippers should review tariff schedules carefully to understand all potential accessorial exposure.",
+    "category": "Operations",
+    "relatedTerms": ["switching-charge", "linehaul", "terminal-charge", "storage-charge", "fuel-surcharge"]
+  },
+  {
+    "slug": "switching-charge",
+    "term": "Switching Charge",
+    "definition": "A fee assessed by a railroad for the local movement of cars within a terminal, between an interchange point and a customer facility, or for reciprocal switching. Switching charges cover the cost of locomotive power, crew, and track used in the switch move. They are published in tariffs and may be assessed in addition to the linehaul rate.",
+    "category": "Operations",
+    "relatedTerms": ["linehaul", "terminal-charge", "accessorial-charges", "reciprocal-switching"]
+  },
+  {
+    "slug": "linehaul",
+    "term": "Linehaul",
+    "definition": "The primary transportation charge for moving freight between origin and destination, covering the over-the-road or mainline portion of the movement. Linehaul rates are the base rate component before the addition of fuel surcharges, accessorials, and terminal charges. Linehaul revenue is the largest single revenue source for railroads.",
+    "category": "Operations",
+    "relatedTerms": ["terminal-charge", "switching-charge", "accessorial-charges", "fuel-surcharge", "rate"]
+  },
+  {
+    "slug": "terminal-charge",
+    "term": "Terminal Charge",
+    "definition": "A fee applied at the origin or destination terminal to cover the cost of handling cars within a rail facility, including classification, inspection, and spotting. Terminal charges may be included in the linehaul rate or assessed separately. They reflect the cost difference between serving terminal customers versus through-move customers.",
+    "category": "Operations",
+    "relatedTerms": ["linehaul", "switching-charge", "accessorial-charges"]
+  },
+  {
+    "slug": "car-order",
+    "term": "Car Order",
+    "definition": "A formal request by a shipper to a railroad for a specified number of empty cars of a particular type to be spotted by a certain date. Car orders are the mechanism through which shippers access the car supply. Railroads fulfill car orders based on availability and priority rules.",
+    "category": "Operations",
+    "relatedTerms": ["car-supply", "spotting", "empty-return", "private-car"]
+  },
+  {
+    "slug": "free-time",
+    "term": "Free Time",
+    "definition": "The period allowed by the railroad during which a shipper or consignee may load or unload a car without incurring demurrage charges. Free time allowances vary by commodity, car type, and tariff. Once free time expires, demurrage begins to accrue at the published daily rate.",
+    "category": "Operations",
+    "relatedTerms": ["demurrage", "constructive-placement", "actual-placement", "spotting"]
+  },
+  {
+    "slug": "boxcar",
+    "term": "Boxcar",
+    "definition": "An enclosed rectangular railcar with sliding side doors, used for transporting general commodities that require protection from weather, including packaged goods, paper, lumber, and auto parts. Boxcars are the most versatile car type in the fleet and are used across virtually all industries. They are available in standard and high-cube configurations.",
+    "category": "Equipment",
+    "relatedTerms": ["covered-hopper", "general-purpose-car", "gondola", "flatcar"]
+  },
+  {
+    "slug": "covered-hopper",
+    "term": "Covered Hopper",
+    "definition": "A closed-top hopper car with roof hatches for top loading and bottom discharge gates for gravity unloading, designed for dry bulk commodities such as grain, fertilizer, plastic pellets, and cement. Covered hoppers protect lading from moisture and contamination. They are the most numerous car type on North American railroads.",
+    "category": "Equipment",
+    "relatedTerms": ["open-hopper", "pressure-differential-car", "boxcar", "gondola"]
+  },
+  {
+    "slug": "open-hopper",
+    "term": "Open Hopper",
+    "definition": "A hopper car with an open top for loading by conveyor or chute and bottom gates for discharge, used primarily for bulk commodities that do not require weather protection such as coal, aggregate, and ore. Open hoppers are heavier-duty than covered hoppers and are built to handle dense, abrasive materials. They dominate the coal and aggregates markets.",
+    "category": "Equipment",
+    "relatedTerms": ["covered-hopper", "gondola", "unit-train"]
+  },
+  {
+    "slug": "gondola",
+    "term": "Gondola",
+    "definition": "An open-top car with fixed sides and ends, used for heavy bulk commodities such as scrap metal, steel coils, pipe, and coal. Gondolas are loaded from the top and typically unloaded by crane, magnet, or rotary dumper. Coil gondolas have a curved floor to cradle steel coils securely.",
+    "category": "Equipment",
+    "relatedTerms": ["coil-car", "open-hopper", "flatcar", "boxcar"]
+  },
+  {
+    "slug": "tank-car",
+    "term": "Tank Car",
+    "definition": "A cylindrical pressurized or non-pressurized railcar designed to transport liquid, gaseous, or slurry commodities including chemicals, petroleum products, food-grade liquids, and compressed gases. Tank cars are subject to strict DOT specifications based on the commodity's hazard class. Modern tank cars feature improved head shields, thermal protection, and electronic controlled pneumatic brakes.",
+    "category": "Equipment",
+    "relatedTerms": ["dot-111", "dot-117", "hazmat", "placarding", "tank-car-specification"]
+  },
+  {
+    "slug": "flatcar",
+    "term": "Flatcar",
+    "definition": "A railcar with a flat deck and no sides or roof, used for oversized or heavy loads such as machinery, lumber, steel beams, and military equipment. Flatcars include standard, bulkhead, center-beam, and well-car variants. They are also the base platform for trailer-on-flatcar (TOFC) intermodal service.",
+    "category": "Equipment",
+    "relatedTerms": ["well-car", "centerbeam", "bulkhead-flat", "tofc", "cofc"]
+  },
+  {
+    "slug": "well-car",
+    "term": "Well Car",
+    "definition": "An intermodal flatcar with a depressed center section (the well) that allows stacking two 20- or 40-foot containers vertically, known as double-stack operation. Double-stacking roughly doubles the payload per train and reduces cost per container. Well cars are typically articulated in sets of five or more to reduce weight and the number of inter-car connections.",
+    "category": "Equipment",
+    "relatedTerms": ["flatcar", "cofc", "intermodal-container", "articulated-car", "intermodal-train"]
+  },
+  {
+    "slug": "autorack",
+    "term": "Autorack",
+    "definition": "A specialized multi-level enclosed rail car designed to transport finished automobiles, light trucks, and SUVs from assembly plants to distribution centers. Autoracks are typically two or three levels high and are enclosed with steel mesh to protect vehicles from vandalism and weather. The automotive industry is one of the largest carload commodity groups in North America.",
+    "category": "Equipment",
+    "relatedTerms": ["bi-level", "tri-level", "flatcar"]
+  },
+  {
+    "slug": "centerbeam",
+    "term": "Centerbeam Flatcar",
+    "abbreviation": "Centerbeam",
+    "definition": "A flatcar with a vertical center partition running the length of the car, used to transport building materials such as lumber, wallboard, and fence posts loaded on both sides of the beam. The center beam provides structural rigidity and keeps loads from shifting. Centerbeam cars are a dominant equipment type in the forest products market.",
+    "category": "Equipment",
+    "relatedTerms": ["flatcar", "bulkhead-flat", "boxcar"]
+  },
+  {
+    "slug": "refrigerator-car",
+    "term": "Refrigerator Car",
+    "abbreviation": "Reefer",
+    "definition": "An insulated railcar equipped with a mechanical refrigeration unit used to transport perishable commodities such as fresh produce, frozen foods, and meat at controlled temperatures. Modern mechanical reefers maintain precise temperature ranges and can operate in both refrigeration and heating modes. Rail refrigerator cars compete directly with over-the-road refrigerated trailers.",
+    "category": "Equipment",
+    "relatedTerms": ["boxcar", "intermodal-container", "flatcar"]
+  },
+  {
+    "slug": "coil-car",
+    "term": "Coil Car",
+    "definition": "A specialized gondola or flatcar with cradles, troughs, or hoods designed to securely transport steel coils without damage to the coil's edge or surface. Coil cars prevent coils from rolling and protect them from moisture. They are a primary equipment type for serving steel mills and automotive stamping plants.",
+    "category": "Equipment",
+    "relatedTerms": ["gondola", "flatcar", "boxcar"]
+  },
+  {
+    "slug": "bulkhead-flat",
+    "term": "Bulkhead Flatcar",
+    "definition": "A flatcar with solid vertical walls (bulkheads) at each end to contain shifting loads such as lumber, pulpwood, and pipe. Bulkheads prevent end-shifting during transit and allow loads to be stacked higher than on a standard flat. They are widely used in the forest products and building materials industries.",
+    "category": "Equipment",
+    "relatedTerms": ["flatcar", "centerbeam", "boxcar"]
+  },
+  {
+    "slug": "intermodal-container",
+    "term": "Intermodal Container",
+    "definition": "A standardized steel box (typically 20, 40, 45, 48, or 53 feet in length) that can be transferred between ships, trains, and trucks without unloading the contents. Containers conform to ISO or domestic standards and are the fundamental unit of intermodal logistics. Their standardization revolutionized global freight economics.",
+    "category": "Equipment",
+    "relatedTerms": ["chassis", "cofc", "tofc", "well-car", "intermodal-terminal"]
+  },
+  {
+    "slug": "chassis",
+    "term": "Chassis",
+    "definition": "A wheeled undercarriage or trailer frame designed to carry an intermodal container over the road. Chassis are lifted onto or off of the container and are a critical piece of drayage equipment. Detention charges apply when chassis are held beyond the allowed free time at a shipper's facility.",
+    "category": "Equipment",
+    "relatedTerms": ["intermodal-container", "detention", "tofc", "cofc"]
+  },
+  {
+    "slug": "tofc",
+    "term": "Trailer on Flatcar",
+    "abbreviation": "TOFC",
+    "definition": "An intermodal service in which an over-the-road highway trailer is loaded directly onto a flatcar for the rail portion of a move, sometimes called piggyback. TOFC allows door-to-door service with standard trailers and is used where containers are not available or practical. It has largely been supplanted by COFC double-stack service on high-density lanes.",
+    "category": "Equipment",
+    "relatedTerms": ["cofc", "flatcar", "intermodal-train", "chassis", "intermodal-container"]
+  },
+  {
+    "slug": "cofc",
+    "term": "Container on Flatcar",
+    "abbreviation": "COFC",
+    "definition": "An intermodal service in which ISO or domestic containers are loaded onto well cars or flatcars, often double-stacked, for the rail portion of a move. COFC is the dominant form of intermodal rail service in North America and enables double-stack efficiency. Containers are transferred between trucks and trains at intermodal terminals.",
+    "category": "Equipment",
+    "relatedTerms": ["tofc", "well-car", "intermodal-container", "intermodal-train", "intermodal-terminal"]
+  },
+  {
+    "slug": "railcar-truck",
+    "term": "Railcar Truck",
+    "definition": "The wheeled undercarriage assembly beneath a railcar consisting of two axles, four wheels, the frame, springs, and brake components. Railcar trucks allow the car body to pivot over curves and absorb track irregularities. Truck maintenance is a major source of bad-order repairs.",
+    "category": "Equipment",
+    "relatedTerms": ["coupler", "air-brake", "bad-order"]
+  },
+  {
+    "slug": "coupler",
+    "term": "Coupler",
+    "definition": "The mechanical device at each end of a railcar that links cars together into a train. North American railroads use the AAR standard E or F knuckle coupler, which engages automatically when two cars are pushed together. Coupler failures are a leading cause of train separations and bad orders.",
+    "category": "Equipment",
+    "relatedTerms": ["knuckle", "air-brake", "bad-order", "railcar-truck"]
+  },
+  {
+    "slug": "knuckle",
+    "term": "Knuckle",
+    "definition": "The pivoting casting inside a coupler that rotates to engage the coupler of an adjacent car. Knuckles are the most frequently replaced coupler component because they bear the buff and draft forces of train handling. A broken knuckle will cause a train to separate and requires immediate repair.",
+    "category": "Equipment",
+    "relatedTerms": ["coupler", "bad-order"]
+  },
+  {
+    "slug": "air-brake",
+    "term": "Air Brake",
+    "definition": "The pneumatic braking system used on all North American freight cars, based on George Westinghouse's fail-safe design in which brakes apply automatically if air pressure is lost. The system uses a continuous brake pipe running the length of the train, fed by a locomotive compressor. FRA regulations govern brake testing requirements before each departure.",
+    "category": "Equipment",
+    "relatedTerms": ["eot-device", "positive-train-control", "bad-order", "fra"]
+  },
+  {
+    "slug": "eot-device",
+    "term": "End-of-Train Device",
+    "abbreviation": "EOT",
+    "definition": "An electronic device attached to the rear coupler of the last car in a train that monitors rear brake pipe pressure, provides a flashing rear marker light, and communicates wirelessly with the locomotive. The EOT replaced the traditional caboose and enables emergency brake applications from the rear of the train. FRA requires EOT devices on all freight trains over a specified length.",
+    "category": "Equipment",
+    "relatedTerms": ["air-brake", "dpu", "consist", "fra"]
+  },
+  {
+    "slug": "dpu",
+    "term": "Distributed Power Unit",
+    "abbreviation": "DPU",
+    "definition": "One or more locomotives placed mid-train or at the rear of a train and controlled remotely from the lead unit to provide additional tractive effort and improve brake handling on long or heavy trains. DPUs reduce in-train forces (slack action) and allow railroads to run longer trains than would otherwise be practical. They are standard on heavy-haul coal and grain unit trains.",
+    "category": "Equipment",
+    "relatedTerms": ["consist", "eot-device", "air-brake", "positive-train-control"]
+  },
+  {
+    "slug": "articulated-car",
+    "term": "Articulated Car",
+    "definition": "A multi-unit rail car in which adjacent car sections share a common truck rather than each section having its own full set of trucks. Articulation reduces the number of trucks, lowers tare weight, and improves ride quality. Well-car sets and some intermodal platforms are commonly articulated in five- or six-unit sets.",
+    "category": "Equipment",
+    "relatedTerms": ["well-car", "railcar-truck", "intermodal-train"]
+  },
+  {
+    "slug": "bi-level",
+    "term": "Bi-Level Autorack",
+    "definition": "A two-deck autorack car used to transport full-size pickup trucks, vans, SUVs, and other tall vehicles that cannot fit on a three-level rack. Bi-level autoracks carry fewer vehicles per car than tri-level units but can accommodate taller vehicles. The choice between bi-level and tri-level depends on the vehicle height being transported.",
+    "category": "Equipment",
+    "relatedTerms": ["autorack", "tri-level", "flatcar"]
+  },
+  {
+    "slug": "tri-level",
+    "term": "Tri-Level Autorack",
+    "definition": "A three-deck autorack car used to transport standard passenger cars and compact vehicles, maximizing vehicle density per car. Tri-level autoracks are the most common type used for standard sedan and compact car shipments from assembly plants. They have a lower deck height clearance than bi-level units.",
+    "category": "Equipment",
+    "relatedTerms": ["autorack", "bi-level", "flatcar"]
+  },
+  {
+    "slug": "pressure-differential-car",
+    "term": "Pressure Differential Car",
+    "definition": "A covered hopper car that uses differential air pressure to unload fine dry bulk commodities such as cement, flour, or fly ash through a pneumatic conveyor system. Air is introduced beneath the fluidized bed of material and carries it through discharge pipes to receiving silos. Pressure differential cars eliminate the need for mechanical unloading equipment at the destination.",
+    "category": "Equipment",
+    "relatedTerms": ["covered-hopper", "general-purpose-car"]
+  },
+  {
+    "slug": "general-purpose-car",
+    "term": "General Purpose Car",
+    "definition": "A covered hopper car designed for a wide range of dry bulk commodities without the specialized features of cars built for a single commodity. General purpose cars typically have multiple roof hatches and bottom gates configurable for different discharge angles. They provide operational flexibility for shippers with diverse bulk commodity needs.",
+    "category": "Equipment",
+    "relatedTerms": ["covered-hopper", "pressure-differential-car", "boxcar"]
+  },
+  {
+    "slug": "stb",
+    "term": "Surface Transportation Board",
+    "abbreviation": "STB",
+    "definition": "The independent U.S. federal agency responsible for the economic regulation of the nation's freight railroads, including jurisdiction over rates, mergers, acquisitions, line sales, and abandonments. The STB was created by the ICC Termination Act of 1995 as the successor to the Interstate Commerce Commission. It adjudicates shipper complaints about unreasonable rates and competitive access.",
+    "category": "Regulatory",
+    "relatedTerms": ["fra", "rate-case", "shipper-complaint", "revenue-adequacy", "competitive-access-rule"]
+  },
+  {
+    "slug": "fra",
+    "term": "Federal Railroad Administration",
+    "abbreviation": "FRA",
+    "definition": "The U.S. Department of Transportation agency responsible for railroad safety regulation and enforcement, including track standards, equipment inspection, operating rules, and hazardous materials transportation. The FRA conducts safety inspections, investigates accidents, and issues emergency orders when immediate safety threats exist. It also administers federal rail investment programs.",
+    "category": "Regulatory",
+    "relatedTerms": ["stb", "phmsa", "positive-train-control", "hazmat", "general-order"]
+  },
+  {
+    "slug": "phmsa",
+    "term": "Pipeline and Hazardous Materials Safety Administration",
+    "abbreviation": "PHMSA",
+    "definition": "The U.S. DOT agency that regulates the safe transportation of hazardous materials by rail, highway, air, and pipeline. PHMSA sets specifications for tank car construction, placarding requirements, and emergency response standards. It works jointly with the FRA on railroad hazmat incidents.",
+    "category": "Regulatory",
+    "relatedTerms": ["fra", "hazmat", "tank-car-specification", "placarding", "dot-111", "dot-117"]
+  },
+  {
+    "slug": "aar",
+    "term": "Association of American Railroads",
+    "abbreviation": "AAR",
+    "definition": "The principal trade and standard-setting organization for the major freight and passenger railroads in North America. The AAR develops and publishes interchange rules, equipment standards, safety standards, and technical specifications that govern how railroads interact with each other. Membership includes Class I railroads, Amtrak, and many regional and short line railroads.",
+    "category": "Regulatory",
+    "relatedTerms": ["stb", "fra", "interchange", "car-hire", "railinc"]
+  },
+  {
+    "slug": "common-carrier-obligation",
+    "term": "Common Carrier Obligation",
+    "definition": "The legal duty of a railroad to provide transportation services to any shipper who requests them at published or negotiated rates, without unjust discrimination. Class I railroads in the United States are common carriers under federal law. The obligation is a fundamental principle of rail regulation that balances the public interest against railroad operational discretion.",
+    "category": "Regulatory",
+    "relatedTerms": ["stb", "tariff", "rate-case", "shipper-complaint"]
+  },
+  {
+    "slug": "staggers-rail-act",
+    "term": "Staggers Rail Act",
+    "definition": "Landmark 1980 U.S. legislation that substantially deregulated the freight railroad industry, allowing railroads to negotiate confidential contract rates, abandon unprofitable lines, and set market-based prices. The Staggers Act is credited with revitalizing a financially troubled industry by giving railroads pricing flexibility. It preserved regulatory oversight for captive shippers through revenue adequacy and rate reasonableness standards.",
+    "category": "Regulatory",
+    "relatedTerms": ["stb", "rate-case", "revenue-adequacy", "contract-rate", "shipper-complaint"]
+  },
+  {
+    "slug": "rate-case",
+    "term": "Rate Case",
+    "definition": "A proceeding before the Surface Transportation Board in which a shipper challenges a railroad rate as unreasonably high, typically under the Simplified Standards for Rail Rate Cases or the Full Stand-Alone Cost methodology. Rate cases are complex, expensive, and time-consuming, often involving detailed economic and engineering analyses. A successful rate case can result in a refund of overcharges and a maximum reasonable rate going forward.",
+    "category": "Regulatory",
+    "relatedTerms": ["stb", "revenue-adequacy", "maximum-reasonable-rate", "shipper-complaint", "staggers-rail-act"]
+  },
+  {
+    "slug": "maximum-reasonable-rate",
+    "term": "Maximum Reasonable Rate",
+    "definition": "The ceiling rate that a railroad may charge a captive shipper, as determined by the Surface Transportation Board in a rate case. Rates above 180% of variable cost are presumptively subject to challenge. The STB uses methodologies such as Stand-Alone Cost to determine the maximum reasonable rate.",
+    "category": "Regulatory",
+    "relatedTerms": ["rate-case", "stb", "revenue-adequacy", "shipper-complaint", "competitive-access"]
+  },
+  {
+    "slug": "revenue-adequacy",
+    "term": "Revenue Adequacy",
+    "definition": "A regulatory standard under which a railroad is considered revenue adequate if its revenues are sufficient to cover all costs and earn a return on investment equal to that of a company of comparable risk. The STB annually determines whether each Class I railroad is revenue adequate. Revenue adequacy status affects a railroad's ability to defend rates in STB proceedings.",
+    "category": "Regulatory",
+    "relatedTerms": ["stb", "rate-case", "maximum-reasonable-rate", "staggers-rail-act"]
+  },
+  {
+    "slug": "competitive-access-rule",
+    "term": "Competitive Access Rule",
+    "definition": "STB regulations that define the circumstances under which a shipper may petition for a mandatory interchange arrangement to gain access to a competing railroad. The rules set standards for when competitive access relief is warranted and what conditions apply. Competitive access rulemaking has been contentious, with railroads and shippers advocating opposing positions.",
+    "category": "Regulatory",
+    "relatedTerms": ["stb", "competitive-access", "reciprocal-switching", "bottleneck-routing"]
+  },
+  {
+    "slug": "shipper-complaint",
+    "term": "Shipper Complaint",
+    "definition": "A formal filing by a shipper with the Surface Transportation Board alleging that a railroad's rate or practice is unreasonable, discriminatory, or otherwise unlawful. Complaints can seek rate relief, damages, or changes in railroad practices. The complaint process provides shippers a regulatory remedy when commercial negotiations fail.",
+    "category": "Regulatory",
+    "relatedTerms": ["stb", "rate-case", "maximum-reasonable-rate", "common-carrier-obligation"]
+  },
+  {
+    "slug": "tariff",
+    "term": "Tariff",
+    "definition": "A publicly filed schedule of rates, rules, and regulations applicable to railroad transportation services. Tariffs are filed with and accessible through the STB and must be applied consistently to all shippers who qualify. Under the Staggers Act, railroads may supplement tariff rates with confidential contracts.",
+    "category": "Regulatory",
+    "relatedTerms": ["contract-rate", "commodity-rate", "published-rate", "circular", "common-carrier-obligation"]
+  },
+  {
+    "slug": "circular",
+    "term": "Circular",
+    "definition": "A tariff document issued by a railroad or the AAR that contains rules, rates, or procedures applicable to a broad class of transactions, such as car hire rules (AAR Circular OT-10) or interline settlement rules. Circulars supplement individual commodity tariffs with general terms and conditions. They are incorporated by reference into specific tariffs.",
+    "category": "Regulatory",
+    "relatedTerms": ["tariff", "aar", "interchange", "car-hire"]
+  },
+  {
+    "slug": "exemption",
+    "term": "Exemption",
+    "definition": "A regulatory determination by the STB removing a commodity, service, or transaction from economic regulation, typically allowing railroads to set rates freely without tariff filing requirements. Many bulk commodities, including intermodal traffic, are exempt from rate regulation. Exemptions were a key tool for implementing Staggers Act deregulation.",
+    "category": "Regulatory",
+    "relatedTerms": ["stb", "tariff", "staggers-rail-act", "commodity-rate"]
+  },
+  {
+    "slug": "class-i-railroad",
+    "term": "Class I Railroad",
+    "definition": "A railroad that meets the STB's annual revenue threshold for the largest classification, currently set at $900 million in adjusted annual operating revenues. There are seven Class I railroads in the United States: BNSF, UP, CN, CSXT, NS, KCS/CPKC, and CP. Class I railroads account for the vast majority of freight rail revenue and ton-miles.",
+    "category": "Regulatory",
+    "relatedTerms": ["class-ii-railroad", "class-iii-railroad", "stb", "revenue-adequacy"]
+  },
+  {
+    "slug": "class-ii-railroad",
+    "term": "Class II Railroad",
+    "definition": "A railroad with annual operating revenues between the Class III threshold and the Class I threshold, roughly $40 million to $900 million. Class II railroads include regional railroads that operate over significant route mileage but are below Class I scale. They are subject to lighter STB oversight than Class I carriers.",
+    "category": "Regulatory",
+    "relatedTerms": ["class-i-railroad", "class-iii-railroad", "stb"]
+  },
+  {
+    "slug": "class-iii-railroad",
+    "term": "Class III Railroad",
+    "definition": "A railroad with annual operating revenues below approximately $40 million, commonly referred to as a short line or local railroad. Class III railroads provide crucial first- and last-mile rail service connecting shippers to Class I mainlines. There are approximately 600 Class III railroads in the United States.",
+    "category": "Regulatory",
+    "relatedTerms": ["class-i-railroad", "class-ii-railroad", "stb", "local-train", "branch-line"]
+  },
+  {
+    "slug": "bill-of-lading",
+    "term": "Bill of Lading",
+    "abbreviation": "BOL",
+    "definition": "The primary shipping document that serves as a contract of carriage between the shipper and the railroad, a receipt for the goods tendered, and sometimes a document of title. The bill of lading describes the commodity, weight, origin, destination, routing, and any special terms. It is issued by the railroad or its agent when freight is accepted for transportation.",
+    "category": "Commercial",
+    "relatedTerms": ["waybill", "freight-bill", "consignee", "consignor", "reconsignment"]
+  },
+  {
+    "slug": "waybill",
+    "term": "Waybill",
+    "definition": "An internal railroad document derived from the bill of lading that travels with or ahead of a car and contains all information needed to route, classify, and deliver the shipment. The waybill is the operational document used by railroad employees to handle a car through the system. It may be electronic in modern railroad IT systems.",
+    "category": "Commercial",
+    "relatedTerms": ["bill-of-lading", "freight-bill", "consist", "interchange"]
+  },
+  {
+    "slug": "freight-bill",
+    "term": "Freight Bill",
+    "definition": "The invoice issued by a railroad to a shipper or third party for transportation services rendered, including linehaul, fuel surcharge, and any applicable accessorial charges. Freight bills may be prepaid (paid by the shipper at origin) or collect (paid by the consignee at destination). Freight bill auditing is a significant function in large shipping operations.",
+    "category": "Commercial",
+    "relatedTerms": ["bill-of-lading", "waybill", "accessorial-charges", "fuel-surcharge"]
+  },
+  {
+    "slug": "rate",
+    "term": "Rate",
+    "definition": "The charge per unit (typically per car, per ton, or per container) for transporting a commodity between specified origin and destination points. Rates may be published in tariffs or established through confidential contracts. Rate levels are influenced by distance, commodity, car type, volume, and competitive conditions.",
+    "category": "Commercial",
+    "relatedTerms": ["tariff", "commodity-rate", "contract-rate", "published-rate", "benchmark-rate", "linehaul"]
+  },
+  {
+    "slug": "commodity-rate",
+    "term": "Commodity Rate",
+    "definition": "A rate applicable to a specific commodity or group of commodities between defined origin and destination points, typically lower than the general freight rate. Commodity rates reflect the volume, regularity, and competitive characteristics of the traffic. They are published in commodity tariffs or established in contracts.",
+    "category": "Commercial",
+    "relatedTerms": ["rate", "contract-rate", "published-rate", "tariff", "transit-privilege"]
+  },
+  {
+    "slug": "contract-rate",
+    "term": "Contract Rate",
+    "definition": "A confidential rate negotiated between a railroad and a shipper under a transportation contract authorized by the Staggers Rail Act. Contract rates are not publicly filed and may include volume commitments, service guarantees, and other terms. They are the primary pricing mechanism for large shippers and most intermodal traffic.",
+    "category": "Commercial",
+    "relatedTerms": ["published-rate", "commodity-rate", "tariff", "staggers-rail-act", "rail-rate-negotiation"]
+  },
+  {
+    "slug": "published-rate",
+    "term": "Published Rate",
+    "definition": "A rate filed in a railroad's public tariff and available to any qualifying shipper without negotiation. Published rates are less common than contract rates for large shippers but remain the default for smaller shippers and exempt traffic. They provide price transparency but less flexibility than contracts.",
+    "category": "Commercial",
+    "relatedTerms": ["contract-rate", "commodity-rate", "tariff", "rate"]
+  },
+  {
+    "slug": "benchmark-rate",
+    "term": "Benchmark Rate",
+    "definition": "A reference rate used to evaluate the reasonableness of a proposed contract or tariff rate, derived from comparable market transactions or the railroad's own tariff rates. Benchmarks help shippers assess whether a negotiated rate is competitive. In STB proceedings, benchmark rates may be used in rate reasonableness analysis.",
+    "category": "Commercial",
+    "relatedTerms": ["rate", "contract-rate", "published-rate", "rail-rate-negotiation"]
+  },
+  {
+    "slug": "fuel-surcharge",
+    "term": "Fuel Surcharge",
+    "definition": "An additional charge assessed on top of the base freight rate to recover fluctuating diesel fuel costs, typically indexed to the weekly U.S. on-highway diesel fuel price published by the U.S. Energy Information Administration. Fuel surcharges are applied as a percentage of the linehaul rate or as a flat amount per car. They became standard after fuel price volatility in the early 2000s.",
+    "category": "Commercial",
+    "relatedTerms": ["rate", "linehaul", "accessorial-charges", "freight-bill"]
+  },
+  {
+    "slug": "storage-charge",
+    "term": "Storage Charge",
+    "definition": "A fee assessed by a railroad for holding a car or container at a railroad-owned facility beyond the free time allowed for loading, unloading, or pickup. Storage differs from demurrage in that it applies to equipment held in railroad facilities rather than at customer locations. Storage charges incentivize shippers to promptly retrieve cars and containers.",
+    "category": "Commercial",
+    "relatedTerms": ["demurrage", "detention", "accessorial-charges", "free-time"]
+  },
+  {
+    "slug": "transload",
+    "term": "Transload",
+    "definition": "The transfer of freight from one mode or container type to another at an intermediate facility, such as moving bulk commodity from a railcar into trucks for final delivery, or consolidating LTL shipments into carload quantities. Transloading allows rail to serve customers without direct rail access. Transload facilities are a critical link in multimodal supply chains.",
+    "category": "Commercial",
+    "relatedTerms": ["transload-facility", "team-track", "intermodal-terminal", "3pl"]
+  },
+  {
+    "slug": "team-track",
+    "term": "Team Track",
+    "definition": "A railroad-owned track at a public facility where multiple shippers can load or unload cars that do not have private sidings. Team tracks provide rail access to small shippers who lack the volume to justify a private siding. They are increasingly rare as freight has shifted to carload and intermodal service.",
+    "category": "Commercial",
+    "relatedTerms": ["private-siding", "transload", "industrial-spur", "local-train"]
+  },
+  {
+    "slug": "private-siding",
+    "term": "Private Siding",
+    "definition": "A railroad track owned or leased by a shipper or industry that connects their facility to the mainline or branch line, providing direct rail loading and unloading capability. Private sidings are the foundation of the carload business and give shippers dedicated rail access. Construction and maintenance of private sidings are typically the shipper's responsibility.",
+    "category": "Commercial",
+    "relatedTerms": ["industrial-spur", "team-track", "spotting", "pulling"]
+  },
+  {
+    "slug": "industrial-spur",
+    "term": "Industrial Spur",
+    "definition": "A short section of railroad track that branches off a mainline or branch line to serve a single industrial customer. Industrial spurs are the physical connection between the railroad network and a manufacturing plant, warehouse, or processing facility. They are often owned by the railroad and maintained under a spur agreement.",
+    "category": "Commercial",
+    "relatedTerms": ["private-siding", "team-track", "branch-line", "local-train"]
+  },
+  {
+    "slug": "shipper",
+    "term": "Shipper",
+    "definition": "The party that tenders freight to a railroad for transportation, also known as the consignor. The shipper is responsible for proper loading, securing, and documentation of the lading. In rail rate negotiations, the shipper is the primary counterparty to the railroad.",
+    "category": "Commercial",
+    "relatedTerms": ["consignee", "consignor", "bill-of-lading", "3pl", "freight-broker"]
+  },
+  {
+    "slug": "consignee",
+    "term": "Consignee",
+    "definition": "The party designated on the bill of lading to receive the shipment at the destination. The consignee is responsible for unloading the car within the free time period and for paying collect freight charges if applicable. They are also liable for demurrage if unloading is delayed.",
+    "category": "Commercial",
+    "relatedTerms": ["consignor", "shipper", "bill-of-lading", "demurrage", "reconsignment"]
+  },
+  {
+    "slug": "consignor",
+    "term": "Consignor",
+    "definition": "The party who ships or consigns goods for transportation; synonymous with shipper in most railroad contexts. The consignor is named on the bill of lading as the originating party and bears responsibility for proper preparation of the shipment. Prepaid freight charges are billed to the consignor.",
+    "category": "Commercial",
+    "relatedTerms": ["consignee", "shipper", "bill-of-lading"]
+  },
+  {
+    "slug": "3pl",
+    "term": "Third-Party Logistics Provider",
+    "abbreviation": "3PL",
+    "definition": "A company that provides outsourced logistics and supply chain management services including transportation procurement, freight brokerage, warehousing, and distribution on behalf of shippers. 3PLs frequently negotiate rail contracts and manage intermodal moves for their clients. They add value through scale, expertise, and technology platforms.",
+    "category": "Commercial",
+    "relatedTerms": ["freight-broker", "shipper", "intermodal-train", "tms"]
+  },
+  {
+    "slug": "freight-broker",
+    "term": "Freight Broker",
+    "definition": "An intermediary licensed by the FMCSA who arranges transportation between shippers and carriers without taking possession of the freight. In the rail context, brokers often coordinate intermodal moves combining truck drayage with rail linehaul. Brokers earn a margin on the rate spread between what shippers pay and what carriers charge.",
+    "category": "Commercial",
+    "relatedTerms": ["3pl", "shipper", "intermodal-train", "tms"]
+  },
+  {
+    "slug": "car-supply",
+    "term": "Car Supply",
+    "definition": "The availability of empty railcars of a specific type to meet shipper demand at a given time and location. Car supply tightness occurs when demand for a particular car type exceeds the fleet's availability, leading to loading delays. Railroads manage car supply through fleet procurement, repositioning, and market-based allocation.",
+    "category": "Commercial",
+    "relatedTerms": ["car-order", "private-car", "system-car", "empty-return", "car-hire"]
+  },
+  {
+    "slug": "eta",
+    "term": "Estimated Time of Arrival",
+    "abbreviation": "ETA",
+    "definition": "The predicted date and time at which a railcar or intermodal shipment is expected to arrive at its destination, based on current location, train plan, and historical performance data. ETAs are published through railroad customer portals and EDI transactions. Predictive ETA models increasingly use machine learning to improve accuracy.",
+    "category": "Commercial",
+    "relatedTerms": ["car-trace", "edi", "predictive-eta", "waybill"]
+  },
+  {
+    "slug": "car-trace",
+    "term": "Car Trace",
+    "definition": "The process of locating a specific railcar by querying the railroad's information system or the industry-wide Railinc car location network. Car traces provide current location, status, and estimated arrival information. Shippers use car traces to plan unloading schedules and manage inventory.",
+    "category": "Commercial",
+    "relatedTerms": ["eta", "edi", "railinc", "aei", "waybill"]
+  },
+  {
+    "slug": "edi",
+    "term": "Electronic Data Interchange",
+    "abbreviation": "EDI",
+    "definition": "The computer-to-computer exchange of standardized business documents between railroads, shippers, and logistics providers using ANSI X12 transaction sets. Common rail EDI transactions include the 404 (rail shipment), 410 (freight invoice), 417 (rate inquiry), and 418 (rate reply). EDI is the foundational data exchange standard for the North American rail industry.",
+    "category": "Commercial",
+    "relatedTerms": ["edi-404", "edi-410", "edi-417", "edi-418", "railinc", "tms"]
+  },
+  {
+    "slug": "rail-rate-negotiation",
+    "term": "Rail Rate Negotiation",
+    "definition": "The process by which a shipper and railroad negotiate the terms of a transportation contract, including rates, volume commitments, service standards, and car supply provisions. Effective negotiation requires understanding market alternatives, the railroad's cost structure, and the shipper's volume and service needs. The Staggers Act enables these confidential bilateral agreements.",
+    "category": "Commercial",
+    "relatedTerms": ["contract-rate", "benchmark-rate", "staggers-rail-act", "shipper-complaint"]
+  },
+  {
+    "slug": "mainline",
+    "term": "Mainline",
+    "definition": "The primary high-capacity route of a railroad, characterized by heavy traffic, higher track speeds, and the most sophisticated signaling and infrastructure. Mainlines carry the bulk of a railroad's revenue ton-miles and receive priority in capital investment. They connect major terminals and industrial centers.",
+    "category": "Infrastructure",
+    "relatedTerms": ["branch-line", "siding", "right-of-way", "positive-train-control"]
+  },
+  {
+    "slug": "branch-line",
+    "term": "Branch Line",
+    "definition": "A secondary line that diverges from the mainline to serve agricultural, industrial, or rural areas with lower traffic density. Branch lines typically have lower speed limits, lighter rail, and less sophisticated signaling than mainlines. Many branch lines have been sold to short line railroads or abandoned as traffic declined.",
+    "category": "Infrastructure",
+    "relatedTerms": ["mainline", "spur", "industrial-spur", "class-iii-railroad", "local-train"]
+  },
+  {
+    "slug": "spur",
+    "term": "Spur",
+    "definition": "A short dead-end track branching off a mainline, branch line, or yard track to serve a specific industry or facility. Spurs do not have a runaround track and require the locomotive to push cars in and pull them back out. The term is often used interchangeably with industrial spur.",
+    "category": "Infrastructure",
+    "relatedTerms": ["industrial-spur", "branch-line", "private-siding", "siding"]
+  },
+  {
+    "slug": "siding",
+    "term": "Siding",
+    "definition": "A track parallel to and connected at both ends to the mainline, used for storing cars, allowing trains to pass each other, or serving customers. Passing sidings are a fundamental capacity tool on single-track mainlines. Customer sidings are used for loading and unloading.",
+    "category": "Infrastructure",
+    "relatedTerms": ["passing-siding", "mainline", "spur", "private-siding", "turnout"]
+  },
+  {
+    "slug": "passing-siding",
+    "term": "Passing Siding",
+    "definition": "A siding long enough to hold an entire train, allowing a meet or pass between two trains on a single-track mainline. The length and spacing of passing sidings are key determinants of mainline capacity. Extending or adding passing sidings is a common capacity improvement investment.",
+    "category": "Infrastructure",
+    "relatedTerms": ["siding", "mainline", "signal", "positive-train-control"]
+  },
+  {
+    "slug": "wye",
+    "term": "Wye",
+    "definition": "A triangular track arrangement with three legs connected by three switches, used to reverse the direction of a locomotive or train without a turntable. Wyes are particularly important at the end of branch lines and in terminal areas where locomotive turning is required. The term comes from the shape's resemblance to the letter Y.",
+    "category": "Infrastructure",
+    "relatedTerms": ["turnout", "siding", "classification-yard"]
+  },
+  {
+    "slug": "transload-facility",
+    "term": "Transload Facility",
+    "definition": "A facility where freight is transferred between railcars and trucks or other modes, enabling rail service to shippers without direct rail access. Transload facilities may handle bulk commodities, packaged goods, or intermodal containers. They serve as an economic alternative to private sidings for shippers with moderate rail volume.",
+    "category": "Infrastructure",
+    "relatedTerms": ["transload", "team-track", "intermodal-terminal", "inland-port", "industrial-spur"]
+  },
+  {
+    "slug": "bulk-terminal",
+    "term": "Bulk Terminal",
+    "definition": "A specialized facility equipped with large storage bins, conveyors, and loading/unloading equipment for handling high volumes of dry or liquid bulk commodities transferred between rail and other modes. Bulk terminals are common at port facilities, grain elevators, and coal export terminals. They enable efficient transfer of commodity streams between domestic and export supply chains.",
+    "category": "Infrastructure",
+    "relatedTerms": ["transload-facility", "intermodal-terminal", "open-hopper", "covered-hopper"]
+  },
+  {
+    "slug": "intermodal-terminal",
+    "term": "Intermodal Terminal",
+    "definition": "A facility equipped with cranes, reach stackers, or other lifting equipment to transfer intermodal containers and trailers between railcars and trucks. Intermodal terminals are the interface between the rail and trucking networks and are located in major metropolitan areas and port cities. Throughput capacity and truck gate efficiency are critical performance metrics.",
+    "category": "Infrastructure",
+    "relatedTerms": ["transload-facility", "inland-port", "cofc", "tofc", "intermodal-train"]
+  },
+  {
+    "slug": "inland-port",
+    "term": "Inland Port",
+    "definition": "An inland facility connected to a seaport by rail or highway that provides port-related services such as container storage, customs processing, and import/export cargo handling away from the congested seaport. Inland ports extend the effective reach of seaports and relieve coastal congestion. They are a growing component of supply chain infrastructure.",
+    "category": "Infrastructure",
+    "relatedTerms": ["intermodal-terminal", "transload-facility", "cofc", "intermodal-container"]
+  },
+  {
+    "slug": "rail-yard",
+    "term": "Rail Yard",
+    "definition": "A complex of tracks and facilities used for assembling, sorting, storing, inspecting, and dispatching trains and railcars. Rail yards range from simple sidings to large hump yards covering hundreds of acres. They are the operational hubs of the railroad network.",
+    "category": "Infrastructure",
+    "relatedTerms": ["classification-yard", "hump-yard", "staging-yard", "arrival-yard", "departure-yard"]
+  },
+  {
+    "slug": "staging-yard",
+    "term": "Staging Yard",
+    "definition": "A yard used to hold assembled trains or cars awaiting departure or entry into a classification yard, often located adjacent to a classification or terminal yard. Staging yards decouple the assembly and departure processes, improving terminal throughput. Cars may dwell in staging yards for hours awaiting a train slot.",
+    "category": "Infrastructure",
+    "relatedTerms": ["arrival-yard", "departure-yard", "classification-yard", "rail-yard"]
+  },
+  {
+    "slug": "arrival-yard",
+    "term": "Arrival Yard",
+    "definition": "A set of tracks within a terminal where inbound trains are received, inspected, and held before cars are moved to the classification yard for sorting. Arrival yard inspection includes safety inspections, brake tests, and car condition checks. Delay in the arrival yard is a common contributor to terminal dwell.",
+    "category": "Infrastructure",
+    "relatedTerms": ["departure-yard", "staging-yard", "classification-yard", "bad-order"]
+  },
+  {
+    "slug": "departure-yard",
+    "term": "Departure Yard",
+    "definition": "A set of tracks where outbound trains are assembled, inspected, and held until they receive a departure slot. Departure yard inspections include air brake tests and train handling briefings. The departure yard is the final step before a train enters the mainline.",
+    "category": "Infrastructure",
+    "relatedTerms": ["arrival-yard", "staging-yard", "classification-yard", "consist"]
+  },
+  {
+    "slug": "grade-crossing",
+    "term": "Grade Crossing",
+    "definition": "An intersection at the same elevation (at-grade) where a road or pathway crosses a railroad track. Grade crossings are protected by warning devices ranging from simple crossbucks to full gates with flashing lights. They are a primary source of railroad accident fatalities and a focus of FRA safety programs.",
+    "category": "Infrastructure",
+    "relatedTerms": ["grade-crossing-safety", "fra", "right-of-way"]
+  },
+  {
+    "slug": "right-of-way",
+    "term": "Right of Way",
+    "abbreviation": "ROW",
+    "definition": "The land corridor owned or controlled by a railroad on which its tracks, structures, and facilities are built. Right of way acquisition was historically one of the largest costs of railroad construction. Railroads actively manage ROW for encroachments, environmental compliance, and disposition of surplus land.",
+    "category": "Infrastructure",
+    "relatedTerms": ["mainline", "grade-crossing", "track-gauge"]
+  },
+  {
+    "slug": "track-gauge",
+    "term": "Track Gauge",
+    "definition": "The distance between the inner faces of the two running rails of a railroad track. North American and most world railroads use standard gauge of 4 feet 8.5 inches (1,435 mm). Gauge determines equipment compatibility and is a fundamental physical standard of the railroad network.",
+    "category": "Infrastructure",
+    "relatedTerms": ["standard-gauge", "rail-weight", "tie", "ballast"]
+  },
+  {
+    "slug": "standard-gauge",
+    "term": "Standard Gauge",
+    "definition": "The rail gauge of 4 feet 8.5 inches (1,435 mm), used by approximately 55% of the world's railways including all Class I railroads in North America. Standard gauge enables interoperability of equipment across the North American network without gauge conversion. It was adopted as the U.S. standard in the 1880s.",
+    "category": "Infrastructure",
+    "relatedTerms": ["track-gauge", "interchange", "aar"]
+  },
+  {
+    "slug": "rail-weight",
+    "term": "Rail Weight",
+    "definition": "The weight of rail measured in pounds per yard, which determines its load-carrying capacity, stiffness, and durability. Mainline tracks typically use 132 to 141 lb/yd rail while branch lines may use lighter 90 to 115 lb/yd sections. Heavier rail supports higher axle loads and train speeds.",
+    "category": "Infrastructure",
+    "relatedTerms": ["track-gauge", "tie", "ballast", "mainline"]
+  },
+  {
+    "slug": "tie",
+    "term": "Tie",
+    "abbreviation": "Sleeper",
+    "definition": "The transverse member placed beneath and perpendicular to the rails to maintain track gauge and transfer load to the ballast and subgrade. Traditional ties are wood (often treated with creosote), while modern alternatives include concrete, composite, and steel. Tie replacement is one of the largest track maintenance cost items.",
+    "category": "Infrastructure",
+    "relatedTerms": ["ballast", "rail-weight", "track-gauge"]
+  },
+  {
+    "slug": "ballast",
+    "term": "Ballast",
+    "definition": "The granular material, typically crushed stone or gravel, placed under and around ties to provide a stable, well-drained foundation for the track structure. Ballast distributes axle loads to the subgrade, provides drainage, and resists lateral and longitudinal movement of the track. Ballast maintenance and tamping are routine track maintenance activities.",
+    "category": "Infrastructure",
+    "relatedTerms": ["tie", "rail-weight", "track-gauge"]
+  },
+  {
+    "slug": "turnout",
+    "term": "Turnout",
+    "definition": "A track assembly consisting of a switch, frog, and closure rails that allows a train to move from one track to another. Turnouts are defined by their angle, expressed as a number (e.g., No. 10 or No. 20), with higher numbers indicating a more gradual diverging angle. They are a critical infrastructure component at every junction, siding, and yard entry.",
+    "category": "Infrastructure",
+    "relatedTerms": ["switch", "siding", "wye", "classification-yard"]
+  },
+  {
+    "slug": "switch",
+    "term": "Switch",
+    "definition": "The moveable rails (points) at the entry of a turnout that direct a train onto either the straight or diverging track. Switches are operated manually by a switchman or remotely by a signal system. Power switches in yards and at controlled locations are operated electronically from a dispatching center.",
+    "category": "Infrastructure",
+    "relatedTerms": ["turnout", "signal", "classification-yard", "positive-train-control"]
+  },
+  {
+    "slug": "signal",
+    "term": "Signal",
+    "definition": "A wayside device that conveys authority and speed information to train crews by displaying light aspects or physical positions. Signals are the fundamental mechanism for maintaining safe train separation in a signaled territory. Signal aspects are governed by rulebooks that define what each combination of lights means.",
+    "category": "Infrastructure",
+    "relatedTerms": ["positive-train-control", "passing-siding", "mainline", "switch"]
+  },
+  {
+    "slug": "hazmat",
+    "term": "Hazardous Materials",
+    "abbreviation": "Hazmat",
+    "definition": "Materials designated by PHMSA as posing a risk to health, safety, property, or the environment during transportation, including explosives, flammable liquids, poisonous gases, and radioactive materials. Hazmat shipments require proper classification, packaging, marking, labeling, placarding, and documentation under 49 CFR. Railroads have specialized procedures and routing requirements for hazmat movements.",
+    "category": "Safety",
+    "relatedTerms": ["placarding", "tank-car-specification", "dot-111", "dot-117", "phmsa", "emergency-order"]
+  },
+  {
+    "slug": "placarding",
+    "term": "Placarding",
+    "definition": "The placement of diamond-shaped warning signs on railcars carrying hazardous materials to identify the hazard class and enable emergency responders to react appropriately. Placards are required under 49 CFR Part 172 and must be displayed on all four sides of the car. Correct placarding is a critical safety and regulatory requirement for hazmat shipments.",
+    "category": "Safety",
+    "relatedTerms": ["hazmat", "tank-car-specification", "phmsa", "fra"]
+  },
+  {
+    "slug": "tank-car-specification",
+    "term": "Tank Car Specification",
+    "definition": "The DOT-defined design, construction, and testing standards that a tank car must meet to transport a particular hazardous material, designating requirements for shell thickness, head shields, thermal protection, pressure relief devices, and other safety features. Specifications are designated by alphanumeric codes such as DOT-111 or DOT-117. Matching the correct car specification to the commodity is a regulatory requirement.",
+    "category": "Safety",
+    "relatedTerms": ["dot-111", "dot-117", "tank-car", "hazmat", "phmsa"]
+  },
+  {
+    "slug": "dot-111",
+    "term": "DOT-111 Tank Car",
+    "abbreviation": "DOT-111",
+    "definition": "A general-purpose non-pressurized tank car specification that was the most common type used for petroleum products and chemicals before safety upgrades were mandated. DOT-111 cars were found to be prone to puncture in derailments, leading to regulatory requirements to retrofit or replace them with DOT-117 standard cars. The phase-out of older DOT-111 cars for flammable liquids was a major regulatory initiative following the Lac-Megantic disaster.",
+    "category": "Safety",
+    "relatedTerms": ["dot-117", "tank-car-specification", "hazmat", "phmsa", "derailment"]
+  },
+  {
+    "slug": "dot-117",
+    "term": "DOT-117 Tank Car",
+    "abbreviation": "DOT-117",
+    "definition": "The enhanced tank car specification introduced after the Lac-Megantic and other crude oil train disasters, featuring a thicker shell, full head shields, thermal jacket, and improved pressure relief valves. DOT-117 cars are required for Class 3 flammable liquids transported in certain quantities. The standard significantly reduces the risk of catastrophic releases in derailments.",
+    "category": "Safety",
+    "relatedTerms": ["dot-111", "tank-car-specification", "hazmat", "phmsa", "derailment"]
+  },
+  {
+    "slug": "general-order",
+    "term": "General Order",
+    "definition": "A formal directive issued by the FRA requiring railroads to take specific safety actions across their operations, such as inspecting a class of equipment, restricting train speeds, or implementing new operating procedures. General orders have the force of law and must be complied with immediately. They are typically issued in response to safety findings from accident investigations or inspection programs.",
+    "category": "Safety",
+    "relatedTerms": ["fra", "emergency-order", "hazmat", "positive-train-control"]
+  },
+  {
+    "slug": "emergency-order",
+    "term": "Emergency Order",
+    "definition": "An expedited directive issued by the FRA Secretary without the normal rulemaking process when there is an immediate safety threat requiring urgent action. Emergency orders may restrict operations, mandate equipment inspections, or require immediate corrective measures. They are among the most powerful regulatory tools available to the FRA.",
+    "category": "Safety",
+    "relatedTerms": ["general-order", "fra", "derailment", "hazmat"]
+  },
+  {
+    "slug": "grade-crossing-safety",
+    "term": "Grade Crossing Safety",
+    "definition": "Programs, regulations, and infrastructure improvements aimed at reducing accidents and fatalities at locations where highways and railroads intersect at grade. Grade crossing safety measures include active warning devices, quad gates, median channelization, sight line improvements, and public education campaigns. Grade crossings account for the majority of rail-related fatalities in the United States.",
+    "category": "Safety",
+    "relatedTerms": ["grade-crossing", "fra", "general-order"]
+  },
+  {
+    "slug": "derailment",
+    "term": "Derailment",
+    "definition": "An accident in which one or more wheels of a railcar or locomotive leave the running rails, potentially causing car damage, lading spills, and injuries. Derailments result from track defects, mechanical failures, excessive speed, improper loading, or obstructions on the track. They are investigated by the FRA and NTSB and are a leading focus of railroad safety programs.",
+    "category": "Safety",
+    "relatedTerms": ["hot-box-detector", "dragging-equipment-detector", "defect-detector", "fra", "bad-order", "dot-111"]
+  },
+  {
+    "slug": "hot-box-detector",
+    "term": "Hot Box Detector",
+    "definition": "A wayside infrared sensing device that measures the temperature of passing railcar journal bearings and alerts dispatchers when a bearing is overheating (a condition called a hot box), which can lead to a bearing failure and derailment. Hot box detectors are spaced at regular intervals along mainlines and are a primary defense against bearing-related derailments. A positive detection triggers a mandatory train stop and inspection.",
+    "category": "Safety",
+    "relatedTerms": ["dragging-equipment-detector", "defect-detector", "derailment", "wayside-detection"]
+  },
+  {
+    "slug": "dragging-equipment-detector",
+    "term": "Dragging Equipment Detector",
+    "abbreviation": "DED",
+    "definition": "A wayside device installed between the rails that is triggered when an object hanging below a passing car contacts it, alerting dispatchers to a potential dragging equipment condition such as a broken brake rod, loose air hose, or fallen lading. Dragging equipment can cause derailments, track damage, and grade crossing accidents. Detection triggers an immediate train stop for inspection.",
+    "category": "Safety",
+    "relatedTerms": ["hot-box-detector", "defect-detector", "derailment", "wayside-detection"]
+  },
+  {
+    "slug": "defect-detector",
+    "term": "Defect Detector",
+    "definition": "A general term for any wayside device that monitors passing trains for mechanical defects including hot bearings, dragging equipment, shifted loads, broken wheels, and wheel impact loads. Modern defect detectors transmit data in real time to dispatching centers and maintenance databases. A network of detectors provides continuous surveillance of the entire train as it moves through the system.",
+    "category": "Safety",
+    "relatedTerms": ["hot-box-detector", "dragging-equipment-detector", "wayside-detection", "derailment", "car-health-monitoring"]
+  },
+  {
+    "slug": "positive-train-control",
+    "term": "Positive Train Control",
+    "abbreviation": "PTC",
+    "definition": "A safety system mandated by Congress after the 2008 Chatsworth collision that automatically enforces speed limits, prevents train-to-train collisions, and enforces temporary speed restrictions, overriding human error. PTC uses GPS, wireless communications, and digital track maps to monitor and control train movements in real time. All Class I railroads completed PTC implementation by the 2020 deadline.",
+    "category": "Technology",
+    "relatedTerms": ["signal", "fra", "dpu", "wayside-detection", "gps-tracking"]
+  },
+  {
+    "slug": "wayside-detection",
+    "term": "Wayside Detection",
+    "definition": "The network of trackside sensing systems that monitor trains as they pass, including hot box detectors, dragging equipment detectors, wheel impact load detectors, and machine vision systems. Data from wayside detectors is transmitted in real time to dispatching centers and maintenance systems. Wayside detection is a foundational layer of railroad safety and car health monitoring.",
+    "category": "Technology",
+    "relatedTerms": ["hot-box-detector", "dragging-equipment-detector", "defect-detector", "car-health-monitoring", "aei"]
+  },
+  {
+    "slug": "aei",
+    "term": "Automatic Equipment Identification",
+    "abbreviation": "AEI",
+    "definition": "A system of passive RFID tags mounted on every railcar and locomotive and read by wayside readers at strategic locations throughout the network, automatically recording the car number, direction, and time of passage. AEI data is the backbone of real-time car location and train tracking for both operational and customer visibility purposes. The system was mandated by the FRA and deployed network-wide in the 1990s.",
+    "category": "Technology",
+    "relatedTerms": ["car-trace", "railinc", "gps-tracking", "wayside-detection", "edi"]
+  },
+  {
+    "slug": "gps-tracking",
+    "term": "GPS Tracking",
+    "definition": "The use of Global Positioning System receivers installed on locomotives or railcars to provide continuous real-time location data independent of wayside AEI readers. GPS tracking is standard on locomotives and is increasingly deployed on railcars and intermodal containers for enhanced visibility. It provides location data in areas between AEI readers and within yards.",
+    "category": "Technology",
+    "relatedTerms": ["aei", "telematics", "car-trace", "eta", "positive-train-control"]
+  },
+  {
+    "slug": "telematics",
+    "term": "Telematics",
+    "definition": "The integrated use of telecommunications and informatics to remotely monitor and transmit data from railcars and locomotives, including GPS location, temperature, shock events, door open/close status, and mechanical sensor readings. Telematics devices enable proactive management of car condition and cargo integrity without physical inspection. They are increasingly standard on tank cars, refrigerator cars, and high-value equipment.",
+    "category": "Technology",
+    "relatedTerms": ["gps-tracking", "car-health-monitoring", "aei", "predictive-eta"]
+  },
+  {
+    "slug": "car-health-monitoring",
+    "term": "Car Health Monitoring",
+    "definition": "The use of onboard sensors and wayside detectors to continuously assess the mechanical condition of railcars, detecting developing faults such as bearing degradation, wheel flat spots, and brake issues before they cause failures. Car health data is integrated with maintenance planning systems to enable predictive maintenance. It reduces bad-order rates and unplanned service interruptions.",
+    "category": "Technology",
+    "relatedTerms": ["wayside-detection", "telematics", "defect-detector", "bad-order", "predictive-eta"]
+  },
+  {
+    "slug": "predictive-eta",
+    "term": "Predictive ETA",
+    "definition": "The use of machine learning models, historical performance data, real-time train location, and network condition information to generate more accurate arrival time predictions for railcars and intermodal shipments. Predictive ETA models outperform schedule-based estimates by accounting for actual network conditions and train plan changes. Improved ETA accuracy enables better inventory management and customer service.",
+    "category": "Technology",
+    "relatedTerms": ["eta", "car-trace", "tms", "gps-tracking", "telematics"]
+  },
+  {
+    "slug": "tms",
+    "term": "Transportation Management System",
+    "abbreviation": "TMS",
+    "definition": "Enterprise software used by shippers, logistics providers, and railroads to plan, execute, track, and optimize freight transportation. In the rail context, a TMS manages rate procurement, shipment tendering, car ordering, tracking, freight bill auditing, and performance analytics. Modern TMS platforms integrate with railroad EDI systems and provide real-time visibility.",
+    "category": "Technology",
+    "relatedTerms": ["edi", "predictive-eta", "car-trace", "3pl", "rail-rate-negotiation"]
+  },
+  {
+    "slug": "edi-404",
+    "term": "EDI 404 Rail Shipment",
+    "abbreviation": "EDI 404",
+    "definition": "The ANSI X12 EDI transaction set used to transmit a rail shipment (bill of lading) from a shipper or agent to a railroad. The 404 contains all information needed to create a waybill including origin, destination, commodity, car number, routing, and billing instructions. It is the primary method by which rail shipments are tendered electronically.",
+    "category": "Technology",
+    "relatedTerms": ["edi", "edi-410", "edi-417", "edi-418", "bill-of-lading", "waybill"]
+  },
+  {
+    "slug": "edi-410",
+    "term": "EDI 410 Rail Freight Invoice",
+    "abbreviation": "EDI 410",
+    "definition": "The ANSI X12 EDI transaction set used by railroads to send freight invoices (freight bills) to shippers and payers. The 410 contains itemized charges including linehaul, fuel surcharge, and accessorials. Electronic invoice processing via EDI 410 enables automated freight bill auditing and payment.",
+    "category": "Technology",
+    "relatedTerms": ["edi", "edi-404", "freight-bill", "accessorial-charges"]
+  },
+  {
+    "slug": "edi-417",
+    "term": "EDI 417 Rail Carrier Rate Inquiry",
+    "abbreviation": "EDI 417",
+    "definition": "The ANSI X12 EDI transaction set used by shippers or their agents to request a freight rate from a railroad. The 417 specifies the origin, destination, commodity, car type, and other parameters needed to generate a rate quote. It is paired with the EDI 418 rate reply.",
+    "category": "Technology",
+    "relatedTerms": ["edi", "edi-418", "edi-404", "rate", "rail-rate-negotiation"]
+  },
+  {
+    "slug": "edi-418",
+    "term": "EDI 418 Rail Carrier Rate Reply",
+    "abbreviation": "EDI 418",
+    "definition": "The ANSI X12 EDI transaction set used by a railroad to respond to an EDI 417 rate inquiry, providing the applicable rate, routing, and validity period. The 418 enables automated rate shopping and contract management in shipper TMS platforms. It is the electronic equivalent of a rate quote.",
+    "category": "Technology",
+    "relatedTerms": ["edi", "edi-417", "rate", "tms"]
+  },
+  {
+    "slug": "railinc",
+    "term": "Railinc",
+    "definition": "The AAR-affiliated technology company that provides information technology services and data standards for the North American rail industry, including the UMLER equipment registry, the Centralized Station Master location database, Jettison EDI translation, and the car location network. Railinc is the central data utility connecting railroads, shippers, and service providers. It maintains the authoritative registry of rail equipment and industry codes.",
+    "category": "Technology",
+    "relatedTerms": ["aar", "umler", "edi", "aei", "car-trace"]
+  },
+  {
+    "slug": "umler",
+    "term": "Universal Machine Language Equipment Register",
+    "abbreviation": "UMLER",
+    "definition": "The industry-wide AAR/Railinc database that contains the specifications, ownership, and operational characteristics of every freight car and locomotive registered in North America. UMLER records are used to validate equipment in EDI transactions, calculate car hire, and support equipment management. Accurate UMLER data is required for a car to move legally over another railroad.",
+    "category": "Technology",
+    "relatedTerms": ["railinc", "aar", "edi", "car-hire", "aei"]
+  },
+  {
+    "slug": "velocity",
+    "term": "Network Velocity",
+    "definition": "A key railroad operating metric measuring the average speed of freight cars across the network, typically expressed in miles per day. Higher velocity means cars are spending less time dwelling in yards and more time moving, improving asset utilization and customer service. Railroads publish weekly velocity statistics as part of their surface transportation board performance data.",
+    "category": "Operations",
+    "relatedTerms": ["dwell-time", "manifest-train", "classification-yard", "car-hire"]
+  },
+  {
+    "slug": "captive-shipper",
+    "term": "Captive Shipper",
+    "definition": "A shipper that has access to only one railroad for a given movement, providing that railroad with market power to set rates above competitive levels. Captive shippers are the primary beneficiaries of STB rate reasonableness protections. The degree of captivity is assessed based on geographic alternatives and the practicality of modal alternatives.",
+    "category": "Commercial",
+    "relatedTerms": ["competitive-access", "bottleneck-routing", "stb", "rate-case", "maximum-reasonable-rate"]
+  },
+  {
+    "slug": "retarder",
+    "term": "Retarder",
+    "definition": "A braking device installed in classification tracks at a hump yard that applies friction to the wheels of descending cars to control their speed and ensure they couple gently with cars already in the classification track. Retarders are operated automatically by computer systems that calculate the required retardation based on car weight, wind, and track grade. They are essential for safe hump operations.",
+    "category": "Infrastructure",
+    "relatedTerms": ["hump-yard", "classification-yard", "flat-switching"]
+  }
+]

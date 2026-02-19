@@ -19,6 +19,7 @@ export function Navbar() {
 
   const links = [
     { href: '/states', label: 'Browse States' },
+    { href: '/resources', label: 'Resources' },
   ]
 
   return (

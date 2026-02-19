@@ -1,0 +1,1335 @@
+[
+  {
+    "mark": "BNSF",
+    "name": "BNSF Railway",
+    "type": "Class I",
+    "headquarters": "Fort Worth, TX",
+    "milesOperated": 32500
+  },
+  {
+    "mark": "UP",
+    "name": "Union Pacific Railroad",
+    "type": "Class I",
+    "headquarters": "Omaha, NE",
+    "milesOperated": 32200
+  },
+  {
+    "mark": "CSX",
+    "name": "CSX Transportation",
+    "type": "Class I",
+    "headquarters": "Jacksonville, FL",
+    "milesOperated": 21000
+  },
+  {
+    "mark": "NS",
+    "name": "Norfolk Southern Railway",
+    "type": "Class I",
+    "headquarters": "Atlanta, GA",
+    "milesOperated": 19500
+  },
+  {
+    "mark": "CN",
+    "name": "Canadian National Railway",
+    "type": "Class I",
+    "headquarters": "Montreal, QC",
+    "milesOperated": 25000
+  },
+  {
+    "mark": "CPKC",
+    "name": "Canadian Pacific Kansas City",
+    "type": "Class I",
+    "headquarters": "Calgary, AB",
+    "milesOperated": 20000
+  },
+  {
+    "mark": "KCS",
+    "name": "Kansas City Southern (now CPKC)",
+    "type": "Class I",
+    "parentCompany": "Canadian Pacific Kansas City",
+    "headquarters": "Kansas City, MO",
+    "milesOperated": 6900
+  },
+  {
+    "mark": "FEC",
+    "name": "Florida East Coast Railway",
+    "type": "Class II",
+    "parentCompany": "Grupo Mexico",
+    "headquarters": "Coral Gables, FL",
+    "milesOperated": 351
+  },
+  {
+    "mark": "GWRR",
+    "name": "Genesee & Wyoming Railroad",
+    "type": "Class II",
+    "parentCompany": "Brookfield Infrastructure Partners",
+    "headquarters": "Stamford, CT",
+    "milesOperated": 13000
+  },
+  {
+    "mark": "MNA",
+    "name": "Missouri & Northern Arkansas Railroad",
+    "type": "Class II",
+    "parentCompany": "Watco Companies",
+    "headquarters": "Carthage, MO",
+    "milesOperated": 470
+  },
+  {
+    "mark": "IC",
+    "name": "Illinois Central Railroad (now CN)",
+    "type": "Class II",
+    "parentCompany": "Canadian National Railway",
+    "headquarters": "Chicago, IL",
+    "milesOperated": 2900
+  },
+  {
+    "mark": "SOO",
+    "name": "Soo Line Railroad (now CP)",
+    "type": "Class II",
+    "parentCompany": "Canadian Pacific Kansas City",
+    "headquarters": "Minneapolis, MN",
+    "milesOperated": 4500
+  },
+  {
+    "mark": "WC",
+    "name": "Wisconsin Central Ltd (now CN)",
+    "type": "Class II",
+    "parentCompany": "Canadian National Railway",
+    "headquarters": "Green Bay, WI",
+    "milesOperated": 3000
+  },
+  {
+    "mark": "GCSR",
+    "name": "Gulf, Colorado & San Saba Railway",
+    "type": "Class II",
+    "headquarters": "San Saba, TX",
+    "milesOperated": 280
+  },
+  {
+    "mark": "IAIS",
+    "name": "Iowa Interstate Railroad",
+    "type": "Class II",
+    "headquarters": "Iowa City, IA",
+    "milesOperated": 589
+  },
+  {
+    "mark": "DGNO",
+    "name": "Dallas, Garland & Northeastern Railroad",
+    "type": "Class II",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Dallas, TX",
+    "milesOperated": 100
+  },
+  {
+    "mark": "RJC",
+    "name": "Rapid City, Pierre & Eastern Railroad",
+    "type": "Class II",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Rapid City, SD",
+    "milesOperated": 679
+  },
+  {
+    "mark": "KCSR",
+    "name": "Kansas City Southern Railway",
+    "type": "Class II",
+    "parentCompany": "Canadian Pacific Kansas City",
+    "headquarters": "Kansas City, MO",
+    "milesOperated": 3100
+  },
+  {
+    "mark": "CORP",
+    "name": "Central Oregon & Pacific Railroad",
+    "type": "Class II",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Roseburg, OR",
+    "milesOperated": 375
+  },
+  {
+    "mark": "CSAO",
+    "name": "Chicago, Southshore & South Bend Railroad",
+    "type": "Class II",
+    "headquarters": "Chicago, IL",
+    "milesOperated": 90
+  },
+  {
+    "mark": "AZER",
+    "name": "Arizona Eastern Railway",
+    "type": "Shortline",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Miami, AZ",
+    "milesOperated": 204
+  },
+  {
+    "mark": "BAYL",
+    "name": "Bay Line Railroad",
+    "type": "Shortline",
+    "headquarters": "Panama City, FL",
+    "milesOperated": 283
+  },
+  {
+    "mark": "BPRR",
+    "name": "Buffalo & Pittsburgh Railroad",
+    "type": "Shortline",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Butler, PA",
+    "milesOperated": 380
+  },
+  {
+    "mark": "CRL",
+    "name": "Chicago Rail Link",
+    "type": "Shortline",
+    "headquarters": "Chicago, IL",
+    "milesOperated": 45
+  },
+  {
+    "mark": "DLWR",
+    "name": "Delaware Lackawanna Railroad",
+    "type": "Shortline",
+    "headquarters": "Scranton, PA",
+    "milesOperated": 69
+  },
+  {
+    "mark": "EVWR",
+    "name": "Evansville Western Railway",
+    "type": "Shortline",
+    "parentCompany": "Watco Companies",
+    "headquarters": "Evansville, IN",
+    "milesOperated": 156
+  },
+  {
+    "mark": "FMRC",
+    "name": "Farmrail Corporation",
+    "type": "Shortline",
+    "headquarters": "Clinton, OK",
+    "milesOperated": 428
+  },
+  {
+    "mark": "GNRR",
+    "name": "Georgia Northeastern Railroad",
+    "type": "Shortline",
+    "headquarters": "Marietta, GA",
+    "milesOperated": 98
+  },
+  {
+    "mark": "GWWR",
+    "name": "Gateway Western Railway",
+    "type": "Shortline",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Kansas City, MO",
+    "milesOperated": 370
+  },
+  {
+    "mark": "HESR",
+    "name": "Huron & Eastern Railway",
+    "type": "Shortline",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Saginaw, MI",
+    "milesOperated": 400
+  },
+  {
+    "mark": "IORY",
+    "name": "Indiana & Ohio Railway",
+    "type": "Shortline",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Cincinnati, OH",
+    "milesOperated": 600
+  },
+  {
+    "mark": "JXPT",
+    "name": "Jacksonville Port Terminal Railroad",
+    "type": "Shortline",
+    "headquarters": "Jacksonville, FL",
+    "milesOperated": 12
+  },
+  {
+    "mark": "KYLE",
+    "name": "Kyle Railroad",
+    "type": "Shortline",
+    "parentCompany": "Watco Companies",
+    "headquarters": "Dodge City, KS",
+    "milesOperated": 695
+  },
+  {
+    "mark": "LSRC",
+    "name": "Lake State Railway",
+    "type": "Shortline",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Saginaw, MI",
+    "milesOperated": 330
+  },
+  {
+    "mark": "NBER",
+    "name": "Nebraska Central Railroad",
+    "type": "Shortline",
+    "parentCompany": "OmniTRAX",
+    "headquarters": "Aurora, NE",
+    "milesOperated": 400
+  },
+  {
+    "mark": "OMLX",
+    "name": "OmniTRAX Inc.",
+    "type": "Shortline",
+    "headquarters": "Denver, CO",
+    "milesOperated": 2000
+  },
+  {
+    "mark": "PNWR",
+    "name": "Portland & Western Railroad",
+    "type": "Shortline",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Portland, OR",
+    "milesOperated": 500
+  },
+  {
+    "mark": "RCPE",
+    "name": "Rapid City Pierre & Eastern Railroad",
+    "type": "Shortline",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Rapid City, SD",
+    "milesOperated": 679
+  },
+  {
+    "mark": "SKOL",
+    "name": "South Kansas & Oklahoma Railroad",
+    "type": "Shortline",
+    "parentCompany": "Watco Companies",
+    "headquarters": "Coffeyville, KS",
+    "milesOperated": 281
+  },
+  {
+    "mark": "TCWR",
+    "name": "Twin Cities & Western Railroad",
+    "type": "Shortline",
+    "headquarters": "Glencoe, MN",
+    "milesOperated": 214
+  },
+  {
+    "mark": "UGRY",
+    "name": "Union Railroad Company",
+    "type": "Shortline",
+    "parentCompany": "United States Steel",
+    "headquarters": "Pittsburgh, PA",
+    "milesOperated": 55
+  },
+  {
+    "mark": "VAST",
+    "name": "Vermont Railway",
+    "type": "Shortline",
+    "headquarters": "Burlington, VT",
+    "milesOperated": 258
+  },
+  {
+    "mark": "WAMX",
+    "name": "Watco Companies",
+    "type": "Shortline",
+    "headquarters": "Pittsburg, KS",
+    "milesOperated": 4000
+  },
+  {
+    "mark": "AKRR",
+    "name": "Alaska Railroad",
+    "type": "Shortline",
+    "headquarters": "Anchorage, AK",
+    "milesOperated": 469
+  },
+  {
+    "mark": "BCLR",
+    "name": "Buffalo & Lake Erie Railroad",
+    "type": "Shortline",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Buffalo, NY",
+    "milesOperated": 96
+  },
+  {
+    "mark": "CMGN",
+    "name": "Chesapeake & Albemarle Railroad",
+    "type": "Shortline",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Elizabeth City, NC",
+    "milesOperated": 72
+  },
+  {
+    "mark": "CWRY",
+    "name": "Connotton Valley Railway",
+    "type": "Shortline",
+    "headquarters": "Carrollton, OH",
+    "milesOperated": 55
+  },
+  {
+    "mark": "DMIR",
+    "name": "Duluth, Missabe & Iron Range Railway",
+    "type": "Shortline",
+    "parentCompany": "Canadian National Railway",
+    "headquarters": "Duluth, MN",
+    "milesOperated": 365
+  },
+  {
+    "mark": "FRVR",
+    "name": "Fort Worth & Western Railroad",
+    "type": "Shortline",
+    "headquarters": "Fort Worth, TX",
+    "milesOperated": 245
+  },
+  {
+    "mark": "GCLR",
+    "name": "Garden City Western Railway",
+    "type": "Shortline",
+    "headquarters": "Garden City, KS",
+    "milesOperated": 82
+  },
+  {
+    "mark": "GRWR",
+    "name": "Great Smoky Mountains Railroad",
+    "type": "Shortline",
+    "headquarters": "Bryson City, NC",
+    "milesOperated": 53
+  },
+  {
+    "mark": "HBLR",
+    "name": "Hudson Bergen Light Rail",
+    "type": "Shortline",
+    "headquarters": "Hoboken, NJ",
+    "milesOperated": 20
+  },
+  {
+    "mark": "ITRR",
+    "name": "Iowa Traction Railroad",
+    "type": "Shortline",
+    "headquarters": "Mason City, IA",
+    "milesOperated": 9
+  },
+  {
+    "mark": "KCTR",
+    "name": "Kansas City Terminal Railway",
+    "type": "Shortline",
+    "headquarters": "Kansas City, MO",
+    "milesOperated": 77
+  },
+  {
+    "mark": "LRRY",
+    "name": "Lycoming Valley Railroad",
+    "type": "Shortline",
+    "headquarters": "Montoursville, PA",
+    "milesOperated": 25
+  },
+  {
+    "mark": "MCER",
+    "name": "Midwest Energy Emissions Corp Rail",
+    "type": "Shortline",
+    "headquarters": "Plain City, OH",
+    "milesOperated": 30
+  },
+  {
+    "mark": "NCYR",
+    "name": "North Carolina & Virginia Railroad",
+    "type": "Shortline",
+    "headquarters": "Roanoke Rapids, NC",
+    "milesOperated": 173
+  },
+  {
+    "mark": "OHCR",
+    "name": "Ohio Central Railroad",
+    "type": "Shortline",
+    "headquarters": "Sugarcreek, OH",
+    "milesOperated": 400
+  },
+  {
+    "mark": "PDRR",
+    "name": "Pickens Railway",
+    "type": "Shortline",
+    "headquarters": "Pickens, SC",
+    "milesOperated": 26
+  },
+  {
+    "mark": "QLNR",
+    "name": "Quincy Railroad",
+    "type": "Shortline",
+    "headquarters": "Quincy, FL",
+    "milesOperated": 40
+  },
+  {
+    "mark": "RGRR",
+    "name": "Rio Grande Railroad",
+    "type": "Shortline",
+    "headquarters": "Alamosa, CO",
+    "milesOperated": 64
+  },
+  {
+    "mark": "SARR",
+    "name": "San Antonio Central Railroad",
+    "type": "Shortline",
+    "headquarters": "San Antonio, TX",
+    "milesOperated": 88
+  },
+  {
+    "mark": "TVRR",
+    "name": "Tennessee Valley Railroad",
+    "type": "Shortline",
+    "headquarters": "Chattanooga, TN",
+    "milesOperated": 130
+  },
+  {
+    "mark": "UWRR",
+    "name": "Utah Railway",
+    "type": "Shortline",
+    "parentCompany": "Genesee & Wyoming",
+    "headquarters": "Helper, UT",
+    "milesOperated": 147
+  },
+  {
+    "mark": "VSOR",
+    "name": "Virginia Southern Railroad",
+    "type": "Shortline",
+    "headquarters": "Ridgeway, VA",
+    "milesOperated": 105
+  },
+  {
+    "mark": "WYRR",
+    "name": "Wyoming Colorado Railroad",
+    "type": "Shortline",
+    "headquarters": "Laramie, WY",
+    "milesOperated": 98
+  },
+  {
+    "mark": "BRC",
+    "name": "Belt Railway of Chicago",
+    "type": "Terminal",
+    "headquarters": "Chicago, IL",
+    "milesOperated": 28
+  },
+  {
+    "mark": "IHB",
+    "name": "Indiana Harbor Belt Railroad",
+    "type": "Terminal",
+    "headquarters": "Hammond, IN",
+    "milesOperated": 83
+  },
+  {
+    "mark": "TRRA",
+    "name": "Terminal Railroad Association of St. Louis",
+    "type": "Terminal",
+    "headquarters": "St. Louis, MO",
+    "milesOperated": 59
+  },
+  {
+    "mark": "PTRA",
+    "name": "Port Terminal Railroad Association",
+    "type": "Terminal",
+    "headquarters": "Houston, TX",
+    "milesOperated": 264
+  },
+  {
+    "mark": "LSMS",
+    "name": "Lake Superior & Mississippi Railroad",
+    "type": "Terminal",
+    "headquarters": "Duluth, MN",
+    "milesOperated": 30
+  },
+  {
+    "mark": "ATGF",
+    "name": "Atlanta & Fort Mac Railroad",
+    "type": "Terminal",
+    "headquarters": "Atlanta, GA",
+    "milesOperated": 18
+  },
+  {
+    "mark": "BALT",
+    "name": "Baltimore Terminal Railroad",
+    "type": "Terminal",
+    "headquarters": "Baltimore, MD",
+    "milesOperated": 22
+  },
+  {
+    "mark": "CDAC",
+    "name": "Chicago & Western Indiana Railroad",
+    "type": "Terminal",
+    "headquarters": "Chicago, IL",
+    "milesOperated": 32
+  },
+  {
+    "mark": "ELPA",
+    "name": "El Paso Terminal Railroad",
+    "type": "Terminal",
+    "headquarters": "El Paso, TX",
+    "milesOperated": 15
+  },
+  {
+    "mark": "GBTI",
+    "name": "Grand Trunk Terminal Railway",
+    "type": "Terminal",
+    "headquarters": "Detroit, MI",
+    "milesOperated": 24
+  },
+  {
+    "mark": "LIRC",
+    "name": "Louisville & Indiana Railroad",
+    "type": "Terminal",
+    "headquarters": "Louisville, KY",
+    "milesOperated": 155
+  },
+  {
+    "mark": "MKCR",
+    "name": "Missouri-Kansas-Texas Terminal",
+    "type": "Terminal",
+    "headquarters": "Kansas City, MO",
+    "milesOperated": 20
+  },
+  {
+    "mark": "NREX",
+    "name": "New Orleans Public Belt Railroad",
+    "type": "Terminal",
+    "headquarters": "New Orleans, LA",
+    "milesOperated": 60
+  },
+  {
+    "mark": "PRSR",
+    "name": "Port of Seattle Terminal Railroad",
+    "type": "Terminal",
+    "headquarters": "Seattle, WA",
+    "milesOperated": 10
+  },
+  {
+    "mark": "SLSF",
+    "name": "St. Louis-San Francisco Terminal",
+    "type": "Terminal",
+    "headquarters": "St. Louis, MO",
+    "milesOperated": 35
+  },
+  {
+    "mark": "TASD",
+    "name": "Tacoma Rail",
+    "type": "Terminal",
+    "headquarters": "Tacoma, WA",
+    "milesOperated": 140
+  },
+  {
+    "mark": "TXGF",
+    "name": "Texas Gulf Railway",
+    "type": "Terminal",
+    "headquarters": "Beaumont, TX",
+    "milesOperated": 45
+  },
+  {
+    "mark": "WYRP",
+    "name": "Wyoming & Pacific Terminal Railroad",
+    "type": "Terminal",
+    "headquarters": "Cheyenne, WY",
+    "milesOperated": 8
+  },
+  {
+    "mark": "YRCR",
+    "name": "Youngstown & Southeastern Railroad",
+    "type": "Terminal",
+    "headquarters": "Youngstown, OH",
+    "milesOperated": 35
+  },
+  {
+    "mark": "ZTRR",
+    "name": "Zionsville Terminal Railroad",
+    "type": "Terminal",
+    "headquarters": "Zionsville, IN",
+    "milesOperated": 12
+  },
+  {
+    "mark": "GATX",
+    "name": "GATX Corporation",
+    "type": "Leasing",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "TILX",
+    "name": "Trinity Industries Leasing",
+    "type": "Leasing",
+    "headquarters": "Dallas, TX"
+  },
+  {
+    "mark": "UTLX",
+    "name": "Union Tank Car Company",
+    "type": "Leasing",
+    "parentCompany": "Marmon Group / Berkshire Hathaway",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "CEFX",
+    "name": "CIT Financial LLC (Rail Leasing)",
+    "type": "Leasing",
+    "headquarters": "New York, NY"
+  },
+  {
+    "mark": "SHPX",
+    "name": "Shippers Car Line",
+    "type": "Leasing",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "DTTX",
+    "name": "TTX Company",
+    "type": "Leasing",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "TTGX",
+    "name": "TTX Company (General Flatcar Fleet)",
+    "type": "Leasing",
+    "parentCompany": "TTX Company",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "TTZX",
+    "name": "TTX Company (Articulated Fleet)",
+    "type": "Leasing",
+    "parentCompany": "TTX Company",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "DODX",
+    "name": "Department of Defense Rail Fleet",
+    "type": "Leasing",
+    "headquarters": "Washington, DC"
+  },
+  {
+    "mark": "BRIX",
+    "name": "BRIX Rail Leasing",
+    "type": "Leasing",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "CRDX",
+    "name": "CRD Rail Leasing",
+    "type": "Leasing",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "MWCX",
+    "name": "Midwest Car Corporation",
+    "type": "Leasing",
+    "headquarters": "Hazelwood, MO"
+  },
+  {
+    "mark": "NATX",
+    "name": "North American Tank Car Corporation",
+    "type": "Leasing",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "PLMX",
+    "name": "Pullman Leasing",
+    "type": "Leasing",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "PROX",
+    "name": "Procor Limited",
+    "type": "Leasing",
+    "headquarters": "Oakville, ON"
+  },
+  {
+    "mark": "ACFX",
+    "name": "ACF Industries",
+    "type": "Leasing",
+    "headquarters": "St. Charles, MO"
+  },
+  {
+    "mark": "CITX",
+    "name": "CIT Leasing Corporation",
+    "type": "Leasing",
+    "headquarters": "Livingston, NJ"
+  },
+  {
+    "mark": "DLCX",
+    "name": "DLC Rail Leasing",
+    "type": "Leasing",
+    "headquarters": "Nashville, TN"
+  },
+  {
+    "mark": "GCFX",
+    "name": "General Car & Foundry",
+    "type": "Leasing",
+    "headquarters": "Atlanta, GA"
+  },
+  {
+    "mark": "GVSR",
+    "name": "Greenbrier Leasing Company",
+    "type": "Leasing",
+    "parentCompany": "The Greenbrier Companies",
+    "headquarters": "Lake Oswego, OR"
+  },
+  {
+    "mark": "HBCX",
+    "name": "Hub Central Leasing",
+    "type": "Leasing",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "IBCX",
+    "name": "IBC Rail Leasing",
+    "type": "Leasing",
+    "headquarters": "Dallas, TX"
+  },
+  {
+    "mark": "KCIX",
+    "name": "KCI Rail Leasing",
+    "type": "Leasing",
+    "headquarters": "Kansas City, MO"
+  },
+  {
+    "mark": "LRCX",
+    "name": "LRC Rail Leasing",
+    "type": "Leasing",
+    "headquarters": "St. Louis, MO"
+  },
+  {
+    "mark": "MLKX",
+    "name": "MLK Rail Holdings",
+    "type": "Leasing",
+    "headquarters": "Memphis, TN"
+  },
+  {
+    "mark": "NRLX",
+    "name": "National Railcar Leasing",
+    "type": "Leasing",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "SNSX",
+    "name": "Suns Rail Leasing",
+    "type": "Leasing",
+    "headquarters": "Phoenix, AZ"
+  },
+  {
+    "mark": "SULX",
+    "name": "Sullivan Rail Leasing",
+    "type": "Leasing",
+    "headquarters": "Louisville, KY"
+  },
+  {
+    "mark": "TGLX",
+    "name": "TGL Rail Leasing",
+    "type": "Leasing",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "WFRX",
+    "name": "Wells Fargo Rail Corporation",
+    "type": "Leasing",
+    "parentCompany": "Wells Fargo & Company",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "CHSX",
+    "name": "CHS Inc. Rail Fleet",
+    "type": "Leasing",
+    "headquarters": "Inver Grove Heights, MN"
+  },
+  {
+    "mark": "BKGX",
+    "name": "Berkshire Hathaway Rail Leasing",
+    "type": "Leasing",
+    "parentCompany": "Berkshire Hathaway",
+    "headquarters": "Omaha, NE"
+  },
+  {
+    "mark": "CREX",
+    "name": "CRE Rail Leasing",
+    "type": "Leasing",
+    "headquarters": "Fort Worth, TX"
+  },
+  {
+    "mark": "FPUX",
+    "name": "First Union Rail Corporation",
+    "type": "Leasing",
+    "headquarters": "Atlanta, GA"
+  },
+  {
+    "mark": "GRLX",
+    "name": "General Rail Leasing",
+    "type": "Leasing",
+    "headquarters": "Detroit, MI"
+  },
+  {
+    "mark": "HLCX",
+    "name": "Helm Financial Corporation",
+    "type": "Leasing",
+    "headquarters": "San Francisco, CA"
+  },
+  {
+    "mark": "IPLX",
+    "name": "International Paper Leasing",
+    "type": "Leasing",
+    "headquarters": "Memphis, TN"
+  },
+  {
+    "mark": "JLCX",
+    "name": "Jackson Leasing Corporation",
+    "type": "Leasing",
+    "headquarters": "Jacksonville, FL"
+  },
+  {
+    "mark": "KLLX",
+    "name": "Keller Rail Leasing",
+    "type": "Leasing",
+    "headquarters": "Minneapolis, MN"
+  },
+  {
+    "mark": "ADMX",
+    "name": "Archer Daniels Midland Company",
+    "type": "Private",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "AMCX",
+    "name": "American Chemical Corporation",
+    "type": "Private",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "BASX",
+    "name": "BASF Corporation",
+    "type": "Private",
+    "headquarters": "Florham Park, NJ"
+  },
+  {
+    "mark": "BCKX",
+    "name": "Buckman Laboratories",
+    "type": "Private",
+    "headquarters": "Memphis, TN"
+  },
+  {
+    "mark": "CGLX",
+    "name": "Cargill Incorporated",
+    "type": "Private",
+    "headquarters": "Wayzata, MN"
+  },
+  {
+    "mark": "CNWX",
+    "name": "ConAgra Foods Inc.",
+    "type": "Private",
+    "headquarters": "Omaha, NE"
+  },
+  {
+    "mark": "CPSX",
+    "name": "Chevron Phillips Chemical Company",
+    "type": "Private",
+    "headquarters": "The Woodlands, TX"
+  },
+  {
+    "mark": "CSSX",
+    "name": "Consolidated Specialty Solutions",
+    "type": "Private",
+    "headquarters": "Atlanta, GA"
+  },
+  {
+    "mark": "DGRX",
+    "name": "Domtar Industries Inc.",
+    "type": "Private",
+    "headquarters": "Fort Mill, SC"
+  },
+  {
+    "mark": "DOWX",
+    "name": "Dow Chemical Company",
+    "type": "Private",
+    "headquarters": "Midland, MI"
+  },
+  {
+    "mark": "DUPX",
+    "name": "DuPont de Nemours Inc.",
+    "type": "Private",
+    "headquarters": "Wilmington, DE"
+  },
+  {
+    "mark": "ETCX",
+    "name": "Enterprise Products Partners",
+    "type": "Private",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "FURX",
+    "name": "Frontier Oil Corporation",
+    "type": "Private",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "GLNX",
+    "name": "Glencore Grain LLC",
+    "type": "Private",
+    "headquarters": "Baar, Switzerland"
+  },
+  {
+    "mark": "GTLX",
+    "name": "GrafTech International Holdings",
+    "type": "Private",
+    "headquarters": "Brooklyn Heights, OH"
+  },
+  {
+    "mark": "HOKX",
+    "name": "Hooker Chemical Corporation",
+    "type": "Private",
+    "headquarters": "Niagara Falls, NY"
+  },
+  {
+    "mark": "HPCX",
+    "name": "Huntsman Petrochemicals Corporation",
+    "type": "Private",
+    "headquarters": "The Woodlands, TX"
+  },
+  {
+    "mark": "INTX",
+    "name": "International Minerals & Chemical Corp",
+    "type": "Private",
+    "headquarters": "Northbrook, IL"
+  },
+  {
+    "mark": "KTRX",
+    "name": "Koch Industries Inc.",
+    "type": "Private",
+    "headquarters": "Wichita, KS"
+  },
+  {
+    "mark": "LGCX",
+    "name": "Lyondell Chemical Company",
+    "type": "Private",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "MOSQ",
+    "name": "Mosaic Company",
+    "type": "Private",
+    "headquarters": "Tampa, FL"
+  },
+  {
+    "mark": "NKCX",
+    "name": "Nucor Corporation",
+    "type": "Private",
+    "headquarters": "Charlotte, NC"
+  },
+  {
+    "mark": "PGLX",
+    "name": "Procter & Gamble Company",
+    "type": "Private",
+    "headquarters": "Cincinnati, OH"
+  },
+  {
+    "mark": "PLSX",
+    "name": "Potash Corporation of Saskatchewan",
+    "type": "Private",
+    "headquarters": "Saskatoon, SK"
+  },
+  {
+    "mark": "QLCX",
+    "name": "QLT Inc.",
+    "type": "Private",
+    "headquarters": "Vancouver, BC"
+  },
+  {
+    "mark": "RDWX",
+    "name": "Rhodia Inc.",
+    "type": "Private",
+    "headquarters": "Cranbury, NJ"
+  },
+  {
+    "mark": "SCMX",
+    "name": "Scotts Company",
+    "type": "Private",
+    "headquarters": "Marysville, OH"
+  },
+  {
+    "mark": "SFLX",
+    "name": "Sunflower Electric Power Corporation",
+    "type": "Private",
+    "headquarters": "Hays, KS"
+  },
+  {
+    "mark": "TRCX",
+    "name": "Terra Industries Inc.",
+    "type": "Private",
+    "headquarters": "Sioux City, IA"
+  },
+  {
+    "mark": "UNCX",
+    "name": "Union Carbide Corporation",
+    "type": "Private",
+    "parentCompany": "Dow Chemical Company",
+    "headquarters": "Midland, MI"
+  },
+  {
+    "mark": "VTSX",
+    "name": "Valero Energy Corporation",
+    "type": "Private",
+    "headquarters": "San Antonio, TX"
+  },
+  {
+    "mark": "WLEX",
+    "name": "Westlake Chemical Corporation",
+    "type": "Private",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "ACSX",
+    "name": "ACS Private Rail Services",
+    "type": "Private",
+    "headquarters": "Dallas, TX"
+  },
+  {
+    "mark": "AEPX",
+    "name": "American Electric Power",
+    "type": "Private",
+    "headquarters": "Columbus, OH"
+  },
+  {
+    "mark": "AIRX",
+    "name": "Air Products & Chemicals Inc.",
+    "type": "Private",
+    "headquarters": "Allentown, PA"
+  },
+  {
+    "mark": "ALAX",
+    "name": "Albemarle Corporation",
+    "type": "Private",
+    "headquarters": "Charlotte, NC"
+  },
+  {
+    "mark": "ALCX",
+    "name": "Alcoa Corporation",
+    "type": "Private",
+    "headquarters": "Pittsburgh, PA"
+  },
+  {
+    "mark": "AMGX",
+    "name": "Amgen Inc.",
+    "type": "Private",
+    "headquarters": "Thousand Oaks, CA"
+  },
+  {
+    "mark": "AMKX",
+    "name": "Amtrak Express (non-revenue)",
+    "type": "Private",
+    "headquarters": "Washington, DC"
+  },
+  {
+    "mark": "APRX",
+    "name": "Apache Corporation",
+    "type": "Private",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "ARCX",
+    "name": "Arch Coal Inc.",
+    "type": "Private",
+    "headquarters": "St. Louis, MO"
+  },
+  {
+    "mark": "AREX",
+    "name": "Ashland Inc.",
+    "type": "Private",
+    "headquarters": "Covington, KY"
+  },
+  {
+    "mark": "ATCX",
+    "name": "Atlantic Richfield Company",
+    "type": "Private",
+    "headquarters": "Los Angeles, CA"
+  },
+  {
+    "mark": "AXCX",
+    "name": "Axiom Rail Services",
+    "type": "Private",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "BHRX",
+    "name": "BHP Billiton",
+    "type": "Private",
+    "headquarters": "Melbourne, Australia"
+  },
+  {
+    "mark": "BKRX",
+    "name": "Baker Hughes Company",
+    "type": "Private",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "BLUX",
+    "name": "Blue Scope Steel",
+    "type": "Private",
+    "headquarters": "Melbourne, Australia"
+  },
+  {
+    "mark": "BPSX",
+    "name": "BP America Inc.",
+    "type": "Private",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "BRNX",
+    "name": "Brenntag North America",
+    "type": "Private",
+    "headquarters": "Reading, PA"
+  },
+  {
+    "mark": "BRVX",
+    "name": "Bravo Natural Resources",
+    "type": "Private",
+    "headquarters": "Denver, CO"
+  },
+  {
+    "mark": "BSRX",
+    "name": "Boise Cascade Company",
+    "type": "Private",
+    "headquarters": "Boise, ID"
+  },
+  {
+    "mark": "BTEX",
+    "name": "Betz Laboratories",
+    "type": "Private",
+    "headquarters": "Horsham, PA"
+  },
+  {
+    "mark": "BWCX",
+    "name": "Babcock & Wilcox Enterprises",
+    "type": "Private",
+    "headquarters": "Barberton, OH"
+  },
+  {
+    "mark": "CASX",
+    "name": "Calumet Specialty Products",
+    "type": "Private",
+    "headquarters": "Indianapolis, IN"
+  },
+  {
+    "mark": "CBRX",
+    "name": "Celanese Corporation",
+    "type": "Private",
+    "headquarters": "Irving, TX"
+  },
+  {
+    "mark": "CCPX",
+    "name": "Conoco Phillips Company",
+    "type": "Private",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "CDUX",
+    "name": "CF Industries Holdings",
+    "type": "Private",
+    "headquarters": "Deerfield, IL"
+  },
+  {
+    "mark": "CELX",
+    "name": "Celanese Ltd.",
+    "type": "Private",
+    "headquarters": "Dallas, TX"
+  },
+  {
+    "mark": "CEMX",
+    "name": "Cemex USA",
+    "type": "Private",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "CERX",
+    "name": "Cerro Flow Products",
+    "type": "Private",
+    "headquarters": "Sauget, IL"
+  },
+  {
+    "mark": "CFCX",
+    "name": "Central Freight Carriers",
+    "type": "Private",
+    "headquarters": "Waco, TX"
+  },
+  {
+    "mark": "CFRX",
+    "name": "Columbia Forest Products",
+    "type": "Private",
+    "headquarters": "Greensboro, NC"
+  },
+  {
+    "mark": "CGAX",
+    "name": "Calumet Grassland Agriculture",
+    "type": "Private",
+    "headquarters": "Indianapolis, IN"
+  },
+  {
+    "mark": "CHRX",
+    "name": "Chromalloy Gas Turbine",
+    "type": "Private",
+    "headquarters": "San Antonio, TX"
+  },
+  {
+    "mark": "CIBX",
+    "name": "Continental Information Broadcasting",
+    "type": "Private",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "CLCX",
+    "name": "Clariant Corporation",
+    "type": "Private",
+    "headquarters": "Charlotte, NC"
+  },
+  {
+    "mark": "CLNX",
+    "name": "Clean Harbors Inc.",
+    "type": "Private",
+    "headquarters": "Norwell, MA"
+  },
+  {
+    "mark": "CLRX",
+    "name": "Calumet Refining",
+    "type": "Private",
+    "headquarters": "Indianapolis, IN"
+  },
+  {
+    "mark": "CMCX",
+    "name": "Commercial Metals Company",
+    "type": "Private",
+    "headquarters": "Irving, TX"
+  },
+  {
+    "mark": "CNFX",
+    "name": "Connell Industries",
+    "type": "Private",
+    "headquarters": "Berkeley Heights, NJ"
+  },
+  {
+    "mark": "CNGX",
+    "name": "CNG Financial Corporation",
+    "type": "Private",
+    "headquarters": "Cincinnati, OH"
+  },
+  {
+    "mark": "CNMX",
+    "name": "Corn Nuts Manufacturing",
+    "type": "Private",
+    "headquarters": "Oakland, CA"
+  },
+  {
+    "mark": "COBX",
+    "name": "Cobalt International Energy",
+    "type": "Private",
+    "headquarters": "Houston, TX"
+  },
+  {
+    "mark": "COCX",
+    "name": "Coce Chemical Company",
+    "type": "Private",
+    "headquarters": "Chicago, IL"
+  },
+  {
+    "mark": "COPX",
+    "name": "Copper Range Company",
+    "type": "Private",
+    "headquarters": "Hancock, MI"
+  },
+  {
+    "mark": "COSIX",
+    "name": "CoStar Group",
+    "type": "Private",
+    "headquarters": "Washington, DC"
+  },
+  {
+    "mark": "COTX",
+    "name": "Cotemporary Industries",
+    "type": "Private",
+    "headquarters": "Goshen, IN"
+  }
+]

@@ -1,0 +1,1524 @@
+[
+  {
+    "stccPrefix": "01",
+    "name": "Farm Products",
+    "description": "Raw and minimally processed agricultural commodities grown for food, feed, fiber, or industrial use. Includes grains, oilseeds, hay, cotton, and live animals.",
+    "subgroups": [
+      {
+        "stccCode": "0110",
+        "name": "Wheat",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Hard Red Winter Wheat", "nmfcClass": "55" },
+          { "name": "Soft Red Winter Wheat", "nmfcClass": "55" },
+          { "name": "Hard Red Spring Wheat", "nmfcClass": "55" },
+          { "name": "Durum Wheat", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "0112",
+        "name": "Corn (Maize)",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Yellow Corn", "nmfcClass": "55" },
+          { "name": "White Corn", "nmfcClass": "55" },
+          { "name": "Seed Corn", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "0113",
+        "name": "Soybeans",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Soybeans, NOS", "nmfcClass": "55" },
+          { "name": "Soybean Seed", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "0115",
+        "name": "Grain Sorghum (Milo)",
+        "nmfcClass": "55"
+      },
+      {
+        "stccCode": "0116",
+        "name": "Barley and Oats",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Barley, Malting", "nmfcClass": "55" },
+          { "name": "Barley, Feed", "nmfcClass": "55" },
+          { "name": "Oats", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "0119",
+        "name": "Hay and Forage",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Alfalfa Hay, Baled", "nmfcClass": "70" },
+          { "name": "Timothy Hay", "nmfcClass": "70" },
+          { "name": "Grass Hay", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "0130",
+        "name": "Cotton",
+        "nmfcClass": "85",
+        "items": [
+          { "name": "Raw Cotton, Baled", "nmfcClass": "85" },
+          { "name": "Cotton Linters", "nmfcClass": "85" }
+        ]
+      },
+      {
+        "stccCode": "0140",
+        "name": "Tobacco, Leaf",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "0170",
+        "name": "Live Animals",
+        "items": [
+          { "name": "Cattle" },
+          { "name": "Hogs" },
+          { "name": "Sheep" }
+        ]
+      }
+    ]
+  },
+  {
+    "stccPrefix": "08",
+    "name": "Forest Products",
+    "description": "Timber and primary wood products harvested directly from forests, including logs, pulpwood, and wood chips, prior to manufacturing into lumber or paper products.",
+    "subgroups": [
+      {
+        "stccCode": "0811",
+        "name": "Logs, Softwood",
+        "nmfcClass": "40",
+        "items": [
+          { "name": "Douglas Fir Logs", "nmfcClass": "40" },
+          { "name": "Pine Logs", "nmfcClass": "40" },
+          { "name": "Hemlock Logs", "nmfcClass": "40" }
+        ]
+      },
+      {
+        "stccCode": "0812",
+        "name": "Logs, Hardwood",
+        "nmfcClass": "40",
+        "items": [
+          { "name": "Oak Logs", "nmfcClass": "40" },
+          { "name": "Maple Logs", "nmfcClass": "40" },
+          { "name": "Walnut Logs", "nmfcClass": "50" }
+        ]
+      },
+      {
+        "stccCode": "0821",
+        "name": "Pulpwood",
+        "nmfcClass": "40",
+        "items": [
+          { "name": "Softwood Pulpwood", "nmfcClass": "40" },
+          { "name": "Hardwood Pulpwood", "nmfcClass": "40" }
+        ]
+      },
+      {
+        "stccCode": "0831",
+        "name": "Wood Chips",
+        "nmfcClass": "40"
+      },
+      {
+        "stccCode": "0841",
+        "name": "Bark and Wood Residuals",
+        "nmfcClass": "50"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "09",
+    "name": "Fresh Fish and Other Marine Products",
+    "description": "Raw and minimally processed fish, shellfish, and other marine products transported in refrigerated or iced condition. Limited rail movement; most moves by refrigerated truck or air.",
+    "subgroups": [
+      {
+        "stccCode": "0912",
+        "name": "Fresh or Frozen Fish",
+        "nmfcClass": "100",
+        "items": [
+          { "name": "Salmon, Fresh/Frozen", "nmfcClass": "100" },
+          { "name": "Tuna, Fresh/Frozen", "nmfcClass": "100" },
+          { "name": "Groundfish, Frozen", "nmfcClass": "100" }
+        ]
+      },
+      {
+        "stccCode": "0913",
+        "name": "Shellfish",
+        "nmfcClass": "100",
+        "items": [
+          { "name": "Crab, Frozen", "nmfcClass": "100" },
+          { "name": "Shrimp, Frozen", "nmfcClass": "100" }
+        ]
+      },
+      {
+        "stccCode": "0919",
+        "name": "Fish Meal and Fish Oil",
+        "nmfcClass": "70"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "10",
+    "name": "Metallic Ores",
+    "description": "Raw metallic ores extracted from mines, including iron ore, copper ore, gold and silver ore, and other metal-bearing rock requiring processing and smelting before use in manufacturing.",
+    "subgroups": [
+      {
+        "stccCode": "1011",
+        "name": "Iron Ore",
+        "nmfcClass": "35",
+        "items": [
+          { "name": "Iron Ore, Lump", "nmfcClass": "35" },
+          { "name": "Iron Ore Pellets", "nmfcClass": "35" },
+          { "name": "Taconite", "nmfcClass": "35" }
+        ]
+      },
+      {
+        "stccCode": "1021",
+        "name": "Copper Ore and Concentrates",
+        "nmfcClass": "35"
+      },
+      {
+        "stccCode": "1041",
+        "name": "Gold and Silver Ore",
+        "nmfcClass": "35"
+      },
+      {
+        "stccCode": "1051",
+        "name": "Bauxite and Aluminum Ore",
+        "nmfcClass": "35"
+      },
+      {
+        "stccCode": "1061",
+        "name": "Uranium Ore",
+        "nmfcClass": "55"
+      },
+      {
+        "stccCode": "1091",
+        "name": "Metal Ores, NOS",
+        "nmfcClass": "35"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "11",
+    "name": "Coal",
+    "description": "All grades of coal mined for steam generation, coking, or industrial use, including bituminous, subbituminous, and lignite coal. Coal is the single largest rail commodity by tonnage in the United States.",
+    "subgroups": [
+      {
+        "stccCode": "1111",
+        "name": "Bituminous Coal",
+        "nmfcClass": "35",
+        "items": [
+          { "name": "Thermal Coal (Steam Coal)", "nmfcClass": "35" },
+          { "name": "Metallurgical Coal (Coking Coal)", "nmfcClass": "35" },
+          { "name": "PCI Coal", "nmfcClass": "35" }
+        ]
+      },
+      {
+        "stccCode": "1112",
+        "name": "Subbituminous Coal",
+        "nmfcClass": "35",
+        "items": [
+          { "name": "Powder River Basin Coal", "nmfcClass": "35" }
+        ]
+      },
+      {
+        "stccCode": "1113",
+        "name": "Lignite (Brown Coal)",
+        "nmfcClass": "35"
+      },
+      {
+        "stccCode": "1114",
+        "name": "Anthracite Coal",
+        "nmfcClass": "35"
+      },
+      {
+        "stccCode": "1191",
+        "name": "Coal Fines and Culm",
+        "nmfcClass": "35"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "13",
+    "name": "Crude Petroleum and Natural Gas",
+    "description": "Unrefined crude oil and natural gas liquids extracted at the wellhead, transported by pipeline and rail tank car to refineries for processing into petroleum products.",
+    "subgroups": [
+      {
+        "stccCode": "1311",
+        "name": "Crude Petroleum (Oil)",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Light Sweet Crude", "nmfcClass": "55" },
+          { "name": "Heavy Crude", "nmfcClass": "55" },
+          { "name": "Bakken Crude", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "1321",
+        "name": "Natural Gas Liquids",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Propane (LPG)", "nmfcClass": "55" },
+          { "name": "Butane", "nmfcClass": "55" },
+          { "name": "Natural Gasoline", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "1381",
+        "name": "Drilling Fluids and Oilfield Materials",
+        "nmfcClass": "55"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "14",
+    "name": "Nonmetallic Minerals (No Fuels)",
+    "description": "Mined nonmetallic minerals used in construction, agriculture, chemicals, and industrial processes, including limestone, potash, phosphate rock, sand, gravel, and sulfur.",
+    "subgroups": [
+      {
+        "stccCode": "1411",
+        "name": "Limestone and Crushed Stone",
+        "nmfcClass": "35",
+        "items": [
+          { "name": "Crushed Limestone", "nmfcClass": "35" },
+          { "name": "Agricultural Lime", "nmfcClass": "35" },
+          { "name": "Dolomite", "nmfcClass": "35" }
+        ]
+      },
+      {
+        "stccCode": "1422",
+        "name": "Sand and Gravel",
+        "nmfcClass": "35",
+        "items": [
+          { "name": "Construction Sand", "nmfcClass": "35" },
+          { "name": "Frac Sand", "nmfcClass": "35" },
+          { "name": "Gravel", "nmfcClass": "35" }
+        ]
+      },
+      {
+        "stccCode": "1442",
+        "name": "Potash and Potassium Minerals",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Potassium Chloride (Muriate of Potash)", "nmfcClass": "55" },
+          { "name": "Potassium Sulfate", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "1474",
+        "name": "Phosphate Rock",
+        "nmfcClass": "35"
+      },
+      {
+        "stccCode": "1490",
+        "name": "Sulfur (Elemental)",
+        "nmfcClass": "55"
+      },
+      {
+        "stccCode": "1499",
+        "name": "Nonmetallic Minerals, NOS",
+        "nmfcClass": "35",
+        "items": [
+          { "name": "Bentonite", "nmfcClass": "35" },
+          { "name": "Kaolin Clay", "nmfcClass": "55" },
+          { "name": "Silica", "nmfcClass": "55" }
+        ]
+      }
+    ]
+  },
+  {
+    "stccPrefix": "19",
+    "name": "Ordnance and Accessories",
+    "description": "Military weapons systems, ammunition, explosives, and related ordnance materials. Movements are regulated by DOT and DOD, requiring special permits, routing restrictions, and security protocols.",
+    "subgroups": [
+      {
+        "stccCode": "1911",
+        "name": "Ammunition, Small Arms",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "1921",
+        "name": "Artillery Ammunition",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "1931",
+        "name": "Bombs, Torpedoes, and Rockets",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "1991",
+        "name": "Ordnance and Accessories, NOS",
+        "nmfcClass": "70"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "20",
+    "name": "Food and Kindred Products",
+    "description": "Processed and manufactured food products including flour, vegetable oils, sugar, canned goods, frozen foods, beverages, and animal feed, produced in food processing facilities for human or animal consumption.",
+    "subgroups": [
+      {
+        "stccCode": "2011",
+        "name": "Meat Products",
+        "nmfcClass": "85",
+        "items": [
+          { "name": "Fresh Beef, Refrigerated", "nmfcClass": "85" },
+          { "name": "Pork Products, Refrigerated", "nmfcClass": "85" },
+          { "name": "Frozen Meat", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "2041",
+        "name": "Flour and Other Grain Mill Products",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Wheat Flour", "nmfcClass": "55" },
+          { "name": "Corn Meal", "nmfcClass": "55" },
+          { "name": "Distillers Dried Grains (DDG)", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2046",
+        "name": "Wet Corn Milling Products",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "High Fructose Corn Syrup", "nmfcClass": "55" },
+          { "name": "Corn Starch", "nmfcClass": "55" },
+          { "name": "Corn Gluten Feed", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2061",
+        "name": "Cane Sugar and Refineries",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Raw Cane Sugar", "nmfcClass": "55" },
+          { "name": "Refined Cane Sugar", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2075",
+        "name": "Soybean Oil and Meal",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Crude Soybean Oil", "nmfcClass": "55" },
+          { "name": "Soybean Meal", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2082",
+        "name": "Malt Beverages",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Beer, Canned/Bottled", "nmfcClass": "70" },
+          { "name": "Malt", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2099",
+        "name": "Animal Feed and Supplements",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Mixed Animal Feed", "nmfcClass": "55" },
+          { "name": "Molasses", "nmfcClass": "55" }
+        ]
+      }
+    ]
+  },
+  {
+    "stccPrefix": "21",
+    "name": "Tobacco Products",
+    "description": "Manufactured tobacco products including cigarettes, cigars, smokeless tobacco, and pipe tobacco produced by tobacco manufacturers and distributed to wholesale and retail channels.",
+    "subgroups": [
+      {
+        "stccCode": "2111",
+        "name": "Cigarettes",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "2121",
+        "name": "Cigars",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "2131",
+        "name": "Chewing and Smoking Tobacco",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "2141",
+        "name": "Tobacco Stems and Scrap",
+        "nmfcClass": "85"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "22",
+    "name": "Textile Mill Products",
+    "description": "Yarn, thread, fabric, and related textile materials produced by spinning and weaving mills from natural and synthetic fibers, used as inputs for apparel manufacturing and industrial applications.",
+    "subgroups": [
+      {
+        "stccCode": "2211",
+        "name": "Cotton Broadwoven Fabric",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "2221",
+        "name": "Man-Made Fiber Broadwoven Fabric",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "2281",
+        "name": "Yarn and Thread",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "2291",
+        "name": "Felt and Nonwoven Fabrics",
+        "nmfcClass": "85"
+      },
+      {
+        "stccCode": "2299",
+        "name": "Textile Mill Products, NOS",
+        "nmfcClass": "100"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "23",
+    "name": "Apparel and Other Finished Textile Products",
+    "description": "Finished garments, clothing accessories, and other sewn textile articles produced by apparel manufacturers from fabric inputs. Limited rail movement; primarily moves by intermodal due to time sensitivity.",
+    "subgroups": [
+      {
+        "stccCode": "2311",
+        "name": "Men's and Boys' Clothing",
+        "nmfcClass": "150"
+      },
+      {
+        "stccCode": "2321",
+        "name": "Women's and Girls' Clothing",
+        "nmfcClass": "150"
+      },
+      {
+        "stccCode": "2381",
+        "name": "Dress and Work Gloves",
+        "nmfcClass": "150"
+      },
+      {
+        "stccCode": "2391",
+        "name": "Curtains, Draperies, and Bedding",
+        "nmfcClass": "125"
+      },
+      {
+        "stccCode": "2399",
+        "name": "Apparel, NOS",
+        "nmfcClass": "150"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "24",
+    "name": "Lumber and Wood Products (Except Furniture)",
+    "description": "Sawn lumber, plywood, particleboard, and other wood panel products produced from raw timber at sawmills and panel mills, used as primary construction materials for residential and commercial building.",
+    "subgroups": [
+      {
+        "stccCode": "2421",
+        "name": "Lumber, Softwood",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Douglas Fir Dimension Lumber", "nmfcClass": "55" },
+          { "name": "Southern Yellow Pine Lumber", "nmfcClass": "55" },
+          { "name": "Spruce-Pine-Fir (SPF) Lumber", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2426",
+        "name": "Lumber, Hardwood",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Oak Hardwood Lumber", "nmfcClass": "55" },
+          { "name": "Maple Hardwood Lumber", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2435",
+        "name": "Hardwood Plywood and Veneer",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "2436",
+        "name": "Softwood Plywood",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "2493",
+        "name": "Reconstituted Wood Products (OSB, Particleboard)",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Oriented Strand Board (OSB)", "nmfcClass": "70" },
+          { "name": "Medium Density Fiberboard (MDF)", "nmfcClass": "70" },
+          { "name": "Particleboard", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "2499",
+        "name": "Wood Products, NOS",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Wood Pellets (Biomass)", "nmfcClass": "70" },
+          { "name": "Railroad Ties (Crosstie)", "nmfcClass": "40" },
+          { "name": "Utility Poles", "nmfcClass": "40" }
+        ]
+      }
+    ]
+  },
+  {
+    "stccPrefix": "25",
+    "name": "Furniture and Fixtures",
+    "description": "Residential and commercial furniture, office systems, and institutional fixtures including chairs, desks, cabinets, and mattresses. Generally high-cube, low-density freight moved primarily by specialized van or intermodal.",
+    "subgroups": [
+      {
+        "stccCode": "2511",
+        "name": "Wood Household Furniture",
+        "nmfcClass": "150"
+      },
+      {
+        "stccCode": "2521",
+        "name": "Office Furniture",
+        "nmfcClass": "125"
+      },
+      {
+        "stccCode": "2541",
+        "name": "Wood Partitions, Shelving, and Lockers",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "2591",
+        "name": "Drapery Hardware and Window Blinds",
+        "nmfcClass": "125"
+      },
+      {
+        "stccCode": "2599",
+        "name": "Furniture and Fixtures, NOS",
+        "nmfcClass": "150"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "26",
+    "name": "Pulp, Paper, and Allied Products",
+    "description": "Wood pulp, paper, paperboard, and converted paper products manufactured from fiber inputs at pulp and paper mills. Paper and board products are a major rail commodity, moving in boxcars and intermodal containers.",
+    "subgroups": [
+      {
+        "stccCode": "2611",
+        "name": "Pulp Mills Products (Wood Pulp)",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Bleached Kraft Pulp", "nmfcClass": "55" },
+          { "name": "Unbleached Kraft Pulp", "nmfcClass": "55" },
+          { "name": "Fluff Pulp", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2621",
+        "name": "Newsprint and Publication Paper",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "2631",
+        "name": "Paperboard and Containerboard",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Linerboard", "nmfcClass": "70" },
+          { "name": "Corrugating Medium", "nmfcClass": "70" },
+          { "name": "Recycled Boxboard", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "2650",
+        "name": "Corrugated and Solid Fiber Boxes",
+        "nmfcClass": "85"
+      },
+      {
+        "stccCode": "2670",
+        "name": "Converted Paper and Paperboard Products",
+        "nmfcClass": "85",
+        "items": [
+          { "name": "Tissue and Sanitary Paper Products", "nmfcClass": "85" },
+          { "name": "Packaging Materials", "nmfcClass": "85" }
+        ]
+      }
+    ]
+  },
+  {
+    "stccPrefix": "27",
+    "name": "Printing and Publishing",
+    "description": "Printed books, magazines, newspapers, catalogs, directories, and other printed matter produced by commercial printers and publishers for distribution to retail and institutional markets.",
+    "subgroups": [
+      {
+        "stccCode": "2711",
+        "name": "Newspapers",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "2721",
+        "name": "Periodicals (Magazines, Journals)",
+        "nmfcClass": "85"
+      },
+      {
+        "stccCode": "2731",
+        "name": "Books",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "2741",
+        "name": "Catalogs and Directories",
+        "nmfcClass": "85"
+      },
+      {
+        "stccCode": "2799",
+        "name": "Printed Matter, NOS",
+        "nmfcClass": "100"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "28",
+    "name": "Chemicals and Allied Products",
+    "description": "Industrial and specialty chemicals, plastics resins, fertilizers, agricultural chemicals, pharmaceuticals, paints, and cleaning products produced by the chemical industry. Chemicals are among the most complex and highly regulated rail commodities.",
+    "subgroups": [
+      {
+        "stccCode": "2812",
+        "name": "Alkalies and Chlorine",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Caustic Soda (Sodium Hydroxide)", "nmfcClass": "70" },
+          { "name": "Chlorine (Liquid)", "nmfcClass": "55" },
+          { "name": "Soda Ash (Sodium Carbonate)", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2813",
+        "name": "Industrial Gases",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Ammonia, Anhydrous", "nmfcClass": "55" },
+          { "name": "Carbon Dioxide, Liquid", "nmfcClass": "55" },
+          { "name": "Nitrogen, Liquid", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2819",
+        "name": "Industrial Inorganic Chemicals, NOS",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Sulfuric Acid", "nmfcClass": "55" },
+          { "name": "Phosphoric Acid", "nmfcClass": "70" },
+          { "name": "Hydrochloric Acid", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "2821",
+        "name": "Plastics Materials and Resins",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Polyethylene Pellets (HDPE/LLDPE)", "nmfcClass": "70" },
+          { "name": "Polypropylene Pellets", "nmfcClass": "70" },
+          { "name": "PVC Resin", "nmfcClass": "70" },
+          { "name": "Polystyrene Pellets", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "2861",
+        "name": "Gum and Wood Chemicals",
+        "nmfcClass": "85",
+        "items": [
+          { "name": "Tall Oil", "nmfcClass": "70" },
+          { "name": "Turpentine", "nmfcClass": "85" }
+        ]
+      },
+      {
+        "stccCode": "2873",
+        "name": "Nitrogenous Fertilizers",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Urea (Granular)", "nmfcClass": "55" },
+          { "name": "Urea Ammonium Nitrate Solution (UAN)", "nmfcClass": "55" },
+          { "name": "Ammonium Sulfate", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2874",
+        "name": "Phosphatic Fertilizers",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Diammonium Phosphate (DAP)", "nmfcClass": "55" },
+          { "name": "Monoammonium Phosphate (MAP)", "nmfcClass": "55" },
+          { "name": "Triple Super Phosphate", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2879",
+        "name": "Agricultural Chemicals, NOS",
+        "nmfcClass": "85",
+        "items": [
+          { "name": "Herbicides", "nmfcClass": "85" },
+          { "name": "Insecticides", "nmfcClass": "85" }
+        ]
+      }
+    ]
+  },
+  {
+    "stccPrefix": "29",
+    "name": "Petroleum and Coal Products",
+    "description": "Refined petroleum products and coal derivatives produced at refineries and coking plants, including gasoline, diesel, jet fuel, asphalt, petroleum coke, and lubricants.",
+    "subgroups": [
+      {
+        "stccCode": "2911",
+        "name": "Gasoline and Motor Fuels",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Conventional Gasoline", "nmfcClass": "55" },
+          { "name": "Reformulated Gasoline (RFG)", "nmfcClass": "55" },
+          { "name": "Fuel Ethanol (Fuel Grade)", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2912",
+        "name": "Diesel Fuel and Distillates",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Ultra-Low Sulfur Diesel (ULSD)", "nmfcClass": "55" },
+          { "name": "Heating Oil (No. 2 Fuel Oil)", "nmfcClass": "55" },
+          { "name": "Jet Fuel (Kerosene)", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2951",
+        "name": "Asphalt and Road Oils",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Paving Asphalt", "nmfcClass": "55" },
+          { "name": "Liquid Asphalt (Cutback)", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "2992",
+        "name": "Lubricating Oils and Greases",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "2999",
+        "name": "Petroleum Coke",
+        "nmfcClass": "35",
+        "items": [
+          { "name": "Calcined Petroleum Coke", "nmfcClass": "35" },
+          { "name": "Green Petroleum Coke (Fuel Grade)", "nmfcClass": "35" }
+        ]
+      }
+    ]
+  },
+  {
+    "stccPrefix": "30",
+    "name": "Rubber and Miscellaneous Plastics Products",
+    "description": "Finished rubber products, synthetic rubber, and fabricated plastics articles including tires, hoses, gaskets, film, pipe, and plastic packaging materials manufactured for industrial and consumer markets.",
+    "subgroups": [
+      {
+        "stccCode": "3011",
+        "name": "Tires and Inner Tubes",
+        "nmfcClass": "100",
+        "items": [
+          { "name": "Passenger Car Tires", "nmfcClass": "100" },
+          { "name": "Truck Tires", "nmfcClass": "85" },
+          { "name": "OTR (Off-the-Road) Tires", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "3021",
+        "name": "Rubber Footwear",
+        "nmfcClass": "125"
+      },
+      {
+        "stccCode": "3061",
+        "name": "Molded and Extruded Rubber Products",
+        "nmfcClass": "100",
+        "items": [
+          { "name": "Rubber Hose and Tubing", "nmfcClass": "100" },
+          { "name": "Rubber Gaskets and Seals", "nmfcClass": "100" }
+        ]
+      },
+      {
+        "stccCode": "3086",
+        "name": "Plastics Foam Products",
+        "nmfcClass": "200"
+      },
+      {
+        "stccCode": "3089",
+        "name": "Plastics Products, NOS",
+        "nmfcClass": "100",
+        "items": [
+          { "name": "PVC Pipe and Fittings", "nmfcClass": "85" },
+          { "name": "Plastic Sheeting and Film", "nmfcClass": "125" }
+        ]
+      }
+    ]
+  },
+  {
+    "stccPrefix": "31",
+    "name": "Leather and Leather Products",
+    "description": "Tanned and finished leather hides, and leather articles including footwear, belts, handbags, and industrial leather goods. Very limited rail movement; primarily truck or parcel.",
+    "subgroups": [
+      {
+        "stccCode": "3111",
+        "name": "Leather Tanning and Finishing",
+        "nmfcClass": "100",
+        "items": [
+          { "name": "Finished Leather Hides", "nmfcClass": "100" },
+          { "name": "Wet Blue Leather (Semi-Processed)", "nmfcClass": "85" }
+        ]
+      },
+      {
+        "stccCode": "3131",
+        "name": "Leather Footwear",
+        "nmfcClass": "150"
+      },
+      {
+        "stccCode": "3199",
+        "name": "Leather Products, NOS",
+        "nmfcClass": "125"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "32",
+    "name": "Stone, Clay, Glass, and Concrete Products",
+    "description": "Dimensional stone, glass, ceramic products, concrete, gypsum wallboard, and abrasives manufactured from mineral inputs for construction, industrial, and consumer markets.",
+    "subgroups": [
+      {
+        "stccCode": "3211",
+        "name": "Flat Glass",
+        "nmfcClass": "85",
+        "items": [
+          { "name": "Float Glass (Clear)", "nmfcClass": "85" },
+          { "name": "Tempered Glass", "nmfcClass": "100" },
+          { "name": "Insulating Glass Units", "nmfcClass": "100" }
+        ]
+      },
+      {
+        "stccCode": "3241",
+        "name": "Cement (Portland Cement)",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Type I/II Portland Cement", "nmfcClass": "55" },
+          { "name": "White Portland Cement", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "3270",
+        "name": "Concrete Products",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Concrete Pipe", "nmfcClass": "55" },
+          { "name": "Precast Concrete Panels", "nmfcClass": "55" },
+          { "name": "Ready-Mix Concrete", "nmfcClass": "35" }
+        ]
+      },
+      {
+        "stccCode": "3275",
+        "name": "Gypsum Products",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Gypsum Wallboard (Drywall)", "nmfcClass": "55" },
+          { "name": "Stucco and Plaster", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "3290",
+        "name": "Abrasive, Asbestos, and Misc Nonmetallic Products",
+        "nmfcClass": "70"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "33",
+    "name": "Primary Metal Products",
+    "description": "Steel, iron, aluminum, copper, and other metals produced at integrated mills, mini-mills, and smelters from raw ores and scrap, in the form of ingots, billets, slabs, coils, and structural shapes.",
+    "subgroups": [
+      {
+        "stccCode": "3312",
+        "name": "Steel Mill Products",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Hot Rolled Steel Coil", "nmfcClass": "55" },
+          { "name": "Cold Rolled Steel Coil", "nmfcClass": "55" },
+          { "name": "Galvanized Steel Sheet", "nmfcClass": "55" },
+          { "name": "Steel Plate", "nmfcClass": "40" },
+          { "name": "Structural Steel (Beams, Angles)", "nmfcClass": "40" }
+        ]
+      },
+      {
+        "stccCode": "3317",
+        "name": "Steel Pipe and Tubes",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Oil Country Tubular Goods (OCTG)", "nmfcClass": "55" },
+          { "name": "Line Pipe", "nmfcClass": "40" },
+          { "name": "Mechanical Tubing", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "3321",
+        "name": "Gray and Ductile Iron Castings",
+        "nmfcClass": "55"
+      },
+      {
+        "stccCode": "3334",
+        "name": "Primary Aluminum",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Aluminum Ingot", "nmfcClass": "55" },
+          { "name": "Aluminum Sheet and Coil", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "3351",
+        "name": "Copper and Brass Mill Products",
+        "nmfcClass": "55"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "34",
+    "name": "Fabricated Metal Products",
+    "description": "Metal products manufactured by stamping, forging, casting, and machining operations, including cans, structural components, hardware, hand tools, heating equipment, and metal containers.",
+    "subgroups": [
+      {
+        "stccCode": "3411",
+        "name": "Metal Cans and Shipping Containers",
+        "nmfcClass": "85"
+      },
+      {
+        "stccCode": "3441",
+        "name": "Fabricated Structural Metal",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Steel Fabrications and Assemblies", "nmfcClass": "55" },
+          { "name": "Metal Buildings and Kits", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "3460",
+        "name": "Metal Forgings and Stampings",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "3490",
+        "name": "Miscellaneous Fabricated Metal Products",
+        "nmfcClass": "85",
+        "items": [
+          { "name": "Steel Drums and Pails", "nmfcClass": "85" },
+          { "name": "IBC Tanks (Intermediate Bulk Containers)", "nmfcClass": "85" }
+        ]
+      }
+    ]
+  },
+  {
+    "stccPrefix": "35",
+    "name": "Industrial and Commercial Machinery and Equipment",
+    "description": "Engines, turbines, farm equipment, construction machinery, metalworking machinery, industrial equipment, and general industrial machinery and equipment manufactured for business use.",
+    "subgroups": [
+      {
+        "stccCode": "3511",
+        "name": "Steam, Gas, and Hydraulic Turbines",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "3523",
+        "name": "Farm Machinery and Equipment",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Tractors", "nmfcClass": "70" },
+          { "name": "Combines and Harvesters", "nmfcClass": "70" },
+          { "name": "Planters and Tillage Equipment", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "3531",
+        "name": "Construction, Mining, and Materials Handling Machinery",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Excavators and Bulldozers", "nmfcClass": "70" },
+          { "name": "Cranes and Lifting Equipment", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "3559",
+        "name": "Special Industry Machinery",
+        "nmfcClass": "85"
+      },
+      {
+        "stccCode": "3585",
+        "name": "Refrigeration and Heating Equipment",
+        "nmfcClass": "85"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "36",
+    "name": "Electronic and Electrical Equipment",
+    "description": "Electronic components, electrical transmission equipment, motors, generators, transformers, and consumer electronics manufactured for industrial, commercial, and household use.",
+    "subgroups": [
+      {
+        "stccCode": "3612",
+        "name": "Power Transformers",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Large Power Transformers (LPT)", "nmfcClass": "70" },
+          { "name": "Distribution Transformers", "nmfcClass": "85" }
+        ]
+      },
+      {
+        "stccCode": "3621",
+        "name": "Motors and Generators",
+        "nmfcClass": "85"
+      },
+      {
+        "stccCode": "3674",
+        "name": "Semiconductors and Related Devices",
+        "nmfcClass": "300"
+      },
+      {
+        "stccCode": "3679",
+        "name": "Electronic Components, NOS",
+        "nmfcClass": "200"
+      },
+      {
+        "stccCode": "3699",
+        "name": "Electrical Equipment, NOS",
+        "nmfcClass": "100"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "37",
+    "name": "Transportation Equipment",
+    "description": "Motor vehicles, aircraft, rail equipment, ships, and their components manufactured for transportation purposes. Finished vehicles move by rail on autoracks; engines, frames, and parts move in various car types.",
+    "subgroups": [
+      {
+        "stccCode": "3711",
+        "name": "Motor Vehicles",
+        "nmfcClass": "85",
+        "items": [
+          { "name": "Passenger Automobiles", "nmfcClass": "85" },
+          { "name": "Light Trucks and SUVs", "nmfcClass": "85" },
+          { "name": "Heavy-Duty Trucks (Class 8)", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "3713",
+        "name": "Truck Trailers",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "3714",
+        "name": "Motor Vehicle Parts and Accessories",
+        "nmfcClass": "85",
+        "items": [
+          { "name": "Automotive Stampings (Body Panels)", "nmfcClass": "85" },
+          { "name": "Engines and Transmissions", "nmfcClass": "70" },
+          { "name": "Automotive Glass", "nmfcClass": "100" }
+        ]
+      },
+      {
+        "stccCode": "3730",
+        "name": "Ship and Boat Building",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "3760",
+        "name": "Guided Missiles and Space Vehicles",
+        "nmfcClass": "70"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "38",
+    "name": "Measuring, Analyzing, and Controlling Instruments",
+    "description": "Precision instruments including medical devices, laboratory equipment, optical instruments, measuring and testing equipment, and photographic supplies manufactured for scientific and industrial applications.",
+    "subgroups": [
+      {
+        "stccCode": "3812",
+        "name": "Defense Electronics and Communication Equipment",
+        "nmfcClass": "150"
+      },
+      {
+        "stccCode": "3821",
+        "name": "Laboratory Apparatus and Furniture",
+        "nmfcClass": "150"
+      },
+      {
+        "stccCode": "3841",
+        "name": "Surgical and Medical Instruments",
+        "nmfcClass": "200"
+      },
+      {
+        "stccCode": "3861",
+        "name": "Photographic Equipment and Supplies",
+        "nmfcClass": "200"
+      },
+      {
+        "stccCode": "3899",
+        "name": "Measuring Instruments, NOS",
+        "nmfcClass": "150"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "39",
+    "name": "Miscellaneous Manufacturing Industries",
+    "description": "A residual manufacturing category capturing finished goods not classified elsewhere, including jewelry, toys, sporting goods, pens, fasteners, brooms, signs, and other miscellaneous manufactured articles.",
+    "subgroups": [
+      {
+        "stccCode": "3911",
+        "name": "Jewelry and Precious Metal Articles",
+        "nmfcClass": "500"
+      },
+      {
+        "stccCode": "3944",
+        "name": "Games, Toys, and Children's Vehicles",
+        "nmfcClass": "150"
+      },
+      {
+        "stccCode": "3949",
+        "name": "Sporting and Athletic Goods",
+        "nmfcClass": "125"
+      },
+      {
+        "stccCode": "3965",
+        "name": "Fasteners, Buttons, Needles, and Pins",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "3999",
+        "name": "Manufacturing Industries, NOS",
+        "nmfcClass": "125"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "40",
+    "name": "Waste and Scrap Materials",
+    "description": "Post-industrial and post-consumer scrap materials including ferrous and nonferrous scrap metal, waste paper, plastic scrap, and other recyclable or disposable waste materials destined for recycling or disposal.",
+    "subgroups": [
+      {
+        "stccCode": "4011",
+        "name": "Ferrous Scrap Metal",
+        "nmfcClass": "40",
+        "items": [
+          { "name": "No. 1 Heavy Melt Scrap", "nmfcClass": "40" },
+          { "name": "Shredded Scrap (Zorba)", "nmfcClass": "40" },
+          { "name": "Busheling (Punchings and Stampings)", "nmfcClass": "40" }
+        ]
+      },
+      {
+        "stccCode": "4012",
+        "name": "Nonferrous Scrap Metal",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Aluminum Scrap", "nmfcClass": "55" },
+          { "name": "Copper Scrap", "nmfcClass": "55" },
+          { "name": "Stainless Steel Scrap", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "4021",
+        "name": "Waste Paper and Paper Products",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Old Corrugated Containers (OCC)", "nmfcClass": "55" },
+          { "name": "Mixed Paper", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "4031",
+        "name": "Plastic Scrap",
+        "nmfcClass": "70"
+      },
+      {
+        "stccCode": "4041",
+        "name": "Glass Cullet",
+        "nmfcClass": "40"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "41",
+    "name": "Miscellaneous Mixed Freight (Shipper Associations)",
+    "description": "Mixed freight shipments consolidated by shipper associations, freight forwarders, or intermediaries combining multiple commodity types into a single rail movement, typically in intermodal service.",
+    "subgroups": [
+      {
+        "stccCode": "4101",
+        "name": "Mixed Freight, General Merchandise",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "4102",
+        "name": "Mixed Freight, Food Products",
+        "nmfcClass": "85"
+      },
+      {
+        "stccCode": "4109",
+        "name": "Mixed Freight, NOS",
+        "nmfcClass": "100"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "42",
+    "name": "Empty Shipping Containers (Except Trailer and Railcar)",
+    "description": "Empty ISO shipping containers, drums, tanks, or other packaging being returned to origin or relocated for reloading. Empty container movements are tracked separately from loaded movements in waybill statistics.",
+    "subgroups": [
+      {
+        "stccCode": "4210",
+        "name": "Empty ISO Containers (20-foot and 40-foot)",
+        "items": [
+          { "name": "Empty 20-Foot Dry Container" },
+          { "name": "Empty 40-Foot Dry Container" },
+          { "name": "Empty 40-Foot High Cube Container" }
+        ]
+      },
+      {
+        "stccCode": "4221",
+        "name": "Empty Chemical Drums and IBCs"
+      },
+      {
+        "stccCode": "4231",
+        "name": "Empty Wooden and Plastic Pallets"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "43",
+    "name": "Mail and Express Traffic",
+    "description": "U.S. Postal Service mail, express parcels, and expedited package traffic moving under postal or express service agreements. Rail mail service has declined substantially since the transition to air-based postal sortation.",
+    "subgroups": [
+      {
+        "stccCode": "4311",
+        "name": "U.S. Mail (First Class and Periodicals)"
+      },
+      {
+        "stccCode": "4321",
+        "name": "Parcel Post and Small Packages"
+      },
+      {
+        "stccCode": "4331",
+        "name": "Express Shipments (Priority Mail)"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "44",
+    "name": "Freight Forwarder Traffic",
+    "description": "Freight consolidated by licensed freight forwarders who act as intermediaries between shippers and railroads, tendering consolidated shipments to railroads under freight forwarder tariffs and through bills of lading.",
+    "subgroups": [
+      {
+        "stccCode": "4411",
+        "name": "Freight Forwarder Consolidated Shipments, Dry"
+      },
+      {
+        "stccCode": "4412",
+        "name": "Freight Forwarder Consolidated Shipments, Refrigerated"
+      },
+      {
+        "stccCode": "4419",
+        "name": "Freight Forwarder Traffic, NOS"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "45",
+    "name": "Shipper Association Traffic",
+    "description": "Freight consolidated by non-profit shipper associations on behalf of their member shippers, typically to achieve volume discounts and rate advantages that smaller individual shippers could not access independently.",
+    "subgroups": [
+      {
+        "stccCode": "4511",
+        "name": "Shipper Association, Agricultural Products"
+      },
+      {
+        "stccCode": "4521",
+        "name": "Shipper Association, Industrial Products"
+      },
+      {
+        "stccCode": "4591",
+        "name": "Shipper Association Traffic, NOS"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "46",
+    "name": "Miscellaneous Mixed Shipments",
+    "description": "Shipments containing two or more commodities from different STCC groups that cannot be classified under a single commodity code, typically tendered as a mixed load by the shipper.",
+    "subgroups": [
+      {
+        "stccCode": "4611",
+        "name": "Mixed Carloads, General"
+      },
+      {
+        "stccCode": "4621",
+        "name": "Mixed Carloads, Food and Grocery"
+      },
+      {
+        "stccCode": "4631",
+        "name": "Mixed Carloads, Industrial and Manufacturing"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "47",
+    "name": "Small Packaged Freight Shipments",
+    "description": "Individual packages and small freight items moving under less-than-carload (LCL) rates or intermodal package service, typically consolidated with other small shipments to fill a container or trailer.",
+    "subgroups": [
+      {
+        "stccCode": "4711",
+        "name": "LCL Freight, General Commodities",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "4721",
+        "name": "LCL Freight, Hazardous Materials",
+        "nmfcClass": "100"
+      },
+      {
+        "stccCode": "4791",
+        "name": "Small Packaged Freight, NOS",
+        "nmfcClass": "125"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "48",
+    "name": "Waste and Hazardous Materials (Non-Regulated or Exempt)",
+    "description": "Waste materials that may have hazardous characteristics but that qualify for regulatory exemptions, or solid waste being transported to licensed disposal or treatment facilities under RCRA requirements.",
+    "subgroups": [
+      {
+        "stccCode": "4811",
+        "name": "Solid Waste for Disposal",
+        "items": [
+          { "name": "Municipal Solid Waste" },
+          { "name": "Construction Demolition Debris" }
+        ]
+      },
+      {
+        "stccCode": "4821",
+        "name": "Industrial Waste (Non-Hazardous)",
+        "items": [
+          { "name": "Fly Ash (Coal Combustion Residuals)", "nmfcClass": "55" },
+          { "name": "Bottom Ash", "nmfcClass": "55" },
+          { "name": "FGD Gypsum (Synthetic Gypsum)", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "4831",
+        "name": "Recyclable Materials, Exempt"
+      },
+      {
+        "stccCode": "4841",
+        "name": "Contaminated Soil and Environmental Waste"
+      }
+    ]
+  },
+  {
+    "stccPrefix": "49",
+    "name": "Hazardous Materials",
+    "description": "Materials that pose a risk to health, safety, property, or the environment during transportation, regulated under DOT's Hazardous Materials Regulations (49 CFR Parts 171-180) and subject to special packaging, labeling, placarding, and routing requirements.",
+    "subgroups": [
+      {
+        "stccCode": "4911",
+        "name": "Flammable Liquids (Class 3)",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Ethanol (Fuel Grade), Flammable Liquid", "nmfcClass": "55" },
+          { "name": "Crude Oil (High Vapor Pressure)", "nmfcClass": "55" },
+          { "name": "Methanol", "nmfcClass": "55" },
+          { "name": "Vinyl Acetate Monomer", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "4921",
+        "name": "Flammable Gases (Division 2.1)",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Propane (Liquefied Petroleum Gas)", "nmfcClass": "55" },
+          { "name": "Butane", "nmfcClass": "55" },
+          { "name": "Vinyl Chloride Monomer", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "4931",
+        "name": "Non-Flammable Compressed Gases (Division 2.2)",
+        "nmfcClass": "55",
+        "items": [
+          { "name": "Chlorine (Liquid), Toxic Gas", "nmfcClass": "55" },
+          { "name": "Anhydrous Ammonia (PIH)", "nmfcClass": "55" },
+          { "name": "Carbon Dioxide, Liquefied", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "4941",
+        "name": "Corrosive Materials (Class 8)",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Sulfuric Acid (Battery Acid)", "nmfcClass": "70" },
+          { "name": "Hydrochloric Acid (Muriatic Acid)", "nmfcClass": "70" },
+          { "name": "Sodium Hydroxide Solution (Caustic Soda)", "nmfcClass": "70" },
+          { "name": "Hydrogen Fluoride (Hydrofluoric Acid)", "nmfcClass": "55" }
+        ]
+      },
+      {
+        "stccCode": "4951",
+        "name": "Oxidizers and Organic Peroxides (Class 5)",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Ammonium Nitrate (Fertilizer Grade)", "nmfcClass": "70" },
+          { "name": "Hydrogen Peroxide Solution", "nmfcClass": "70" },
+          { "name": "Sodium Hypochlorite Solution", "nmfcClass": "70" }
+        ]
+      },
+      {
+        "stccCode": "4961",
+        "name": "Explosives (Class 1)",
+        "items": [
+          { "name": "Blasting Explosives (1.1D)" },
+          { "name": "Detonators (1.4)" },
+          { "name": "Propellant Explosives (1.3C)" }
+        ]
+      },
+      {
+        "stccCode": "4971",
+        "name": "Radioactive Materials (Class 7)",
+        "items": [
+          { "name": "Low-Level Radioactive Waste" },
+          { "name": "Uranium Hexafluoride (UF6)" },
+          { "name": "Spent Nuclear Fuel (Irradiated)" }
+        ]
+      },
+      {
+        "stccCode": "4981",
+        "name": "Toxic and Poisonous Materials (Class 6)",
+        "nmfcClass": "70",
+        "items": [
+          { "name": "Methyl Isocyanate (TIH)" },
+          { "name": "Acrylonitrile" },
+          { "name": "Formaldehyde Solution" },
+          { "name": "Acrolein" }
+        ]
+      }
+    ]
+  }
+]

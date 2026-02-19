@@ -1,0 +1,689 @@
+[
+  {
+    "designation": "boxcar",
+    "name": "Boxcar",
+    "aarCodes": ["XM", "XL", "XF", "XA", "XP"],
+    "description": "The boxcar is the most versatile enclosed freight car, featuring a rectangular steel body with sliding side doors. It provides weather protection for a wide range of general merchandise and packaged goods. Modern boxcars are typically 50 to 60 feet long and ride on four-axle trucks for heavy loads. They are the workhorse of carload freight and can be found in virtually every freight classification yard.",
+    "commonCommodities": [
+      "Paper and packaging",
+      "Canned goods",
+      "Auto parts",
+      "Beverages",
+      "Lumber",
+      "Appliances",
+      "Dry goods"
+    ],
+    "dimensions": {
+      "length": "50-60 ft",
+      "width": "9'2\" interior",
+      "height": "10'6\" interior",
+      "capacity": "5,080-6,250 cu ft",
+      "loadLimit": "210,000-220,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "Standard Boxcar",
+        "description": "Plain steel box with plug or sliding doors; used for general merchandise not requiring temperature control."
+      },
+      {
+        "name": "Insulated Boxcar",
+        "description": "Foam or fiberglass insulation in walls, floor, and roof to reduce temperature swings; no mechanical refrigeration."
+      },
+      {
+        "name": "Equipped Boxcar",
+        "description": "Interior load-restraint devices such as load bars, Evans DF (damage-free) loaders, or bulkheads for shipments prone to shifting."
+      },
+      {
+        "name": "Hi-Cube Boxcar",
+        "description": "Taller body (up to 15'6\" exterior) built to ride on lower-profile trucks, maximizing cubic capacity for light-density freight."
+      }
+    ],
+    "useCases": "Boxcars are used for any general merchandise that requires protection from weather but not refrigeration. They are particularly common for paper, consumer goods, and auto parts moving in carload lots."
+  },
+  {
+    "designation": "covered-hopper",
+    "name": "Covered Hopper",
+    "aarCodes": ["LO", "LG", "LC", "LT", "LP"],
+    "description": "The covered hopper is an enclosed car with a sloped interior floor that funnels bulk dry commodities to bottom discharge gates. Hatches along the roof allow top-loading of grain, plastics, or cement. Two broad classes exist: small-cube cars of roughly 3,000 to 4,000 cubic feet for dense commodities like cement and fertilizer, and large-cube cars of 4,500 to 6,000 cubic feet for light-density grain and plastics. The bottom outlet gates are pneumatically or gravity-discharged at destination.",
+    "commonCommodities": [
+      "Grain (wheat, corn, soybeans)",
+      "Plastic pellets",
+      "Cement",
+      "Fertilizer (potash, urea)",
+      "Sand and frac sand",
+      "Sugar",
+      "Carbon black"
+    ],
+    "dimensions": {
+      "length": "42-60 ft",
+      "capacity": "3,000-6,000 cu ft",
+      "loadLimit": "220,000-263,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "Small-Cube Covered Hopper",
+        "description": "Approximately 2,900-4,000 cu ft; typically 3-bay design for dense commodities like cement, potash, and fertilizer."
+      },
+      {
+        "name": "Large-Cube Grain Hopper",
+        "description": "Approximately 4,500-5,800 cu ft; typically 3-bay or 4-bay for grain, plastic pellets, and other light-density bulk commodities."
+      },
+      {
+        "name": "Pressure Differential Covered Hopper",
+        "description": "Air-slide floor with pneumatic unloading for fine powders such as flour, starch, and cement that would otherwise bridge."
+      }
+    ],
+    "useCases": "Covered hoppers dominate North American grain and fertilizer logistics, moving unit train volumes between elevators, mills, and export terminals. They also serve chemical plants shipping plastic resin and manufacturers requiring bulk cement delivery."
+  },
+  {
+    "designation": "open-hopper",
+    "name": "Open Hopper",
+    "aarCodes": ["HT", "HK", "HS", "HFA"],
+    "description": "The open hopper is a self-clearing car with sloped interior hopper bays and bottom discharge doors, but no roof enclosure. It is purpose-built for bulk commodities that do not require weather protection and are delivered by top-loading equipment such as rotary car dumpers or bottom-dump facilities. Coal hoppers traditionally carry 100-ton payloads and operate in unit trains of 100 or more cars. Aggregate hoppers are typically shorter and heavier-built to accept large rocks.",
+    "commonCommodities": [
+      "Coal (thermal and metallurgical)",
+      "Crushed stone and aggregate",
+      "Iron ore pellets",
+      "Coke",
+      "Ballast"
+    ],
+    "dimensions": {
+      "length": "40-53 ft",
+      "capacity": "3,900-4,200 cu ft",
+      "loadLimit": "220,000-263,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "Coal Hopper",
+        "description": "High-sided, 3-bay or 4-bay design optimized for high-volume unit train coal service from mine to power plant or export terminal."
+      },
+      {
+        "name": "Aggregate Hopper",
+        "description": "Shorter, lower-cube, heavier-duty car designed for quarry products; often equipped with metal liners to resist abrasion from rock."
+      },
+      {
+        "name": "Rotary-Coupler Hopper",
+        "description": "Fitted with rotary-end couplers so the car can be inverted 360 degrees in a rotary dumper without uncoupling from the train."
+      }
+    ],
+    "useCases": "Open hoppers are the preferred equipment for high-tonnage coal and aggregate unit trains where rapid loading at a mine or quarry and rapid unloading at a dumper or tipple are required."
+  },
+  {
+    "designation": "gondola",
+    "name": "Gondola",
+    "aarCodes": ["GS", "GB", "GM", "GA", "GT"],
+    "description": "The gondola is an open-top car with a flat or slightly contoured floor and fixed or drop ends and sides. Unlike hoppers, gondolas are manually or mechanically unloaded because they have no bottom discharge. Mill gondolas serve steel mills continuously cycling between furnaces and rolling operations. Gondolas also haul scrap metal, pipe, lumber, and heavy industrial products. Modern gondolas are often 52 to 65 feet long and carry 100-ton payloads.",
+    "commonCommodities": [
+      "Steel scrap and billets",
+      "Steel coils (with coil cradles)",
+      "Pipe and structural steel",
+      "Lumber",
+      "Aggregates",
+      "Coke",
+      "Waste and recycling"
+    ],
+    "dimensions": {
+      "length": "52-65 ft",
+      "width": "9'6\" exterior",
+      "height": "2'6\"-4'6\" side height",
+      "capacity": "3,600-4,400 cu ft",
+      "loadLimit": "220,000-263,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "Mill Gondola",
+        "description": "Heavy-duty, low-sided car built for steel mill service; often equipped with removable coil cradles or drop ends for structural steel."
+      },
+      {
+        "name": "Rotary Dump Gondola",
+        "description": "Equipped with rotary-end couplers to allow the car to be inverted in a rotary dumper for unloading coal or other bulk material."
+      },
+      {
+        "name": "Coil Car (Steel Coil Gondola)",
+        "description": "Gondola body with built-in saddle-shaped cradles to cradle steel coils upright and prevent them from rolling during transit."
+      }
+    ],
+    "useCases": "Gondolas serve the steel industry as the primary equipment for moving semi-finished steel products, scrap, and structural shapes between mills, processors, and fabricators. They also handle pipe, lumber, and other commodities too heavy or awkward for boxcars."
+  },
+  {
+    "designation": "tank-car",
+    "name": "Tank Car",
+    "aarCodes": ["TM", "TP", "TC", "TG", "TMH"],
+    "description": "The tank car is a cylindrical pressure vessel mounted on a rail underframe, designed to transport liquids, liquefied gases, and slurries in bulk. Tanks may be insulated, heated, or cryogenic depending on the commodity. The DOT-111 is the most common general-purpose car, while DOT-117 (the post-2015 enhanced standard) features a thicker steel shell, full head shields, and thermal protection. Pressure cars (DOT-105, DOT-112) handle liquefied gases such as propane, chlorine, and vinyl chloride at higher containment pressures.",
+    "commonCommodities": [
+      "Crude oil and refined products",
+      "Ethanol",
+      "Liquefied petroleum gas (LPG)",
+      "Chlorine and caustic soda",
+      "Corn syrup and edible oils",
+      "Sulfuric acid",
+      "Anhydrous ammonia"
+    ],
+    "dimensions": {
+      "length": "40-60 ft",
+      "capacity": "17,000-34,500 gallons",
+      "loadLimit": "220,000-263,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "General Purpose (DOT-111 / AAR-211)",
+        "description": "Non-pressurized tank for flammable and non-flammable liquids; most common type historically used in ethanol and petroleum service."
+      },
+      {
+        "name": "Enhanced Safety (DOT-117 / DOT-117R)",
+        "description": "Post-2015 retrofit or new-build standard with 9/16-inch steel shell, full-height head shields, and thermal protection blanket for hazmat liquids."
+      },
+      {
+        "name": "Pressure Car (DOT-105 / DOT-112)",
+        "description": "Thicker-walled, pressure-rated tank for liquefied gases such as LPG, chlorine, and vinyl chloride shipped under their own vapor pressure."
+      },
+      {
+        "name": "Cryogenic Tank Car",
+        "description": "Double-walled vacuum-jacketed tank for cryogenic liquids such as liquid nitrogen, liquid oxygen, or liquid helium at very low temperatures."
+      },
+      {
+        "name": "Lined and Coated Tank Car",
+        "description": "Interior lining (rubber, stainless steel, or polymer) for aggressive acids, food-grade products, or commodities that must be kept from contact with carbon steel."
+      }
+    ],
+    "useCases": "Tank cars are indispensable for bulk liquid chemical and petroleum logistics, moving crude oil, ethanol, and hazardous chemicals where pipelines are unavailable or unit-train economics are favorable."
+  },
+  {
+    "designation": "flatcar",
+    "name": "Flatcar",
+    "aarCodes": ["FM", "FB", "FA", "FD"],
+    "description": "The flatcar is the simplest rail freight car — a level steel deck with no sides, ends, or roof. Its open configuration makes it suitable for over-dimensional or awkward loads that cannot fit inside an enclosed car. Standard flatcars use stake pockets, chains, and tie-down rings to secure loads. They are used for machinery, military equipment, large rolls of newsprint, and project cargo. Modern flatcars range from 48 to 89 feet in length.",
+    "commonCommodities": [
+      "Machinery and heavy equipment",
+      "Military vehicles and equipment",
+      "Large diameter pipe",
+      "Newsprint rolls",
+      "Precast concrete",
+      "Wind energy components",
+      "Oversized industrial equipment"
+    ],
+    "dimensions": {
+      "length": "48-89 ft",
+      "width": "10'0\" deck",
+      "height": "3'9\" rail to deck",
+      "loadLimit": "210,000-263,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "Standard Flatcar",
+        "description": "Level-deck car without any fixed superstructure; load secured with chains, straps, and stake pockets for general over-dimensional freight."
+      },
+      {
+        "name": "Bulkhead Flatcar",
+        "description": "Flatcar with fixed vertical steel bulkheads at each end to contain loads that might shift longitudinally, such as lumber, pipe, and steel bar."
+      },
+      {
+        "name": "Depressed Center Flatcar",
+        "description": "Car with a central deck section lower than the end sections, allowing tall loads to clear overhead bridges and wire without special routing."
+      }
+    ],
+    "useCases": "Flatcars handle project and heavy-lift cargo that is too large or heavy for enclosed equipment, including turbines, transformers, military vehicles, and structural steel sections that must be loaded from the side by crane."
+  },
+  {
+    "designation": "well-car",
+    "name": "Well Car",
+    "aarCodes": ["WC", "WS", "WT"],
+    "description": "The well car — also called a stack car — has a depressed center section (the well) that sits between the trucks, allowing ISO intermodal containers to ride lower than on a standard flatcar. This extra vertical clearance permits double-stacking two 9'6\" tall containers within standard railroad clearance envelopes. Double-stack well cars dramatically improve train density, reducing per-container transportation cost by as much as 40 percent compared to single-stack service. They are the backbone of transcontinental intermodal service.",
+    "commonCommodities": [
+      "ISO shipping containers (20 ft, 40 ft, 45 ft, 48 ft, 53 ft)",
+      "Domestic trailers (via container chassis)",
+      "Consumer goods",
+      "Retail merchandise",
+      "Import/export containerized freight"
+    ],
+    "dimensions": {
+      "length": "48-89 ft (single unit); 250-315 ft (5-unit articulated)",
+      "capacity": "2 containers per well (double-stack)",
+      "loadLimit": "105,000 lbs per well (lower); 67,200 lbs per well (upper)"
+    },
+    "variants": [
+      {
+        "name": "Single-Unit Well Car",
+        "description": "Independent car with one well; used in mixed traffic or where articulated sets are not practical."
+      },
+      {
+        "name": "Double-Stack 5-Unit Articulated Set",
+        "description": "Five-platform articulated car sharing trucks between units, carrying up to 10 forty-foot containers in double-stack configuration; the dominant equipment for coast-to-coast intermodal."
+      },
+      {
+        "name": "3-Platform Well Car",
+        "description": "Three-unit articulated car suitable for shorter intermodal trains or service not requiring full 5-unit sets."
+      },
+      {
+        "name": "53 ft Well Car",
+        "description": "Wider well designed specifically for 53-foot domestic containers used in North American intermodal distribution."
+      }
+    ],
+    "useCases": "Well cars are the primary equipment for transcontinental double-stack intermodal service connecting ports, inland terminals, and distribution centers for major retailers and shippers moving containerized import and export freight."
+  },
+  {
+    "designation": "autorack",
+    "name": "Autorack",
+    "aarCodes": ["RA", "RB", "RC"],
+    "description": "The autorack is a multi-deck enclosed car designed exclusively to transport finished automobiles and light trucks from assembly plants to regional distribution centers. The enclosed steel rack structure protects vehicles from weather, vandalism, and road debris during transit. Modern enclosed autoracks replaced the older open-rack designs in the 1980s after widespread vandalism problems. Tri-level racks carry compact and mid-size cars; bi-level racks carry full-size trucks, SUVs, and vans with greater height requirements.",
+    "commonCommodities": [
+      "Passenger cars",
+      "Light trucks and SUVs",
+      "Vans and minivans",
+      "High-roof vehicles",
+      "Military light vehicles"
+    ],
+    "dimensions": {
+      "length": "89 ft (tri-level); 89 ft (bi-level)",
+      "height": "20'2\" exterior (tri-level); 20'2\" exterior (bi-level)",
+      "capacity": "15-18 cars (tri-level); 10-12 vehicles (bi-level)"
+    },
+    "variants": [
+      {
+        "name": "Tri-Level Autorack",
+        "description": "Three-deck enclosed rack for passenger cars and smaller vehicles with limited interior height; maximum vehicle height approximately 5'5\"."
+      },
+      {
+        "name": "Bi-Level Autorack",
+        "description": "Two-deck enclosed rack for full-size pickups, SUVs, and vans; accommodates vehicles up to approximately 7'0\" in height."
+      },
+      {
+        "name": "Enclosed Autorack",
+        "description": "Current industry-standard design with full-height corrugated steel side panels and end doors to prevent vandalism and weather damage."
+      }
+    ],
+    "useCases": "Autoracks operate in dedicated unit trains directly from assembly plants to regional vehicle distribution centers (VDCs), where finished vehicles are off-loaded for final dealer delivery by truck transporter."
+  },
+  {
+    "designation": "centerbeam-flatcar",
+    "name": "Centerbeam Flatcar",
+    "aarCodes": ["FC"],
+    "description": "The centerbeam flatcar has a full-height longitudinal center partition running the length of the car, with load secured to both sides of the beam using straps and load bars. This bilateral loading configuration doubles the load density compared to a standard flatcar for certain commodities. Centerbeams are primarily used in lumber and building products service in Western North America. The center spine provides structural rigidity and a tying surface for bundled lumber, wallboard, and particleboard.",
+    "commonCommodities": [
+      "Dimensional lumber",
+      "Plywood and OSB",
+      "Wallboard and drywall",
+      "Particleboard and MDF",
+      "Fencing and posts",
+      "Structural lumber"
+    ],
+    "dimensions": {
+      "length": "61-73 ft",
+      "width": "8'4\" usable each side",
+      "height": "11'0\" center beam",
+      "loadLimit": "210,000-220,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "Standard Centerbeam",
+        "description": "Full-length center partition with flat decks on each side; primary equipment for dimensional lumber and sheet goods."
+      },
+      {
+        "name": "Folding-End Centerbeam",
+        "description": "Hinged end sections that fold down to simplify loading of extra-long lumber with a forklift or crane."
+      }
+    ],
+    "useCases": "Centerbeam flatcars are the preferred equipment for Western lumber mills shipping dimensional lumber, panel products, and building materials east to construction markets, where unit trains maximize mill-to-distribution throughput."
+  },
+  {
+    "designation": "refrigerator-car",
+    "name": "Refrigerator Car",
+    "aarCodes": ["RM", "RS", "RZ", "RC"],
+    "description": "The refrigerator car, commonly called a reefer, provides active temperature control for perishable commodities during transit. Mechanical reefers use diesel-powered refrigeration units mounted in an end compartment to circulate cooled air throughout the load chamber. Cryogenic reefers use liquid nitrogen or liquid carbon dioxide instead of a mechanical compressor for longer retention times or ultra-cold requirements. Modern mechanical reefers maintain temperatures from -20 degrees Fahrenheit to +70 degrees Fahrenheit with precision control.",
+    "commonCommodities": [
+      "Fresh produce (fruits and vegetables)",
+      "Meat and poultry",
+      "Dairy products",
+      "Frozen foods",
+      "Beer and beverages",
+      "Pharmaceuticals",
+      "Chemicals requiring temperature control"
+    ],
+    "dimensions": {
+      "length": "57-64 ft",
+      "width": "9'2\" interior",
+      "height": "8'6\" interior",
+      "capacity": "4,200-4,600 cu ft",
+      "loadLimit": "198,000-210,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "Mechanical Reefer",
+        "description": "Self-contained diesel refrigeration unit in end compartment; capable of multi-temperature zones and precise setpoint control over long distances."
+      },
+      {
+        "name": "Cryogenic Reefer",
+        "description": "Liquid nitrogen or CO2 system for frozen commodities; simpler mechanically but requires cryogen servicing at intermediate points on long hauls."
+      },
+      {
+        "name": "Plug-Door Reefer",
+        "description": "Heavy plug doors provide superior insulation compared to sliding doors; standard on modern mechanical reefers to minimize thermal leakage."
+      }
+    ],
+    "useCases": "Refrigerator cars handle transcontinental movements of fresh produce from California and Florida to eastern markets, as well as frozen meat and dairy products moving between processing facilities and distribution centers."
+  },
+  {
+    "designation": "coil-car",
+    "name": "Coil Car",
+    "aarCodes": ["GS", "GM"],
+    "description": "The coil car is a specialized gondola or flatcar fitted with permanent saddle-shaped cradles to transport steel coils in an upright orientation. Steel coils are extremely dense and concentrated-load items that would damage a flat car deck or roll uncontrollably inside a standard gondola. Coil cars spread the load across multiple cradle supports and keep each coil from contacting adjacent coils. The cars cycle between flat-rolled steel mills and stamping plants, service centers, and pipe mills.",
+    "commonCommodities": [
+      "Hot-rolled steel coils",
+      "Cold-rolled steel coils",
+      "Galvanized and coated steel coils",
+      "Aluminum coils",
+      "Stainless steel coils",
+      "Copper coil stock"
+    ],
+    "dimensions": {
+      "length": "48-65 ft",
+      "width": "9'6\" exterior",
+      "capacity": "3-5 coil cradle positions",
+      "loadLimit": "220,000-263,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "Covered Coil Car",
+        "description": "Gondola body with a removable or retractable hood cover to protect coils from weather and contamination during transit."
+      },
+      {
+        "name": "Open Coil Car",
+        "description": "Saddle cradles in an open gondola or flatcar body; used where surface oxidation of hot-rolled coils is acceptable."
+      },
+      {
+        "name": "Aluminum Coil Car",
+        "description": "Lighter-duty cradles and softer protective saddle materials to prevent surface damage to high-value aluminum coil stock."
+      }
+    ],
+    "useCases": "Coil cars shuttle flat-rolled steel between integrated steel mills and mini-mills and their downstream customers including automotive stamping plants, appliance manufacturers, and steel service centers."
+  },
+  {
+    "designation": "intermodal-container",
+    "name": "Intermodal Container",
+    "aarCodes": ["C20", "C40", "C53"],
+    "description": "ISO intermodal containers are standardized steel boxes that transfer between ships, railcars, and trucks using the same standardized corner fittings without rehandling the cargo inside. They are not rail cars themselves but are the load units carried by well cars, flatcars, and spine cars. The ISO standard governs exterior dimensions, corner casting locations, and structural strength requirements. North American domestic containers (48 ft and 53 ft) are wider and taller than international ISO containers but use the same corner fitting concept.",
+    "commonCommodities": [
+      "Consumer retail goods",
+      "Electronics and appliances",
+      "Clothing and textiles",
+      "Machinery and parts",
+      "Food and beverages (non-perishable)",
+      "Chemicals in intermediate bulk containers",
+      "E-commerce fulfillment freight"
+    ],
+    "dimensions": {
+      "length": "20 ft (TEU), 40 ft (FEU), 45 ft, 48 ft, 53 ft",
+      "width": "8'0\" (ISO); 8'6\" (domestic)",
+      "height": "8'6\" standard; 9'6\" high-cube",
+      "capacity": "1,172 cu ft (20 ft) to 3,040 cu ft (53 ft)"
+    },
+    "variants": [
+      {
+        "name": "20 ft ISO Container (TEU)",
+        "description": "Standard twenty-foot equivalent unit; the base unit of global container measurement used in port statistics and vessel planning."
+      },
+      {
+        "name": "40 ft ISO Container (FEU)",
+        "description": "Forty-foot equivalent unit; the dominant container size in transoceanic trade due to efficient stowage and forklift accessibility."
+      },
+      {
+        "name": "53 ft Domestic Container",
+        "description": "North American domestic standard for intermodal rail service; larger cube accommodates truck-equivalent loads on double-stack well cars."
+      },
+      {
+        "name": "High-Cube Container",
+        "description": "9'6\" exterior height (vs. 8'6\" standard) for additional cubic capacity; prevalent in Asian imports and domestic retail distribution."
+      },
+      {
+        "name": "Refrigerated Container (Reefer ISO)",
+        "description": "Integral refrigeration unit at one end; requires electrical power from ship, terminal, or rail car plug-in point to maintain temperature."
+      }
+    ],
+    "useCases": "Intermodal containers enable seamless door-to-door freight movement by combining the long-haul efficiency of rail with the final-mile flexibility of trucking, and they underpin the global supply chain for retail and manufacturing."
+  },
+  {
+    "designation": "spine-car",
+    "name": "Spine Car",
+    "aarCodes": ["WS", "FS"],
+    "description": "The spine car is a skeletal intermodal car consisting of a central steel spine or chassis with articulated or independent platforms, designed to carry containers or trailers with minimal dead weight. Because it lacks the heavy well structure of a well car, it is lighter and less expensive, but it cannot double-stack. Spine cars are commonly used for trailer-on-flatcar (TOFC) service and for containers where clearance does not permit double-stack operations. They are often built as multi-unit articulated sets to share trucks and reduce tare weight.",
+    "commonCommodities": [
+      "Highway trailers (TOFC piggyback)",
+      "ISO containers (single level)",
+      "Domestic 53 ft containers",
+      "Refrigerated trailers"
+    ],
+    "dimensions": {
+      "length": "48-89 ft (single unit); up to 260 ft (5-unit set)",
+      "loadLimit": "100,000-110,000 lbs per platform"
+    },
+    "variants": [
+      {
+        "name": "Single-Unit Spine Car",
+        "description": "One-platform skeletal car for individual trailer or container loads; flexible assignment in mixed traffic."
+      },
+      {
+        "name": "5-Unit Articulated Spine Car",
+        "description": "Five-platform articulated set sharing trucks for lightweight intermodal service where double-stack clearance is unavailable."
+      },
+      {
+        "name": "TOFC Piggyback Car",
+        "description": "Spine or flatcar equipped with trailer hitches (circus ramps or end-loading) to carry over-the-road trailers directly on the car."
+      }
+    ],
+    "useCases": "Spine cars serve intermodal corridors where tunnel and bridge clearances prevent double-stack operations, and they dominate trailer-on-flatcar piggyback service for over-the-road carriers using the rail network for line-haul."
+  },
+  {
+    "designation": "depressed-center-flatcar",
+    "name": "Depressed Center Flatcar",
+    "aarCodes": ["FD", "FE"],
+    "description": "The depressed center flatcar has end decks at normal rail-car height with a center section significantly lower, typically 12 to 18 inches below the end sections. This configuration reduces the overall height of tall loads, allowing them to pass under bridges, overhead catenary, and tunnel portals that would otherwise be clearance-restrictive. Depressed center flatcars are used for electrical transformers, large industrial machines, and other tall heavy loads. They are often paired with multi-axle bogies to spread the concentrated weight over more rail.",
+    "commonCommodities": [
+      "Large power transformers",
+      "Industrial generators",
+      "Mining equipment",
+      "Heavy presses and machine tools",
+      "Nuclear reactor components",
+      "Chemical vessels"
+    ],
+    "dimensions": {
+      "length": "40-70 ft",
+      "width": "10'0\" deck",
+      "height": "2'0\"-2'6\" rail to center deck",
+      "loadLimit": "250,000-500,000 lbs (varies by axle count)"
+    },
+    "variants": [
+      {
+        "name": "Standard Depressed Center",
+        "description": "Four-axle car with a single depressed center section; typical capacity 250,000-280,000 lbs for power equipment."
+      },
+      {
+        "name": "Multi-Axle Heavy-Duty Depressed Center",
+        "description": "Six to twenty axle configurations for extreme payloads above 300,000 lbs; special clearance authority required for each movement."
+      }
+    ],
+    "useCases": "Depressed center flatcars are essential for moving large power transformers from factories to utility substations and for transporting industrial equipment that is too tall to ride on a standard flatcar."
+  },
+  {
+    "designation": "schnabel-car",
+    "name": "Schnabel Car",
+    "aarCodes": ["FX"],
+    "description": "The Schnabel car is the most specialized rail freight equipment in North America, designed to carry a single extremely heavy and oversized load by actually becoming part of the car structure. Two end-frame assemblies with multiple axle trucks attach directly to fittings on the cargo itself, so the cargo (typically a large transformer or reactor) serves as the central structural member of the car. Schnabel cars can carry loads exceeding one million pounds and are custom-designed or purpose-matched to specific loads. Movement requires careful route clearance surveys, utility wire lifts, and slow-speed operation.",
+    "commonCommodities": [
+      "Extra-large power transformers (EHV/500kV class)",
+      "Nuclear steam generators",
+      "Large pressure vessels",
+      "Petrochemical reactors"
+    ],
+    "dimensions": {
+      "length": "150-250 ft assembled with load",
+      "width": "Up to 20'0\" (load-dependent)",
+      "height": "Variable (load-dependent)",
+      "loadLimit": "Up to 2,000,000 lbs (load-dependent)"
+    },
+    "variants": [
+      {
+        "name": "Fixed-Frame Schnabel",
+        "description": "Rigid end frames permanently attached for a dedicated commodity; the most common configuration for large transformer repeat movements."
+      },
+      {
+        "name": "Adjustable Schnabel",
+        "description": "Hydraulically adjustable end frames that can change span and height to accommodate different loads within a payload class."
+      }
+    ],
+    "useCases": "Schnabel cars handle once-in-a-decade moves of the largest power transformers and nuclear components, where no other rail or highway equipment can legally or physically carry the load across the continent."
+  },
+  {
+    "designation": "pressure-differential-airslide",
+    "name": "Pressure Differential Car (Airslide)",
+    "aarCodes": ["LT", "LP"],
+    "description": "The pressure differential car, commercially known by the Airslide trademark, is a covered hopper designed with a porous membrane floor through which compressed air is pumped to fluidize fine dry bulk commodities. The air-fluidized product flows like a liquid to pneumatic conveying lines connected at discharge outlets. This design eliminates bridging and hangup problems common with fine powders in standard gravity hoppers. Airslide cars are commonly used for Portland cement, fly ash, flour, and other cohesive powders.",
+    "commonCommodities": [
+      "Portland cement",
+      "Fly ash and pozzolans",
+      "Flour and starch",
+      "Plastic powder",
+      "Calcium carbonate",
+      "Talc and kaolin clay",
+      "Carbon black"
+    ],
+    "dimensions": {
+      "length": "40-50 ft",
+      "capacity": "2,900-3,500 cu ft",
+      "loadLimit": "198,000-220,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "Airslide Cement Car",
+        "description": "Standard 2-bay or 3-bay configuration for Portland cement; designed to connect to plant pneumatic conveying systems at discharge."
+      },
+      {
+        "name": "Food-Grade Airslide",
+        "description": "Interior surfaces and components approved for food contact; used for flour, starch, and food-grade sugar in bulk."
+      }
+    ],
+    "useCases": "Pressure differential cars are the preferred equipment for cement plants, ready-mix concrete producers, and food processors that need to receive fine bulk powders and transfer them pneumatically into silos without manual handling."
+  },
+  {
+    "designation": "bulkhead-flatcar",
+    "name": "Bulkhead Flatcar",
+    "aarCodes": ["FB"],
+    "description": "The bulkhead flatcar is a standard flatcar fitted with large fixed vertical steel bulkheads at each end, typically 4 to 8 feet tall, to contain and restrain loads that would otherwise shift longitudinally during braking and acceleration. The bulkheads protect the cargo and prevent it from sliding off the ends of the car. Bulkhead flatcars are the dominant equipment for lumber, pipe, and steel bar in unit train and manifest service. They are often used in conjunction with centerbeam flatcars on the same trains serving the building products industry.",
+    "commonCommodities": [
+      "Dimensional lumber and timber",
+      "Steel pipe and tubular goods",
+      "Steel bar and rod",
+      "Plywood and panel products",
+      "Concrete pipe",
+      "Piling and poles"
+    ],
+    "dimensions": {
+      "length": "52-73 ft",
+      "width": "9'4\" deck",
+      "height": "4'0\"-8'0\" bulkhead height",
+      "loadLimit": "210,000-220,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "Low-Profile Bulkhead Flatcar",
+        "description": "Bulkheads 4-5 feet tall for loads that need end restraint but do not stack high, such as single layers of pipe or structural steel."
+      },
+      {
+        "name": "High-Bulkhead Flatcar",
+        "description": "Bulkheads 7-8 feet tall for stacked lumber or tall bundled products requiring full end-containment to the top of the load."
+      }
+    ],
+    "useCases": "Bulkhead flatcars are the standard equipment for Pacific Northwest lumber operations shipping large volumes of dimensional lumber and panel products to eastern construction and distribution markets."
+  },
+  {
+    "designation": "log-car",
+    "name": "Log Car",
+    "aarCodes": ["FL"],
+    "description": "The log car is a skeletal flatcar with steel stanchions or bunks at intervals along a central spine, designed to cradle and secure full-length logs during transit from forest to sawmill. The open framework minimizes tare weight while the fixed or adjustable bunks support the logs and prevent them from rolling. Log cars often operate in dedicated shuttle service between timber loading facilities and sawmills, sometimes loaded by log-stacker cranes directly from logging trucks. They are predominantly used in the Pacific Northwest and Southeast.",
+    "commonCommodities": [
+      "Softwood logs (Douglas fir, pine, hemlock)",
+      "Hardwood logs",
+      "Pulpwood and chip logs",
+      "Veneer logs",
+      "Log exports to Asia"
+    ],
+    "dimensions": {
+      "length": "60-73 ft",
+      "width": "9'6\" between stanchions",
+      "loadLimit": "198,000-220,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "Fixed-Bunk Log Car",
+        "description": "Permanent V-shaped or flat bunk cradles welded to a center spine; simplest and lightest design for dedicated sawmill shuttle service."
+      },
+      {
+        "name": "Adjustable-Bunk Log Car",
+        "description": "Repositionable bunks along the spine to accommodate different log lengths and species mixes on the same car."
+      }
+    ],
+    "useCases": "Log cars serve the primary link in the wood products supply chain, moving timber from logging landings and log dumps to sawmills and veneer plants where logs are converted into lumber, plywood, and pulp."
+  },
+  {
+    "designation": "rotary-dump-gondola",
+    "name": "Rotary Dump Gondola",
+    "aarCodes": ["GM", "GT"],
+    "description": "The rotary dump gondola is a heavy-duty gondola or open-top car specifically equipped with rotary-end couplers on one or both ends, permitting it to be rotated 360 degrees in a rotary car dumper while remaining coupled to adjacent cars in the train. This allows extremely rapid unloading — a full 100-ton car can be emptied in under two minutes — without uncoupling or spotting individual cars. Rotary dump gondolas are the dominant equipment for coal unit trains serving power plants and export terminals with rotary dumper installations.",
+    "commonCommodities": [
+      "Thermal coal",
+      "Metallurgical coal",
+      "Iron ore pellets",
+      "Potash",
+      "Petroleum coke"
+    ],
+    "dimensions": {
+      "length": "52-65 ft",
+      "capacity": "3,900-4,600 cu ft",
+      "loadLimit": "220,000-263,000 lbs"
+    },
+    "variants": [
+      {
+        "name": "Single-Rotary-Coupler Gondola",
+        "description": "One rotary coupler on the B end; car rotates with the rotary coupler end held by the dumper clamp while fixed coupler end stays coupled to the train."
+      },
+      {
+        "name": "Double-Rotary-Coupler Gondola",
+        "description": "Rotary couplers on both ends for flexibility in dumper orientation or reversing train direction through the dumper loop."
+      }
+    ],
+    "useCases": "Rotary dump gondolas are essential for high-throughput coal unit train operations where rotary dumpers allow rapid, continuous unloading without uncoupling the train, enabling fast turn cycles between mine and power plant."
+  },
+  {
+    "designation": "multi-level-auto-carrier",
+    "name": "Multi-Level Auto Carrier",
+    "aarCodes": ["RA", "RB"],
+    "description": "The multi-level auto carrier — commonly called an autorack — is the enclosed multi-deck rail car used for finished vehicle distribution. It consists of a standard flatcar or well flatcar underframe surmounted by a bolted or welded steel rack structure with two or three decks, full-height corrugated steel side panels, and hinged end doors. Modern enclosed designs replaced open racks following extensive vandalism losses in the 1970s and 1980s. Vehicle loading is via ramps at end doors, and cars travel in dedicated unit trains between assembly plants and vehicle distribution centers.",
+    "commonCommodities": [
+      "Domestic passenger vehicles",
+      "Imported vehicles from port VDCs",
+      "Light trucks, SUVs, and crossovers",
+      "Full-size pickup trucks",
+      "Motorcycles and ATVs (with adaptation)"
+    ],
+    "dimensions": {
+      "length": "89 ft",
+      "height": "20'2\" exterior",
+      "width": "10'7\" exterior",
+      "capacity": "10-12 vehicles (bi-level); 15-18 vehicles (tri-level)"
+    },
+    "variants": [
+      {
+        "name": "Tri-Level Enclosed Autorack",
+        "description": "Three decks for compact cars and smaller vehicles with a maximum vehicle height of approximately 65 inches; highest vehicle capacity per car."
+      },
+      {
+        "name": "Bi-Level Enclosed Autorack",
+        "description": "Two decks for tall vehicles including full-size pickups, SUVs, and vans with vehicle heights up to approximately 84 inches."
+      },
+      {
+        "name": "Convertible Bi/Tri-Level",
+        "description": "Adjustable middle deck that can be raised or lowered to switch between bi-level and tri-level configuration based on vehicle height mix."
+      }
+    ],
+    "useCases": "Multi-level auto carriers are the exclusive rail equipment for new vehicle distribution, moving cars directly from assembly plant loading docks to regional vehicle distribution centers for dealer delivery, with unit trains of 30-50 cars operating on dedicated auto-train schedules."
+  }
+]
