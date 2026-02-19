@@ -26,6 +26,8 @@ export function getStateName(code: string): string {
 }
 
 const CANADIAN_CODES = new Set(['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'NT', 'ON', 'QC', 'SK'])
+// Mexican state codes use 3-letter INEGI abbreviations (not 2-letter like US/CA).
+// MEX = Estado de México (not the country). CMX = Ciudad de México (CDMX).
 const MEXICAN_CODES = new Set(['NLE', 'QRO', 'SLP', 'HGO', 'MEX', 'GTO', 'VER', 'COA', 'JAL', 'CMX'])
 
 export function isCanadianProvince(code: string): boolean {

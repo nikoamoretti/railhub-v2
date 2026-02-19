@@ -26,12 +26,12 @@ const usStates = allStates.filter(s => !isCanadianProvince(s.code) && !isMexican
 const caProvinces = allStates.filter(s => isCanadianProvince(s.code))
 const mxStates = allStates.filter(s => isMexicanState(s.code))
 
-export default function StatesPage() {
+const cardStyle = {
+  backgroundColor: 'var(--bg-card)',
+  borderColor: 'var(--border-default)',
+}
 
-  const cardStyle = {
-    backgroundColor: 'var(--bg-card)',
-    borderColor: 'var(--border-default)',
-  }
+export default function StatesPage() {
 
   return (
     <main>
@@ -50,7 +50,7 @@ export default function StatesPage() {
             Browse by State
           </h1>
           <p className="text-lg mt-2" style={{ color: 'var(--text-secondary)' }}>
-            {allStates.length} states and provinces &middot; {facilities.length.toLocaleString()} facilities
+            {usStates.length} US states &middot; {caProvinces.length} CA provinces &middot; {mxStates.length} MX states &middot; {facilities.length.toLocaleString()} facilities
           </p>
         </div>
       </header>
