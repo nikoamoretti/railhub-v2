@@ -114,20 +114,20 @@ export function FacilityCard({ facility }: FacilityCardProps) {
   
   return (
     <Link href={`/facility/${facility.id}`} className="block">
-    <div className="bg-white rounded-xl shadow-sm border hover:shadow-md transition p-6 cursor-pointer">
+    <div className="rounded-xl shadow-sm border hover:shadow-md transition p-6 cursor-pointer" style={{ backgroundColor: '#2d2d2d', borderColor: '#3d3d3d' }}>
       {/* Type Badge */}
       <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase ${typeColor}`}>
         {typeLabel}
       </span>
       
       {/* Name */}
-      <h3 className="text-lg font-semibold mt-3 text-gray-900">
+      <h3 className="text-lg font-semibold mt-3" style={{ color: '#ffffff' }}>
         {facility.name}
       </h3>
       
       {/* Location */}
       {facility.location && (
-        <div className="mt-2 text-gray-600">
+        <div className="mt-2" style={{ color: '#a0a0a0' }}>
           <div className="flex items-center gap-2">
             <span>📍</span>
             <span>
@@ -135,7 +135,7 @@ export function FacilityCard({ facility }: FacilityCardProps) {
             </span>
           </div>
           {facility.location.street_address && (
-            <div className="text-sm text-gray-500 mt-1">
+            <div className="text-sm mt-1" style={{ color: '#808080' }}>
               {facility.location.street_address}
             </div>
           )}
@@ -144,7 +144,7 @@ export function FacilityCard({ facility }: FacilityCardProps) {
       
       {/* Phone */}
       {facility.phone && (
-        <div className="mt-2 text-sm text-gray-600">
+        <div className="mt-2 text-sm" style={{ color: '#a0a0a0' }}>
           <span>📞 {facility.phone}</span>
         </div>
       )}

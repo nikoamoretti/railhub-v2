@@ -72,7 +72,7 @@ export default async function Home({ searchParams }: PageProps) {
 
   return (
     <main className="min-h-screen">
-      <header className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-12 px-4">
+      <header className="py-12 px-4" style={{ background: 'linear-gradient(135deg, rgba(230,81,0,0.1) 0%, transparent 50%, rgba(230,81,0,0.05) 100%)' }}>
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-4">🚂 Railhub</h1>
           <p className="text-xl opacity-90 mb-8">Free Rail Freight Directory</p>
@@ -85,14 +85,15 @@ export default async function Home({ searchParams }: PageProps) {
         
         <div className="mt-8">
           <div className="flex items-center justify-between mb-4">
-            <p className="text-gray-600">
+            <p style={{ color: '#a0a0a0' }}>
               Showing {facilities.length} of {allFacilities.length} facilities
               {hasFilters && ' (filtered)'}
             </p>
             {hasFilters && (
               <Link 
                 href="/" 
-                className="text-blue-600 hover:text-blue-800 text-sm"
+                className="text-sm hover:opacity-80 transition"
+                style={{ color: '#e65100' }}
               >
                 Clear filters
               </Link>
@@ -106,7 +107,7 @@ export default async function Home({ searchParams }: PageProps) {
           </div>
           
           {facilities.length === 0 && (
-            <div className="text-center py-12 text-gray-500">
+            <div className="text-center py-12" style={{ color: '#a0a0a0' }}>
               <p className="text-lg mb-2">No facilities found.</p>
               <p className="text-sm">Try adjusting your search or filters.</p>
             </div>
@@ -121,13 +122,14 @@ export default async function Home({ searchParams }: PageProps) {
                     pathname: '/', 
                     query: { ...params, page: currentPage - 1 } 
                   }}
-                  className="px-4 py-2 bg-white border rounded-lg hover:bg-gray-50"
+                  className="px-4 py-2 border rounded-lg transition hover:opacity-80"
+                  style={{ backgroundColor: '#2d2d2d', borderColor: '#3d3d3d', color: '#ffffff' }}
                 >
                   ← Previous
                 </Link>
               )}
               
-              <span className="px-4 py-2 text-gray-600">
+              <span className="px-4 py-2" style={{ color: '#a0a0a0' }}>
                 Page {currentPage} of {totalPages}
               </span>
               
@@ -137,7 +139,8 @@ export default async function Home({ searchParams }: PageProps) {
                     pathname: '/', 
                     query: { ...params, page: currentPage + 1 } 
                   }}
-                  className="px-4 py-2 bg-white border rounded-lg hover:bg-gray-50"
+                  className="px-4 py-2 border rounded-lg transition hover:opacity-80"
+                  style={{ backgroundColor: '#2d2d2d', borderColor: '#3d3d3d', color: '#ffffff' }}
                 >
                   Next →
                 </Link>

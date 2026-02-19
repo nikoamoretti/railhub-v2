@@ -75,41 +75,60 @@ export function SearchFilters({ states }: SearchFiltersProps) {
   }
 
   return (
-    <form onSubmit={handleSearch} className="bg-white rounded-xl shadow-sm border p-6">
+    <form onSubmit={handleSearch} className="rounded-xl shadow-sm border p-6" style={{ backgroundColor: '#2d2d2d', borderColor: '#3d3d3d' }}>
       <div className="flex flex-wrap gap-4">
         <input
           type="text"
           placeholder="Search by name, city, or state..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="flex-1 min-w-[200px] px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="flex-1 min-w-[200px] px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none"
+          style={{ 
+            backgroundColor: '#1a1a1a', 
+            borderColor: '#3d3d3d', 
+            color: '#ffffff',
+            '--tw-ring-color': '#e65100'
+          } as React.CSSProperties}
         />
         
         <select
           value={state}
           onChange={(e) => setState(e.target.value)}
-          className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+          className="px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none"
+          style={{ 
+            backgroundColor: '#1a1a1a', 
+            borderColor: '#3d3d3d', 
+            color: '#ffffff',
+            '--tw-ring-color': '#e65100'
+          } as React.CSSProperties}
         >
-          <option value="">All States</option>
+          <option value="" style={{ backgroundColor: '#1a1a1a' }}>All States</option>
           {states.map((s) => (
-            <option key={s} value={s}>{s}</option>
+            <option key={s} value={s} style={{ backgroundColor: '#1a1a1a' }}>{s}</option>
           ))}
         </select>
         
         <select
           value={type}
           onChange={(e) => setType(e.target.value)}
-          className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+          className="px-4 py-2 border rounded-lg focus:ring-2 focus:outline-none"
+          style={{ 
+            backgroundColor: '#1a1a1a', 
+            borderColor: '#3d3d3d', 
+            color: '#ffffff',
+            '--tw-ring-color': '#e65100'
+          } as React.CSSProperties}
         >
-          <option value="">All Types ({FACILITY_TYPES.length})</option>
+          <option value="" style={{ backgroundColor: '#1a1a1a' }}>All Types ({FACILITY_TYPES.length})</option>
           {FACILITY_TYPES.map((t) => (
-            <option key={t.value} value={t.value.toLowerCase()}>{t.label}</option>
+            <option key={t.value} value={t.value.toLowerCase()} style={{ backgroundColor: '#1a1a1a' }}>{t.label}</option>
           ))}
         </select>
         
         <button
           type="submit"
-          className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          className="px-6 py-2 rounded-lg transition hover:opacity-90"
+          style={{ backgroundColor: '#e65100', color: '#ffffff' }}
         >
           Search
         </button>
@@ -118,7 +137,8 @@ export function SearchFilters({ states }: SearchFiltersProps) {
           <button
             type="button"
             onClick={handleClear}
-            className="px-6 py-2 text-gray-600 hover:text-gray-800"
+            className="px-6 py-2 hover:opacity-80 transition"
+            style={{ color: '#a0a0a0' }}
           >
             Clear
           </button>

@@ -23,14 +23,14 @@ export function Stats({ counts, totalCount }: StatsProps) {
   return (
     <div className="flex flex-wrap justify-center gap-4 mt-8">
       {topTypes.map(([type, count]) => (
-        <div key={type} className="bg-white/10 backdrop-blur rounded-lg px-6 py-3">
-          <div className="text-2xl font-bold">{count.toLocaleString()}</div>
-          <div className="text-xs opacity-80">{TYPE_LABELS[type] || type.replace(/_/g, ' ')}</div>
+        <div key={type} className="backdrop-blur rounded-lg px-6 py-3" style={{ backgroundColor: 'rgba(45, 45, 45, 0.8)' }}>
+          <div className="text-2xl font-bold" style={{ color: '#e65100' }}>{count.toLocaleString()}</div>
+          <div className="text-xs" style={{ color: '#a0a0a0' }}>{TYPE_LABELS[type] || type.replace(/_/g, ' ')}</div>
         </div>
       ))}
-      <div className="bg-white/20 backdrop-blur rounded-lg px-6 py-3 border-2 border-white/30">
-        <div className="text-2xl font-bold">{totalCount.toLocaleString()}</div>
-        <div className="text-xs opacity-80">Total Locations</div>
+      <div className="backdrop-blur rounded-lg px-6 py-3 border-2" style={{ backgroundColor: 'rgba(230, 81, 0, 0.2)', borderColor: 'rgba(230, 81, 0, 0.5)' }}>
+        <div className="text-2xl font-bold" style={{ color: '#ffffff' }}>{totalCount.toLocaleString()}</div>
+        <div className="text-xs" style={{ color: '#a0a0a0' }}>Total Locations</div>
       </div>
     </div>
   )

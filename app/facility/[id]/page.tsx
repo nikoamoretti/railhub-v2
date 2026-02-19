@@ -142,10 +142,10 @@ const typeColorClass = facility.type === 'TRANSLOAD'
   const equipmentList = facility.capabilities?.equipment_list || []
 
   return (
-    <main className="min-h-screen bg-gray-50">
-      <header className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-8 px-4">
+    <main className="min-h-screen" style={{ backgroundColor: '#1a1a1a' }}>
+      <header className="py-8 px-4" style={{ background: 'linear-gradient(135deg, rgba(230,81,0,0.1) 0%, transparent 50%, rgba(230,81,0,0.05) 100%)' }}>
         <div className="max-w-4xl mx-auto">
-          <Link href="/" className="text-blue-200 hover:text-white mb-4 inline-block">
+          <Link href="/" className="mb-4 inline-block hover:opacity-80 transition" style={{ color: '#e65100' }}>
             ← Back to Directory
           </Link>
           <div className="flex items-center gap-3">
@@ -153,25 +153,25 @@ const typeColorClass = facility.type === 'TRANSLOAD'
               {typeLabel}
             </span>
           </div>
-          <h1 className="text-4xl font-bold mt-2">{facility.name}</h1>
+          <h1 className="text-4xl font-bold mt-2" style={{ color: '#ffffff' }}>{facility.name}</h1>
         </div>
       </header>
 
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Location */}
-          <div className="bg-white rounded-xl shadow-sm border p-6">
-            <h2 className="text-xl font-semibold mb-4">📍 Location</h2>
+          <div className="rounded-xl shadow-sm border p-6" style={{ backgroundColor: '#2d2d2d', borderColor: '#3d3d3d' }}>
+            <h2 className="text-xl font-semibold mb-4" style={{ color: '#ffffff' }}>📍 Location</h2>
             {facility.location ? (
-              <div className="space-y-2 text-gray-700">
+              <div className="space-y-2" style={{ color: '#a0a0a0' }}>
                 {facility.location.street_address && (
-                  <p>{facility.location.street_address}</p>
+                  <p style={{ color: '#ffffff' }}>{facility.location.street_address}</p>
                 )}
-                <p className="font-medium">
+                <p className="font-medium" style={{ color: '#ffffff' }}>
                   {facility.location.city}, {facility.location.state} {facility.location.zip_code}
                 </p>
                 {facility.location.latitude && facility.location.longitude && (
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm" style={{ color: '#808080' }}>
                     {facility.location.latitude}, {facility.location.longitude}
                   </p>
                 )}
