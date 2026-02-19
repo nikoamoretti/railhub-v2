@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Railhub - Free Rail Freight Directory",
-  description: "Find transload and railcar storage facilities across the US",
+  description: "Find transload, team track, and railcar storage facilities across North America. 11,000+ locations with railroad, capacity, and service details.",
 };
 
 export default function RootLayout({
