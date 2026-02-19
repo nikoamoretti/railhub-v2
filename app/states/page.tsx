@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import facilitiesData from '@/public/facilities.json'
 import type { Facility } from '@/lib/types'
-import { getStateName, isCanadianProvince } from '@/lib/states'
+import { getStateName, isCanadianProvince, isMexicanState } from '@/lib/states'
 
 const facilities = facilitiesData as Facility[]
 
 export const metadata: Metadata = {
   title: 'Browse Rail Freight Facilities by State | Railhub',
-  description: 'Explore rail freight facilities across all US states and Canadian provinces. Find transload, storage, team track, and intermodal locations near you.',
+  description: 'Explore rail freight facilities across US states, Canadian provinces, and Mexican states. Find transload, storage, team track, and intermodal locations.',
 }
 
 const allStates = (() => {
@@ -22,8 +22,9 @@ const allStates = (() => {
     .sort((a, b) => a.name.localeCompare(b.name))
 })()
 
-const usStates = allStates.filter(s => !isCanadianProvince(s.code))
+const usStates = allStates.filter(s => !isCanadianProvince(s.code) && !isMexicanState(s.code))
 const caProvinces = allStates.filter(s => isCanadianProvince(s.code))
+const mxStates = allStates.filter(s => isMexicanState(s.code))
 
 export default function StatesPage() {
 
@@ -90,6 +91,35 @@ export default function StatesPage() {
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
               {caProvinces.map(s => (
+                <Link
+                  key={s.code}
+                  href={`/state/${s.code}`}
+                  className="rounded-xl border p-4 transition hover:border-[var(--accent)] hover:shadow-md"
+                  style={cardStyle}
+                >
+                  <div className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
+                    {s.name}
+                  </div>
+                  <div className="flex items-center justify-between mt-1">
+                    <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{s.code}</span>
+                    <span className="text-xs font-medium" style={{ color: 'var(--accent-text)' }}>
+                      {s.count.toLocaleString()}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Mexican States */}
+        {mxStates.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>
+              Mexico
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              {mxStates.map(s => (
                 <Link
                   key={s.code}
                   href={`/state/${s.code}`}

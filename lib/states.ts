@@ -16,6 +16,9 @@ export const STATE_NAMES: Record<string, string> = {
   NB: 'New Brunswick', NL: 'Newfoundland', NS: 'Nova Scotia',
   NT: 'Northwest Territories', ON: 'Ontario', QC: 'Quebec',
   SK: 'Saskatchewan', PR: 'Puerto Rico',
+  NLE: 'Nuevo León', QRO: 'Querétaro', SLP: 'San Luis Potosí',
+  HGO: 'Hidalgo', MEX: 'Estado de México', GTO: 'Guanajuato',
+  VER: 'Veracruz', COA: 'Coahuila', JAL: 'Jalisco', CMX: 'Ciudad de México',
 }
 
 export function getStateName(code: string): string {
@@ -23,7 +26,12 @@ export function getStateName(code: string): string {
 }
 
 const CANADIAN_CODES = new Set(['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'NT', 'ON', 'QC', 'SK'])
+const MEXICAN_CODES = new Set(['NLE', 'QRO', 'SLP', 'HGO', 'MEX', 'GTO', 'VER', 'COA', 'JAL', 'CMX'])
 
 export function isCanadianProvince(code: string): boolean {
   return CANADIAN_CODES.has(code)
+}
+
+export function isMexicanState(code: string): boolean {
+  return MEXICAN_CODES.has(code)
 }
