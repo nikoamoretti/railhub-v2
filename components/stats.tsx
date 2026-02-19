@@ -1,21 +1,11 @@
 'use client'
 
 import { useRouter, useSearchParams } from 'next/navigation'
+import { getTypeLabel } from '@/lib/facility-types'
 
 interface StatsProps {
   counts: { [key: string]: number }
   totalCount: number
-}
-
-const TYPE_LABELS: { [key: string]: string } = {
-  TRANSLOAD: 'Transload',
-  STORAGE: 'Storage',
-  TEAM_TRACK: 'Team Tracks',
-  BULK_TRANSFER: 'Bulk Transfer',
-  REPAIR_SHOP: 'Repair Shops',
-  INTERMODAL: 'Intermodal',
-  TANK_WASH: 'Tank Wash',
-  MANUFACTURING: 'Manufacturing',
 }
 
 export function Stats({ counts, totalCount }: StatsProps) {
@@ -58,13 +48,13 @@ export function Stats({ counts, totalCount }: StatsProps) {
               borderColor: isActive ? 'var(--accent)' : 'transparent',
             }}
             aria-pressed={isActive}
-            title={`Filter by ${TYPE_LABELS[type] || type}`}
+            title={`Filter by ${getTypeLabel(type)}`}
           >
             <div className="text-2xl font-bold" style={{ color: isActive ? 'var(--accent-text)' : 'var(--accent)' }}>
               {count.toLocaleString()}
             </div>
             <div className="text-xs" style={{ color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
-              {TYPE_LABELS[type] || type.replace(/_/g, ' ')}
+              {getTypeLabel(type)}
             </div>
           </button>
         )

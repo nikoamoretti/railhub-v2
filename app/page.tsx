@@ -1,4 +1,5 @@
 import facilitiesData from '../public/facilities.json'
+import type { Facility } from '@/lib/types'
 import { SearchFilters } from '@/components/search-filters'
 import { FacilityCard } from '@/components/facility-card'
 import { Stats } from '@/components/stats'
@@ -15,12 +16,14 @@ interface SearchParams {
 
 const ITEMS_PER_PAGE = 48
 
+const facilities_typed = facilitiesData as Facility[]
+
 async function getFacilities(searchParams: SearchParams) {
-  let facilities = facilitiesData as any[]
+  let facilities = [...facilities_typed]
 
   if (searchParams.q) {
     const q = searchParams.q.toLowerCase()
-    facilities = facilities.filter((f: any) =>
+    facilities = facilities.filter((f) =>
       f.name?.toLowerCase().includes(q) ||
       f.location?.city?.toLowerCase().includes(q) ||
       f.location?.state?.toLowerCase().includes(q)
@@ -28,17 +31,17 @@ async function getFacilities(searchParams: SearchParams) {
   }
 
   if (searchParams.state) {
-    facilities = facilities.filter((f: any) => f.location?.state === searchParams.state)
+    facilities = facilities.filter((f) => f.location?.state === searchParams.state)
   }
 
   if (searchParams.type) {
-    facilities = facilities.filter((f: any) => f.type === searchParams.type?.toUpperCase())
+    facilities = facilities.filter((f) => f.type === searchParams.type?.toUpperCase())
   }
 
   if (searchParams.railroad) {
     const rr = searchParams.railroad.toLowerCase()
-    facilities = facilities.filter((f: any) =>
-      f.railroads?.some((r: any) => {
+    facilities = facilities.filter((f) =>
+      f.railroads?.some((r) => {
         const name = r.railroad?.name?.toLowerCase() ?? ''
         return name === rr || name.includes(rr) || rr.includes(name)
       })
@@ -47,7 +50,7 @@ async function getFacilities(searchParams: SearchParams) {
 
   if (searchParams.sort) {
     const sort = searchParams.sort
-    facilities = [...facilities].sort((a: any, b: any) => {
+    facilities = [...facilities].sort((a, b) => {
       switch (sort) {
         case 'name_asc':
           return (a.name || '').localeCompare(b.name || '')
@@ -71,20 +74,20 @@ async function getFacilities(searchParams: SearchParams) {
 
 function getStats() {
   const counts: { [key: string]: number } = {}
-  facilitiesData.forEach((f: any) => {
+  facilities_typed.forEach((f) => {
     counts[f.type] = (counts[f.type] || 0) + 1
   })
-  return { counts, totalCount: facilitiesData.length }
+  return { counts, totalCount: facilities_typed.length }
 }
 
 function getStates(): string[] {
-  const states = [...new Set(facilitiesData.map((f: any) => f.location?.state).filter(Boolean))] as string[]
+  const states = [...new Set(facilities_typed.map((f) => f.location?.state).filter(Boolean))] as string[]
   return states.sort()
 }
 
 function getRailroads(): string[] {
   const names = new Set<string>()
-  for (const f of facilitiesData as any[]) {
+  for (const f of facilities_typed) {
     if (!f.railroads) continue
     for (const r of f.railroads) {
       const name = r.railroad?.name
@@ -132,13 +135,13 @@ export default async function Home({ searchParams }: PageProps) {
         <SearchFilters
           states={states}
           railroads={railroads}
-          totalResults={facilitiesData.length}
+          totalResults={facilities_typed.length}
           filteredResults={allFacilities.length}
         />
 
         <div id="main-results" className="mt-6" role="region" aria-label="Facility results">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {facilities.map((facility: any) => (
+            {facilities.map((facility) => (
               <FacilityCard key={facility.id} facility={facility} />
             ))}
           </div>

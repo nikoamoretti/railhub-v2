@@ -1,50 +1,22 @@
 'use client'
 
 import Link from 'next/link'
+import type { Facility } from '@/lib/types'
+import { getTypeLabel, getBadgeStyle } from '@/lib/facility-types'
 import { isValidRailroad } from '@/lib/railroads'
 
 interface FacilityCardProps {
-  facility: any
+  facility: Facility
 }
-
-const TYPE_LABELS: { [key: string]: string } = {
-  TRANSLOAD: 'Transload', STORAGE: 'Storage', TEAM_TRACK: 'Team Track',
-  BULK_TRANSFER: 'Bulk Transfer', REPAIR_SHOP: 'Repair Shop', INTERMODAL: 'Intermodal',
-  TANK_WASH: 'Tank Wash', MANUFACTURING: 'Manufacturing', SHORTLINE: 'Shortline',
-  PRIVATESIDING: 'Private Siding', WAREHOUSING: 'Warehousing', LINING: 'Lining',
-  CUSTOMS: 'Customs', SCALE: 'Scale', TRANSLOADING: 'Transloading',
-  INSPECTION: 'Inspection', MOBILEREPAIR: 'Mobile Repair', DRAYAGE: 'Drayage',
-  LEASING: 'Leasing', CARBUILDER: 'Car Builder', PARTS: 'Parts',
-  SIGNAL: 'Signal', MANAGEMENT: 'Management', BROKER: 'Broker',
-  FREIGHTFORWARDER: 'Freight Forwarder', ENGINEERING: 'Engineering', CHASSIS: 'Chassis',
-  LOCOMOTIVESHOP: 'Locomotive Shop', LOCOMOTIVELEASING: 'Locomotive Leasing',
-  SWITCHING: 'Switching', TMS: 'TMS', FUMIGATION: 'Fumigation',
-  DEMURRAGE: 'Demurrage', TRACKING: 'Tracking', EDI: 'EDI',
-  FLEETMGMT: 'Fleet Mgmt', LOADPLAN: 'Load Planning', YARDMGMT: 'Yard Mgmt',
-  DEMURRAGESOFT: 'Demurrage Soft',
-}
-
-const TYPE_BADGE_STYLES: { [key: string]: { bg: string, border: string, text: string } } = {
-  TRANSLOAD:     { bg: 'var(--badge-blue-bg)', border: 'var(--badge-blue-border)', text: 'var(--badge-blue-text)' },
-  STORAGE:       { bg: 'var(--badge-green-bg)', border: 'var(--badge-green-border)', text: 'var(--badge-green-text)' },
-  TEAM_TRACK:    { bg: 'var(--badge-purple-bg)', border: 'var(--badge-purple-border)', text: 'var(--badge-purple-text)' },
-  REPAIR_SHOP:   { bg: 'var(--badge-orange-bg)', border: 'var(--badge-orange-border)', text: 'var(--badge-orange-text)' },
-  INTERMODAL:    { bg: 'var(--badge-indigo-bg)', border: 'var(--badge-indigo-border)', text: 'var(--badge-indigo-text)' },
-  BULK_TRANSFER: { bg: 'var(--badge-yellow-bg)', border: 'var(--badge-yellow-border)', text: 'var(--badge-yellow-text)' },
-  TANK_WASH:     { bg: 'var(--badge-cyan-bg)', border: 'var(--badge-cyan-border)', text: 'var(--badge-cyan-text)' },
-  MANUFACTURING: { bg: 'var(--badge-pink-bg)', border: 'var(--badge-pink-border)', text: 'var(--badge-pink-text)' },
-}
-
-const DEFAULT_BADGE = { bg: 'var(--badge-gray-bg)', border: 'var(--badge-gray-border)', text: 'var(--badge-gray-text)' }
 
 export function FacilityCard({ facility }: FacilityCardProps) {
-  const typeLabel = TYPE_LABELS[facility.type] || facility.type?.replace(/_/g, ' ')
-  const badge = TYPE_BADGE_STYLES[facility.type] || DEFAULT_BADGE
+  const typeLabel = getTypeLabel(facility.type)
+  const badge = getBadgeStyle(facility.type)
 
-  const validRailroads = facility.railroads
-    ?.map((r: any) => r.railroad?.name)
-    ?.filter((name: string) => isValidRailroad(name))
-    ?.slice(0, 4) || []
+  const validRailroads = (facility.railroads || [])
+    .map((r) => r.railroad?.name)
+    .filter((name): name is string => !!name && isValidRailroad(name))
+    .slice(0, 4)
 
   const capacity = facility.capabilities?.track_capacity
   const productCount = facility.capabilities?.product_types?.length || 0

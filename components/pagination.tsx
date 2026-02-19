@@ -8,16 +8,17 @@ interface PaginationProps {
   currentPage: number
   totalPages: number
   searchParams: { [key: string]: string | undefined }
+  basePath?: string
 }
 
-function pageHref(params: Record<string, string | undefined>, page: number) {
+function pageHref(params: Record<string, string | undefined>, basePath: string, page: number) {
   const p = new URLSearchParams()
   for (const [key, value] of Object.entries(params)) {
     if (value && key !== 'page') p.set(key, value)
   }
   if (page > 1) p.set('page', String(page))
   const qs = p.toString()
-  return qs ? `/?${qs}` : '/'
+  return qs ? `${basePath}?${qs}` : basePath
 }
 
 const btnStyle = {
@@ -32,7 +33,7 @@ const btnDisabledStyle = {
   color: 'var(--text-muted)',
 }
 
-export function Pagination({ currentPage, totalPages, searchParams }: PaginationProps) {
+export function Pagination({ currentPage, totalPages, searchParams, basePath = '/' }: PaginationProps) {
   const router = useRouter()
   const [jumpValue, setJumpValue] = useState('')
 
@@ -41,7 +42,7 @@ export function Pagination({ currentPage, totalPages, searchParams }: Pagination
     const parsed = parseInt(jumpValue, 10)
     if (!isNaN(parsed)) {
       const page = Math.max(1, Math.min(totalPages, parsed))
-      router.push(pageHref(searchParams, page))
+      router.push(pageHref(searchParams, basePath,page))
       setJumpValue('')
     }
   }
@@ -72,7 +73,7 @@ export function Pagination({ currentPage, totalPages, searchParams }: Pagination
       {/* Previous */}
       {currentPage > 1 ? (
         <Link
-          href={pageHref(searchParams, currentPage - 1)}
+          href={pageHref(searchParams, basePath,currentPage - 1)}
           className="px-3 py-2 border rounded-lg transition hover:opacity-80 text-sm"
           style={btnStyle}
           aria-label="Go to previous page"
@@ -99,7 +100,7 @@ export function Pagination({ currentPage, totalPages, searchParams }: Pagination
           ) : (
             <Link
               key={page}
-              href={pageHref(searchParams, page)}
+              href={pageHref(searchParams, basePath,page)}
               className="px-3 py-2 border rounded-lg text-sm transition hover:opacity-80"
               style={page === currentPage
                 ? { backgroundColor: 'var(--accent)', borderColor: 'var(--accent)', color: '#ffffff' }
@@ -117,7 +118,7 @@ export function Pagination({ currentPage, totalPages, searchParams }: Pagination
       {/* Next */}
       {currentPage < totalPages ? (
         <Link
-          href={pageHref(searchParams, currentPage + 1)}
+          href={pageHref(searchParams, basePath,currentPage + 1)}
           className="px-3 py-2 border rounded-lg transition hover:opacity-80 text-sm"
           style={btnStyle}
           aria-label="Go to next page"

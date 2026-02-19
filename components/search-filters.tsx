@@ -2,57 +2,16 @@
 
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useState, useEffect } from 'react'
+import { FACILITY_TYPES, TYPE_LABEL_MAP_LOWER } from '@/lib/facility-types'
 
 interface SearchFiltersProps {
   states: string[]
   railroads: string[]
   totalResults: number
   filteredResults: number
+  basePath?: string
+  hideStateFilter?: boolean
 }
-
-const FACILITY_TYPES = [
-  { value: 'TRANSLOAD', label: 'Transload' },
-  { value: 'STORAGE', label: 'Storage' },
-  { value: 'TEAM_TRACK', label: 'Team Track' },
-  { value: 'BULK_TRANSFER', label: 'Bulk Transfer' },
-  { value: 'REPAIR_SHOP', label: 'Repair Shop' },
-  { value: 'INTERMODAL', label: 'Intermodal' },
-  { value: 'TANK_WASH', label: 'Tank Wash' },
-  { value: 'MANUFACTURING', label: 'Manufacturing' },
-  { value: 'SHORTLINE', label: 'Shortline Railroad' },
-  { value: 'PRIVATESIDING', label: 'Private Siding' },
-  { value: 'WAREHOUSING', label: 'Warehousing' },
-  { value: 'LINING', label: 'Lining/Coating' },
-  { value: 'CUSTOMS', label: 'Customs Broker' },
-  { value: 'SCALE', label: 'Scale/Weigh Station' },
-  { value: 'TRANSLOADING', label: 'Transloading Operator' },
-  { value: 'INSPECTION', label: 'Inspection Service' },
-  { value: 'MOBILEREPAIR', label: 'Mobile Repair' },
-  { value: 'DRAYAGE', label: 'Drayage' },
-  { value: 'LEASING', label: 'Leasing Company' },
-  { value: 'CARBUILDER', label: 'Car Builder' },
-  { value: 'PARTS', label: 'Parts Supplier' },
-  { value: 'SIGNAL', label: 'Signal Contractor' },
-  { value: 'MANAGEMENT', label: 'Management Company' },
-  { value: 'BROKER', label: 'Broker' },
-  { value: 'FREIGHTFORWARDER', label: 'Freight Forwarder' },
-  { value: 'ENGINEERING', label: 'Engineering/Construction' },
-  { value: 'CHASSIS', label: 'Chassis Provider' },
-  { value: 'LOCOMOTIVESHOP', label: 'Locomotive Shop' },
-  { value: 'LOCOMOTIVELEASING', label: 'Locomotive Leasing' },
-  { value: 'SWITCHING', label: 'Switching Railroad' },
-  { value: 'TMS', label: 'TMS Platform' },
-  { value: 'FUMIGATION', label: 'Fumigation' },
-  { value: 'DEMURRAGE', label: 'Demurrage Consulting' },
-  { value: 'TRACKING', label: 'Tracking Platform' },
-  { value: 'EDI', label: 'EDI Provider' },
-  { value: 'FLEETMGMT', label: 'Fleet Management' },
-  { value: 'LOADPLAN', label: 'Load Planning' },
-  { value: 'YARDMGMT', label: 'Yard Management' },
-  { value: 'DEMURRAGESOFT', label: 'Demurrage Software' },
-]
-
-const TYPE_MAP = Object.fromEntries(FACILITY_TYPES.map(t => [t.value.toLowerCase(), t.label]))
 
 const SORT_OPTIONS = [
   { value: '', label: 'Default' },
@@ -62,7 +21,7 @@ const SORT_OPTIONS = [
   { value: 'capacity_desc', label: 'Capacity (high to low)' },
 ]
 
-export function SearchFilters({ states, railroads, totalResults, filteredResults }: SearchFiltersProps) {
+export function SearchFilters({ states, railroads, totalResults, filteredResults, basePath = '/', hideStateFilter = false }: SearchFiltersProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -89,7 +48,8 @@ export function SearchFilters({ states, railroads, totalResults, filteredResults
       }
     }
     params.delete('page')
-    return `/?${params.toString()}`
+    const qs = params.toString()
+    return qs ? `${basePath}?${qs}` : basePath
   }
 
   function handleSearch(e: React.FormEvent) {
@@ -103,7 +63,7 @@ export function SearchFilters({ states, railroads, totalResults, filteredResults
 
   function clearAll() {
     setQuery('')
-    router.push('/')
+    router.push(basePath)
   }
 
   const selectClass = "px-3 py-2.5 border rounded-lg focus:ring-2 focus:outline-none text-sm"
@@ -137,13 +97,15 @@ export function SearchFilters({ states, railroads, totalResults, filteredResults
             />
           </div>
 
-          <div>
-            <label htmlFor="state-filter" className="sr-only">Filter by state</label>
-            <select id="state-filter" value={currentState} onChange={(e) => router.push(buildUrl({ state: e.target.value || null }))} className={selectClass} style={selectStyle}>
-              <option value="" style={optionStyle}>All States</option>
-              {states.map((s) => <option key={s} value={s} style={optionStyle}>{s}</option>)}
-            </select>
-          </div>
+          {!hideStateFilter && (
+            <div>
+              <label htmlFor="state-filter" className="sr-only">Filter by state</label>
+              <select id="state-filter" value={currentState} onChange={(e) => router.push(buildUrl({ state: e.target.value || null }))} className={selectClass} style={selectStyle}>
+                <option value="" style={optionStyle}>All States</option>
+                {states.map((s) => <option key={s} value={s} style={optionStyle}>{s}</option>)}
+              </select>
+            </div>
+          )}
 
           <div>
             <label htmlFor="type-filter" className="sr-only">Filter by facility type</label>
@@ -216,7 +178,7 @@ export function SearchFilters({ states, railroads, totalResults, filteredResults
 
             {currentType && (
               <button onClick={() => removeFilter('type')} className="filter-chip">
-                {TYPE_MAP[currentType] || currentType}
+                {TYPE_LABEL_MAP_LOWER[currentType] || currentType}
                 <span aria-hidden="true">&times;</span>
                 <span className="sr-only">Remove type filter</span>
               </button>
