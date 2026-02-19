@@ -21,3 +21,9 @@ export const STATE_NAMES: Record<string, string> = {
 export function getStateName(code: string): string {
   return STATE_NAMES[code] || code
 }
+
+const CANADIAN_CODES = new Set(['AB', 'BC', 'MB', 'NB', 'NL', 'NS', 'NT', 'ON', 'QC', 'SK'])
+
+export function isCanadianProvince(code: string): boolean {
+  return CANADIAN_CODES.has(code)
+}

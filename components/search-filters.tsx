@@ -126,7 +126,7 @@ export function SearchFilters({ states, railroads, totalResults, filteredResults
           <button
             type="submit"
             className="px-5 py-2.5 rounded-lg transition hover:opacity-90 text-sm font-medium"
-            style={{ backgroundColor: 'var(--accent)', color: '#ffffff' }}
+            style={{ backgroundColor: 'var(--accent)', color: 'var(--text-on-accent)' }}
           >
             Search
           </button>

@@ -103,7 +103,7 @@ export function Pagination({ currentPage, totalPages, searchParams, basePath = '
               href={pageHref(searchParams, basePath,page)}
               className="px-3 py-2 border rounded-lg text-sm transition hover:opacity-80"
               style={page === currentPage
-                ? { backgroundColor: 'var(--accent)', borderColor: 'var(--accent)', color: '#ffffff' }
+                ? { backgroundColor: 'var(--accent)', borderColor: 'var(--accent)', color: 'var(--text-on-accent)' }
                 : btnStyle
               }
               aria-label={`Go to page ${page}`}

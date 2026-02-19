@@ -9,6 +9,10 @@ import { FacilityCard } from '@/components/facility-card'
 
 const facilities = facilitiesData as Facility[]
 
+export function generateStaticParams() {
+  return facilities.map(f => ({ id: f.id }))
+}
+
 function isSafeUrl(url: string): boolean {
   try {
     const parsed = new URL(url)
@@ -16,6 +20,10 @@ function isSafeUrl(url: string): boolean {
   } catch {
     return false
   }
+}
+
+function isSafeEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 }
 
 const DAYS = [
@@ -105,10 +113,10 @@ export default async function FacilityPage({ params }: PageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
-      <main className="min-h-screen">
-        <header className="py-8 px-4" style={{ background: 'linear-gradient(135deg, var(--accent-muted) 0%, transparent 50%, rgba(230,81,0,0.05) 100%)' }}>
+      <main>
+        <header className="py-8 px-4 page-header-gradient">
           <div className="max-w-4xl mx-auto">
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mb-4 text-sm">
@@ -196,7 +204,7 @@ export default async function FacilityPage({ params }: PageProps) {
                 ) : (
                   <p style={{ color: 'var(--text-muted)' }}>No phone number</p>
                 )}
-                {facility.email && (
+                {facility.email && isSafeEmail(facility.email) && (
                   <p>
                     <a href={`mailto:${facility.email}`} className="hover:underline" style={{ color: 'var(--accent-text)' }}>
                       {facility.email}

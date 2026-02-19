@@ -1,5 +1,8 @@
+import Link from 'next/link'
 import facilitiesData from '../public/facilities.json'
 import type { Facility } from '@/lib/types'
+import { getStateName } from '@/lib/states'
+import { getTypeLabel, getBadgeStyle } from '@/lib/facility-types'
 import { SearchFilters } from '@/components/search-filters'
 import { FacilityCard } from '@/components/facility-card'
 import { Stats } from '@/components/stats'
@@ -97,6 +100,29 @@ function getRailroads(): string[] {
   return [...names].sort()
 }
 
+function getTopStates(n: number) {
+  const counts = new Map<string, number>()
+  for (const f of facilities_typed) {
+    const st = f.location?.state
+    if (st) counts.set(st, (counts.get(st) || 0) + 1)
+  }
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, n)
+    .map(([code, count]) => ({ code, name: getStateName(code), count }))
+}
+
+function getTopTypes(n: number) {
+  const counts = new Map<string, number>()
+  for (const f of facilities_typed) {
+    counts.set(f.type, (counts.get(f.type) || 0) + 1)
+  }
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, n)
+    .map(([type, count]) => ({ type, label: getTypeLabel(type), badge: getBadgeStyle(type), count }))
+}
+
 interface PageProps {
   searchParams: Promise<SearchParams>
 }
@@ -114,19 +140,46 @@ export default async function Home({ searchParams }: PageProps) {
   const stats = getStats()
   const states = getStates()
   const railroads = getRailroads()
+  const hasFilters = !!(params.q || params.state || params.type || params.railroad)
+  const topStates = getTopStates(12)
+  const topTypes = getTopTypes(6)
 
   return (
-    <main className="min-h-screen">
+    <main>
       <a href="#main-results" className="skip-link">
         Skip to results
       </a>
 
       <header className="py-10 px-4" style={{ background: 'linear-gradient(135deg, rgba(230,81,0,0.1) 0%, transparent 50%, rgba(230,81,0,0.05) 100%)' }}>
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-3">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-2">
             <span aria-hidden="true">🚂 </span>Railhub
           </h1>
-          <p className="text-lg opacity-90 mb-6" style={{ color: 'var(--text-secondary)' }}>Free Rail Freight Directory</p>
+          <p className="text-lg mb-1" style={{ color: 'var(--text-secondary)' }}>Free Rail Freight Directory</p>
+          <p className="text-sm mb-5 max-w-xl mx-auto" style={{ color: 'var(--text-tertiary)' }}>
+            Search {facilities_typed.length.toLocaleString()} rail-served facilities across North America.
+            Find transload locations, team tracks, storage, and more.
+          </p>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Link
+              href="/states"
+              className="px-5 py-2.5 rounded-lg text-sm font-medium transition hover:opacity-90"
+              style={{ backgroundColor: 'var(--accent)', color: 'var(--text-on-accent)' }}
+            >
+              Browse by State
+            </Link>
+            <a
+              href="#search-input"
+              className="px-5 py-2.5 rounded-lg text-sm font-medium border transition hover:opacity-80"
+              style={{
+                backgroundColor: 'var(--accent-muted)',
+                borderColor: 'var(--accent-border)',
+                color: 'var(--accent-text)',
+              }}
+            >
+              Search Facilities
+            </a>
+          </div>
           <Stats {...stats} />
         </div>
       </header>
@@ -177,6 +230,72 @@ export default async function Home({ searchParams }: PageProps) {
             />
           )}
         </div>
+
+        {/* Browse sections — only on unfiltered homepage */}
+        {!hasFilters && currentPage === 1 && (
+          <>
+            {/* Browse by State */}
+            <section className="mt-12">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-semibold" style={{ color: 'var(--text-primary)' }}>
+                  Browse by State
+                </h2>
+                <Link
+                  href="/states"
+                  className="text-sm font-medium transition hover:underline"
+                  style={{ color: 'var(--accent-text)' }}
+                >
+                  View all states &rarr;
+                </Link>
+              </div>
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+                {topStates.map(s => (
+                  <Link
+                    key={s.code}
+                    href={`/state/${s.code}`}
+                    className="rounded-xl border p-3 text-center transition hover:border-[var(--accent)] hover:shadow-md"
+                    style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-default)' }}
+                  >
+                    <div className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{s.name}</div>
+                    <div className="text-xs mt-1" style={{ color: 'var(--accent-text)' }}>
+                      {s.count.toLocaleString()}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+            {/* Popular Facility Types */}
+            <section className="mt-10 mb-4">
+              <h2 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>
+                Popular Facility Types
+              </h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+                {topTypes.map(t => (
+                  <Link
+                    key={t.type}
+                    href={`/?type=${t.type.toLowerCase()}`}
+                    className="rounded-xl border p-4 text-center transition hover:shadow-md"
+                    style={{
+                      backgroundColor: 'var(--bg-card)',
+                      borderColor: 'var(--border-default)',
+                    }}
+                  >
+                    <span
+                      className="badge"
+                      style={{ background: t.badge.bg, borderColor: t.badge.border, color: t.badge.text }}
+                    >
+                      {t.label}
+                    </span>
+                    <div className="text-lg font-bold mt-2" style={{ color: 'var(--text-primary)' }}>
+                      {t.count.toLocaleString()}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
       </div>
     </main>
   )

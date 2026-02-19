@@ -11,6 +11,13 @@ import { Pagination } from '@/components/pagination'
 const facilities = facilitiesData as Facility[]
 const ITEMS_PER_PAGE = 48
 
+export function generateStaticParams() {
+  const states = [...new Set(
+    facilities.map(f => f.location?.state).filter(Boolean)
+  )] as string[]
+  return states.map(state => ({ state }))
+}
+
 interface SearchParams {
   q?: string
   type?: string
@@ -102,10 +109,10 @@ export default async function StatePage({ params, searchParams }: PageProps) {
   const basePath = `/state/${state}`
 
   return (
-    <main className="min-h-screen">
+    <main>
       <a href="#main-results" className="skip-link">Skip to results</a>
 
-      <header className="py-8 px-4" style={{ background: 'linear-gradient(135deg, var(--accent-muted) 0%, transparent 50%, rgba(230,81,0,0.05) 100%)' }}>
+      <header className="py-8 px-4 page-header-gradient">
         <div className="max-w-7xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-4 text-sm">
             <ol className="flex items-center gap-1.5">

@@ -23,6 +23,10 @@
   --accent-border: rgba(230, 81, 0, 0.3);
   --accent-text: #ff7043;      /* 4.6:1 on #111 */
 
+  /* Navigation */
+  --bg-nav: rgba(28, 28, 28, 0.85);
+  --text-on-accent: #ffffff;
+
   /* Borders */
   --border-subtle: #2a2a2a;
   --border-default: #333333;
@@ -189,4 +193,20 @@ body {
   height: 1px;
   background: var(--border-subtle);
   margin: 12px 0;
+}
+
+/* Page header gradient */
+.page-header-gradient {
+  background: linear-gradient(135deg, var(--accent-muted) 0%, transparent 50%, rgba(230, 81, 0, 0.05) 100%);
+}
+
+/* Skeleton loading */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+.skeleton {
+  background: var(--border-default);
+  border-radius: 8px;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
 }
