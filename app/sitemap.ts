@@ -6,6 +6,7 @@ import glossaryData from '@/public/data/glossary.json'
 import carTypesData from '@/public/data/car-types.json'
 import interchangeData from '@/public/data/interchange-rules.json'
 import guidesData from '@/public/data/guides.json'
+import { prisma } from '@/lib/db'
 
 const BASE_URL = 'https://railhub-v2.vercel.app'
 const facilities = facilitiesData as Facility[]
@@ -14,7 +15,7 @@ const carTypes = carTypesData as CarType[]
 const interchangeRules = interchangeData as InterchangeRule[]
 const guides = guidesData as Guide[]
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const states = [...new Set(
     facilities.map(f => f.location?.state).filter(Boolean)
   )] as string[]
@@ -77,6 +78,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  // Job pages
+  let jobEntries: MetadataRoute.Sitemap = []
+  try {
+    const activeJobs = await prisma.job.findMany({
+      where: { isActive: true },
+      select: { slug: true, updatedAt: true },
+      take: 50000,
+    })
+    jobEntries = activeJobs.map(job => ({
+      url: `${BASE_URL}/jobs/${job.slug}`,
+      lastModified: job.updatedAt,
+      changeFrequency: 'daily' as const,
+      priority: 0.6,
+    }))
+  } catch {
+    // Jobs table may not exist yet during initial build
+  }
+
   return [
     {
       url: BASE_URL,
@@ -90,6 +109,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/jobs`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
     ...stateEntries,
     ...facilityEntries,
     ...resourcePages,
@@ -97,5 +122,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...carTypeEntries,
     ...interchangeEntries,
     ...guideEntries,
+    ...jobEntries,
   ]
 }

@@ -214,3 +214,142 @@ enum ImportStatus {
   COMPLETED
   FAILED
 }
+
+// ── Job Board ──────────────────────────────────────────────
+
+model Job {
+  id            String    @id @default(cuid())
+  slug          String    @unique
+
+  // Core identity
+  title         String
+  company       String
+  companySlug   String    @map("company_slug")
+
+  // Location
+  city          String?
+  state         String?
+  country       String    @default("US")
+  workMode      WorkMode  @map("work_mode")
+
+  // Classification
+  jobType       JobType   @map("job_type")
+  category      String?
+  experienceLevel ExperienceLevel? @map("experience_level")
+
+  // Compensation
+  salaryMin     Int?      @map("salary_min")
+  salaryMax     Int?      @map("salary_max")
+  salaryPeriod  SalaryPeriod? @map("salary_period")
+
+  // Content
+  description   String
+  applyUrl      String    @map("apply_url")
+
+  // Source tracking
+  externalId    String    @map("external_id")
+  jobSource     JobSource @relation(fields: [jobSourceId], references: [id])
+  jobSourceId   String    @map("job_source_id")
+
+  // Deduplication
+  contentHash   String?   @map("content_hash")
+
+  // Lifecycle
+  postedAt      DateTime  @map("posted_at")
+  expiresAt     DateTime? @map("expires_at")
+  scrapedAt     DateTime  @default(now()) @map("scraped_at")
+  isActive      Boolean   @default(true) @map("is_active")
+
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  @@unique([externalId, jobSourceId])
+  @@index([isActive, postedAt])
+  @@index([state])
+  @@index([company])
+  @@index([companySlug])
+  @@index([category])
+  @@index([jobType])
+  @@index([workMode])
+  @@index([contentHash])
+  @@map("jobs")
+}
+
+model JobSource {
+  id          String        @id @default(cuid())
+  name        String        @unique
+  type        JobSourceType
+  baseUrl     String?       @map("base_url")
+
+  lastScrapeAt DateTime?    @map("last_scrape_at")
+  totalJobs    Int          @default(0) @map("total_jobs")
+  isEnabled    Boolean      @default(true) @map("is_enabled")
+
+  jobs        Job[]
+  scrapeLogs  ScrapeLog[]
+
+  createdAt   DateTime      @default(now()) @map("created_at")
+
+  @@map("job_sources")
+}
+
+model ScrapeLog {
+  id            String      @id @default(cuid())
+  jobSourceId   String      @map("job_source_id")
+  jobSource     JobSource   @relation(fields: [jobSourceId], references: [id], onDelete: Cascade)
+
+  jobsFound     Int         @default(0) @map("jobs_found")
+  jobsCreated   Int         @default(0) @map("jobs_created")
+  jobsUpdated   Int         @default(0) @map("jobs_updated")
+  jobsExpired   Int         @default(0) @map("jobs_expired")
+  jobsFailed    Int         @default(0) @map("jobs_failed")
+
+  status        ScrapeStatus
+  errorMessage  String?     @map("error_message")
+
+  startedAt     DateTime    @map("started_at")
+  completedAt   DateTime?   @map("completed_at")
+
+  @@index([jobSourceId])
+  @@index([status])
+  @@map("scrape_logs")
+}
+
+enum WorkMode {
+  ONSITE
+  REMOTE
+  HYBRID
+}
+
+enum JobType {
+  FULL_TIME
+  PART_TIME
+  CONTRACT
+  INTERNSHIP
+  TEMPORARY
+}
+
+enum ExperienceLevel {
+  ENTRY
+  MID
+  SENIOR
+  EXECUTIVE
+}
+
+enum SalaryPeriod {
+  YEARLY
+  HOURLY
+}
+
+enum JobSourceType {
+  API
+  SCRAPER
+  MANUAL
+}
+
+enum ScrapeStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+}

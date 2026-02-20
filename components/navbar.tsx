@@ -19,6 +19,7 @@ export function Navbar() {
 
   const links = [
     { href: '/states', label: 'Browse States' },
+    { href: '/jobs', label: 'Jobs' },
     { href: '/resources', label: 'Resources' },
   ]
 

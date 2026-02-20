@@ -25,7 +25,7 @@ export function Footer() {
       style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-subtle)' }}
     >
       <div className="max-w-7xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8">
           {/* Top States */}
           <div>
             <h3 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: 'var(--text-tertiary)' }}>
@@ -69,6 +69,32 @@ export function Footer() {
                     style={{ color: 'var(--text-secondary)' }}
                   >
                     {t.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Jobs */}
+          <div>
+            <h3 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: 'var(--text-tertiary)' }}>
+              Jobs
+            </h3>
+            <ul className="space-y-2">
+              {[
+                { href: '/jobs', label: 'All Jobs' },
+                { href: '/jobs?jobType=FULL_TIME', label: 'Full-time' },
+                { href: '/jobs?workMode=REMOTE', label: 'Remote' },
+                { href: '/jobs?category=Operations', label: 'Operations' },
+                { href: '/jobs?category=Mechanical', label: 'Mechanical' },
+              ].map(link => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm transition hover:underline"
+                    style={{ color: 'var(--text-secondary)' }}
+                  >
+                    {link.label}
                   </Link>
                 </li>
               ))}
