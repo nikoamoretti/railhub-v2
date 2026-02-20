@@ -13,10 +13,10 @@ export async function getJobs(filters: JobFilters): Promise<{ jobs: JobWithSourc
 
   if (filters.q) {
     where.OR = [
-      { title: { contains: filters.q } },
-      { company: { contains: filters.q } },
-      { description: { contains: filters.q } },
-      { city: { contains: filters.q } },
+      { title: { contains: filters.q, mode: 'insensitive' } },
+      { company: { contains: filters.q, mode: 'insensitive' } },
+      { description: { contains: filters.q, mode: 'insensitive' } },
+      { city: { contains: filters.q, mode: 'insensitive' } },
     ]
   }
 
