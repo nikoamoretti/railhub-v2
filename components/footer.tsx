@@ -25,7 +25,7 @@ export function Footer() {
       style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-subtle)' }}
     >
       <div className="max-w-7xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-6 gap-8">
           {/* Top States */}
           <div>
             <h3 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: 'var(--text-tertiary)' }}>
@@ -135,16 +135,30 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* About */}
+          {/* Industry Data */}
           <div>
             <h3 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: 'var(--text-tertiary)' }}>
-              About Railhub
+              Industry Data
             </h3>
-            <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-              Free directory of 7,900+ rail freight facilities across North America.
-              Find transload locations, team tracks, storage yards, and more with
-              railroad connections and capacity details.
-            </p>
+            <ul className="space-y-2">
+              {[
+                { href: '/industry', label: 'Overview' },
+                { href: '/industry/metrics', label: 'Service Metrics' },
+                { href: '/industry/fuel-surcharges', label: 'Fuel Surcharges' },
+                { href: '/industry/advisories', label: 'Advisories' },
+                { href: '/regulatory', label: 'Regulatory' },
+              ].map(link => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm transition hover:underline"
+                    style={{ color: 'var(--text-secondary)' }}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

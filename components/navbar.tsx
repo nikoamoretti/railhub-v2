@@ -20,6 +20,7 @@ export function Navbar() {
   const links = [
     { href: '/states', label: 'Browse States' },
     { href: '/jobs', label: 'Jobs' },
+    { href: '/industry', label: 'Industry Data' },
     { href: '/resources', label: 'Resources' },
   ]
 

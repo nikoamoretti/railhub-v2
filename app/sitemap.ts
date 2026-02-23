@@ -78,6 +78,55 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
+  // Industry pages
+  const industryPages: MetadataRoute.Sitemap = [
+    '/industry',
+    '/industry/metrics',
+    '/industry/fuel-surcharges',
+    '/industry/advisories',
+    '/regulatory',
+  ].map(path => ({
+    url: `${BASE_URL}${path}`,
+    lastModified: new Date(),
+    changeFrequency: 'daily' as const,
+    priority: 0.8,
+  }))
+
+  // Dynamic advisory pages
+  let advisoryEntries: MetadataRoute.Sitemap = []
+  try {
+    const advisories = await prisma.serviceAdvisory.findMany({
+      where: { isActive: true },
+      select: { slug: true, updatedAt: true },
+      take: 5000,
+    })
+    advisoryEntries = advisories.map(a => ({
+      url: `${BASE_URL}/industry/advisories/${a.slug}`,
+      lastModified: a.updatedAt,
+      changeFrequency: 'daily' as const,
+      priority: 0.6,
+    }))
+  } catch {
+    // Table may not exist during initial build
+  }
+
+  // Dynamic regulatory pages
+  let regulatoryEntries: MetadataRoute.Sitemap = []
+  try {
+    const updates = await prisma.regulatoryUpdate.findMany({
+      select: { slug: true, createdAt: true },
+      take: 5000,
+    })
+    regulatoryEntries = updates.map(u => ({
+      url: `${BASE_URL}/regulatory/${u.slug}`,
+      lastModified: u.createdAt,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    }))
+  } catch {
+    // Table may not exist during initial build
+  }
+
   // Job pages
   let jobEntries: MetadataRoute.Sitemap = []
   try {
@@ -122,6 +171,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...carTypeEntries,
     ...interchangeEntries,
     ...guideEntries,
+    ...industryPages,
+    ...advisoryEntries,
+    ...regulatoryEntries,
     ...jobEntries,
   ]
 }
