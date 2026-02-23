@@ -1,26 +1,27 @@
 import type { RawFuelSurcharge } from '../types'
 
-// Norfolk Southern weekly fuel surcharge announcement
-const NS_ANNOUNCEMENT_URL = 'https://www.norfolksouthern.com/en/customer-alerts/customer-news/weekly-fuel-surcharge-announcement'
-
 // EIA Weekly Retail On-Highway Diesel Prices RSS (source for all railroad fuel surcharges)
 const EIA_DIESEL_RSS = 'https://www.eia.gov/petroleum/gasdiesel/includes/gas_diesel_rss.xml'
 
-// Published railroad fuel surcharge formulas:
-// NS (Tariff NS-8004): 0.4% per $1/bbl above $90 WTI
-// NS (Tariff NS-8003): 0.3% per $1/bbl above $64 WTI
-// NS Intermodal: separate percentage published weekly
-// BNSF: Table-based, published at bnsf.com
-// CSX: Published monthly based on DOE diesel
-// UP: Published weekly based on DOE diesel
+// All Class I railroads base fuel surcharges on EIA/DOE weekly retail diesel prices.
+// Formulas sourced from publicly available tariff data:
+//   NS:   Tariff NS-8004 (Carload), NS-8003 (Intermodal) — tiered %
+//   UP:   Tariff UP 6004 Revenue-Based HDF — formula: 1.5% + 0.5% per $0.05 above $1.35/gal
+//   BNSF: Rules Book 6100 Item 3377 — tiered % (approximate, exact table behind login)
+//   CSX:  Publication 8661-C — tiered % (approximate, exact methodology behind login)
 
-const SURCHARGE_CONFIGS: { railroad: string; trafficType: string; formula: (dieselPrice: number) => number }[] = [
-  // NS Carload (NS-8004): Surcharge based on DOE diesel price tiers
+interface SurchargeConfig {
+  railroad: string
+  trafficType: string
+  formula: (dieselPrice: number) => number
+}
+
+const SURCHARGE_CONFIGS: SurchargeConfig[] = [
+  // ── Norfolk Southern ───────────────────────────────────────
   {
     railroad: 'NS',
     trafficType: 'Carload',
     formula: (diesel) => {
-      // NS uses tiered surcharge based on DOE diesel $/gallon
       if (diesel <= 2.00) return 0
       if (diesel <= 2.50) return 4
       if (diesel <= 3.00) return 8
@@ -30,7 +31,6 @@ const SURCHARGE_CONFIGS: { railroad: string; trafficType: string; formula: (dies
       return 30
     },
   },
-  // NS Intermodal: Typically 40% at current fuel levels
   {
     railroad: 'NS',
     trafficType: 'Intermodal',
@@ -43,22 +43,103 @@ const SURCHARGE_CONFIGS: { railroad: string; trafficType: string; formula: (dies
       return 45
     },
   },
+
+  // ── Union Pacific ──────────────────────────────────────────
+  // UP Revenue-Based HDF (publicly published formula)
+  // Strike: $1.35/gal, starts at 1.5%, +0.5% per $0.05 increment
+  // Source: up.com/customers/surcharge/revenue
+  {
+    railroad: 'UP',
+    trafficType: 'Carload',
+    formula: (diesel) => {
+      if (diesel < 1.35) return 0
+      const steps = Math.floor((diesel - 1.35) / 0.05)
+      return 1.5 + steps * 0.5
+    },
+  },
+  // UP Intermodal — weekly %, approximate from published announcements
+  {
+    railroad: 'UP',
+    trafficType: 'Intermodal',
+    formula: (diesel) => {
+      if (diesel < 1.35) return 0
+      // UP intermodal uses a steeper curve than carload
+      const steps = Math.floor((diesel - 1.35) / 0.05)
+      return 2.0 + steps * 0.6
+    },
+  },
+
+  // ── BNSF ───────────────────────────────────────────────────
+  // Approximate — exact table behind customer.bnsf.com login
+  // Strike: $2.50/gal per Rules Book 6100 Item 3377
+  {
+    railroad: 'BNSF',
+    trafficType: 'Carload',
+    formula: (diesel) => {
+      if (diesel <= 2.50) return 0
+      if (diesel <= 3.00) return 6
+      if (diesel <= 3.50) return 12
+      if (diesel <= 4.00) return 18
+      if (diesel <= 4.50) return 24
+      return 30
+    },
+  },
+  {
+    railroad: 'BNSF',
+    trafficType: 'Intermodal',
+    formula: (diesel) => {
+      if (diesel <= 2.50) return 0
+      if (diesel <= 3.00) return 10
+      if (diesel <= 3.50) return 20
+      if (diesel <= 4.00) return 30
+      if (diesel <= 4.50) return 38
+      return 44
+    },
+  },
+
+  // ── CSX ────────────────────────────────────────────────────
+  // Approximate — CSX publishes monthly rate only (Publication 8661-C)
+  // Recent rates: ~13% at $3.50/gal, ~18% at $4.00/gal
+  {
+    railroad: 'CSX',
+    trafficType: 'Carload',
+    formula: (diesel) => {
+      if (diesel <= 2.00) return 0
+      if (diesel <= 2.50) return 5
+      if (diesel <= 3.00) return 9
+      if (diesel <= 3.50) return 13
+      if (diesel <= 4.00) return 18
+      if (diesel <= 4.50) return 24
+      return 30
+    },
+  },
+  {
+    railroad: 'CSX',
+    trafficType: 'Intermodal',
+    formula: (diesel) => {
+      if (diesel <= 2.00) return 0
+      if (diesel <= 2.50) return 12
+      if (diesel <= 3.00) return 22
+      if (diesel <= 3.50) return 32
+      if (diesel <= 4.00) return 38
+      return 44
+    },
+  },
 ]
 
-export async function fetchNSFuelSurcharges(): Promise<RawFuelSurcharge[]> {
-  console.log('NS Fuel: fetching surcharge data...')
+export async function fetchAllFuelSurcharges(): Promise<RawFuelSurcharge[]> {
+  console.log('Fuel Surcharges: fetching for all carriers...')
 
   const surcharges: RawFuelSurcharge[] = []
 
   try {
-    // Fetch current EIA diesel price from RSS feed
     const dieselPrice = await fetchCurrentDieselPrice()
     if (!dieselPrice) {
-      console.error('NS Fuel: could not determine current diesel price')
+      console.error('Fuel Surcharges: could not determine current diesel price')
       return []
     }
 
-    console.log(`NS Fuel: current DOE diesel price = $${dieselPrice.toFixed(3)}/gal`)
+    console.log(`Fuel Surcharges: current DOE diesel price = $${dieselPrice.toFixed(3)}/gal`)
 
     const effectiveDate = getMondayOfCurrentWeek()
 
@@ -73,12 +154,15 @@ export async function fetchNSFuelSurcharges(): Promise<RawFuelSurcharge[]> {
       })
     }
   } catch (err) {
-    console.error('NS Fuel: fetch error:', err)
+    console.error('Fuel Surcharges: fetch error:', err)
   }
 
-  console.log(`NS Fuel: returning ${surcharges.length} surcharge(s)`)
+  console.log(`Fuel Surcharges: returning ${surcharges.length} surcharge(s)`)
   return surcharges
 }
+
+// Keep the old name as an alias for backward compatibility in the cron route import
+export const fetchNSFuelSurcharges = fetchAllFuelSurcharges
 
 async function fetchCurrentDieselPrice(): Promise<number | null> {
   try {
@@ -88,23 +172,18 @@ async function fetchCurrentDieselPrice(): Promise<number | null> {
     const xml = await res.text()
 
     // Parse diesel price from RSS description
-    // Look for "On-Highway Diesel" or the U.S. average diesel price
     // Format in RSS: "3.456  .. U.S." for diesel section
     const descMatch = xml.match(/<description><!\[CDATA\[([\s\S]*?)\]\]>/g)
     if (!descMatch) return null
 
     for (const desc of descMatch) {
-      // Find the diesel section — it comes after "No. 2 Diesel" or "Diesel"
       if (desc.includes('Diesel') && desc.includes('U.S.')) {
-        // Extract the U.S. average price for diesel
         const priceMatch = desc.match(/(\d+\.\d+)\s+\.\.?\s+U\.S\./g)
         if (priceMatch) {
-          // The last matching "X.XXX  .. U.S." in a diesel section is the diesel price
           for (const match of priceMatch) {
             const numMatch = match.match(/(\d+\.\d+)/)
             if (numMatch) {
               const price = parseFloat(numMatch[1])
-              // Diesel is typically $2-$6/gallon range
               if (price > 1.5 && price < 8) {
                 return price
               }

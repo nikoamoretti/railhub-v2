@@ -17,8 +17,8 @@ interface SourceConfig {
 const SOURCES: SourceConfig[] = [
   {
     name: 'FRA Safety Data',
-    type: 'SCRAPER',
-    baseUrl: 'https://railroads.dot.gov',
+    type: 'API',
+    baseUrl: 'https://data.transportation.gov',
     fetcher: fetchFRASafetyData,
   },
 ]

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/db'
 import { fetchUSDAMetrics } from '@/lib/industry/sources/usda-metrics'
-import { fetchNSFuelSurcharges } from '@/lib/industry/sources/ns-fuel-surcharge'
+import { fetchAllFuelSurcharges } from '@/lib/industry/sources/ns-fuel-surcharge'
 import { fetchBNSFAdvisories } from '@/lib/industry/sources/bnsf-advisories'
 import { fetchCSXEmbargoes } from '@/lib/industry/sources/csx-embargoes'
 import { generateAdvisorySlug } from '@/lib/industry/slug'
@@ -26,10 +26,10 @@ const SOURCES: SourceConfig[] = [
     fetcher: async () => ({ type: 'metrics', items: await fetchUSDAMetrics() }),
   },
   {
-    name: 'NS Fuel Surcharges',
-    type: 'EXCEL',
-    baseUrl: 'https://www.norfolksouthern.com',
-    fetcher: async () => ({ type: 'fuel_surcharges', items: await fetchNSFuelSurcharges() }),
+    name: 'Fuel Surcharges (All Carriers)',
+    type: 'API',
+    baseUrl: 'https://www.eia.gov',
+    fetcher: async () => ({ type: 'fuel_surcharges', items: await fetchAllFuelSurcharges() }),
   },
   {
     name: 'BNSF Customer Notifications',
