@@ -66,6 +66,12 @@ async function getFacilities(searchParams: SearchParams) {
           const capB = b.capabilities?.track_capacity || 0
           return capB - capA
         }
+        case 'rating_desc': {
+          const rA = a.google_rating ?? 0
+          const rB = b.google_rating ?? 0
+          if (rB !== rA) return rB - rA
+          return (b.google_review_count ?? 0) - (a.google_review_count ?? 0)
+        }
         default:
           return 0
       }

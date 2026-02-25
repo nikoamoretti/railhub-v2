@@ -94,6 +94,12 @@ export default async function StatePage({ params, searchParams }: PageProps) {
         case 'name_asc': return (a.name || '').localeCompare(b.name || '')
         case 'name_desc': return (b.name || '').localeCompare(a.name || '')
         case 'capacity_desc': return (b.capabilities?.track_capacity || 0) - (a.capabilities?.track_capacity || 0)
+        case 'rating_desc': {
+          const rA = a.google_rating ?? 0
+          const rB = b.google_rating ?? 0
+          if (rB !== rA) return rB - rA
+          return (b.google_review_count ?? 0) - (a.google_review_count ?? 0)
+        }
         default: return 0
       }
     })

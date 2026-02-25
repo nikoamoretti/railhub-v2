@@ -19,6 +19,7 @@ const SORT_OPTIONS = [
   { value: 'name_desc', label: 'Name Z-A' },
   { value: 'state', label: 'State' },
   { value: 'capacity_desc', label: 'Capacity (high to low)' },
+  { value: 'rating_desc', label: 'Rating (high to low)' },
 ]
 
 export function SearchFilters({ states, railroads, totalResults, filteredResults, basePath = '/', hideStateFilter = false }: SearchFiltersProps) {
