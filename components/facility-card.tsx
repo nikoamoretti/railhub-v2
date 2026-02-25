@@ -4,6 +4,7 @@ import Link from 'next/link'
 import type { Facility } from '@/lib/types'
 import { getTypeLabel, getBadgeStyle } from '@/lib/facility-types'
 import { isValidRailroad } from '@/lib/railroads'
+import { StarRating } from '@/components/star-rating'
 
 interface FacilityCardProps {
   facility: Facility
@@ -112,9 +113,9 @@ export function FacilityCard({ facility }: FacilityCardProps) {
           </div>
           <div className="flex items-center gap-2">
             {facility.google_rating != null && (
-              <span className="flex items-center gap-1" style={{ color: 'var(--badge-yellow-text)' }}>
-                <span aria-hidden="true">&#9733;</span>
-                {facility.google_rating}
+              <span className="flex items-center gap-1">
+                <span style={{ color: 'var(--badge-yellow-text)' }}>{facility.google_rating}</span>
+                <StarRating rating={facility.google_rating} size="sm" />
               </span>
             )}
             {productCount > 0 && (

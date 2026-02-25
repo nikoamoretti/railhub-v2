@@ -6,6 +6,7 @@ import type { Facility } from '@/lib/types'
 import { getTypeLabel, getBadgeStyle } from '@/lib/facility-types'
 import { isValidRailroad } from '@/lib/railroads'
 import { FacilityCard } from '@/components/facility-card'
+import { StarRating } from '@/components/star-rating'
 
 const facilities = facilitiesData as Facility[]
 
@@ -182,9 +183,9 @@ export default async function FacilityPage({ params }: PageProps) {
                 </p>
               )}
               {facility.google_rating != null && (
-                <span className="flex items-center gap-1 text-sm font-medium px-2 py-0.5 rounded-full border" style={{ background: 'var(--badge-yellow-bg)', borderColor: 'var(--badge-yellow-border)', color: 'var(--badge-yellow-text)' }}>
-                  <span aria-hidden="true">&#9733;</span>
+                <span className="flex items-center gap-1.5 text-sm font-medium px-2 py-0.5 rounded-full border" style={{ background: 'var(--badge-yellow-bg)', borderColor: 'var(--badge-yellow-border)', color: 'var(--badge-yellow-text)' }}>
                   {facility.google_rating}
+                  <StarRating rating={facility.google_rating} size="sm" />
                   {facility.google_review_count != null && (
                     <span className="font-normal" style={{ color: 'var(--text-tertiary)' }}>({facility.google_review_count})</span>
                   )}
@@ -438,13 +439,9 @@ export default async function FacilityPage({ params }: PageProps) {
                     <div className="flex items-center gap-2">
                       <span className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>{facility.google_rating}</span>
                       <div className="text-right">
-                        <div className="flex gap-0.5">
-                          {[1, 2, 3, 4, 5].map(star => (
-                            <span key={star} style={{ color: star <= Math.round(facility.google_rating ?? 0) ? 'var(--badge-yellow-text)' : 'var(--border-default)' }}>&#9733;</span>
-                          ))}
-                        </div>
+                        <StarRating rating={facility.google_rating} size="md" />
                         {facility.google_review_count != null && (
-                          <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{facility.google_review_count} reviews</span>
+                          <div className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{facility.google_review_count} reviews</div>
                         )}
                       </div>
                     </div>
@@ -457,10 +454,8 @@ export default async function FacilityPage({ params }: PageProps) {
                         <span className="font-medium text-sm" style={{ color: 'var(--text-primary)' }}>{review.author}</span>
                         <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{review.relative_time}</span>
                       </div>
-                      <div className="flex gap-0.5 mb-2">
-                        {[1, 2, 3, 4, 5].map(star => (
-                          <span key={star} className="text-xs" style={{ color: star <= (review.rating ?? 0) ? 'var(--badge-yellow-text)' : 'var(--border-default)' }}>&#9733;</span>
-                        ))}
+                      <div className="mb-2">
+                        <StarRating rating={review.rating ?? 0} size="sm" />
                       </div>
                       {review.text && (
                         <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{review.text}</p>
