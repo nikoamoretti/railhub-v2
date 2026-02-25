@@ -243,21 +243,23 @@ def enrich_facility(
     facility: dict,
     place: dict,
     confidence: float,
+    coords_only: bool = False,
 ) -> Tuple[Dict, List[str]]:
     """Return (enriched_facility, fields_filled). Mutates a copy."""
     f = dict(facility)
     f["location"] = dict(facility.get("location") or {})
     filled: List[str] = []
 
-    # Website
-    if not f.get("website") and place.get("websiteUri"):
-        f["website"] = place["websiteUri"]
-        filled.append("website")
+    if not coords_only:
+        # Website
+        if not f.get("website") and place.get("websiteUri"):
+            f["website"] = place["websiteUri"]
+            filled.append("website")
 
-    # Phone
-    if not f.get("phone") and place.get("nationalPhoneNumber"):
-        f["phone"] = format_phone(place["nationalPhoneNumber"])
-        filled.append("phone")
+        # Phone
+        if not f.get("phone") and place.get("nationalPhoneNumber"):
+            f["phone"] = format_phone(place["nationalPhoneNumber"])
+            filled.append("phone")
 
     # Lat/lon
     loc = place.get("location", {})
@@ -268,24 +270,25 @@ def enrich_facility(
         f["location"]["longitude"] = loc["longitude"]
         filled.append("longitude")
 
-    # Address components
-    addr_parts = extract_address_parts(place.get("addressComponents", []))
-    if not f["location"].get("street_address") and addr_parts.get("street_address"):
-        f["location"]["street_address"] = addr_parts["street_address"]
-        filled.append("street_address")
-    if not f["location"].get("zip_code") and addr_parts.get("zip_code"):
-        f["location"]["zip_code"] = addr_parts["zip_code"]
-        filled.append("zip_code")
+    if not coords_only:
+        # Address components
+        addr_parts = extract_address_parts(place.get("addressComponents", []))
+        if not f["location"].get("street_address") and addr_parts.get("street_address"):
+            f["location"]["street_address"] = addr_parts["street_address"]
+            filled.append("street_address")
+        if not f["location"].get("zip_code") and addr_parts.get("zip_code"):
+            f["location"]["zip_code"] = addr_parts["zip_code"]
+            filled.append("zip_code")
 
-    # Google-specific fields (always set)
-    if place.get("rating") is not None:
-        f["google_rating"] = place["rating"]
-        filled.append("google_rating")
-    if place.get("userRatingCount") is not None:
-        f["google_review_count"] = place["userRatingCount"]
-        filled.append("google_review_count")
-    if place.get("reviews"):
-        f["google_reviews"] = build_reviews(place["reviews"])
+        # Google-specific fields (always set)
+        if place.get("rating") is not None:
+            f["google_rating"] = place["rating"]
+            filled.append("google_rating")
+        if place.get("userRatingCount") is not None:
+            f["google_review_count"] = place["userRatingCount"]
+            filled.append("google_review_count")
+        if place.get("reviews"):
+            f["google_reviews"] = build_reviews(place["reviews"])
 
     if place.get("id"):
         f["google_place_id"] = place["id"]
@@ -329,6 +332,7 @@ def process_facilities(
     conn: sqlite3.Connection,
     threshold: float,
     skip_enriched: bool,
+    coords_only: bool = False,
 ) -> Tuple[List[Dict], Dict[str, Any]]:
     stats: Dict[str, Any] = {
         "total_facilities": len(facilities),
@@ -420,7 +424,7 @@ def process_facilities(
             _maybe_print_progress(i + 1, len(facilities), stats)
             continue
 
-        enriched, filled = enrich_facility(facility, best_place, confidence)
+        enriched, filled = enrich_facility(facility, best_place, confidence, coords_only=coords_only)
         results.append(enriched)
         stats["enriched"] += 1
         stats["processed"] += 1
@@ -454,6 +458,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--limit", type=int, default=None, help="Process only first N facilities")
     parser.add_argument("--threshold", type=float, default=0.80, help="Match confidence threshold (default 0.80)")
     parser.add_argument("--skip-enriched", action="store_true", help="Skip facilities that already have enrichment metadata")
+    parser.add_argument("--coords-only", action="store_true", help="Only fill lat/lon (safe for low-confidence matches)")
     parser.add_argument("--report", action="store_true", help="Write enrichment_report.json")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="Output JSON path")
     return parser.parse_args()
@@ -484,6 +489,7 @@ def main() -> int:
         conn,
         threshold=args.threshold,
         skip_enriched=args.skip_enriched,
+        coords_only=args.coords_only,
     )
     conn.close()
 
