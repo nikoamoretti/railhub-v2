@@ -47,6 +47,14 @@ export interface FacilityCategory {
   category: { name: string; type: string }
 }
 
+export interface GoogleReview {
+  author: string
+  rating: number | null
+  text: string
+  time: string
+  relative_time: string
+}
+
 export interface Facility {
   id: string
   external_id: string
@@ -62,4 +70,8 @@ export interface Facility {
   capabilities: FacilityCapabilities | null
   categories: FacilityCategory[]
   railroads: FacilityRailroad[]
+  google_rating?: number | null
+  google_review_count?: number | null
+  google_reviews?: GoogleReview[]
+  google_place_id?: string | null
 }

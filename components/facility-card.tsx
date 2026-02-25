@@ -111,6 +111,12 @@ export function FacilityCard({ facility }: FacilityCardProps) {
             )}
           </div>
           <div className="flex items-center gap-2">
+            {facility.google_rating != null && (
+              <span className="flex items-center gap-1" style={{ color: 'var(--badge-yellow-text)' }}>
+                <span aria-hidden="true">&#9733;</span>
+                {facility.google_rating}
+              </span>
+            )}
             {productCount > 0 && (
               <span>{productCount} product{productCount !== 1 ? 's' : ''}</span>
             )}

@@ -107,6 +107,21 @@ export default async function FacilityPage({ params }: PageProps) {
         ...(facility.location.country && { addressCountry: facility.location.country }),
       },
     }),
+    ...(facility.google_rating != null && facility.google_review_count != null && {
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: facility.google_rating,
+        reviewCount: facility.google_review_count,
+        bestRating: 5,
+      },
+    }),
+    ...(facility.location?.latitude != null && facility.location?.longitude != null && {
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: facility.location.latitude,
+        longitude: facility.location.longitude,
+      },
+    }),
   }
 
   return (
@@ -159,12 +174,23 @@ export default async function FacilityPage({ params }: PageProps) {
             </div>
 
             <h1 className="text-3xl sm:text-4xl font-bold mt-3" style={{ color: 'var(--text-primary)' }}>{facility.name}</h1>
-            {facility.location && (
-              <p className="text-lg mt-1" style={{ color: 'var(--text-secondary)' }}>
-                {facility.location.city}, {facility.location.state}
-                {facility.location.zip_code ? ` ${facility.location.zip_code}` : ''}
-              </p>
-            )}
+            <div className="flex items-center gap-3 mt-1">
+              {facility.location && (
+                <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
+                  {facility.location.city}, {facility.location.state}
+                  {facility.location.zip_code ? ` ${facility.location.zip_code}` : ''}
+                </p>
+              )}
+              {facility.google_rating != null && (
+                <span className="flex items-center gap-1 text-sm font-medium px-2 py-0.5 rounded-full border" style={{ background: 'var(--badge-yellow-bg)', borderColor: 'var(--badge-yellow-border)', color: 'var(--badge-yellow-text)' }}>
+                  <span aria-hidden="true">&#9733;</span>
+                  {facility.google_rating}
+                  {facility.google_review_count != null && (
+                    <span className="font-normal" style={{ color: 'var(--text-tertiary)' }}>({facility.google_review_count})</span>
+                  )}
+                </span>
+              )}
+            </div>
           </div>
         </header>
 
@@ -396,6 +422,50 @@ export default async function FacilityPage({ params }: PageProps) {
                     <span key={idx} className="px-2 py-1 rounded text-sm border" style={{ background: 'var(--badge-gray-bg)', borderColor: 'var(--badge-gray-border)', color: 'var(--badge-gray-text)' }}>
                       {city}
                     </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Google Reviews */}
+            {facility.google_reviews && facility.google_reviews.length > 0 && (
+              <div className="rounded-xl shadow-sm border p-6 md:col-span-2" style={cardStyle}>
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xl font-semibold" style={{ color: 'var(--text-primary)' }}>
+                    <span aria-hidden="true">&#9733; </span>Google Reviews
+                  </h2>
+                  {facility.google_rating != null && (
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>{facility.google_rating}</span>
+                      <div className="text-right">
+                        <div className="flex gap-0.5">
+                          {[1, 2, 3, 4, 5].map(star => (
+                            <span key={star} style={{ color: star <= Math.round(facility.google_rating ?? 0) ? 'var(--badge-yellow-text)' : 'var(--border-default)' }}>&#9733;</span>
+                          ))}
+                        </div>
+                        {facility.google_review_count != null && (
+                          <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{facility.google_review_count} reviews</span>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="space-y-4">
+                  {facility.google_reviews.map((review, idx) => (
+                    <div key={idx} className="border-t pt-4 first:border-t-0 first:pt-0" style={{ borderColor: 'var(--border-default)' }}>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="font-medium text-sm" style={{ color: 'var(--text-primary)' }}>{review.author}</span>
+                        <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{review.relative_time}</span>
+                      </div>
+                      <div className="flex gap-0.5 mb-2">
+                        {[1, 2, 3, 4, 5].map(star => (
+                          <span key={star} className="text-xs" style={{ color: star <= (review.rating ?? 0) ? 'var(--badge-yellow-text)' : 'var(--border-default)' }}>&#9733;</span>
+                        ))}
+                      </div>
+                      {review.text && (
+                        <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{review.text}</p>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>
