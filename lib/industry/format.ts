@@ -1,4 +1,4 @@
-import type { MetricType, AdvisoryType, RegulatoryAgency } from '@prisma/client'
+import type { MetricType, AdvisoryType, RegulatoryAgency } from './types'
 
 export function formatMetricType(type: MetricType): string {
   const map: Record<MetricType, string> = {
@@ -52,7 +52,7 @@ export function formatChangePercent(current: number, previous: number): string {
   return `${sign}${change.toFixed(1)}%`
 }
 
-export function formatReportWeek(date: Date): string {
+export function formatReportWeek(date: Date | string): string {
   return new Date(date).toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
@@ -60,7 +60,7 @@ export function formatReportWeek(date: Date): string {
   })
 }
 
-export function formatRelativeTime(date: Date): string {
+export function formatRelativeTime(date: Date | string): string {
   const now = new Date()
   const diff = now.getTime() - new Date(date).getTime()
   const hours = Math.floor(diff / (1000 * 60 * 60))

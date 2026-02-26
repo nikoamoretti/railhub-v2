@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import type { RegulatoryUpdate } from '@prisma/client'
+import type { RegulatoryUpdate } from '@/lib/industry/types'
 import { AgencyBadge } from './agency-badge'
 import { formatRelativeTime } from '@/lib/industry/format'
 

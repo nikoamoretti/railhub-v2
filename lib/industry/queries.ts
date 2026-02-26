@@ -1,231 +1,132 @@
-import { prisma } from '@/lib/db'
-import type { Prisma, MetricType, AdvisoryType, RegulatoryAgency } from '@prisma/client'
-import type { IndustryStats, MetricWithTrend } from './types'
+import industryData from '@/public/industry.json'
+import type { RailServiceMetric, FuelSurcharge, RegulatoryUpdate, ServiceAdvisory, MetricWithTrend, IndustryStats } from './types'
+
+const metrics = industryData.metrics as RailServiceMetric[]
+const fuelSurcharges = industryData.fuelSurcharges as FuelSurcharge[]
+const regulatory = industryData.regulatory as RegulatoryUpdate[]
 
 export const ITEMS_PER_PAGE = 20
 
 // ── Rail Service Metrics ──────────────────────────────
 
 export async function getLatestMetrics(): Promise<MetricWithTrend[]> {
-  try {
-    // Get the latest report week
-    const latest = await prisma.railServiceMetric.findFirst({
-      orderBy: { reportWeek: 'desc' },
-      select: { reportWeek: true },
-    })
-    if (!latest) return []
+  if (metrics.length === 0) return []
 
-    // Get previous week for trend
-    const previousWeek = new Date(latest.reportWeek)
-    previousWeek.setDate(previousWeek.getDate() - 7)
-
-    const [current, previous] = await Promise.all([
-      prisma.railServiceMetric.findMany({
-        where: { reportWeek: latest.reportWeek },
-        orderBy: [{ railroad: 'asc' }, { metricType: 'asc' }],
-      }),
-      prisma.railServiceMetric.findMany({
-        where: { reportWeek: previousWeek },
-      }),
-    ])
-
-    const prevMap = new Map(
-      previous.map((m) => [`${m.railroad}-${m.metricType}-${m.commodity || ''}`, m.value])
-    )
-
-    return current.map((m) => {
-      const key = `${m.railroad}-${m.metricType}-${m.commodity || ''}`
-      const previousValue = prevMap.get(key)
-      const changePercent =
-        previousValue != null && previousValue !== 0
-          ? ((m.value - previousValue) / previousValue) * 100
-          : undefined
-
-      return { ...m, previousValue, changePercent }
-    })
-  } catch (err) {
-    console.error('getLatestMetrics error:', err)
-    return []
+  // Find latest report week per metric type (datasets report on slightly different days)
+  const latestWeekByType = new Map<string, string>()
+  for (const m of metrics) {
+    const prev = latestWeekByType.get(m.metricType)
+    if (!prev || m.reportWeek > prev) latestWeekByType.set(m.metricType, m.reportWeek)
   }
+
+  // Get current metrics: latest week for each type
+  const current = metrics
+    .filter(m => m.reportWeek === latestWeekByType.get(m.metricType))
+    .sort((a, b) => a.railroad.localeCompare(b.railroad) || a.metricType.localeCompare(b.metricType))
+
+  // Build previous-week map for trend calculation
+  const prevMap = new Map<string, number>()
+  for (const [type, latestWeek] of latestWeekByType) {
+    const typeMetrics = metrics.filter(m => m.metricType === type && m.reportWeek < latestWeek)
+    const prevWeeks = [...new Set(typeMetrics.map(m => m.reportWeek))].sort().reverse()
+    if (prevWeeks.length > 0) {
+      for (const m of typeMetrics.filter(m => m.reportWeek === prevWeeks[0])) {
+        prevMap.set(`${m.railroad}-${m.metricType}-${m.commodity || ''}`, m.value)
+      }
+    }
+  }
+
+  return current.map(m => {
+    const key = `${m.railroad}-${m.metricType}-${m.commodity || ''}`
+    const previousValue = prevMap.get(key)
+    const changePercent =
+      previousValue != null && previousValue !== 0
+        ? ((m.value - previousValue) / previousValue) * 100
+        : undefined
+    return { ...m, previousValue, changePercent }
+  })
 }
 
 export async function getMetricsByRailroad(railroad: string): Promise<MetricWithTrend[]> {
-  try {
-    const metrics = await prisma.railServiceMetric.findMany({
-      where: { railroad },
-      orderBy: [{ reportWeek: 'desc' }, { metricType: 'asc' }],
-      take: 50,
-    })
-    return metrics.map((m) => ({ ...m }))
-  } catch (err) {
-    console.error('getMetricsByRailroad error:', err)
-    return []
-  }
+  return metrics
+    .filter(m => m.railroad === railroad)
+    .sort((a, b) => b.reportWeek.localeCompare(a.reportWeek) || a.metricType.localeCompare(b.metricType))
+    .slice(0, 50)
+    .map(m => ({ ...m }))
 }
 
 export async function getMetricHistory(
   railroad: string,
-  metricType: MetricType,
+  metricType: string,
   weeks: number = 12
-): Promise<{ reportWeek: Date; value: number }[]> {
-  try {
-    const metrics = await prisma.railServiceMetric.findMany({
-      where: { railroad, metricType, commodity: '' },
-      orderBy: { reportWeek: 'desc' },
-      take: weeks,
-      select: { reportWeek: true, value: true },
-    })
-    return metrics.reverse()
-  } catch (err) {
-    console.error('getMetricHistory error:', err)
-    return []
-  }
+): Promise<{ reportWeek: string; value: number }[]> {
+  return metrics
+    .filter(m => m.railroad === railroad && m.metricType === metricType && (!m.commodity || m.commodity === ''))
+    .sort((a, b) => b.reportWeek.localeCompare(a.reportWeek))
+    .slice(0, weeks)
+    .map(m => ({ reportWeek: m.reportWeek, value: m.value }))
+    .reverse()
 }
 
 // ── Fuel Surcharges ──────────────────────────────────
 
-export async function getLatestFuelSurcharges() {
-  try {
-    // Get the most recent surcharges (last 30 days)
-    const cutoff = new Date()
-    cutoff.setDate(cutoff.getDate() - 90)
-
-    const surcharges = await prisma.fuelSurcharge.findMany({
-      where: { effectiveDate: { gte: cutoff } },
-      orderBy: [{ railroad: 'asc' }, { effectiveDate: 'desc' }],
-    })
-
-    // Deduplicate: keep latest per railroad+trafficType
-    const seen = new Set<string>()
-    const latest = surcharges.filter((s) => {
-      const key = `${s.railroad}-${s.trafficType}`
-      if (seen.has(key)) return false
-      seen.add(key)
-      return true
-    })
-
-    return latest
-  } catch (err) {
-    console.error('getLatestFuelSurcharges error:', err)
-    return []
-  }
+export async function getLatestFuelSurcharges(): Promise<FuelSurcharge[]> {
+  // Already deduplicated in the scraper output
+  return [...fuelSurcharges].sort((a, b) => a.railroad.localeCompare(b.railroad))
 }
 
-export async function getFuelSurchargeHistory(railroad: string, weeks: number = 12) {
-  try {
-    return await prisma.fuelSurcharge.findMany({
-      where: { railroad },
-      orderBy: { effectiveDate: 'desc' },
-      take: weeks,
-    })
-  } catch (err) {
-    console.error('getFuelSurchargeHistory error:', err)
-    return []
-  }
+export async function getFuelSurchargeHistory(railroad: string, weeks: number = 12): Promise<FuelSurcharge[]> {
+  return fuelSurcharges
+    .filter(s => s.railroad === railroad)
+    .sort((a, b) => b.effectiveDate.localeCompare(a.effectiveDate))
+    .slice(0, weeks)
 }
 
 // ── Service Advisories ────────────────────────────────
+// No advisories in static data yet (requires BNSF/CSX HTML scraping)
 
 export async function getActiveAdvisories(filters?: {
   railroad?: string
-  advisoryType?: AdvisoryType
+  advisoryType?: string
   page?: number
-}) {
-  try {
-    const where: Prisma.ServiceAdvisoryWhereInput = { isActive: true }
-    if (filters?.railroad) where.railroad = filters.railroad
-    if (filters?.advisoryType) where.advisoryType = filters.advisoryType
-
-    const page = Math.max(1, filters?.page || 1)
-    const skip = (page - 1) * ITEMS_PER_PAGE
-
-    const [advisories, total] = await Promise.all([
-      prisma.serviceAdvisory.findMany({
-        where,
-        orderBy: { issuedAt: 'desc' },
-        skip,
-        take: ITEMS_PER_PAGE,
-      }),
-      prisma.serviceAdvisory.count({ where }),
-    ])
-
-    return { advisories, total }
-  } catch (err) {
-    console.error('getActiveAdvisories error:', err)
-    return { advisories: [], total: 0 }
-  }
+}): Promise<{ advisories: ServiceAdvisory[]; total: number }> {
+  return { advisories: [], total: 0 }
 }
 
-export async function getAdvisoryBySlug(slug: string) {
-  try {
-    return await prisma.serviceAdvisory.findUnique({ where: { slug } })
-  } catch (err) {
-    console.error('getAdvisoryBySlug error:', err)
-    return null
-  }
+export async function getAdvisoryBySlug(slug: string): Promise<ServiceAdvisory | null> {
+  return null
 }
 
 // ── Regulatory Updates ────────────────────────────────
 
 export async function getRegulatoryUpdates(filters?: {
-  agency?: RegulatoryAgency
+  agency?: string
   page?: number
 }) {
-  try {
-    const where: Prisma.RegulatoryUpdateWhereInput = {}
-    if (filters?.agency) where.agency = filters.agency
-
-    const page = Math.max(1, filters?.page || 1)
-    const skip = (page - 1) * ITEMS_PER_PAGE
-
-    const [updates, total] = await Promise.all([
-      prisma.regulatoryUpdate.findMany({
-        where,
-        orderBy: { publishedAt: 'desc' },
-        skip,
-        take: ITEMS_PER_PAGE,
-      }),
-      prisma.regulatoryUpdate.count({ where }),
-    ])
-
-    return { updates, total }
-  } catch (err) {
-    console.error('getRegulatoryUpdates error:', err)
-    return { updates: [], total: 0 }
+  let filtered = [...regulatory]
+  if (filters?.agency) {
+    filtered = filtered.filter(u => u.agency === filters.agency)
   }
+  filtered.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+
+  const page = Math.max(1, filters?.page || 1)
+  const skip = (page - 1) * ITEMS_PER_PAGE
+  const paged = filtered.slice(skip, skip + ITEMS_PER_PAGE)
+
+  return { updates: paged, total: filtered.length }
 }
 
 export async function getRegulatoryBySlug(slug: string) {
-  try {
-    return await prisma.regulatoryUpdate.findUnique({ where: { slug } })
-  } catch (err) {
-    console.error('getRegulatoryBySlug error:', err)
-    return null
-  }
+  return regulatory.find(u => u.slug === slug) || null
 }
 
 // ── Dashboard Stats ──────────────────────────────────
 
 export async function getIndustryStats(): Promise<IndustryStats> {
-  try {
-    const [totalMetrics, totalAdvisories, activeEmbargoes, lastFeed] = await Promise.all([
-      prisma.railServiceMetric.count(),
-      prisma.serviceAdvisory.count({ where: { isActive: true } }),
-      prisma.serviceAdvisory.count({ where: { isActive: true, advisoryType: 'EMBARGO' } }),
-      prisma.dataFeedSource.findFirst({
-        orderBy: { lastFetchAt: 'desc' },
-        select: { lastFetchAt: true },
-      }),
-    ])
-
-    return {
-      totalMetrics,
-      totalAdvisories,
-      activeEmbargoes,
-      lastUpdated: lastFeed?.lastFetchAt || null,
-    }
-  } catch (err) {
-    console.error('getIndustryStats error:', err)
-    return { totalMetrics: 0, totalAdvisories: 0, activeEmbargoes: 0, lastUpdated: null }
+  return {
+    totalMetrics: metrics.length,
+    totalAdvisories: 0,
+    activeEmbargoes: 0,
+    lastUpdated: industryData.scrapedAt ? new Date(industryData.scrapedAt) : null,
   }
 }

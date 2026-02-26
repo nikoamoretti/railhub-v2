@@ -1,7 +1,7 @@
 import { formatRelativeTime } from '@/lib/industry/format'
 
 interface DataFreshnessProps {
-  lastUpdated: Date | null
+  lastUpdated: Date | string | null
 }
 
 export function DataFreshness({ lastUpdated }: DataFreshnessProps) {

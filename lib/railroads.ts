@@ -1,3 +1,138 @@
+// ─── Railroad registry with metadata for carrier pages ─────────────────────
+
+export interface RailroadMeta {
+  slug: string
+  name: string
+  shortName: string
+  tier: 'class1' | 'regional'
+  hq: string
+  founded?: number
+  description: string
+  facilityNames: string[]   // matches against facility.railroads[].railroad.name
+  jobSlugs: string[]        // matches against job.companySlug
+  accentColor: string
+}
+
+export const RAILROAD_REGISTRY: RailroadMeta[] = [
+  {
+    slug: 'bnsf',
+    name: 'BNSF Railway',
+    shortName: 'BNSF',
+    tier: 'class1',
+    hq: 'Fort Worth, TX',
+    founded: 1995,
+    description: 'One of the largest freight railroad networks in North America, spanning 32,500 miles across 28 states and three Canadian provinces.',
+    facilityNames: ['BNSF'],
+    jobSlugs: ['bnsf-railway'],
+    accentColor: '#f97316',
+  },
+  {
+    slug: 'union-pacific',
+    name: 'Union Pacific Railroad',
+    shortName: 'UP',
+    tier: 'class1',
+    hq: 'Omaha, NE',
+    founded: 1862,
+    description: 'America\'s premier railroad franchise, linking 23 states in the western two-thirds of the country with 32,000 route miles.',
+    facilityNames: ['UP'],
+    jobSlugs: ['union-pacific'],
+    accentColor: '#eab308',
+  },
+  {
+    slug: 'csx',
+    name: 'CSX Transportation',
+    shortName: 'CSX',
+    tier: 'class1',
+    hq: 'Jacksonville, FL',
+    founded: 1980,
+    description: 'Rail freight transportation across a 20,000-mile network serving the eastern United States and parts of Canada.',
+    facilityNames: ['CSX'],
+    jobSlugs: ['csx-transportation'],
+    accentColor: '#3b82f6',
+  },
+  {
+    slug: 'norfolk-southern',
+    name: 'Norfolk Southern Railway',
+    shortName: 'NS',
+    tier: 'class1',
+    hq: 'Atlanta, GA',
+    founded: 1982,
+    description: 'Operates approximately 19,300 route miles in 22 eastern states, serving major ports and intermodal terminals.',
+    facilityNames: ['NS'],
+    jobSlugs: ['norfolk-southern'],
+    accentColor: '#8b5cf6',
+  },
+  {
+    slug: 'canadian-national',
+    name: 'Canadian National Railway',
+    shortName: 'CN',
+    tier: 'class1',
+    hq: 'Montreal, QC',
+    founded: 1919,
+    description: 'Spans Canada and mid-America with 19,500 miles of track across eight Canadian provinces and 16 US states.',
+    facilityNames: ['CN'],
+    jobSlugs: ['canadian-national'],
+    accentColor: '#ef4444',
+  },
+  {
+    slug: 'cpkc',
+    name: 'Canadian Pacific Kansas City',
+    shortName: 'CPKC',
+    tier: 'class1',
+    hq: 'Calgary, AB',
+    founded: 2023,
+    description: 'The first single-line railroad linking Canada, the United States, and Mexico with a 20,000-mile network.',
+    facilityNames: ['CPKC', 'CP', 'KCS'],
+    jobSlugs: ['cpkc'],
+    accentColor: '#dc2626',
+  },
+  {
+    slug: 'amtrak',
+    name: 'Amtrak',
+    shortName: 'AMTK',
+    tier: 'class1',
+    hq: 'Washington, DC',
+    founded: 1971,
+    description: 'National passenger railroad serving over 500 destinations across 46 states on a 21,000-mile route network.',
+    facilityNames: ['AMTK'],
+    jobSlugs: ['amtrak'],
+    accentColor: '#0ea5e9',
+  },
+  {
+    slug: 'florida-east-coast',
+    name: 'Florida East Coast Railway',
+    shortName: 'FEC',
+    tier: 'regional',
+    hq: 'Coral Gables, FL',
+    description: 'Operates 351 miles of mainline track along Florida\'s east coast from Jacksonville to Miami.',
+    facilityNames: ['FEC'],
+    jobSlugs: [],
+    accentColor: '#14b8a6',
+  },
+  {
+    slug: 'watco',
+    name: 'Watco Companies',
+    shortName: 'Watco',
+    tier: 'regional',
+    hq: 'Pittsburg, KS',
+    founded: 1983,
+    description: 'Operates 42 short line and regional railroads, plus terminal and port services across the US and Australia.',
+    facilityNames: ['Watco'],
+    jobSlugs: ['watco'],
+    accentColor: '#6366f1',
+  },
+]
+
+export function getRailroadBySlug(slug: string): RailroadMeta | undefined {
+  return RAILROAD_REGISTRY.find(r => r.slug === slug)
+}
+
+export function getAllRailroadSlugs(): string[] {
+  return RAILROAD_REGISTRY.map(r => r.slug)
+}
+
+// ─── Validation ────────────────────────────────────────────────────────────
+
 export const VALID_RAILROADS = [
   'BNSF', 'UP', 'CSX', 'NS', 'CN', 'CP', 'KCS', 'FEC', 'AMTK',
   'Union Pacific', 'Burlington Northern', 'Norfolk Southern',

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { getRegulatoryUpdates, ITEMS_PER_PAGE } from '@/lib/industry/queries'
 import { RegulatoryCard } from '@/components/regulatory/regulatory-card'
 import { Pagination } from '@/components/pagination'
-import type { RegulatoryAgency } from '@prisma/client'
+import type { RegulatoryAgency } from '@/lib/industry/types'
 
 export const revalidate = 3600
 

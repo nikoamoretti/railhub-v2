@@ -1,4 +1,4 @@
-import type { AdvisoryType } from '@prisma/client'
+import type { AdvisoryType } from '@/lib/industry/types'
 import { formatAdvisoryType } from '@/lib/industry/format'
 
 interface AdvisoryBadgeProps {

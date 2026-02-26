@@ -1,4 +1,4 @@
-import type { RegulatoryAgency } from '@prisma/client'
+import type { RegulatoryAgency } from '@/lib/industry/types'
 
 interface AgencyBadgeProps {
   agency: RegulatoryAgency

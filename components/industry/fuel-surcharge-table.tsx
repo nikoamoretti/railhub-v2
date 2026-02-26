@@ -1,4 +1,4 @@
-import type { FuelSurcharge } from '@prisma/client'
+import type { FuelSurcharge } from '@/lib/industry/types'
 
 interface FuelSurchargeTableProps {
   surcharges: FuelSurcharge[]

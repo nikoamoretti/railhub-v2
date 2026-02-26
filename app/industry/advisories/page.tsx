@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { getActiveAdvisories, ITEMS_PER_PAGE } from '@/lib/industry/queries'
 import { AdvisoryCard } from '@/components/industry/advisory-card'
 import { Pagination } from '@/components/pagination'
-import type { AdvisoryType } from '@prisma/client'
+import type { AdvisoryType } from '@/lib/industry/types'
 
 export const revalidate = 1800
 

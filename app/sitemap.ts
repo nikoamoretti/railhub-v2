@@ -7,6 +7,7 @@ import carTypesData from '@/public/data/car-types.json'
 import interchangeData from '@/public/data/interchange-rules.json'
 import guidesData from '@/public/data/guides.json'
 import { prisma } from '@/lib/db'
+import { getAllRailroadSlugs } from '@/lib/railroads'
 
 const BASE_URL = 'https://railhub-v2.vercel.app'
 const facilities = facilitiesData as Facility[]
@@ -155,6 +156,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily',
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/railroads`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    ...getAllRailroadSlugs().map(slug => ({
+      url: `${BASE_URL}/railroad/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    })),
     ...stateEntries,
     ...facilityEntries,
     ...resourcePages,

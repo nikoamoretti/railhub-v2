@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import type { ServiceAdvisory } from '@prisma/client'
+import type { ServiceAdvisory } from '@/lib/industry/types'
 import { AdvisoryBadge } from './advisory-badge'
 import { formatRelativeTime } from '@/lib/industry/format'
 

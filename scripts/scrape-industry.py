@@ -1,0 +1,534 @@
+"""
+Rail industry data scraper.
+Fetches from USDA (Socrata), EIA, FRA, and STB.
+Writes to public/industry.json.
+"""
+
+import json
+import re
+import uuid
+import xml.etree.ElementTree as ET
+from datetime import datetime, timedelta, timezone
+from math import floor
+
+import requests
+
+# --- Constants ---
+
+NOW_ISO = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+
+RAILROAD_MAP = {
+    "BNSF": "BNSF",
+    "Union Pacific": "UP",
+    "UP": "UP",
+    "CSX": "CSX",
+    "CSXT": "CSX",
+    "CSX Transportation": "CSX",
+    "Norfolk Southern": "NS",
+    "NS": "NS",
+    "Canadian National": "CN",
+    "CN": "CN",
+    "Canadian Pacific Kansas City": "CPKC",
+    "CPKC": "CPKC",
+    "KCS": "CPKC",
+}
+
+USDA_BASE = "https://agtransport.usda.gov/resource/{id}.json"
+
+USDA_DATASETS = [
+    {
+        "id": "2wy9-nmz4",
+        "metricType": "TRAIN_SPEED",
+        "unit": "mph",
+        "value_field": "mph",
+        "commodity_field": "commodity",
+        "filter": None,
+    },
+    {
+        "id": "9z94-b4fw",
+        "metricType": "TERMINAL_DWELL",
+        "unit": "hours",
+        "value_field": "value",
+        "commodity_field": None,
+        "filter": lambda row: not row.get("yard") or row.get("yard") == "System Average",
+    },
+    {
+        "id": "grdc-x6yk",
+        "metricType": "CARS_ON_LINE",
+        "unit": "cars",
+        "value_field": "cars",
+        "commodity_field": None,
+        "filter": None,
+    },
+    {
+        "id": "tb7q-kn5i",
+        "metricType": "CARLOADS_ORIGINATED",
+        "unit": "carloads",
+        "value_field": "carloads",
+        "commodity_field": "commodity",
+        "filter": lambda row: not row.get("type") or row.get("type") == "Originated",
+    },
+]
+
+
+# --- Helpers ---
+
+def short_uuid() -> str:
+    return str(uuid.uuid4()).replace("-", "")[:12]
+
+
+def slugify(text: str) -> str:
+    text = text.lower()
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    text = re.sub(r"-{2,}", "-", text)
+    text = text.strip("-")
+    return text[:80]
+
+
+def normalize_railroad(name: str) -> str:
+    if not name:
+        return name
+    return RAILROAD_MAP.get(name.strip(), name.strip())
+
+
+def current_monday_iso() -> str:
+    today = datetime.now(timezone.utc).date()
+    monday = today - timedelta(days=today.weekday())
+    return f"{monday.isoformat()}T00:00:00.000Z"
+
+
+def safe_float(val) -> float | None:
+    try:
+        return float(val)
+    except (TypeError, ValueError):
+        return None
+
+
+# --- Source 1: USDA Rail Metrics ---
+
+def fetch_usda_metrics() -> list[dict]:
+    print("[USDA] Fetching rail metrics from 4 datasets...")
+    records = []
+
+    for ds in USDA_DATASETS:
+        url = USDA_BASE.format(id=ds["id"])
+        params = {"$limit": 100, "$order": "date DESC"}
+        try:
+            resp = requests.get(url, params=params, timeout=30)
+            resp.raise_for_status()
+            rows = resp.json()
+        except Exception as exc:
+            print(f"  [USDA] ERROR fetching {ds['id']}: {exc}")
+            continue
+
+        kept = 0
+        for row in rows:
+            # Apply row-level filter
+            if ds["filter"] and not ds["filter"](row):
+                continue
+
+            railroad_raw = row.get("railroad") or row.get("reporting_railroad") or ""
+            railroad = normalize_railroad(railroad_raw)
+
+            raw_value = row.get(ds["value_field"])
+            value = safe_float(raw_value)
+            if value is None:
+                continue
+
+            date_raw = row.get("date") or row.get("week_of") or ""
+            # Normalize to ISO 8601
+            if date_raw:
+                date_raw = date_raw[:10]  # take YYYY-MM-DD
+                report_week = f"{date_raw}T00:00:00.000Z"
+            else:
+                report_week = NOW_ISO
+
+            commodity = ""
+            if ds["commodity_field"]:
+                commodity = row.get(ds["commodity_field"]) or ""
+
+            records.append({
+                "id": f"metric-{short_uuid()}",
+                "railroad": railroad,
+                "metricType": ds["metricType"],
+                "value": value,
+                "unit": ds["unit"],
+                "reportWeek": report_week,
+                "commodity": commodity,
+                "createdAt": NOW_ISO,
+            })
+            kept += 1
+
+        print(f"  [USDA] {ds['metricType']}: {kept} records from {len(rows)} rows")
+
+    print(f"[USDA] Total: {len(records)} metric records")
+    return records
+
+
+# --- Source 2: EIA Fuel Surcharges ---
+
+def _ns_carload(diesel: float) -> float:
+    if diesel <= 2.00: return 0.0
+    if diesel <= 2.50: return 4.0
+    if diesel <= 3.00: return 8.0
+    if diesel <= 3.50: return 13.0
+    if diesel <= 4.00: return 18.0
+    if diesel <= 4.50: return 24.0
+    return 30.0
+
+def _ns_intermodal(diesel: float) -> float:
+    if diesel <= 2.00: return 0.0
+    if diesel <= 2.50: return 15.0
+    if diesel <= 3.00: return 25.0
+    if diesel <= 3.50: return 35.0
+    if diesel <= 4.00: return 40.0
+    return 45.0
+
+def _up_carload(diesel: float) -> float:
+    if diesel < 1.35: return 0.0
+    return 1.5 + floor((diesel - 1.35) / 0.05) * 0.5
+
+def _up_intermodal(diesel: float) -> float:
+    if diesel < 1.35: return 0.0
+    return 2.0 + floor((diesel - 1.35) / 0.05) * 0.6
+
+def _bnsf_carload(diesel: float) -> float:
+    if diesel <= 2.50: return 0.0
+    if diesel <= 3.00: return 6.0
+    if diesel <= 3.50: return 12.0
+    if diesel <= 4.00: return 18.0
+    if diesel <= 4.50: return 24.0
+    return 30.0
+
+def _bnsf_intermodal(diesel: float) -> float:
+    if diesel <= 2.50: return 0.0
+    if diesel <= 3.00: return 10.0
+    if diesel <= 3.50: return 20.0
+    if diesel <= 4.00: return 30.0
+    if diesel <= 4.50: return 38.0
+    return 44.0
+
+def _csx_carload(diesel: float) -> float:
+    if diesel <= 2.00: return 0.0
+    if diesel <= 2.50: return 5.0
+    if diesel <= 3.00: return 9.0
+    if diesel <= 3.50: return 13.0
+    if diesel <= 4.00: return 18.0
+    if diesel <= 4.50: return 24.0
+    return 30.0
+
+def _csx_intermodal(diesel: float) -> float:
+    if diesel <= 2.00: return 0.0
+    if diesel <= 2.50: return 12.0
+    if diesel <= 3.00: return 22.0
+    if diesel <= 3.50: return 32.0
+    if diesel <= 4.00: return 38.0
+    return 44.0
+
+SURCHARGE_FORMULAS = [
+    ("NS",   "Carload",    _ns_carload),
+    ("NS",   "Intermodal", _ns_intermodal),
+    ("UP",   "Carload",    _up_carload),
+    ("UP",   "Intermodal", _up_intermodal),
+    ("BNSF", "Carload",    _bnsf_carload),
+    ("BNSF", "Intermodal", _bnsf_intermodal),
+    ("CSX",  "Carload",    _csx_carload),
+    ("CSX",  "Intermodal", _csx_intermodal),
+]
+
+
+def fetch_eia_fuel_surcharges() -> list[dict]:
+    print("[EIA] Fetching diesel price from RSS feed...")
+    url = "https://www.eia.gov/petroleum/gasdiesel/includes/gas_diesel_rss.xml"
+    try:
+        resp = requests.get(url, timeout=30)
+        resp.raise_for_status()
+    except Exception as exc:
+        print(f"  [EIA] ERROR fetching RSS: {exc}")
+        return []
+
+    try:
+        root = ET.fromstring(resp.text)
+    except ET.ParseError as exc:
+        print(f"  [EIA] XML parse error: {exc}")
+        return []
+
+    diesel_price = None
+    for item in root.iter("item"):
+        desc_el = item.find("description")
+        if desc_el is None or desc_el.text is None:
+            continue
+        desc = desc_el.text
+        if "Diesel" in desc and "U.S." in desc:
+            match = re.search(r"(\d+\.\d+)\s+\.\.?\s+U\.S\.", desc)
+            if match:
+                candidate = float(match.group(1))
+                if 1.5 <= candidate <= 8.0:
+                    diesel_price = candidate
+                    break
+
+    if diesel_price is None:
+        print("  [EIA] Could not extract a valid diesel price from RSS")
+        return []
+
+    print(f"  [EIA] Diesel price: ${diesel_price:.3f}")
+
+    effective_date = current_monday_iso()
+    records = []
+    for railroad, traffic_type, formula in SURCHARGE_FORMULAS:
+        rate = formula(diesel_price)
+        records.append({
+            "id": f"fs-{short_uuid()}",
+            "railroad": railroad,
+            "effectiveDate": effective_date,
+            "fuelPrice": diesel_price,
+            "surchargeRate": round(rate, 4),
+            "trafficType": traffic_type,
+            "createdAt": NOW_ISO,
+        })
+
+    print(f"[EIA] Total: {len(records)} fuel surcharge records")
+    return records
+
+
+# --- Source 3a: FRA Safety ---
+
+def fetch_fra_incidents() -> list[dict]:
+    print("[FRA] Fetching accident data...")
+    url = "https://data.transportation.gov/resource/85tf-25kj.json"
+    params = {
+        "$limit": 50,
+        "$order": "date DESC",
+        "$where": "date>'2024-01-01'",
+    }
+    try:
+        resp = requests.get(url, params=params, timeout=30)
+        resp.raise_for_status()
+        rows = resp.json()
+    except Exception as exc:
+        print(f"  [FRA] ERROR: {exc}")
+        return []
+
+    records = []
+    for row in rows:
+        # Actual field names from FRA Form 54 Socrata dataset
+        incident_number = (
+            row.get("accidentnumber")
+            or row.get("incidentkey")
+            or row.get("incident_number")
+            or short_uuid()
+        )
+        external_id = f"fra-{incident_number}"
+
+        incident_type = row.get("accidenttype") or row.get("type") or "Incident"
+        railroad_name = (
+            row.get("reportingrailroadname")
+            or row.get("railroad_name")
+            or row.get("railroad")
+            or "Unknown Railroad"
+        )
+        city = row.get("station") or row.get("city_name") or row.get("city") or "Unknown City"
+        state = (
+            row.get("stateabbr")
+            or row.get("statename")
+            or row.get("state_name")
+            or row.get("state")
+            or ""
+        )
+        date_raw = (row.get("date") or "")[:10]
+
+        title = f"{incident_type} - {railroad_name} near {city}, {state}"
+
+        killed = row.get("totalpersonskilled") or row.get("total_killed") or row.get("killed") or "0"
+        injured = row.get("totalpersonsinjured") or row.get("total_injured") or row.get("injured") or "0"
+        damage = row.get("totaldamagecost") or row.get("total_damage") or row.get("damage") or "0"
+
+        summary = (
+            f"Incident on {date_raw}: {killed} fatalities, "
+            f"{injured} injuries. Estimated damage: ${damage}"
+        )
+
+        narrative = row.get("narrative") or ""
+        narrative1 = row.get("narrative1") or ""
+        content = f"{narrative} {narrative1}".strip()
+
+        # documentUrl — some rows include a url dict
+        url_field = row.get("url")
+        doc_url = None
+        if isinstance(url_field, dict):
+            doc_url = url_field.get("url")
+        elif isinstance(url_field, str):
+            doc_url = url_field
+
+        slug = slugify(f"{title}-{external_id}")
+        published_at = f"{date_raw}T00:00:00.000Z" if date_raw else NOW_ISO
+
+        records.append({
+            "id": f"reg-{short_uuid()}",
+            "externalId": external_id,
+            "agency": "FRA",
+            "updateType": "Safety Alert",
+            "title": title,
+            "summary": summary,
+            "content": content,
+            "documentUrl": doc_url,
+            "docketNumber": None,
+            "slug": slug,
+            "publishedAt": published_at,
+            "createdAt": NOW_ISO,
+        })
+
+    print(f"[FRA] Total: {len(records)} incident records")
+    return records
+
+
+# --- Source 3b: STB News ---
+
+def fetch_stb_news() -> list[dict]:
+    print("[STB] Scraping latest news...")
+    url = "https://www.stb.gov/news-communications/latest-news/"
+    try:
+        resp = requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0 railhub-scraper"})
+        resp.raise_for_status()
+        html = resp.text
+    except Exception as exc:
+        print(f"  [STB] ERROR: {exc}")
+        return []
+
+    # STB uses class="stb-latest-news" on <article> elements with <h4> headings.
+    # Each article contains a heading div and a content div with date + docket in a <p>.
+    article_pattern = re.compile(
+        r'<article[^>]+class="[^"]*stb-latest-news[^"]*"[^>]*>(.*?)</article>',
+        re.DOTALL | re.IGNORECASE,
+    )
+    tag_pattern = re.compile(r"<[^>]+>")
+    heading_pattern = re.compile(r"<h[2-6][^>]*>(.*?)</h[2-6]>", re.DOTALL | re.IGNORECASE)
+    # Date format on STB: "02/06/2026 (Friday)"
+    date_pattern_mdy = re.compile(r"(\d{2}/\d{2}/\d{4})")
+    # Fallback: "February 6, 2026"
+    date_pattern_long = re.compile(r"(\w+ \d{1,2},?\s*\d{4})")
+    href_pattern = re.compile(r'href=["\']([^"\']+)["\']', re.IGNORECASE)
+    docket_pattern = re.compile(r"No\.\s*([\w\-]+)")
+    para_pattern = re.compile(r"<p[^>]*>(.*?)</p>", re.DOTALL | re.IGNORECASE)
+
+    records = []
+    for match in article_pattern.finditer(html):
+        body = match.group(1)
+
+        # Title — from heading tag
+        h_match = heading_pattern.search(body)
+        title_raw = tag_pattern.sub("", h_match.group(1)).strip() if h_match else ""
+        if not title_raw:
+            continue
+
+        # Href — first link in the heading div
+        href = ""
+        a_match = href_pattern.search(body)
+        if a_match:
+            href = a_match.group(1)
+            if href.startswith("/"):
+                href = f"https://www.stb.gov{href}"
+
+        # Date — prefer MM/DD/YYYY format found in content paragraph
+        date_str = ""
+        plain_body = tag_pattern.sub(" ", body)
+        d_match = date_pattern_mdy.search(plain_body)
+        if d_match:
+            try:
+                parsed_date = datetime.strptime(d_match.group(1), "%m/%d/%Y")
+                date_str = parsed_date.strftime("%Y-%m-%d")
+            except ValueError:
+                pass
+        if not date_str:
+            d_match2 = date_pattern_long.search(plain_body)
+            if d_match2:
+                raw = d_match2.group(1).replace(",", "").strip()
+                for fmt in ("%B %d %Y", "%b %d %Y"):
+                    try:
+                        parsed_date = datetime.strptime(raw, fmt)
+                        date_str = parsed_date.strftime("%Y-%m-%d")
+                        break
+                    except ValueError:
+                        pass
+
+        # Docket number (e.g. "No. 26-04")
+        docket = None
+        dk_match = docket_pattern.search(plain_body)
+        if dk_match:
+            docket = dk_match.group(1)
+
+        # First paragraph as summary (skip short/whitespace ones)
+        summary = ""
+        for p_match in para_pattern.finditer(body):
+            candidate = tag_pattern.sub("", p_match.group(1)).strip()
+            # Skip the date/docket paragraph (short, contains a date)
+            if len(candidate) > 30 and not date_pattern_mdy.search(candidate):
+                summary = candidate
+                break
+        if not summary:
+            # Fallback: use plain body excerpt
+            summary = plain_body.strip()[:200]
+
+        external_id = f"stb-{docket or short_uuid()}"
+        published_at = f"{date_str}T00:00:00.000Z" if date_str else NOW_ISO
+        slug = slugify(f"{title_raw}-{external_id}")
+
+        records.append({
+            "id": f"reg-{short_uuid()}",
+            "externalId": external_id,
+            "agency": "STB",
+            "updateType": "Notice",
+            "title": title_raw,
+            "summary": summary,
+            "content": summary,
+            "documentUrl": href or None,
+            "docketNumber": docket,
+            "slug": slug,
+            "publishedAt": published_at,
+            "createdAt": NOW_ISO,
+        })
+
+    print(f"[STB] Total: {len(records)} news records")
+    return records
+
+
+# --- Main ---
+
+def main() -> None:
+    import os
+
+    output_path = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "public",
+        "industry.json",
+    )
+
+    print("=== Rail Industry Scraper ===")
+
+    metrics = fetch_usda_metrics()
+    fuel_surcharges = fetch_eia_fuel_surcharges()
+
+    fra_records = fetch_fra_incidents()
+    stb_records = fetch_stb_news()
+    regulatory = fra_records + stb_records
+
+    payload = {
+        "metrics": metrics,
+        "fuelSurcharges": fuel_surcharges,
+        "regulatory": regulatory,
+        "scrapedAt": NOW_ISO,
+    }
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as fh:
+        json.dump(payload, fh, indent=2, ensure_ascii=False)
+
+    print(f"\n=== Done ===")
+    print(f"  metrics:       {len(metrics)}")
+    print(f"  fuelSurcharges:{len(fuel_surcharges)}")
+    print(f"  regulatory:    {len(regulatory)} ({len(fra_records)} FRA + {len(stb_records)} STB)")
+    print(f"  output:        {output_path}")
+
+
+if __name__ == "__main__":
+    main()
