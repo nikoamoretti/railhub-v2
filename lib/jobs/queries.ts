@@ -1,160 +1,108 @@
-import { prisma } from '@/lib/db'
-import type { Prisma, JobType, WorkMode, ExperienceLevel } from '@prisma/client'
-import type { JobFilters, JobFilterOptions, JobStats, JobWithSource } from './types'
+import jobsData from '../../public/jobs.json'
+import type { StaticJob, JobFilters, JobFilterOptions, JobStats, JobWithSource } from './types'
+
+const allJobs = jobsData as StaticJob[]
 
 export const ITEMS_PER_PAGE = 24
 
-const VALID_JOB_TYPES = new Set<string>(['FULL_TIME', 'PART_TIME', 'CONTRACT', 'INTERNSHIP', 'TEMPORARY'])
-const VALID_WORK_MODES = new Set<string>(['ONSITE', 'REMOTE', 'HYBRID'])
-const VALID_EXPERIENCE_LEVELS = new Set<string>(['ENTRY', 'MID', 'SENIOR', 'EXECUTIVE'])
-
-const EMPTY_FILTER_OPTIONS: JobFilterOptions = { states: [], companies: [], categories: [] }
-const EMPTY_STATS: JobStats = { totalActive: 0, newThisWeek: 0, byType: [], byCategory: [] }
-
 export async function getJobs(filters: JobFilters): Promise<{ jobs: JobWithSource[]; total: number }> {
-  try {
-    const where: Prisma.JobWhereInput = { isActive: true }
+  let result = [...allJobs]
 
-    if (filters.q) {
-      where.OR = [
-        { title: { contains: filters.q, mode: 'insensitive' } },
-        { company: { contains: filters.q, mode: 'insensitive' } },
-        { description: { contains: filters.q, mode: 'insensitive' } },
-        { city: { contains: filters.q, mode: 'insensitive' } },
-      ]
-    }
-
-    if (filters.state) where.state = filters.state
-    if (filters.company) where.companySlug = filters.company
-    if (filters.category) where.category = filters.category
-    if (filters.jobType && VALID_JOB_TYPES.has(filters.jobType)) where.jobType = filters.jobType as JobType
-    if (filters.workMode && VALID_WORK_MODES.has(filters.workMode)) where.workMode = filters.workMode as WorkMode
-    if (filters.experienceLevel && VALID_EXPERIENCE_LEVELS.has(filters.experienceLevel)) where.experienceLevel = filters.experienceLevel as ExperienceLevel
-
-    const orderBy = getOrderBy(filters.sort)
-    const page = Math.min(Math.max(1, parseInt(filters.page || '1', 10) || 1), 1000)
-    const skip = (page - 1) * ITEMS_PER_PAGE
-
-    const [jobs, total] = await Promise.all([
-      prisma.job.findMany({
-        where,
-        orderBy,
-        skip,
-        take: ITEMS_PER_PAGE,
-        include: { jobSource: { select: { name: true, baseUrl: true } } },
-      }),
-      prisma.job.count({ where }),
-    ])
-
-    return { jobs: jobs as JobWithSource[], total }
-  } catch (err) {
-    console.error('getJobs error:', err)
-    return { jobs: [], total: 0 }
+  if (filters.q) {
+    const q = filters.q.toLowerCase()
+    result = result.filter(j =>
+      j.title.toLowerCase().includes(q) ||
+      j.company.toLowerCase().includes(q) ||
+      j.description?.toLowerCase().includes(q) ||
+      j.city?.toLowerCase().includes(q)
+    )
   }
+
+  if (filters.state) result = result.filter(j => j.state === filters.state)
+  if (filters.company) result = result.filter(j => j.companySlug === filters.company)
+  if (filters.category) result = result.filter(j => j.category === filters.category)
+  if (filters.jobType) result = result.filter(j => j.jobType === filters.jobType)
+  if (filters.workMode) result = result.filter(j => j.workMode === filters.workMode)
+
+  result.sort(getSortFn(filters.sort))
+
+  const total = result.length
+  const page = Math.max(1, parseInt(filters.page || '1', 10) || 1)
+  const skip = (page - 1) * ITEMS_PER_PAGE
+  const jobs = result.slice(skip, skip + ITEMS_PER_PAGE)
+
+  return { jobs, total }
 }
 
 export async function getJobBySlug(slug: string): Promise<JobWithSource | null> {
-  const job = await prisma.job.findUnique({
-    where: { slug },
-    include: { jobSource: { select: { name: true, baseUrl: true } } },
-  })
-  return job as JobWithSource | null
+  return allJobs.find(j => j.slug === slug) || null
 }
 
 export async function getJobFilterOptions(): Promise<JobFilterOptions> {
-  try {
-    const [states, companies, categories] = await Promise.all([
-      prisma.job.groupBy({
-        by: ['state'],
-        where: { isActive: true, state: { not: null } },
-        _count: true,
-        orderBy: { state: 'asc' },
-      }),
-      prisma.job.groupBy({
-        by: ['company', 'companySlug'],
-        where: { isActive: true },
-        _count: true,
-        orderBy: { company: 'asc' },
-        take: 50,
-      }),
-      prisma.job.groupBy({
-        by: ['category'],
-        where: { isActive: true, category: { not: null } },
-        _count: true,
-        orderBy: { category: 'asc' },
-      }),
-    ])
+  const stateCounts = new Map<string, number>()
+  const companyCounts = new Map<string, { name: string; slug: string; count: number }>()
+  const categoryCounts = new Map<string, number>()
 
-    return {
-      states: states
-        .filter((s) => s.state)
-        .map((s) => ({ value: s.state!, count: s._count }))
-        .sort((a, b) => b.count - a.count),
-      companies: companies.map((c) => ({
-        value: c.company,
-        slug: c.companySlug,
-        count: c._count,
-      })).sort((a, b) => b.count - a.count),
-      categories: categories
-        .filter((c) => c.category)
-        .map((c) => ({ value: c.category!, count: c._count }))
-        .sort((a, b) => b.count - a.count),
+  for (const j of allJobs) {
+    if (j.state) stateCounts.set(j.state, (stateCounts.get(j.state) || 0) + 1)
+
+    if (!companyCounts.has(j.companySlug)) {
+      companyCounts.set(j.companySlug, { name: j.company, slug: j.companySlug, count: 0 })
     }
-  } catch (err) {
-    console.error('getJobFilterOptions error:', err)
-    return EMPTY_FILTER_OPTIONS
+    companyCounts.get(j.companySlug)!.count++
+
+    if (j.category) categoryCounts.set(j.category, (categoryCounts.get(j.category) || 0) + 1)
+  }
+
+  return {
+    states: [...stateCounts.entries()]
+      .map(([value, count]) => ({ value, count }))
+      .sort((a, b) => b.count - a.count),
+    companies: [...companyCounts.values()]
+      .map(c => ({ value: c.name, slug: c.slug, count: c.count }))
+      .sort((a, b) => b.count - a.count),
+    categories: [...categoryCounts.entries()]
+      .map(([value, count]) => ({ value, count }))
+      .sort((a, b) => b.count - a.count),
   }
 }
 
 export async function getJobStats(): Promise<JobStats> {
-  try {
-    const oneWeekAgo = new Date()
-    oneWeekAgo.setDate(oneWeekAgo.getDate() - 7)
+  const oneWeekAgo = new Date()
+  oneWeekAgo.setDate(oneWeekAgo.getDate() - 7)
 
-    const [totalActive, newThisWeek, byType, byCategory] = await Promise.all([
-      prisma.job.count({ where: { isActive: true } }),
-      prisma.job.count({ where: { isActive: true, postedAt: { gte: oneWeekAgo } } }),
-      prisma.job.groupBy({
-        by: ['jobType'],
-        where: { isActive: true },
-        _count: true,
-        orderBy: { jobType: 'asc' },
-      }),
-      prisma.job.groupBy({
-        by: ['category'],
-        where: { isActive: true, category: { not: null } },
-        _count: true,
-        orderBy: { category: 'asc' },
-        take: 5,
-      }),
-    ])
+  const newThisWeek = allJobs.filter(j => new Date(j.postedAt) >= oneWeekAgo).length
 
-    return {
-      totalActive,
-      newThisWeek,
-      byType: byType
-        .map((t) => ({ type: t.jobType, count: t._count }))
-        .sort((a, b) => b.count - a.count),
-      byCategory: byCategory
-        .filter((c) => c.category)
-        .map((c) => ({ category: c.category!, count: c._count }))
-        .sort((a, b) => b.count - a.count),
-    }
-  } catch (err) {
-    console.error('getJobStats error:', err)
-    return EMPTY_STATS
+  const byType = new Map<string, number>()
+  const byCategory = new Map<string, number>()
+
+  for (const j of allJobs) {
+    byType.set(j.jobType, (byType.get(j.jobType) || 0) + 1)
+    if (j.category) byCategory.set(j.category, (byCategory.get(j.category) || 0) + 1)
+  }
+
+  return {
+    totalActive: allJobs.length,
+    newThisWeek,
+    byType: [...byType.entries()]
+      .map(([type, count]) => ({ type, count }))
+      .sort((a, b) => b.count - a.count),
+    byCategory: [...byCategory.entries()]
+      .map(([category, count]) => ({ category, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 5),
   }
 }
 
-function getOrderBy(sort?: string): Prisma.JobOrderByWithRelationInput[] {
+function getSortFn(sort?: string): (a: StaticJob, b: StaticJob) => number {
   switch (sort) {
     case 'salary_desc':
-      return [{ salaryMax: 'desc' }, { postedAt: 'desc' }]
+      return (a, b) => (b.salaryMax || 0) - (a.salaryMax || 0)
     case 'title_asc':
-      return [{ title: 'asc' }]
+      return (a, b) => a.title.localeCompare(b.title)
     case 'company_asc':
-      return [{ company: 'asc' }]
+      return (a, b) => a.company.localeCompare(b.company)
     default:
-      return [{ postedAt: 'desc' }]
+      return (a, b) => new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime()
   }
 }

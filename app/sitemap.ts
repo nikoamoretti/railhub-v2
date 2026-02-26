@@ -127,23 +127,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Table may not exist during initial build
   }
 
-  // Job pages
-  let jobEntries: MetadataRoute.Sitemap = []
-  try {
-    const activeJobs = await prisma.job.findMany({
-      where: { isActive: true },
-      select: { slug: true, updatedAt: true },
-      take: 50000,
-    })
-    jobEntries = activeJobs.map(job => ({
-      url: `${BASE_URL}/jobs/${job.slug}`,
-      lastModified: job.updatedAt,
-      changeFrequency: 'daily' as const,
-      priority: 0.6,
-    }))
-  } catch {
-    // Jobs table may not exist yet during initial build
-  }
+  // Job pages (from static JSON)
+  const jobsJson = await import('@/public/jobs.json').then(m => m.default).catch(() => [])
+  const jobEntries: MetadataRoute.Sitemap = (jobsJson as { slug: string; postedAt: string }[]).map(job => ({
+    url: `${BASE_URL}/jobs/${job.slug}`,
+    lastModified: new Date(job.postedAt),
+    changeFrequency: 'daily' as const,
+    priority: 0.6,
+  }))
 
   return [
     {

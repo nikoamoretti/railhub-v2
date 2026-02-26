@@ -1,5 +1,3 @@
-import type { SalaryPeriod } from '@prisma/client'
-
 export function isSafeUrl(url: string): boolean {
   try {
     const parsed = new URL(url)
@@ -9,7 +7,7 @@ export function isSafeUrl(url: string): boolean {
   }
 }
 
-export function formatSalary(min?: number | null, max?: number | null, period?: SalaryPeriod | null): string | null {
+export function formatSalary(min?: number | null, max?: number | null, period?: string | null): string | null {
   if (!min && !max) return null
 
   const fmt = (n: number) => {

@@ -6,8 +6,6 @@ import { JobSearchFilters } from '@/components/jobs/job-search-filters'
 import { JobStatsBar } from '@/components/jobs/job-stats'
 import { Pagination } from '@/components/pagination'
 
-export const revalidate = 3600
-
 export const metadata: Metadata = {
   title: 'Rail Industry Jobs | Railhub',
   description: 'Find railroad and rail freight jobs across the United States. Browse conductor, engineer, maintenance, operations, and management positions.',

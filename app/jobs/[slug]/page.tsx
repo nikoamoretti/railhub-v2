@@ -6,8 +6,6 @@ import { formatSalary, formatPostedDate, formatJobType, formatWorkMode, formatEx
 import { getCategoryBadge } from '@/lib/jobs/categories'
 import { SalaryDisplay } from '@/components/jobs/salary-display'
 
-export const revalidate = 3600
-
 interface PageProps {
   params: Promise<{ slug: string }>
 }
@@ -48,7 +46,7 @@ export default async function JobDetailPage({ params }: PageProps) {
     title: job.title,
     description: job.description,
     datePosted: new Date(job.postedAt).toISOString(),
-    ...(job.expiresAt && { validThrough: new Date(job.expiresAt).toISOString() }),
+    ...(('expiresAt' in job && job.expiresAt) ? { validThrough: new Date(String(job.expiresAt)).toISOString() } : {}),
     hiringOrganization: {
       '@type': 'Organization',
       name: job.company,
@@ -59,7 +57,7 @@ export default async function JobDetailPage({ params }: PageProps) {
         '@type': 'PostalAddress',
         ...(job.city && { addressLocality: job.city }),
         ...(job.state && { addressRegion: job.state }),
-        addressCountry: job.country,
+        addressCountry: job.country || 'US',
       },
     },
     employmentType: job.jobType.replace('_', ' '),
@@ -239,7 +237,7 @@ export default async function JobDetailPage({ params }: PageProps) {
                   </div>
                   <div className="flex justify-between text-sm">
                     <dt style={{ color: 'var(--text-tertiary)' }}>Source</dt>
-                    <dd className="font-medium" style={{ color: 'var(--text-primary)' }}>{job.jobSource.name}</dd>
+                    <dd className="font-medium" style={{ color: 'var(--text-primary)' }}>{job.source}</dd>
                   </div>
                 </dl>
               </div>
@@ -257,7 +255,7 @@ export default async function JobDetailPage({ params }: PageProps) {
                   color: 'var(--accent-text)',
                 }}
               >
-                Apply on {job.jobSource.name}
+                Apply on {job.source}
               </a>
               )}
             </div>
