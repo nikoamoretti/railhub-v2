@@ -144,6 +144,90 @@ def safe_iso(dt):
     return str(dt)
 
 
+# ─── Detail page fetcher (SuccessFactors sites) ────────────────────────────
+
+def fetch_detail_description(url, delay=0.5):
+    """Fetch a job detail page and extract description from .jobDisplay div.
+    Works for SuccessFactors sites (UP, NS, Amtrak). Returns cleaned text."""
+    try:
+        if delay:
+            time.sleep(delay)
+        resp = requests.get(url, headers=HEADERS, timeout=20)
+        if resp.status_code != 200:
+            return None
+        soup = BeautifulSoup(resp.text, 'html.parser')
+        display = soup.select_one('.jobDisplay')
+        if not display:
+            return None
+
+        # Remove the "Apply now" button and metadata header
+        for el in display.select('.applyButton, .apply-btn, .job-apply, script, style'):
+            el.decompose()
+
+        # Get text, clean up whitespace
+        text = display.get_text(separator='\n')
+        # Remove leading metadata lines (title, date, location, company repeated)
+        lines = text.split('\n')
+        # Find where "Description" or actual content starts
+        desc_start = 0
+        for i, line in enumerate(lines):
+            stripped = line.strip().lower()
+            if stripped in ('description', 'job description', 'position description'):
+                desc_start = i + 1
+                break
+            # Also check for common content-start patterns
+            if any(kw in stripped for kw in ['at union pacific', 'at norfolk southern', 'at amtrak', 'your success', 'we are', 'join us', 'about the role', 'position summary', 'summary of position']):
+                desc_start = i
+                break
+
+        clean_lines = []
+        for line in lines[desc_start:]:
+            stripped = line.strip()
+            if not stripped:
+                continue
+            # Stop at "Apply now" or similar footer content
+            if stripped.lower() in ('apply now', 'apply now »', 'share this job'):
+                break
+            clean_lines.append(stripped)
+
+        result = '\n'.join(clean_lines).strip()
+        # Cap at 5000 chars
+        if len(result) > 5000:
+            result = result[:5000] + '...'
+        return result if len(result) > 100 else None
+    except Exception as e:
+        return None
+
+
+def fetch_bnsf_detail(job_seq):
+    """Fetch BNSF job detail from the Phenom job page's ld+json script tag."""
+    import html as html_mod
+    try:
+        url = 'https://jobs.bnsf.com/us/en/job/%s' % job_seq
+        time.sleep(0.5)
+        resp = requests.get(url, headers=HEADERS, timeout=20)
+        if resp.status_code != 200:
+            return None
+        soup = BeautifulSoup(resp.text, 'html.parser')
+        for script in soup.select('script'):
+            txt = script.string or ''
+            if '"description"' in txt and len(txt) > 500:
+                try:
+                    data = json.loads(txt)
+                    if 'description' in data:
+                        desc_html = html_mod.unescape(data['description'])
+                        desc_soup = BeautifulSoup(desc_html, 'html.parser')
+                        text = desc_soup.get_text(separator='\n').strip()
+                        if len(text) > 5000:
+                            text = text[:5000] + '...'
+                        return text if len(text) > 100 else None
+                except (json.JSONDecodeError, TypeError):
+                    continue
+        return None
+    except Exception:
+        return None
+
+
 # ═══════════════════════════════════════════════════════════════════════════════
 # JobSpy: Scrape major job boards (Indeed, LinkedIn, ZipRecruiter, Glassdoor)
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -410,7 +494,10 @@ def scrape_csx():
             wm_map = {'ORA_REMOTE': 'REMOTE', 'ORA_HYBRID': 'HYBRID', 'ORA_ONSITE': 'ONSITE'}
             work_mode = wm_map.get(r.get('WorkplaceTypeCode', ''), 'ONSITE')
             desc_parts = [r.get('ShortDescriptionStr', ''), r.get('ExternalResponsibilitiesStr', ''), r.get('ExternalQualificationsStr', '')]
-            description = '\n\n'.join(p for p in desc_parts if p)
+            description = '\n\n'.join(p.strip() for p in desc_parts if p and p.strip())
+            # Strip any HTML from Oracle API responses
+            if '<' in description:
+                description = BeautifulSoup(description, 'html.parser').get_text(separator='\n').strip()
             title = r['Title']
             try:
                 posted = datetime.fromisoformat(r.get('PostedDate', '').replace('Z', '+00:00'))
@@ -497,6 +584,10 @@ def scrape_bnsf():
             except Exception:
                 posted = datetime.now(timezone.utc)
             desc = (j.get('descriptionTeaser') or '').strip() or '%s at BNSF Railway.' % title
+            # Try fetching full description from BNSF API
+            full_desc = fetch_bnsf_detail(j['jobSeqNo'])
+            if full_desc:
+                desc = full_desc
             apply_url = (j.get('applyUrl') or '').strip() or 'https://jobs.bnsf.com/us/en/job/%s' % j['jobSeqNo']
             jobs.append({
                 'id': 'bnsf-%s' % j['jobSeqNo'],
@@ -546,13 +637,16 @@ def scrape_union_pacific():
                 posted = parse_date_mdy(date_td.get_text(strip=True) if date_td else '')
                 work_mode = 'REMOTE' if 'remote' in title.lower() else 'ONSITE'
                 job_type = 'INTERNSHIP' if 'intern' in title.lower() else 'FULL_TIME'
-                loc_str = ', '.join(filter(None, [city, state])) or 'various locations'
-                desc = '%s at Union Pacific Railroad in %s.' % (title, loc_str)
+                detail_url = '%s%s' % (base_url, url_path)
+                desc = fetch_detail_description(detail_url, delay=0.5)
+                if not desc:
+                    loc_str = ', '.join(filter(None, [city, state])) or 'various locations'
+                    desc = '%s at Union Pacific Railroad in %s.' % (title, loc_str)
                 jobs.append({
                     'id': ext_id, 'title': title, 'company': 'Union Pacific', 'companySlug': 'union-pacific',
                     'city': city, 'state': state, 'country': 'US',
                     'workMode': work_mode, 'jobType': job_type, 'description': desc,
-                    'applyUrl': '%s%s' % (base_url, url_path),
+                    'applyUrl': detail_url,
                     'postedAt': safe_iso(posted), 'source': 'Union Pacific Careers', 'sourceUrl': 'https://up.jobs',
                 })
             except Exception as e:
@@ -605,13 +699,16 @@ def scrape_norfolk_southern():
                 city, state = parse_location_comma(raw_loc)
                 date_div = tile.select_one('[id*="date-value"]')
                 posted = parse_date_mdy(date_div.get_text(strip=True) if date_div else '')
-                desc = '%s at Norfolk Southern. Location: %s.' % (title, raw_loc or 'Various')
+                detail_url = '%s%s' % (base_url, url_path)
+                desc = fetch_detail_description(detail_url, delay=0.5)
+                if not desc:
+                    desc = '%s at Norfolk Southern. Location: %s.' % (title, raw_loc or 'Various')
                 jobs.append({
                     'id': ext_id, 'title': title, 'company': 'Norfolk Southern', 'companySlug': 'norfolk-southern',
                     'city': city, 'state': state, 'country': 'US',
                     'workMode': 'REMOTE' if 'remote' in title.lower() else 'ONSITE',
                     'jobType': 'INTERNSHIP' if 'intern' in title.lower() else 'FULL_TIME',
-                    'description': desc, 'applyUrl': '%s%s' % (base_url, url_path),
+                    'description': desc, 'applyUrl': detail_url,
                     'postedAt': safe_iso(posted), 'source': 'Norfolk Southern Careers', 'sourceUrl': 'https://jobs.nscorp.com',
                 })
             except Exception as e:
@@ -652,12 +749,15 @@ def scrape_amtrak():
             city, state = parse_location_comma(loc_span.get_text(strip=True) if loc_span else '')
             date_span = row.select_one('span.jobDate')
             posted = parse_date_mdy(date_span.get_text(strip=True) if date_span else '')
-            desc = '%s at Amtrak in %s.' % (title, loc_span.get_text(strip=True) if loc_span else 'Amtrak')
+            detail_url = '%s%s' % (base_url, url_path)
+            desc = fetch_detail_description(detail_url, delay=0.5)
+            if not desc:
+                desc = '%s at Amtrak in %s.' % (title, loc_span.get_text(strip=True) if loc_span else 'Amtrak')
             jobs.append({
                 'id': ext_id, 'title': title, 'company': 'Amtrak', 'companySlug': 'amtrak',
                 'city': city, 'state': state, 'country': 'US',
                 'workMode': 'ONSITE', 'jobType': 'FULL_TIME',
-                'description': desc, 'applyUrl': '%s%s' % (base_url, url_path),
+                'description': desc, 'applyUrl': detail_url,
                 'postedAt': safe_iso(posted), 'source': 'Amtrak Careers', 'sourceUrl': 'https://careers.amtrak.com',
             })
         except Exception as e:
