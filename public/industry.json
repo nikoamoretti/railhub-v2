@@ -1,2653 +1,2653 @@
 {
   "metrics": [
     {
-      "id": "metric-e96acb7a3306",
+      "id": "metric-0f093340f43f",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 33.0,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-89216f43a94b",
+      "id": "metric-4636f696b3d0",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 25.6,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-f995c2498801",
+      "id": "metric-132775eea985",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 24.7,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9423951c57c6",
+      "id": "metric-eaf5e05d3394",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 25.9,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Automotive",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-49c51760a1a9",
+      "id": "metric-0d055825af54",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 25.6,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Crude Oil",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-44df6c9718f6",
+      "id": "metric-cdbde3b02f18",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 25.9,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Ethanol",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-abf729c0824a",
+      "id": "metric-852537522b8c",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 24.0,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Manifest",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-424d00b47f0a",
+      "id": "metric-f259804a1427",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 26.7,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "System",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-a84b7c49c678",
+      "id": "metric-bbe666f0298a",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 22.13,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-0e70930b1846",
+      "id": "metric-757f2bc688a2",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 25.07,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Crude Oil",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-26acdf71112c",
+      "id": "metric-9189639c9a13",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 27.8,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Ethanol",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ea2e23b4bc56",
+      "id": "metric-784b41f1d159",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 22.82,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5759da49e9c3",
+      "id": "metric-67c26727572f",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 28.26,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ba90c0c70cc2",
+      "id": "metric-c05ca89a4731",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 23.72,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Manifest",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ed22eee7cb9f",
+      "id": "metric-df7f1e911612",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 24.6,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Other",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-4f1290a62029",
+      "id": "metric-f9dafaa2220a",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 24.36,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "System",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5df965f6ecec",
+      "id": "metric-b29f5b58bc8d",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 29.76,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-8210a26fc222",
+      "id": "metric-f2cba32c8eb7",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 24.27,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-aef99f9eafd7",
+      "id": "metric-f698236c581e",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 22.78,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5bd5a0dc59dc",
+      "id": "metric-e6d913bcba62",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 20.7,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Crude Oil",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-28cd215625f3",
+      "id": "metric-f3f8e0e73a29",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 25.09,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Ethanol",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-292df2688e94",
+      "id": "metric-47b5bcfae825",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 22.34,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Manifest",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-c4a0e7a619ac",
+      "id": "metric-a6dfc0e7a657",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 24.54,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "System",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-7c5af444460c",
+      "id": "metric-949e63e4a175",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 25.8,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9c37fa77813d",
+      "id": "metric-bf13ef309a74",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 19.6,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-3fcbc66cd6e5",
+      "id": "metric-6b55397a01f0",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 19.9,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9f10d426ba59",
+      "id": "metric-35155974e524",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 21.3,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Automotive",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-a2af0f5bd435",
+      "id": "metric-48730363197a",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 26.4,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Crude Oil",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-75309f814fd7",
+      "id": "metric-0d83180cb428",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 18.8,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Ethanol",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-dec5a5f228c5",
+      "id": "metric-e844123286c2",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 19.1,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Manifest",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-a25430aa5fae",
+      "id": "metric-5a6f6909310a",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 21.5,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "System",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-23a056e5b88a",
+      "id": "metric-2acad84f56eb",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 33.7,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9ad75131ee53",
+      "id": "metric-5e8674eb539f",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 23.7,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-56d071b8ebe6",
+      "id": "metric-984e56ae6cb3",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 26.5,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-72bcfdd0d7ed",
+      "id": "metric-1daba941945d",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 25.6,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Automotive",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-79ee2907ce93",
+      "id": "metric-289c01464557",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 24.7,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Crude Oil",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-b817072c5439",
+      "id": "metric-49a464fbfa61",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 20.4,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Ethanol",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-0e8a07be7271",
+      "id": "metric-fc67b9627fc9",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 22.9,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Manifest",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-2a7c9d33ba8d",
+      "id": "metric-4f3c96bad9b6",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 25.7,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "System",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-fc93f28d9d79",
+      "id": "metric-fa598a5d992b",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 28.69,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-1f44bcab86d2",
+      "id": "metric-ec0e48e9ffb7",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 20.53,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-2c38a5576c9d",
+      "id": "metric-1a289129e7e7",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 18.46,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-b2fd2cb2fd86",
+      "id": "metric-9806d2a32290",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 22.92,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Automotive",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-dc33ab7dd5be",
+      "id": "metric-99714ca31c71",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 20.47,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Crude Oil",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-23fbbe7f7570",
+      "id": "metric-240503015aaa",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 24.55,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Ethanol",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-7b83cb6fde4a",
+      "id": "metric-74b9c262b017",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 20.66,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "Manifest",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-e0a655e5d18a",
+      "id": "metric-1f54e4d21d99",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 21.73,
       "unit": "mph",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "System",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-57aaf9096cf7",
+      "id": "metric-89183131c64e",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 32.8,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-7c1cf1abb8e5",
+      "id": "metric-e8bbc4b3943b",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 24.9,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-d592294641f9",
+      "id": "metric-c673ec3dfc21",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 24.2,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-1b21e98289ca",
+      "id": "metric-2d8afc78af3d",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 25.8,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Automotive",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5eab119065d0",
+      "id": "metric-6c20099aa5bf",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 23.4,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Crude Oil",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-c321c37ed8c3",
+      "id": "metric-1f6cdde6fb6b",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 22.8,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Ethanol",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ff5aa6ddf091",
+      "id": "metric-b7d129efcfaf",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 23.7,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Manifest",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-f5fce25f08b4",
+      "id": "metric-94b435510e15",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 26.3,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "System",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-7dcd897efd96",
+      "id": "metric-a8c3ba0cbff3",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 21.97,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-fbef002c4788",
+      "id": "metric-f365fb950d53",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 25.03,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Crude Oil",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-6b8f29b097bc",
+      "id": "metric-0b9c46c3edef",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 26.89,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Ethanol",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-bc1c244718d6",
+      "id": "metric-72a81dd33383",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 23.81,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-8edba8e201a9",
+      "id": "metric-77d442eaa718",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 28.17,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-092909753589",
+      "id": "metric-a926d113847e",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 22.93,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Manifest",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-69e8ca5f38fa",
+      "id": "metric-0225c3f47c8e",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 24.01,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Other",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-e306a31255e5",
+      "id": "metric-5da9dd24b879",
       "railroad": "CN",
       "metricType": "TRAIN_SPEED",
       "value": 23.92,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "System",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-2c177d20cc63",
+      "id": "metric-81bb1a8134c7",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 29.08,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5ce052e689d8",
+      "id": "metric-5242a1c0e8e7",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 23.48,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-dbb3d6b66646",
+      "id": "metric-57aa577cdf17",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 21.77,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9109a0fff5a5",
+      "id": "metric-015bfcce8887",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 28.25,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Crude Oil",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-4e20b166f482",
+      "id": "metric-e139e3087950",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 24.59,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Ethanol",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-03ecebeae578",
+      "id": "metric-b4233655c574",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 21.97,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Manifest",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-08dca0bcaf0e",
+      "id": "metric-f84a009c4fe7",
       "railroad": "CSX",
       "metricType": "TRAIN_SPEED",
       "value": 24.04,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "System",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-4d48f0cfc46b",
+      "id": "metric-ed84e9b2030b",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 26.1,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ed4dfa12d933",
+      "id": "metric-5ad92c65503c",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 19.9,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-c16c73af6ebf",
+      "id": "metric-936ba243cc52",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 18.9,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-328e77e04f09",
+      "id": "metric-32da8526134c",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 22.1,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Automotive",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-de596bb2060e",
+      "id": "metric-7366f6a2c427",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 22.4,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Crude Oil",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-7cd00a26ef4b",
+      "id": "metric-6deff5defa92",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 22.8,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Ethanol",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-3a4c2008d6fc",
+      "id": "metric-d0d9d5e26fc6",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 19.5,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Manifest",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ea6efdb04416",
+      "id": "metric-d4e8a2b4eab0",
       "railroad": "NS",
       "metricType": "TRAIN_SPEED",
       "value": 21.9,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "System",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-8d2bf5155bf2",
+      "id": "metric-e3544d6272e6",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 33.5,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5a2340258331",
+      "id": "metric-e383403d960a",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 23.4,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-2641b5bfd2a6",
+      "id": "metric-17e2a5c4e4bb",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 26.4,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ccc69eae4321",
+      "id": "metric-2752647447dd",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 26.5,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Automotive",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-2b781dcac3aa",
+      "id": "metric-646b06d492af",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 25.2,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Crude Oil",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5d3ab9297704",
+      "id": "metric-ee43fe281ce3",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 20.7,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Ethanol",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-618b2a839c4f",
+      "id": "metric-bbb1296b3fc5",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 22.4,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Manifest",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-230c5498f42d",
+      "id": "metric-6dae4b1c3906",
       "railroad": "UP",
       "metricType": "TRAIN_SPEED",
       "value": 25.5,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "System",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-cccf82bf9cf8",
+      "id": "metric-88b1002aa5de",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 26.95,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-7493b78992c5",
+      "id": "metric-f3dd79a68943",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 19.71,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5c597be93d00",
+      "id": "metric-8d17ee708dad",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 18.2,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-3c3744c08eef",
+      "id": "metric-06f2daabde09",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 30.13,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Automotive",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-64b441bb363b",
+      "id": "metric-3204783bb74f",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 19.04,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Crude Oil",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-cd4a2ac20c9b",
+      "id": "metric-894887e4289a",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 22.83,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Ethanol",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-4532e482438c",
+      "id": "metric-3e9998081f97",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 19.93,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "Manifest",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9653a7f452e3",
+      "id": "metric-50c69f3d86ac",
       "railroad": "CPKC",
       "metricType": "TRAIN_SPEED",
       "value": 21.05,
       "unit": "mph",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "System",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-555847402b80",
+      "id": "metric-c11dd84ce114",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 32.4,
       "unit": "mph",
       "reportWeek": "2026-01-30T00:00:00.000Z",
       "commodity": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-fc7f6479fd38",
+      "id": "metric-b90389e4de8d",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 24.1,
       "unit": "mph",
       "reportWeek": "2026-01-30T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-c45fd8a01fc5",
+      "id": "metric-57651ec22980",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 22.7,
       "unit": "mph",
       "reportWeek": "2026-01-30T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-c3aeb40b418e",
+      "id": "metric-ece1314d77ec",
       "railroad": "BNSF",
       "metricType": "TRAIN_SPEED",
       "value": 25.0,
       "unit": "mph",
       "reportWeek": "2026-01-30T00:00:00.000Z",
       "commodity": "Automotive",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-dafcbdda98cd",
+      "id": "metric-419de4b4df9f",
       "railroad": "NS",
       "metricType": "TERMINAL_DWELL",
       "value": 21.8,
       "unit": "hours",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ea4edab95e9e",
+      "id": "metric-b7c07d1ab807",
       "railroad": "CN",
       "metricType": "TERMINAL_DWELL",
       "value": 16.49,
       "unit": "hours",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5aa5a121c86d",
+      "id": "metric-6b062185bcd2",
       "railroad": "CPKC",
       "metricType": "TERMINAL_DWELL",
       "value": 22.48,
       "unit": "hours",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-752a3d97d752",
+      "id": "metric-42fea431c7d9",
       "railroad": "CSX",
       "metricType": "TERMINAL_DWELL",
       "value": 22.28,
       "unit": "hours",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-13da44be7007",
+      "id": "metric-0be5a6e8035c",
       "railroad": "UP",
       "metricType": "TERMINAL_DWELL",
       "value": 19.3,
       "unit": "hours",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-cf50d6e861b0",
+      "id": "metric-19f7d9c67ba3",
       "railroad": "BNSF",
       "metricType": "TERMINAL_DWELL",
       "value": 21.9,
       "unit": "hours",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-552deae94ecb",
+      "id": "metric-089b7d8ce9ee",
       "railroad": "UP",
       "metricType": "TERMINAL_DWELL",
       "value": 19.7,
       "unit": "hours",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-3fdf9155f885",
+      "id": "metric-4bead3c38dfc",
       "railroad": "CN",
       "metricType": "TERMINAL_DWELL",
       "value": 17.17,
       "unit": "hours",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-33b9ca766da0",
+      "id": "metric-0c5a921d6da1",
       "railroad": "NS",
       "metricType": "TERMINAL_DWELL",
       "value": 22.3,
       "unit": "hours",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-bcae93c34b88",
+      "id": "metric-1ba262b956b1",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 10470.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-019033c84b8a",
+      "id": "metric-af18c4810270",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 79632.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-c161da4d31c9",
+      "id": "metric-12e3bfc1712d",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 9548.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-0045e8b9d036",
+      "id": "metric-7d9e5b410f5b",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 19218.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-262ada64f799",
+      "id": "metric-0ff674126ab5",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 12179.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-63cd9af834d4",
+      "id": "metric-c5787f932744",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 40407.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-bacb2c3cc73f",
+      "id": "metric-64001070ecc6",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 59539.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ef64ff72e478",
+      "id": "metric-81c51b28aea6",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 10105.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-7fe4a744bd75",
+      "id": "metric-a10ec6569243",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 241098.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-e852957f79cc",
+      "id": "metric-da3a0c01af61",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 2884.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9fc06d2f09f0",
+      "id": "metric-97bee4186b12",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 15869.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-8423226c42c6",
+      "id": "metric-c6931e6c8e5b",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 2086.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-8f743d938679",
+      "id": "metric-08287b7f9c34",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 754.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-c95a220cd796",
+      "id": "metric-3b8476251749",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 1838.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-daeb3606b690",
+      "id": "metric-04a5e8309d9b",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 2163.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-fa1f2b236a33",
+      "id": "metric-415854f5a055",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 1471.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-1c666eb79c60",
+      "id": "metric-23442423050c",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 12395.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-112d3e3aadf9",
+      "id": "metric-c760cdcb73f1",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 39459.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5f01cf9b0188",
+      "id": "metric-e45fdc816dc8",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 14252.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-32241697d16d",
+      "id": "metric-258be4768f64",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 53054.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-1073b2544284",
+      "id": "metric-2d50fcbd7fd7",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 14245.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-70e583f45e42",
+      "id": "metric-1005cfc68dd2",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 7591.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-efe5dce1eb85",
+      "id": "metric-ca6ec797d78b",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 11323.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-b7240e2b9cf4",
+      "id": "metric-d87fe2562c7e",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 31526.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-d24e3b782886",
+      "id": "metric-e4eebec0b1c0",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 45910.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-80f9bf648bf3",
+      "id": "metric-760771b7a921",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 8735.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-2e896f11f932",
+      "id": "metric-e62f66aada0b",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 186636.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-e1a91e0b263a",
+      "id": "metric-427af8f442d5",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 11256.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-7f74a9933471",
+      "id": "metric-a62bff1bbedf",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 44037.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-11d1511b4c70",
+      "id": "metric-3ac01d15ccf9",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 15491.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-573028e9e408",
+      "id": "metric-4b4c7924acd3",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 10637.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9704ca74d4ab",
+      "id": "metric-dabaad0cd39a",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 11357.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-c7a3d415dd4f",
+      "id": "metric-28785d616767",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 25768.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ff267a86b74c",
+      "id": "metric-c0c836ab7d3c",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 37158.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9fd3fb0073e9",
+      "id": "metric-b8c37d1c4e4e",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 6749.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-48f09d117b50",
+      "id": "metric-3b5ee792c4d9",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 162456.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-d78f129fa096",
+      "id": "metric-92e7a724be8b",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 18448.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-f94de16eb43d",
+      "id": "metric-b7a419299ce3",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 116194.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-e4884b411d69",
+      "id": "metric-d039921d01e4",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 14271.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-f59c600e5276",
+      "id": "metric-2bf5c20cbbb9",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 14768.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-1f35643a4ef5",
+      "id": "metric-0b6f51c4d020",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 14554.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-f3b6d4eb3951",
+      "id": "metric-454e07261efa",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 30705.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-2dd192afec17",
+      "id": "metric-6b0d55ad7bce",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 82236.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-fb26a70f8b6b",
+      "id": "metric-807a3b9f95cc",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 10784.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-76ae20416f46",
+      "id": "metric-0e864d9c14a3",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 301960.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5c2657460496",
+      "id": "metric-df8c5b59cb65",
       "railroad": "CPKC",
       "metricType": "CARS_ON_LINE",
       "value": 4444.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-99361b0751b2",
+      "id": "metric-0db618909a15",
       "railroad": "CPKC",
       "metricType": "CARS_ON_LINE",
       "value": 20844.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-667716e12274",
+      "id": "metric-4570f115248d",
       "railroad": "CPKC",
       "metricType": "CARS_ON_LINE",
       "value": 4759.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-b34fd0029cc8",
+      "id": "metric-24dcecda91d6",
       "railroad": "CPKC",
       "metricType": "CARS_ON_LINE",
       "value": 1113.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-e06bc0996826",
+      "id": "metric-90bb5e800f72",
       "railroad": "CPKC",
       "metricType": "CARS_ON_LINE",
       "value": 1915.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-a4f2cbbd1ada",
+      "id": "metric-d2df1f641e4b",
       "railroad": "CPKC",
       "metricType": "CARS_ON_LINE",
       "value": 1520.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-68c545f19d6d",
+      "id": "metric-f16ec236418c",
       "railroad": "CPKC",
       "metricType": "CARS_ON_LINE",
       "value": 16228.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-33c694e576d5",
+      "id": "metric-f2cd4c7492c5",
       "railroad": "CPKC",
       "metricType": "CARS_ON_LINE",
       "value": 1551.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-3db132a8fd88",
+      "id": "metric-10ff0bcf8ade",
       "railroad": "CPKC",
       "metricType": "CARS_ON_LINE",
       "value": 52374.0,
       "unit": "cars",
       "reportWeek": "2026-02-13T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-723c441cec53",
+      "id": "metric-89e6e4e54d8c",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 10507.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-77ef86ab35fc",
+      "id": "metric-7ef234236e6d",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 79983.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-0c7f55a875ac",
+      "id": "metric-ebecf68bf1d6",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 9695.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-3831d5c5807a",
+      "id": "metric-f1936231404f",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 19335.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-567f81a96c40",
+      "id": "metric-c4f1bdc59e4e",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 11724.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-a0567f7e284b",
+      "id": "metric-02b385bfa6bb",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 40725.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-81e4a1e5a08e",
+      "id": "metric-4baa41f0b99e",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 59243.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-0e22975a5845",
+      "id": "metric-9a589765dabf",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 10278.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5dfd84a1077d",
+      "id": "metric-3c40214639fc",
       "railroad": "BNSF",
       "metricType": "CARS_ON_LINE",
       "value": 241490.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-27b5ae795c23",
+      "id": "metric-c3fa7a70694a",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 2866.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-58adebf85bcb",
+      "id": "metric-1208211860f0",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 15518.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ee57c4a1d620",
+      "id": "metric-4fb1da17ce18",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 1961.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-b3fe63a601dc",
+      "id": "metric-d18d45ba6c2f",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 777.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9370b359624e",
+      "id": "metric-63a193ed35c6",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 1925.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-b7bd9bfae706",
+      "id": "metric-59c6ba2949c1",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 2120.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-37dfdb4006ba",
+      "id": "metric-294a753609e2",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 1489.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-44a01ccd1b86",
+      "id": "metric-d699def9ff66",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 12055.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-84cb73f646be",
+      "id": "metric-680dc5bd1991",
       "railroad": "CN",
       "metricType": "CARS_ON_LINE",
       "value": 38711.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-e7545b2744fc",
+      "id": "metric-89470cbab48b",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 13938.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-197c436d2102",
+      "id": "metric-135d40150041",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 52528.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-902397c81226",
+      "id": "metric-b94323ef5a8b",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 14107.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-1f3977f4a5df",
+      "id": "metric-98efc6af6144",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 7559.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-f411e83942c5",
+      "id": "metric-ebfded0d9c0c",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 11144.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-01bab127bb1f",
+      "id": "metric-ebfbad077f61",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 31811.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-c8df0835fc2c",
+      "id": "metric-7394ab9b91fd",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 45515.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-e95bb7fc9291",
+      "id": "metric-ec8fe20e6ee4",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 8900.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5d63a270225c",
+      "id": "metric-77d642ad78f0",
       "railroad": "CSX",
       "metricType": "CARS_ON_LINE",
       "value": 185502.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-568715727c13",
+      "id": "metric-24e078335c0d",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 11094.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-72d7f3ac38f2",
+      "id": "metric-c0bf1bd084d1",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 42681.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-19bec3db6923",
+      "id": "metric-a24906fdd3b1",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 15392.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-fa137cbc568f",
+      "id": "metric-9af3fdb04675",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 10541.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-562816553384",
+      "id": "metric-ae673c8a4db1",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 12153.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-6d8b2150817b",
+      "id": "metric-b0f82548b2ee",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 25869.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-7aee54551bc1",
+      "id": "metric-f1298b866a75",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 36795.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-8ca5c54dfe49",
+      "id": "metric-c40060e42c52",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 6539.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-fe55aeb6ba48",
+      "id": "metric-aaf2df7432ce",
       "railroad": "NS",
       "metricType": "CARS_ON_LINE",
       "value": 161067.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-63350d195e64",
+      "id": "metric-786c346eee37",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 18850.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5d37f6621636",
+      "id": "metric-4a5cf1a28380",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 116927.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-f6ddc687e519",
+      "id": "metric-19866bc18e2a",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 14446.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-8529f1726645",
+      "id": "metric-05f77ff5b5b0",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 14954.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9b135b2c97e4",
+      "id": "metric-4690b92e9f5d",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 14541.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-6c3b2dc3427c",
+      "id": "metric-9da790957a60",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 30920.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-38f47bcc3daa",
+      "id": "metric-beb89fe0fe2e",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 82750.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-c524d8b025f0",
+      "id": "metric-8f097153646e",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 10920.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-431af5660125",
+      "id": "metric-6a90dedeaba1",
       "railroad": "UP",
       "metricType": "CARS_ON_LINE",
       "value": 304308.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-7cad1fed766f",
+      "id": "metric-1e7c2a031735",
       "railroad": "CPKC",
       "metricType": "CARS_ON_LINE",
       "value": 4489.0,
       "unit": "cars",
       "reportWeek": "2026-02-06T00:00:00.000Z",
       "commodity": "",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-628bf6ca0762",
+      "id": "metric-24a789a0488e",
       "railroad": "UP",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 3511.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Petroleum Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9aac532072f3",
+      "id": "metric-5bc1227f107d",
       "railroad": "UP",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 375.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Primary Forest Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-99be4b3484a8",
+      "id": "metric-faf4211b173f",
       "railroad": "UP",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 867.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Pulp, Paper and Allied Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-8a016a721b56",
+      "id": "metric-fc40eeffd804",
       "railroad": "UP",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 2687.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Stone, Clay and Glass Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-a40d8a87f611",
+      "id": "metric-35a7db3ec902",
       "railroad": "UP",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1376.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Trailers",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-d39486b6bf00",
+      "id": "metric-45c2cdaf8c1b",
       "railroad": "UP",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 490.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Waste and Scrap Materials",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-1b6fa778883d",
+      "id": "metric-0cf65e3cb6c3",
       "railroad": "CPKC",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 230.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Stone, Clay and Glass Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-4cbd93233b00",
+      "id": "metric-615949272c0f",
       "railroad": "CPKC",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 11.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Trailers",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-40a3db10162c",
+      "id": "metric-d98f7abce9c6",
       "railroad": "CPKC",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 120.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Waste and Scrap Materials",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-be6ee65fdf5c",
+      "id": "metric-ea8004a24ac0",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 552.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "All Other",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-797322a36e82",
+      "id": "metric-dd0f071935a3",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 4914.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Chemicals",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-315786884564",
+      "id": "metric-7b926fc69c5e",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 7753.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-f70b2719d179",
+      "id": "metric-510ffba0d385",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 885.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Coke",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-2fdffc970f1b",
+      "id": "metric-8daf78d82f08",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 48689.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Containers",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-b6b976e32105",
+      "id": "metric-84f435eb1987",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 3931.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Crushed Stone, Sand and Gravel",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-fecc238574e9",
+      "id": "metric-925395163303",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 26.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Farm Products except Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-e18dd1aa94d9",
+      "id": "metric-4619fb54c8e7",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1241.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Fertilizer",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-e50678f1880c",
+      "id": "metric-b85dd1a7895f",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 516.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Food and Kindred Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-bb1ae0a5b44a",
+      "id": "metric-aecb5d5889f6",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1532.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-d3e788221b93",
+      "id": "metric-77492025d185",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1120.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Grain Mill Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-432f11d9c9a1",
+      "id": "metric-f1eb7824ff64",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1299.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Iron and Steel Scrap",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-9550141484a6",
+      "id": "metric-0e6a72afc0ea",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 366.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Lumber and Wood Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-982e85126c8c",
+      "id": "metric-cd7119d123dc",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 670.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Metallic Ores",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-db168144f406",
+      "id": "metric-0c0ddb72bb47",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 2004.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Metals",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-c33d10ca9073",
+      "id": "metric-9a2852c7b8b5",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 4210.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Motor Vehicles and Equipment",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-fa3f3f90523f",
+      "id": "metric-06aa36bc4815",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1584.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Non Metallic Minerals",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-2e6d2b606334",
+      "id": "metric-f69e40dd0d68",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1503.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Petroleum Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ea415c4c9014",
+      "id": "metric-492baa0a35c5",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 454.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Primary Forest Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5a61a674107a",
+      "id": "metric-eb2c5c5dce51",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1662.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Pulp, Paper and Allied Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-b2420eca10a4",
+      "id": "metric-8c204484558f",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1626.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Stone, Clay and Glass Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-d98f715ce655",
+      "id": "metric-10ca1faf0d70",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1149.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Trailers",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-d547939041b7",
+      "id": "metric-c6c43cfefc1e",
       "railroad": "CSX",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1715.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Waste and Scrap Materials",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5239f4411eed",
+      "id": "metric-7bbd2559063e",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 201.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "All Other",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-63682abc7131",
+      "id": "metric-d94edcffeca1",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 3526.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Chemicals",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-8a45815de2b7",
+      "id": "metric-7a803a17702b",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 9277.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Coal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-ca906ba9d392",
+      "id": "metric-c6591512b3de",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 702.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Coke",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-8b7de1dbe6c7",
+      "id": "metric-9d94f0edf0ec",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 65559.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Containers",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-953796863857",
+      "id": "metric-87b07aa7a26b",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 2042.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Crushed Stone, Sand and Gravel",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-de66bc659e0e",
+      "id": "metric-d171c79761ea",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 100.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Farm Products except Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-b1aa9b9eba18",
+      "id": "metric-10bf67e38d0c",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 576.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Fertilizer",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-140259193a37",
+      "id": "metric-4966fc467cdb",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 553.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Food and Kindred Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-d12a476a1025",
+      "id": "metric-d0d602dee67a",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 2950.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Grain",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-8b26deadcfbb",
+      "id": "metric-7c0471e404ea",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1563.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Grain Mill Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-329e9420b8c3",
+      "id": "metric-24e17a31c174",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 1535.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Iron and Steel Scrap",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-5f0b2306a00b",
+      "id": "metric-c1b75ea36089",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 359.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Lumber and Wood Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-948b76372f35",
+      "id": "metric-d98b046e0e2f",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 31.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Metallic Ores",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-840792ae4084",
+      "id": "metric-4551dd7f148c",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 3478.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Metals",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-2fd4ab3f8d1f",
+      "id": "metric-5f2276637e0f",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 5424.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Motor Vehicles and Equipment",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-18afa707a7d1",
+      "id": "metric-9841591b3e71",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 324.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Non Metallic Minerals",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "metric-0b0efaf75930",
+      "id": "metric-35d203eb32a2",
       "railroad": "NS",
       "metricType": "CARLOADS_ORIGINATED",
       "value": 725.0,
       "unit": "carloads",
       "reportWeek": "2026-02-14T00:00:00.000Z",
       "commodity": "Petroleum Products",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     }
   ],
   "fuelSurcharges": [
     {
-      "id": "fs-415cf1d32333",
+      "id": "fs-ee7377b98317",
       "railroad": "NS",
       "effectiveDate": "2026-02-23T00:00:00.000Z",
       "fuelPrice": 2.937,
       "surchargeRate": 8.0,
       "trafficType": "Carload",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "fs-eb738a2f7cd3",
+      "id": "fs-4c1b4a8e96c2",
       "railroad": "NS",
       "effectiveDate": "2026-02-23T00:00:00.000Z",
       "fuelPrice": 2.937,
       "surchargeRate": 25.0,
       "trafficType": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "fs-2eb4470ca077",
+      "id": "fs-a12af48eeee1",
       "railroad": "UP",
       "effectiveDate": "2026-02-23T00:00:00.000Z",
       "fuelPrice": 2.937,
       "surchargeRate": 17.0,
       "trafficType": "Carload",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "fs-ac2990950c99",
+      "id": "fs-6ebdea7328a2",
       "railroad": "UP",
       "effectiveDate": "2026-02-23T00:00:00.000Z",
       "fuelPrice": 2.937,
       "surchargeRate": 20.6,
       "trafficType": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "fs-14e1cc47f7a2",
+      "id": "fs-058eb1ede3c3",
       "railroad": "BNSF",
       "effectiveDate": "2026-02-23T00:00:00.000Z",
       "fuelPrice": 2.937,
       "surchargeRate": 6.0,
       "trafficType": "Carload",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "fs-e51df27c0f53",
+      "id": "fs-fa49ba8ed91e",
       "railroad": "BNSF",
       "effectiveDate": "2026-02-23T00:00:00.000Z",
       "fuelPrice": 2.937,
       "surchargeRate": 10.0,
       "trafficType": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "fs-7c1a26c152ec",
+      "id": "fs-62e307648481",
       "railroad": "CSX",
       "effectiveDate": "2026-02-23T00:00:00.000Z",
       "fuelPrice": 2.937,
       "surchargeRate": 9.0,
       "trafficType": "Carload",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "fs-e5b554696559",
+      "id": "fs-2fb28d3a8ac0",
       "railroad": "CSX",
       "effectiveDate": "2026-02-23T00:00:00.000Z",
       "fuelPrice": 2.937,
       "surchargeRate": 22.0,
       "trafficType": "Intermodal",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     }
   ],
   "advisories": [
     {
-      "id": "adv-7456fe725f33",
+      "id": "adv-b92b98447b89",
       "externalId": "bnsf-final-report-train-derailment-near-angora-ne-powder-river-division-angora-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-angora-ne-powder-river-division-angora-s",
       "railroad": "BNSF",
@@ -2658,10 +2658,10 @@
       "isActive": true,
       "issuedAt": "2026-02-21T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-4e34a5b81f57",
+      "id": "adv-ebda83ee6c88",
       "externalId": "bnsf-update-report-train-derailment-near-angora-ne-powder-river-division-angora-subdivision",
       "slug": "bnsf-update-report-train-derailment-near-angora-ne-powder-river-division-angora-",
       "railroad": "BNSF",
@@ -2672,10 +2672,10 @@
       "isActive": true,
       "issuedAt": "2026-02-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-86852d4c0146",
+      "id": "adv-7cb8ec47bbe3",
       "externalId": "bnsf-initial-report-train-derailment-near-angora-ne-powder-river-division-angora-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-angora-ne-powder-river-division-angora",
       "railroad": "BNSF",
@@ -2686,10 +2686,10 @@
       "isActive": true,
       "issuedAt": "2026-02-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-8800b42e8006",
+      "id": "adv-5e3fcd4ed8fe",
       "externalId": "bnsf-final-report-train-derailment-near-new-westminster-bc-northwest-division-new-westminster-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-new-westminster-bc-northwest-division-ne",
       "railroad": "BNSF",
@@ -2700,10 +2700,10 @@
       "isActive": true,
       "issuedAt": "2026-02-07T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-94581f1a4638",
+      "id": "adv-11c433835a9f",
       "externalId": "bnsf-update-report-train-derailment-near-new-westminster-bc-northwest-division-new-westminster-subdivision",
       "slug": "bnsf-update-report-train-derailment-near-new-westminster-bc-northwest-division-n",
       "railroad": "BNSF",
@@ -2714,10 +2714,10 @@
       "isActive": true,
       "issuedAt": "2026-02-06T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-157ea11e9f5d",
+      "id": "adv-0f192c244670",
       "externalId": "bnsf-initial-report-train-derailment-near-new-westminster-bc-northwest-division-new-westminster-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-new-westminster-bc-northwest-division-",
       "railroad": "BNSF",
@@ -2728,10 +2728,10 @@
       "isActive": true,
       "issuedAt": "2026-02-05T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-2c76ac2c3a0a",
+      "id": "adv-af12cebffe8a",
       "externalId": "bnsf-progress-to-restore-operations-following-winter-weather",
       "slug": "bnsf-progress-to-restore-operations-following-winter-weather",
       "railroad": "BNSF",
@@ -2742,10 +2742,10 @@
       "isActive": true,
       "issuedAt": "2026-01-27T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-d4524033c20c",
+      "id": "adv-84ff0fb72c0f",
       "externalId": "bnsf-major-winter-storm-expected-to-impact-much-of-the-bnsf-network",
       "slug": "bnsf-major-winter-storm-expected-to-impact-much-of-the-bnsf-network",
       "railroad": "BNSF",
@@ -2756,10 +2756,10 @@
       "isActive": true,
       "issuedAt": "2026-01-22T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-0e92e932ac9b",
+      "id": "adv-8e7620a932ad",
       "externalId": "bnsf-up-ns-merger-application-rejected-as-incomplete",
       "slug": "bnsf-up-ns-merger-application-rejected-as-incomplete",
       "railroad": "BNSF",
@@ -2770,10 +2770,10 @@
       "isActive": true,
       "issuedAt": "2026-01-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-a2837a01f99a",
+      "id": "adv-d0bdaf815031",
       "externalId": "bnsf-up-ns-merger-application-filed-what-it-means-for-you",
       "slug": "bnsf-up-ns-merger-application-filed-what-it-means-for-you",
       "railroad": "BNSF",
@@ -2784,10 +2784,10 @@
       "isActive": true,
       "issuedAt": "2026-01-06T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-06ba075ffb55",
+      "id": "adv-4c02f363537a",
       "externalId": "bnsf-final-report-major-flooding-impacting-bnsf-operations-in-the-pacific-northwest",
       "slug": "bnsf-final-report-major-flooding-impacting-bnsf-operations-in-the-pacific-northw",
       "railroad": "BNSF",
@@ -2798,10 +2798,10 @@
       "isActive": true,
       "issuedAt": "2025-12-21T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-680682979940",
+      "id": "adv-a43b518d8cb3",
       "externalId": "bnsf-up-ns-merger-application-filed-whats-next",
       "slug": "bnsf-up-ns-merger-application-filed-what-s-next",
       "railroad": "BNSF",
@@ -2812,10 +2812,10 @@
       "isActive": true,
       "issuedAt": "2025-12-19T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-0dbea1047316",
+      "id": "adv-0107e2a0667a",
       "externalId": "bnsf-updated-bnsf-agriculture-and-energy-2025-2026-christmas-and-new-years-operating-plan",
       "slug": "bnsf-updated-bnsf-agriculture-and-energy-2025-2026-christmas-and-new-year-s-oper",
       "railroad": "BNSF",
@@ -2826,10 +2826,10 @@
       "isActive": true,
       "issuedAt": "2025-12-17T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-cf98e1d09b7a",
+      "id": "adv-5f4e0b16dc89",
       "externalId": "bnsf-updated-bnsf-intermodal-2025-2026-christmas-and-new-years-operating-plan",
       "slug": "bnsf-updated-bnsf-intermodal-2025-2026-christmas-and-new-year-s-operating-plan",
       "railroad": "BNSF",
@@ -2840,10 +2840,10 @@
       "isActive": true,
       "issuedAt": "2025-12-17T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-4f45c921b674",
+      "id": "adv-9d9ff348abe9",
       "externalId": "bnsf-update-report-flood-recovery-progress-pacific-northwest",
       "slug": "bnsf-update-report-flood-recovery-progress-pacific-northwest",
       "railroad": "BNSF",
@@ -2854,10 +2854,10 @@
       "isActive": true,
       "issuedAt": "2025-12-17T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-5af48fc3cd3f",
+      "id": "adv-67b776a73d1e",
       "externalId": "bnsf-update-flood-recovery-progress-pacific-northwest",
       "slug": "bnsf-update-flood-recovery-progress-pacific-northwest",
       "railroad": "BNSF",
@@ -2868,10 +2868,10 @@
       "isActive": true,
       "issuedAt": "2025-12-12T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-49bfe1d58d7d",
+      "id": "adv-76ec00d2b2fb",
       "externalId": "bnsf-major-flooding-impacting-bnsf-operations-in-the-pacific-northwest",
       "slug": "bnsf-major-flooding-impacting-bnsf-operations-in-the-pacific-northwest",
       "railroad": "BNSF",
@@ -2882,10 +2882,10 @@
       "isActive": true,
       "issuedAt": "2025-12-11T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-f7ccb45a2e20",
+      "id": "adv-211660340ba2",
       "externalId": "bnsf-bnsf-coal-2025-2026-christmas-and-new-years-operating-plan",
       "slug": "bnsf-bnsf-coal-2025-2026-christmas-and-new-year-s-operating-plan",
       "railroad": "BNSF",
@@ -2896,10 +2896,10 @@
       "isActive": true,
       "issuedAt": "2025-12-10T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-8f026defdf7f",
+      "id": "adv-7ac978895d3f",
       "externalId": "bnsf-bnsf-automotive-2025-2026-christmas-and-new-years-operating-plan",
       "slug": "bnsf-bnsf-automotive-2025-2026-christmas-and-new-year-s-operating-plan",
       "railroad": "BNSF",
@@ -2910,10 +2910,10 @@
       "isActive": true,
       "issuedAt": "2025-12-10T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-a1d3c5f7627e",
+      "id": "adv-3b7be5e6a61c",
       "externalId": "bnsf-bnsf-industrial-products-2025-2026-christmas-and-new-years-operating-plan",
       "slug": "bnsf-bnsf-industrial-products-2025-2026-christmas-and-new-year-s-operating-plan",
       "railroad": "BNSF",
@@ -2924,10 +2924,10 @@
       "isActive": true,
       "issuedAt": "2025-12-10T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-4dfcdc51e623",
+      "id": "adv-f8805e523153",
       "externalId": "bnsf-updated-bnsf-intermodal-2025-thanksgiving-operating-plan",
       "slug": "bnsf-updated-bnsf-intermodal-2025-thanksgiving-operating-plan",
       "railroad": "BNSF",
@@ -2938,10 +2938,10 @@
       "isActive": true,
       "issuedAt": "2025-11-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-42c02aa663d5",
+      "id": "adv-34b727ae791c",
       "externalId": "bnsf-lumber-and-panel-logs-auction-wednesday-december-10-2025",
       "slug": "bnsf-lumber-and-panel-logs-auction-wednesday-december-10-2025",
       "railroad": "BNSF",
@@ -2952,10 +2952,10 @@
       "isActive": true,
       "issuedAt": "2025-11-17T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-2b32bc3c37e4",
+      "id": "adv-4b4ef63b64b4",
       "externalId": "bnsf-faster-coast-to-coast-solutions-bnsf-and-csx-launch-new-intermodal-schedules-to-ohio-valley-and-northeast",
       "slug": "bnsf-faster-coast-to-coast-solutions-bnsf-and-csx-launch-new-intermodal-schedule",
       "railroad": "BNSF",
@@ -2966,10 +2966,10 @@
       "isActive": true,
       "issuedAt": "2025-11-14T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-a99d93b2afb3",
+      "id": "adv-f9a7bf47bf07",
       "externalId": "bnsf-important-update-on-up-ns-merger-and-what-it-means-for-you",
       "slug": "bnsf-important-update-on-up-ns-merger-and-what-it-means-for-you",
       "railroad": "BNSF",
@@ -2980,10 +2980,10 @@
       "isActive": true,
       "issuedAt": "2025-11-12T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-0ab657a2e655",
+      "id": "adv-19b69c1be77b",
       "externalId": "bnsf-bnsf-agriculture-and-energy-2025-thanksgiving-operating-plan",
       "slug": "bnsf-bnsf-agriculture-and-energy-2025-thanksgiving-operating-plan",
       "railroad": "BNSF",
@@ -2994,10 +2994,10 @@
       "isActive": true,
       "issuedAt": "2025-11-06T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-c76210143de7",
+      "id": "adv-615911ba0983",
       "externalId": "bnsf-bnsf-automotive-2025-thanksgiving-operating-plan",
       "slug": "bnsf-bnsf-automotive-2025-thanksgiving-operating-plan",
       "railroad": "BNSF",
@@ -3008,10 +3008,10 @@
       "isActive": true,
       "issuedAt": "2025-11-06T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-85909a044e55",
+      "id": "adv-7888908aefc7",
       "externalId": "bnsf-bnsf-coal-2025-thanksgiving-operating-plan",
       "slug": "bnsf-bnsf-coal-2025-thanksgiving-operating-plan",
       "railroad": "BNSF",
@@ -3022,10 +3022,10 @@
       "isActive": true,
       "issuedAt": "2025-11-06T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-bae6e6857bdd",
+      "id": "adv-d1d2a02e962b",
       "externalId": "bnsf-bnsf-industrial-products-2025-thanksgiving-operating-plan",
       "slug": "bnsf-bnsf-industrial-products-2025-thanksgiving-operating-plan",
       "railroad": "BNSF",
@@ -3036,10 +3036,10 @@
       "isActive": true,
       "issuedAt": "2025-11-06T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-9911b472bc99",
+      "id": "adv-3bbb0079bb6e",
       "externalId": "bnsf-final-report-train-derailment-near-teague-tx-red-river-division-dfw-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-teague-tx-red-river-division-dfw-subdivi",
       "railroad": "BNSF",
@@ -3050,10 +3050,10 @@
       "isActive": true,
       "issuedAt": "2025-11-04T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-3385c3e95607",
+      "id": "adv-d2aff0d93248",
       "externalId": "bnsf-update-report-train-derailment-near-teague-tx-red-river-division-dfw-subdivision",
       "slug": "bnsf-update-report-train-derailment-near-teague-tx-red-river-division-dfw-subdiv",
       "railroad": "BNSF",
@@ -3064,10 +3064,10 @@
       "isActive": true,
       "issuedAt": "2025-11-04T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-56fcf5d20284",
+      "id": "adv-7c08df2d9b6b",
       "externalId": "bnsf-initial-report-train-derailment-near-teague-tx-red-river-division-dfw-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-teague-tx-red-river-division-dfw-subdi",
       "railroad": "BNSF",
@@ -3078,10 +3078,10 @@
       "isActive": true,
       "issuedAt": "2025-11-03T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-364e2e5fb1cb",
+      "id": "adv-a4deaeeb5c8a",
       "externalId": "bnsf-final-report-train-derailment-near-marcel-ca-uprr-mojave-subdivision-california-division",
       "slug": "bnsf-final-report-train-derailment-near-marcel-ca-uprr-mojave-subdivision-califo",
       "railroad": "BNSF",
@@ -3092,10 +3092,10 @@
       "isActive": true,
       "issuedAt": "2025-10-24T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-dcde38107233",
+      "id": "adv-254f193d22a1",
       "externalId": "bnsf-memphis-intermodal-facility-update-truck-spot-check-in",
       "slug": "bnsf-memphis-intermodal-facility-update-truck-spot-check-in",
       "railroad": "BNSF",
@@ -3106,10 +3106,10 @@
       "isActive": true,
       "issuedAt": "2025-10-23T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-1419123c22f6",
+      "id": "adv-9b27e1d052fb",
       "externalId": "bnsf-initial-report-train-derailment-near-marcel-ca-uprr-mojave-subdivision-california-division",
       "slug": "bnsf-initial-report-train-derailment-near-marcel-ca-uprr-mojave-subdivision-cali",
       "railroad": "BNSF",
@@ -3120,10 +3120,10 @@
       "isActive": true,
       "issuedAt": "2025-10-23T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-7f3508d4a485",
+      "id": "adv-011254590b74",
       "externalId": "bnsf-final-report-train-derailment-near-scotland-sd-twin-cities-division-aberdeen-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-scotland-sd-twin-cities-division-aberdee",
       "railroad": "BNSF",
@@ -3134,10 +3134,10 @@
       "isActive": true,
       "issuedAt": "2025-10-16T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-0b9c1b70f896",
+      "id": "adv-9ac0c70e689b",
       "externalId": "bnsf-update-report-train-derailment-near-scotland-sd-twin-cities-division-aberdeen-subdivision",
       "slug": "bnsf-update-report-train-derailment-near-scotland-sd-twin-cities-division-aberde",
       "railroad": "BNSF",
@@ -3148,10 +3148,10 @@
       "isActive": true,
       "issuedAt": "2025-10-14T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-8b45a8bd86df",
+      "id": "adv-011a1afd8857",
       "externalId": "bnsf-initial-report-train-derailment-near-scotland-sd-twin-cities-division-aberdeen-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-scotland-sd-twin-cities-division-aberd",
       "railroad": "BNSF",
@@ -3162,10 +3162,10 @@
       "isActive": true,
       "issuedAt": "2025-10-14T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-2480c06889ad",
+      "id": "adv-4adc23a196a3",
       "externalId": "bnsf-final-report-train-derailment-near-nolan-nd-twin-cities-division-ko-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-nolan-nd-twin-cities-division-ko-subdivi",
       "railroad": "BNSF",
@@ -3176,10 +3176,10 @@
       "isActive": true,
       "issuedAt": "2025-10-10T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-0dff63d53c9f",
+      "id": "adv-eb13c7ba429d",
       "externalId": "bnsf-initial-report-train-derailment-near-nolan-nd-twin-cities-division-ko-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-nolan-nd-twin-cities-division-ko-subdi",
       "railroad": "BNSF",
@@ -3190,10 +3190,10 @@
       "isActive": true,
       "issuedAt": "2025-10-09T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-b4e723879a15",
+      "id": "adv-64a881ab2dac",
       "externalId": "bnsf-help-preserve-rail-competition-your-voice-matters",
       "slug": "bnsf-help-preserve-rail-competition-your-voice-matters",
       "railroad": "BNSF",
@@ -3204,10 +3204,10 @@
       "isActive": true,
       "issuedAt": "2025-09-29T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-d2c99f9bebb8",
+      "id": "adv-721240ecfe3e",
       "externalId": "bnsf-final-report-train-derailment-near-dilworth-mn-twin-cities-division-ko-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-dilworth-mn-twin-cities-division-ko-subd",
       "railroad": "BNSF",
@@ -3218,10 +3218,10 @@
       "isActive": true,
       "issuedAt": "2025-09-26T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-b5f7729c777c",
+      "id": "adv-d71a7016985b",
       "externalId": "bnsf-changes-to-commodity-description-requirements-for-cross-border-shipments-effective-september-27-2025",
       "slug": "bnsf-changes-to-commodity-description-requirements-for-cross-border-shipments-ef",
       "railroad": "BNSF",
@@ -3232,10 +3232,10 @@
       "isActive": true,
       "issuedAt": "2025-09-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-646e35deef48",
+      "id": "adv-e61963e9302b",
       "externalId": "bnsf-update-report-train-derailment-near-dilworth-mn-ko-subdivision",
       "slug": "bnsf-update-report-train-derailment-near-dilworth-mn-ko-subdivision",
       "railroad": "BNSF",
@@ -3246,10 +3246,10 @@
       "isActive": true,
       "issuedAt": "2025-09-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-0f5266684bbd",
+      "id": "adv-3b95fee74722",
       "externalId": "bnsf-initial-report-train-derailment-near-dilworth-mn-twin-cities-division-ko-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-dilworth-mn-twin-cities-division-ko-su",
       "railroad": "BNSF",
@@ -3260,10 +3260,10 @@
       "isActive": true,
       "issuedAt": "2025-09-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-4e65366f2e36",
+      "id": "adv-75280d0256d6",
       "externalId": "bnsf-upcoming-cot-offers-for-january-through-march-2026",
       "slug": "bnsf-upcoming-cot-offers-for-january-through-march-2026",
       "railroad": "BNSF",
@@ -3274,10 +3274,10 @@
       "isActive": true,
       "issuedAt": "2025-09-18T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-481e1b954e66",
+      "id": "adv-74daae6c2b8e",
       "externalId": "bnsf-metals-logs-auction-beginning-september-29-2025",
       "slug": "bnsf-metals-logs-auction-beginning-september-29-2025",
       "railroad": "BNSF",
@@ -3288,10 +3288,10 @@
       "isActive": true,
       "issuedAt": "2025-09-15T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-2be0511ad279",
+      "id": "adv-00a676d93985",
       "externalId": "bnsf-final-report-train-derailment-near-caliente-ca-uprr-mojave-subdivision-california",
       "slug": "bnsf-final-report-train-derailment-near-caliente-ca-uprr-mojave-subdivision-cali",
       "railroad": "BNSF",
@@ -3302,10 +3302,10 @@
       "isActive": true,
       "issuedAt": "2025-09-14T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-3e0f40e20311",
+      "id": "adv-55ebad9873c8",
       "externalId": "bnsf-update-report-train-derailment-near-caliente-ca-uprr-mojave-subdivision-california",
       "slug": "bnsf-update-report-train-derailment-near-caliente-ca-uprr-mojave-subdivision-cal",
       "railroad": "BNSF",
@@ -3316,10 +3316,10 @@
       "isActive": true,
       "issuedAt": "2025-09-14T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-0a752d6be138",
+      "id": "adv-c5657090ce06",
       "externalId": "bnsf-bnsf-ag-car-program-information-webpage",
       "slug": "bnsf-bnsf-ag-car-program-information-webpage",
       "railroad": "BNSF",
@@ -3330,10 +3330,10 @@
       "isActive": true,
       "issuedAt": "2025-09-12T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-cc9283327307",
+      "id": "adv-e824e30ac931",
       "externalId": "bnsf-initial-report-train-derailment-near-caliente-ca-uprr-mojave-subdivision-california",
       "slug": "bnsf-initial-report-train-derailment-near-caliente-ca-uprr-mojave-subdivision-ca",
       "railroad": "BNSF",
@@ -3344,10 +3344,10 @@
       "isActive": true,
       "issuedAt": "2025-09-12T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-429a607f0ecd",
+      "id": "adv-be6eae7043e6",
       "externalId": "bnsf-final-report-train-derailment-near-mcgregor-tx-red-river-division-ft-worth-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-mcgregor-tx-red-river-division-ft-worth-",
       "railroad": "BNSF",
@@ -3358,10 +3358,10 @@
       "isActive": true,
       "issuedAt": "2025-09-11T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-c0a0102c0d54",
+      "id": "adv-ae9ecec31c74",
       "externalId": "bnsf-initial-report-train-derailment-near-mcgregor-tx-red-river-division-ft-worth-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-mcgregor-tx-red-river-division-ft-wort",
       "railroad": "BNSF",
@@ -3372,10 +3372,10 @@
       "isActive": true,
       "issuedAt": "2025-09-10T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-b8c15a90c47b",
+      "id": "adv-18d901f318b2",
       "externalId": "bnsf-final-report-train-derailment-near-summit-mt-hi-line-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-summit-mt-hi-line-subdivision",
       "railroad": "BNSF",
@@ -3386,10 +3386,10 @@
       "isActive": true,
       "issuedAt": "2025-09-07T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-aa5fe653c476",
+      "id": "adv-76c8018f20eb",
       "externalId": "bnsf-initial-report-train-derailment-near-summit-mt-hi-line-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-summit-mt-hi-line-subdivision",
       "railroad": "BNSF",
@@ -3400,10 +3400,10 @@
       "isActive": true,
       "issuedAt": "2025-09-07T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-062163810df2",
+      "id": "adv-28ca5bf3a0fe",
       "externalId": "bnsf-coast-to-coast-solutions-bnsf-and-csx-launch-new-intermodal-services",
       "slug": "bnsf-coast-to-coast-solutions-bnsf-and-csx-launch-new-intermodal-services",
       "railroad": "BNSF",
@@ -3414,10 +3414,10 @@
       "isActive": true,
       "issuedAt": "2025-08-22T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-05ca333d6bda",
+      "id": "adv-896dd3d7131d",
       "externalId": "bnsf-bnsf-agriculture-and-energy-2025-labor-day-operating-plan",
       "slug": "bnsf-bnsf-agriculture-and-energy-2025-labor-day-operating-plan",
       "railroad": "BNSF",
@@ -3428,10 +3428,10 @@
       "isActive": true,
       "issuedAt": "2025-08-11T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-55ff519d6616",
+      "id": "adv-276dd877f22c",
       "externalId": "bnsf-bnsf-automotive-2025-labor-day-operating-plan",
       "slug": "bnsf-bnsf-automotive-2025-labor-day-operating-plan",
       "railroad": "BNSF",
@@ -3442,10 +3442,10 @@
       "isActive": true,
       "issuedAt": "2025-08-11T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-ca0a0427c1a6",
+      "id": "adv-7c44247c35b8",
       "externalId": "bnsf-bnsf-coal-2025-labor-day-operating-plan",
       "slug": "bnsf-bnsf-coal-2025-labor-day-operating-plan",
       "railroad": "BNSF",
@@ -3456,10 +3456,10 @@
       "isActive": true,
       "issuedAt": "2025-08-11T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-072d3f01b6d2",
+      "id": "adv-46d3510068b4",
       "externalId": "bnsf-bnsf-industrial-products-2025-labor-day-operating-plan",
       "slug": "bnsf-bnsf-industrial-products-2025-labor-day-operating-plan",
       "railroad": "BNSF",
@@ -3470,10 +3470,10 @@
       "isActive": true,
       "issuedAt": "2025-08-11T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-14d46d00371e",
+      "id": "adv-ddf4a227c212",
       "externalId": "bnsf-bnsf-intermodal-2025-labor-day-operating-plan",
       "slug": "bnsf-bnsf-intermodal-2025-labor-day-operating-plan",
       "railroad": "BNSF",
@@ -3484,10 +3484,10 @@
       "isActive": true,
       "issuedAt": "2025-08-11T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-29f81670c04b",
+      "id": "adv-abaf74b0d5f9",
       "externalId": "bnsf-final-report-track-washout-near-morris-mn-morris-subdivision",
       "slug": "bnsf-final-report-track-washout-near-morris-mn-morris-subdivision",
       "railroad": "BNSF",
@@ -3498,10 +3498,10 @@
       "isActive": true,
       "issuedAt": "2025-07-31T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-42f99db51c44",
+      "id": "adv-0a302f952837",
       "externalId": "bnsf-new-enhancements-to-message-us-launching-september-3",
       "slug": "bnsf-new-enhancements-to-message-us-launching-september-3",
       "railroad": "BNSF",
@@ -3512,10 +3512,10 @@
       "isActive": true,
       "issuedAt": "2025-07-31T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-2823257412fd",
+      "id": "adv-f82cc042827c",
       "externalId": "bnsf-update-report-track-washout-near-morris-mn-morris-subdivision",
       "slug": "bnsf-update-report-track-washout-near-morris-mn-morris-subdivision",
       "railroad": "BNSF",
@@ -3526,10 +3526,10 @@
       "isActive": true,
       "issuedAt": "2025-07-31T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-2474da1d1022",
+      "id": "adv-5c26e04591c1",
       "externalId": "bnsf-initial-report-track-washout-near-morris-mn-morris-subdivision",
       "slug": "bnsf-initial-report-track-washout-near-morris-mn-morris-subdivision",
       "railroad": "BNSF",
@@ -3540,10 +3540,10 @@
       "isActive": true,
       "issuedAt": "2025-07-29T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-176fed515bca",
+      "id": "adv-a3f991eef589",
       "externalId": "bnsf-bnsf-launches-new-expedited-intermodal-service-from-los-angeles-to-houston-enhancing-speed-consistency-and-connectivity",
       "slug": "bnsf-bnsf-launches-new-expedited-intermodal-service-from-los-angeles-to-houston-",
       "railroad": "BNSF",
@@ -3554,10 +3554,10 @@
       "isActive": true,
       "issuedAt": "2025-07-15T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-74f3da5facd0",
+      "id": "adv-57af61f97878",
       "externalId": "bnsf-final-report-train-derailment-near-mojave-ca-uprr-mojave-subdivision-california",
       "slug": "bnsf-final-report-train-derailment-near-mojave-ca-uprr-mojave-subdivision-califo",
       "railroad": "BNSF",
@@ -3568,10 +3568,10 @@
       "isActive": true,
       "issuedAt": "2025-07-12T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-447e377c4265",
+      "id": "adv-b1c2f0548a30",
       "externalId": "bnsf-initial-report-train-derailment-near-mojave-ca-uprr-mojave-subdivision-california",
       "slug": "bnsf-initial-report-train-derailment-near-mojave-ca-uprr-mojave-subdivision-cali",
       "railroad": "BNSF",
@@ -3582,10 +3582,10 @@
       "isActive": true,
       "issuedAt": "2025-07-11T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-c384e35bc068",
+      "id": "adv-a90645d450c4",
       "externalId": "bnsf-final-report-train-derailment-near-thayer-mo-thayer-south-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-thayer-mo-thayer-south-subdivision",
       "railroad": "BNSF",
@@ -3596,10 +3596,10 @@
       "isActive": true,
       "issuedAt": "2025-06-23T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-8246cd242730",
+      "id": "adv-5d60e9bf9b29",
       "externalId": "bnsf-initial-report-train-derailment-near-thayer-mo-thayer-south-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-thayer-mo-thayer-south-subdivision",
       "railroad": "BNSF",
@@ -3610,10 +3610,10 @@
       "isActive": true,
       "issuedAt": "2025-06-23T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-7fc680a8a879",
+      "id": "adv-4adebd357d38",
       "externalId": "bnsf-final-report-track-washout-near-sanborn-nd-jamestown-subdivision",
       "slug": "bnsf-final-report-track-washout-near-sanborn-nd-jamestown-subdivision",
       "railroad": "BNSF",
@@ -3624,10 +3624,10 @@
       "isActive": true,
       "issuedAt": "2025-06-22T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-235942b551a2",
+      "id": "adv-de9d08d8b927",
       "externalId": "bnsf-update-report-track-washout-near-sanborn-nd-jamestown-subdivision",
       "slug": "bnsf-update-report-track-washout-near-sanborn-nd-jamestown-subdivision",
       "railroad": "BNSF",
@@ -3638,10 +3638,10 @@
       "isActive": true,
       "issuedAt": "2025-06-22T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-6dfa8d9a055e",
+      "id": "adv-dbcdbdd8be20",
       "externalId": "bnsf-initial-report-track-washout-near-sanborn-nd-jamestown-subdivision",
       "slug": "bnsf-initial-report-track-washout-near-sanborn-nd-jamestown-subdivision",
       "railroad": "BNSF",
@@ -3652,10 +3652,10 @@
       "isActive": true,
       "issuedAt": "2025-06-21T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-c6ea43dc349d",
+      "id": "adv-2e1154d60a4a",
       "externalId": "bnsf-upcoming-monthly-single-auctions-for-october-through-december-2025",
       "slug": "bnsf-upcoming-monthly-single-auctions-for-october-through-december-2025",
       "railroad": "BNSF",
@@ -3666,10 +3666,10 @@
       "isActive": true,
       "issuedAt": "2025-06-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-b884c456b26d",
+      "id": "adv-3c842460dd7c",
       "externalId": "bnsf-bnsf-agricultural-products-independence-day-2025-operating-plan",
       "slug": "bnsf-bnsf-agricultural-products-independence-day-2025-operating-plan",
       "railroad": "BNSF",
@@ -3680,10 +3680,10 @@
       "isActive": true,
       "issuedAt": "2025-06-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-834018b0337b",
+      "id": "adv-c836248c9c5a",
       "externalId": "bnsf-bnsf-automotive-independence-day-2025-operating-plan",
       "slug": "bnsf-bnsf-automotive-independence-day-2025-operating-plan",
       "railroad": "BNSF",
@@ -3694,10 +3694,10 @@
       "isActive": true,
       "issuedAt": "2025-06-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-c1ad93577f93",
+      "id": "adv-d176f98daf37",
       "externalId": "bnsf-bnsf-coal-independence-day-2025-operating-plan",
       "slug": "bnsf-bnsf-coal-independence-day-2025-operating-plan",
       "railroad": "BNSF",
@@ -3708,10 +3708,10 @@
       "isActive": true,
       "issuedAt": "2025-06-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-8b69028dae83",
+      "id": "adv-865171832e0a",
       "externalId": "bnsf-bnsf-industrial-products-independence-day-2025-operating-plan",
       "slug": "bnsf-bnsf-industrial-products-independence-day-2025-operating-plan",
       "railroad": "BNSF",
@@ -3722,10 +3722,10 @@
       "isActive": true,
       "issuedAt": "2025-06-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-230a54956df0",
+      "id": "adv-7225c6d9490d",
       "externalId": "bnsf-bnsf-intermodal-independence-day-2025-operating-plan",
       "slug": "bnsf-bnsf-intermodal-independence-day-2025-operating-plan",
       "railroad": "BNSF",
@@ -3736,10 +3736,10 @@
       "isActive": true,
       "issuedAt": "2025-06-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-34f4b5c3462a",
+      "id": "adv-9ad581a639e8",
       "externalId": "bnsf-final-report-train-derailment-near-rosebud-mt-forsyth-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-rosebud-mt-forsyth-subdivision",
       "railroad": "BNSF",
@@ -3750,10 +3750,10 @@
       "isActive": true,
       "issuedAt": "2025-06-18T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-a49be46c3dce",
+      "id": "adv-1af773bd6585",
       "externalId": "bnsf-initial-report-train-derailment-near-rosebud-mt-forsyth-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-rosebud-mt-forsyth-subdivision",
       "railroad": "BNSF",
@@ -3764,10 +3764,10 @@
       "isActive": true,
       "issuedAt": "2025-06-17T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-cceb98ac3e0f",
+      "id": "adv-476c2039afc4",
       "externalId": "bnsf-cicero-intermodal-facility-update-austin-blvd-bridge-closed-for-construction",
       "slug": "bnsf-cicero-intermodal-facility-update-austin-blvd-bridge-closed-for-constructio",
       "railroad": "BNSF",
@@ -3778,10 +3778,10 @@
       "isActive": true,
       "issuedAt": "2025-06-13T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-587c703689b8",
+      "id": "adv-6f5a4c7198f4",
       "externalId": "bnsf-upcoming-enhancements-to-waybill-validation-for-single-carload-traffic-effective-august-1-2025",
       "slug": "bnsf-upcoming-enhancements-to-waybill-validation-for-single-carload-traffic-effe",
       "railroad": "BNSF",
@@ -3792,10 +3792,10 @@
       "isActive": true,
       "issuedAt": "2025-06-11T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-ffb63ee528f5",
+      "id": "adv-6fb06013bdfd",
       "externalId": "bnsf-final-report-main-track-out-of-service-due-to-high-water-near-winfield-jct-ks",
       "slug": "bnsf-final-report-main-track-out-of-service-due-to-high-water-near-winfield-jct-",
       "railroad": "BNSF",
@@ -3806,10 +3806,10 @@
       "isActive": true,
       "issuedAt": "2025-06-06T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-6873d53719b5",
+      "id": "adv-4432ef43f2c8",
       "externalId": "bnsf-initial-report-main-track-out-of-service-due-to-high-water-near-winfield-jct-ks",
       "slug": "bnsf-initial-report-main-track-out-of-service-due-to-high-water-near-winfield-jc",
       "railroad": "BNSF",
@@ -3820,10 +3820,10 @@
       "isActive": true,
       "issuedAt": "2025-06-05T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-ed057870a321",
+      "id": "adv-14525c9bd534",
       "externalId": "bnsf-final-report-train-derailment-near-argyle-ia-marceline-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-argyle-ia-marceline-subdivision",
       "railroad": "BNSF",
@@ -3834,10 +3834,10 @@
       "isActive": true,
       "issuedAt": "2025-06-04T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-d5d0769b63a1",
+      "id": "adv-f405ea22666f",
       "externalId": "bnsf-initial-report-train-derailment-near-argyle-ia-marceline-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-argyle-ia-marceline-subdivision",
       "railroad": "BNSF",
@@ -3848,10 +3848,10 @@
       "isActive": true,
       "issuedAt": "2025-06-04T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-26e9d1c7b131",
+      "id": "adv-05277e4403af",
       "externalId": "bnsf-nominations-now-open-for-bnsfs-2025-sustainability-awards",
       "slug": "bnsf-nominations-now-open-for-bnsf-s-2025-sustainability-awards",
       "railroad": "BNSF",
@@ -3862,10 +3862,10 @@
       "isActive": true,
       "issuedAt": "2025-05-29T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-517994bd3175",
+      "id": "adv-dcfbae5a6f03",
       "externalId": "bnsf-bnsf-intermodal-2025-memorial-day-operating-plan",
       "slug": "bnsf-bnsf-intermodal-2025-memorial-day-operating-plan",
       "railroad": "BNSF",
@@ -3876,10 +3876,10 @@
       "isActive": true,
       "issuedAt": "2025-05-15T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-9c353ed7d279",
+      "id": "adv-2da2ee82b961",
       "externalId": "bnsf-bnsf-agricultural-products-2025-memorial-day-operating-plan",
       "slug": "bnsf-bnsf-agricultural-products-2025-memorial-day-operating-plan",
       "railroad": "BNSF",
@@ -3890,10 +3890,10 @@
       "isActive": true,
       "issuedAt": "2025-05-14T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-77a47d333462",
+      "id": "adv-69245a43901e",
       "externalId": "bnsf-bnsf-automotive-2025-memorial-day-operating-plan",
       "slug": "bnsf-bnsf-automotive-2025-memorial-day-operating-plan",
       "railroad": "BNSF",
@@ -3904,10 +3904,10 @@
       "isActive": true,
       "issuedAt": "2025-05-14T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-173a52a2d89c",
+      "id": "adv-e473b4f199c7",
       "externalId": "bnsf-bnsf-coal-2025-memorial-day-operating-plan",
       "slug": "bnsf-bnsf-coal-2025-memorial-day-operating-plan",
       "railroad": "BNSF",
@@ -3918,10 +3918,10 @@
       "isActive": true,
       "issuedAt": "2025-05-14T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-ad308419fec5",
+      "id": "adv-7d7ef5944f3e",
       "externalId": "bnsf-bnsf-industrial-products-2025-memorial-day-operating-plan",
       "slug": "bnsf-bnsf-industrial-products-2025-memorial-day-operating-plan",
       "railroad": "BNSF",
@@ -3932,10 +3932,10 @@
       "isActive": true,
       "issuedAt": "2025-05-14T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-cc8f66665ae3",
+      "id": "adv-c25690482847",
       "externalId": "bnsf-important-instructions-to-ensure-accurate-commodity-description-for-cross-border-shipments",
       "slug": "bnsf-important-instructions-to-ensure-accurate-commodity-description-for-cross-b",
       "railroad": "BNSF",
@@ -3946,10 +3946,10 @@
       "isActive": true,
       "issuedAt": "2025-04-30T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-be81b4862279",
+      "id": "adv-2cf5af02dee1",
       "externalId": "bnsf-final-report-train-derailment-near-ashby-ne-powder-river-division-sand-hills-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-ashby-ne-powder-river-division-sand-hill",
       "railroad": "BNSF",
@@ -3960,10 +3960,10 @@
       "isActive": true,
       "issuedAt": "2025-04-28T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-bd6b61791e35",
+      "id": "adv-5cac90498f2d",
       "externalId": "bnsf-update-report-train-derailment-near-ashby-ne-powder-river-division-sand-hills-subdivision",
       "slug": "bnsf-update-report-train-derailment-near-ashby-ne-powder-river-division-sand-hil",
       "railroad": "BNSF",
@@ -3974,10 +3974,10 @@
       "isActive": true,
       "issuedAt": "2025-04-28T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-844837230956",
+      "id": "adv-7450bce88f46",
       "externalId": "bnsf-initial-report-train-derailment-near-ashby-ne-powder-river-division-sand-hills-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-ashby-ne-powder-river-division-sand-hi",
       "railroad": "BNSF",
@@ -3988,10 +3988,10 @@
       "isActive": true,
       "issuedAt": "2025-04-27T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-f62418e7bd0e",
+      "id": "adv-ed833a267fc4",
       "externalId": "bnsf-final-report-red-river-division-silsbee-subdivision-main-track-out-of-service",
       "slug": "bnsf-final-report-red-river-division-silsbee-subdivision-main-track-out-of-servi",
       "railroad": "BNSF",
@@ -4002,10 +4002,10 @@
       "isActive": true,
       "issuedAt": "2025-04-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-51e24e736441",
+      "id": "adv-55d900da9780",
       "externalId": "bnsf-waybill-submission-changes-for-cpkc-interchange-submissions-may-2-3-2025",
       "slug": "bnsf-waybill-submission-changes-for-cpkc-interchange-submissions-may-2-3-2025",
       "railroad": "BNSF",
@@ -4016,10 +4016,10 @@
       "isActive": true,
       "issuedAt": "2025-04-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-fc3e50cbb524",
+      "id": "adv-4b3af2552363",
       "externalId": "bnsf-initial-report-red-river-division-silsbee-subdivision-main-track-out-of-service",
       "slug": "bnsf-initial-report-red-river-division-silsbee-subdivision-main-track-out-of-ser",
       "railroad": "BNSF",
@@ -4030,10 +4030,10 @@
       "isActive": true,
       "issuedAt": "2025-04-24T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-067c6668ad69",
+      "id": "adv-3d91c915a157",
       "externalId": "bnsf-upcoming-bnsf-shuttle-direct-det-and-det-program-changes",
       "slug": "bnsf-upcoming-bnsf-shuttle-direct-det-and-det-program-changes",
       "railroad": "BNSF",
@@ -4044,10 +4044,10 @@
       "isActive": true,
       "issuedAt": "2025-04-17T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-79d4193dcf82",
+      "id": "adv-51e57c285c5c",
       "externalId": "bnsf-additional-2025-shuttle-direct-det-and-det-offerings",
       "slug": "bnsf-additional-2025-shuttle-direct-det-and-det-offerings",
       "railroad": "BNSF",
@@ -4058,10 +4058,10 @@
       "isActive": true,
       "issuedAt": "2025-04-17T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-b4a3dc086f5e",
+      "id": "adv-f5e70b46f84c",
       "externalId": "bnsf-update-multiple-flooding-events-on-the-heartland-division-river-thayer-north-and-thayer-sub-subdivisions",
       "slug": "bnsf-update-multiple-flooding-events-on-the-heartland-division-river-thayer-nort",
       "railroad": "BNSF",
@@ -4072,10 +4072,10 @@
       "isActive": true,
       "issuedAt": "2025-04-10T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-150886772993",
+      "id": "adv-81dfa5bac6db",
       "externalId": "bnsf-update-multiple-flooding-events-impacting-bnsf-operations",
       "slug": "bnsf-update-multiple-flooding-events-impacting-bnsf-operations",
       "railroad": "BNSF",
@@ -4086,10 +4086,10 @@
       "isActive": true,
       "issuedAt": "2025-04-07T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-b7f68b6e9cfb",
+      "id": "adv-9b47c0cbe322",
       "externalId": "bnsf-update-report-train-derailment-near-mammoth-spring-ar-thayer-south-subdivision",
       "slug": "bnsf-update-report-train-derailment-near-mammoth-spring-ar-thayer-south-subdivis",
       "railroad": "BNSF",
@@ -4100,10 +4100,10 @@
       "isActive": true,
       "issuedAt": "2025-04-07T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-e7365596175d",
+      "id": "adv-099109f1292d",
       "externalId": "bnsf-initial-update-multiple-flooding-events-on-the-heartland-division-river-thayer-north-and-thayer-sub-subdivisions",
       "slug": "bnsf-initial-update-multiple-flooding-events-on-the-heartland-division-river-tha",
       "railroad": "BNSF",
@@ -4114,10 +4114,10 @@
       "isActive": true,
       "issuedAt": "2025-04-05T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-8b008bf4f12b",
+      "id": "adv-a717e156d95d",
       "externalId": "bnsf-initial-report-train-derailment-near-mammoth-spring-ar-thayer-south-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-mammoth-spring-ar-thayer-south-subdivi",
       "railroad": "BNSF",
@@ -4128,10 +4128,10 @@
       "isActive": true,
       "issuedAt": "2025-04-05T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-2cb2c158a03a",
+      "id": "adv-940a750dde93",
       "externalId": "bnsf-powerful-storms-and-flooding-impacting-operations",
       "slug": "bnsf-powerful-storms-and-flooding-impacting-operations",
       "railroad": "BNSF",
@@ -4142,10 +4142,10 @@
       "isActive": true,
       "issuedAt": "2025-04-04T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-eccf49a67459",
+      "id": "adv-2cb24b459320",
       "externalId": "bnsf-final-report-train-derailment-near-bay-ar-thayer-south-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-bay-ar-thayer-south-subdivision",
       "railroad": "BNSF",
@@ -4156,10 +4156,10 @@
       "isActive": true,
       "issuedAt": "2025-04-03T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-caf231aa60a3",
+      "id": "adv-279d29a75714",
       "externalId": "bnsf-initial-report-train-derailment-near-bay-ar-thayer-south-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-bay-ar-thayer-south-subdivision",
       "railroad": "BNSF",
@@ -4170,10 +4170,10 @@
       "isActive": true,
       "issuedAt": "2025-04-03T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-7c748ab13506",
+      "id": "adv-4610c30d332f",
       "externalId": "bnsf-metals-logs-auction-beginning-march-31-2025",
       "slug": "bnsf-metals-logs-auction-beginning-march-31-2025",
       "railroad": "BNSF",
@@ -4184,10 +4184,10 @@
       "isActive": true,
       "issuedAt": "2025-03-24T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-1406316cf39b",
+      "id": "adv-38328e3676cf",
       "externalId": "bnsf-customer-pin-authentication-returning-may-15th",
       "slug": "bnsf-customer-pin-authentication-returning-may-15th",
       "railroad": "BNSF",
@@ -4198,10 +4198,10 @@
       "isActive": true,
       "issuedAt": "2025-03-24T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-5c6e9ea8413d",
+      "id": "adv-25b4b4ef955b",
       "externalId": "bnsf-update-on-current-network-conditions-and-southern-transcon-recovery-efforts",
       "slug": "bnsf-update-on-current-network-conditions-and-southern-transcon-recovery-efforts",
       "railroad": "BNSF",
@@ -4212,10 +4212,10 @@
       "isActive": true,
       "issuedAt": "2025-03-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-d245a18dcd12",
+      "id": "adv-a565350ee171",
       "externalId": "bnsf-data-security-enhancements",
       "slug": "bnsf-data-security-enhancements",
       "railroad": "BNSF",
@@ -4226,10 +4226,10 @@
       "isActive": true,
       "issuedAt": "2025-03-19T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-7c5f5f06387e",
+      "id": "adv-a7270f9a12f5",
       "externalId": "bnsf-us-department-of-transportation-and-transport-canada-important-update-on-class-3-flammable-liquid-tank-car-phase-out",
       "slug": "bnsf-u-s-department-of-transportation-and-transport-canada-important-update-on-c",
       "railroad": "BNSF",
@@ -4240,10 +4240,10 @@
       "isActive": true,
       "issuedAt": "2025-03-18T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-58e4bb3f2b9e",
+      "id": "adv-cf3ecb24dd4a",
       "externalId": "bnsf-final-report-train-derailment-near-templeton-ia-bayard-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-templeton-ia-bayard-subdivision",
       "railroad": "BNSF",
@@ -4254,10 +4254,10 @@
       "isActive": true,
       "issuedAt": "2025-03-07T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-5c57a48fa585",
+      "id": "adv-9e44319e4c97",
       "externalId": "bnsf-upcoming-monthly-single-auctions-for-july-through-september-2025",
       "slug": "bnsf-upcoming-monthly-single-auctions-for-july-through-september-2025",
       "railroad": "BNSF",
@@ -4268,10 +4268,10 @@
       "isActive": true,
       "issuedAt": "2025-03-07T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-6e9be9745efe",
+      "id": "adv-80b790d82dc7",
       "externalId": "bnsf-initial-report-train-derailment-near-templeton-ia-bayard-subdivision",
       "slug": "bnsf-initial-report-train-derailment-near-templeton-ia-bayard-subdivision",
       "railroad": "BNSF",
@@ -4282,10 +4282,10 @@
       "isActive": true,
       "issuedAt": "2025-03-07T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-e2cd37cb662b",
+      "id": "adv-16cf010be25c",
       "externalId": "bnsf-final-report-train-derailment-near-forsyth-mt-forsyth-subdivision",
       "slug": "bnsf-final-report-train-derailment-near-forsyth-mt-forsyth-subdivision",
       "railroad": "BNSF",
@@ -4296,10 +4296,10 @@
       "isActive": true,
       "issuedAt": "2025-02-27T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-6c8fa3481ece",
+      "id": "adv-52e047498942",
       "externalId": "bnsf-bnsf-responds-to-ongoing-winter-weather-challenges-in-the-north-february-26-2025",
       "slug": "bnsf-bnsf-responds-to-ongoing-winter-weather-challenges-in-the-north-february-26",
       "railroad": "BNSF",
@@ -4310,10 +4310,10 @@
       "isActive": true,
       "issuedAt": "2025-02-26T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-ad4bd435a0bc",
+      "id": "adv-530508b56529",
       "externalId": "bnsf-update-report-train-derailment-near-forsyth-mt-forsyth-subdivision",
       "slug": "bnsf-update-report-train-derailment-near-forsyth-mt-forsyth-subdivision",
       "railroad": "BNSF",
@@ -4324,10 +4324,10 @@
       "isActive": true,
       "issuedAt": "2025-02-26T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-745c49ebc519",
+      "id": "adv-017df9561666",
       "externalId": "csx-CSXT000726",
       "slug": "csx-embargo-csxt000726",
       "railroad": "CSX",
@@ -4338,10 +4338,10 @@
       "isActive": true,
       "issuedAt": "2026-02-23T00:00:00.000Z",
       "expiresAt": "2027-02-23T00:00:00.000Z",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-f239021a5125",
+      "id": "adv-1ce9fa8881e3",
       "externalId": "csx-CSXT000626",
       "slug": "csx-embargo-csxt000626",
       "railroad": "CSX",
@@ -4352,10 +4352,10 @@
       "isActive": true,
       "issuedAt": "2026-02-17T00:00:00.000Z",
       "expiresAt": "2027-02-17T00:00:00.000Z",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-807d5a26285f",
+      "id": "adv-43a85bdbf336",
       "externalId": "csx-90b2bb81bd27",
       "slug": "csx-csx-customer-advisory-winter-storm-gianna-update",
       "railroad": "CSX",
@@ -4364,12 +4364,12 @@
       "description": "CSX Customer Advisory: Winter Storm Gianna Update",
       "affectedArea": null,
       "isActive": true,
-      "issuedAt": "2026-02-26T06:32:46.000Z",
+      "issuedAt": "2026-02-26T08:49:31.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-2848efb6fbd6",
+      "id": "adv-8a05db01c959",
       "externalId": "csx-d471ccd575ed",
       "slug": "csx-csx-customer-advisory-csx-monitoring-winter-storm",
       "railroad": "CSX",
@@ -4378,12 +4378,12 @@
       "description": "CSX Customer Advisory: CSX Monitoring Winter Storm",
       "affectedArea": null,
       "isActive": true,
-      "issuedAt": "2026-02-26T06:32:46.000Z",
+      "issuedAt": "2026-02-26T08:49:31.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-593c83a9f0c0",
+      "id": "adv-5f189705156a",
       "externalId": "csx-5255b8e70702",
       "slug": "csx-csx-customer-advisory-winter-storm-causes-temporary-delays",
       "railroad": "CSX",
@@ -4392,12 +4392,12 @@
       "description": "CSX Customer Advisory: Winter Storm Causes Temporary Delays",
       "affectedArea": null,
       "isActive": true,
-      "issuedAt": "2026-02-26T06:32:46.000Z",
+      "issuedAt": "2026-02-26T08:49:31.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-af6183aeee74",
+      "id": "adv-b0f5ff69806a",
       "externalId": "csx-92527ef77f57",
       "slug": "csx-csx-customer-advisory-csx-monitoring-severe-winter-storm",
       "railroad": "CSX",
@@ -4406,12 +4406,12 @@
       "description": "CSX Customer Advisory: CSX Monitoring Severe Winter Storm",
       "affectedArea": null,
       "isActive": true,
-      "issuedAt": "2026-02-26T06:32:46.000Z",
+      "issuedAt": "2026-02-26T08:49:31.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-94a34f90c425",
+      "id": "adv-63afd2bcf0dd",
       "externalId": "csx-d07ca0b69c5e",
       "slug": "csx-csx-customer-advisory-service-restored-in-trenton-kentucky",
       "railroad": "CSX",
@@ -4420,12 +4420,12 @@
       "description": "CSX Customer Advisory: Service Restored in Trenton, Kentucky",
       "affectedArea": null,
       "isActive": true,
-      "issuedAt": "2026-02-26T06:32:46.000Z",
+      "issuedAt": "2026-02-26T08:49:31.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-90c1931b658c",
+      "id": "adv-1b8379106603",
       "externalId": "csx-2f017bc04659",
       "slug": "csx-csx-customer-advisory-trenton-kentucky-derailment-may-cause-delays",
       "railroad": "CSX",
@@ -4434,12 +4434,12 @@
       "description": "CSX Customer Advisory: Trenton, Kentucky, Derailment May Cause Delays",
       "affectedArea": null,
       "isActive": true,
-      "issuedAt": "2026-02-26T06:32:46.000Z",
+      "issuedAt": "2026-02-26T08:49:31.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-03a92b103217",
+      "id": "adv-fa7ec59cc25b",
       "externalId": "csx-0f6ee1d9f2fb",
       "slug": "csx-csx-customer-advisory-csx-monitoring-winter-storm-ezra",
       "railroad": "CSX",
@@ -4448,12 +4448,12 @@
       "description": "CSX Customer Advisory: CSX Monitoring Winter Storm Ezra",
       "affectedArea": null,
       "isActive": true,
-      "issuedAt": "2026-02-26T06:32:46.000Z",
+      "issuedAt": "2026-02-26T08:49:31.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-780733cf1926",
+      "id": "adv-46d9791ca818",
       "externalId": "csx-dd355ec86543",
       "slug": "csx-csx-customer-advisory-providence-forge-virginia-derailment-may-cause-delays",
       "railroad": "CSX",
@@ -4462,12 +4462,12 @@
       "description": "CSX Customer Advisory: Providence Forge, Virginia, Derailment May Cause Delays",
       "affectedArea": null,
       "isActive": true,
-      "issuedAt": "2026-02-26T06:32:46.000Z",
+      "issuedAt": "2026-02-26T08:49:31.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-d4a3a3930540",
+      "id": "adv-4f58d864d30e",
       "externalId": "csx-ff0228b51340",
       "slug": "csx-csx-customer-advisory-sn-a-north-subdivision-service-restoration",
       "railroad": "CSX",
@@ -4476,12 +4476,12 @@
       "description": "CSX Customer Advisory: SN&A North Subdivision Service Restoration",
       "affectedArea": null,
       "isActive": true,
-      "issuedAt": "2026-02-26T06:32:46.000Z",
+      "issuedAt": "2026-02-26T08:49:31.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-f32192b11d05",
+      "id": "adv-b46b40556212",
       "externalId": "csx-bc42fc0c5fd0",
       "slug": "csx-csx-customer-advisory-temporary-reroute-on-sn-a-north-subdivision",
       "railroad": "CSX",
@@ -4490,12 +4490,12 @@
       "description": "CSX Customer Advisory: Temporary Reroute on SN&A North Subdivision",
       "affectedArea": null,
       "isActive": true,
-      "issuedAt": "2026-02-26T06:32:46.000Z",
+      "issuedAt": "2026-02-26T08:49:31.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-042c38bf84aa",
+      "id": "adv-9ed6fc42970f",
       "externalId": "ns-347cc2fdace0",
       "slug": "ns-port-of-ny-nj-ingate-reopeningseffective-tomorrow-february-26-at-8-00am-local",
       "railroad": "NS",
@@ -4506,10 +4506,10 @@
       "isActive": true,
       "issuedAt": "2026-02-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-ee47d37e89e3",
+      "id": "adv-9418f603dcc9",
       "externalId": "ns-32ce9e9d8729",
       "slug": "ns-harrisburg-rutherford-emp-announcementeffective-immediately-and-until-further",
       "railroad": "NS",
@@ -4520,10 +4520,10 @@
       "isActive": true,
       "issuedAt": "2026-02-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-1d8c4208b822",
+      "id": "adv-7038ddeebe4a",
       "externalId": "ns-d15bbba92bb7",
       "slug": "ns-nsq-27000-nsq-27002-tariff-updatensq-27000-nsq-27002-will-be-adjusted-to-refl",
       "railroad": "NS",
@@ -4534,10 +4534,10 @@
       "isActive": true,
       "issuedAt": "2026-02-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-9cb578d98ac6",
+      "id": "adv-227c5406dae5",
       "externalId": "ns-46873734cb4a",
       "slug": "ns-public-tariff-announcement-effective-04-01-2026effective-april-1-2026-ns-is-m",
       "railroad": "NS",
@@ -4548,10 +4548,10 @@
       "isActive": true,
       "issuedAt": "2026-02-23T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-9df6fc7d96bb",
+      "id": "adv-54491c3cf87a",
       "externalId": "ns-8415f2b6b2ec",
       "slug": "ns-winter-storm-hernandonorfolk-southern-is-monitoring-and-preparing-for-winter-",
       "railroad": "NS",
@@ -4562,10 +4562,10 @@
       "isActive": true,
       "issuedAt": "2026-02-21T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-e6c51ade7e56",
+      "id": "adv-db7e9e3853f2",
       "externalId": "ns-df1cdc3e2044",
       "slug": "ns-port-of-ny-nj-ingate-closuresat-6-00pm-local-today-the-ingates-at-chicago-lan",
       "railroad": "NS",
@@ -4576,10 +4576,10 @@
       "isActive": true,
       "issuedAt": "2026-02-22T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-80567ab2b901",
+      "id": "adv-68c6eefe00bd",
       "externalId": "ns-ffba129637b1",
       "slug": "ns-nsq-43500-43040-tariff-updatenorfolk-southern-is-making-changes-to-lumber-tar",
       "railroad": "NS",
@@ -4590,10 +4590,10 @@
       "isActive": true,
       "issuedAt": "2026-02-19T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-354daa528061",
+      "id": "adv-4e4605c6a65f",
       "externalId": "ns-c05c486de670",
       "slug": "ns-detroit-livernois-transition-to-fully-stacked-operationson-march-16-2026-the-",
       "railroad": "NS",
@@ -4604,10 +4604,10 @@
       "isActive": true,
       "issuedAt": "2026-02-16T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-cc9d8f2dc533",
+      "id": "adv-09e0b9e6e08c",
       "externalId": "ns-5f08279b3c2e",
       "slug": "ns-driver-compliance-with-tda-instructions-at-landersto-ensure-a-safe-orderly-an",
       "railroad": "NS",
@@ -4618,10 +4618,10 @@
       "isActive": true,
       "issuedAt": "2026-02-12T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-cfd8ba63abcb",
+      "id": "adv-6e740011d852",
       "externalId": "ns-7815f5092fb3",
       "slug": "ns-last-free-day-extension-request-now-live-in-accessnsnorfolk-southern-has-impl",
       "railroad": "NS",
@@ -4632,10 +4632,10 @@
       "isActive": true,
       "issuedAt": "2026-02-11T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-8370bc5d071f",
+      "id": "adv-665f56fa168d",
       "externalId": "fra-IMR334325O",
       "slug": "fra-derailment-illinois-midland-railroad-inc-pekin-il-2025-11-30",
       "railroad": "Illinois & Midland Railroad Inc.",
@@ -4646,10 +4646,10 @@
       "isActive": true,
       "issuedAt": "2025-11-30T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-d6ccc7953831",
+      "id": "adv-dda20a303461",
       "externalId": "fra-CH1125112",
       "slug": "fra-derailment-bnsf-pekin-il-2025-11-30",
       "railroad": "BNSF",
@@ -4660,10 +4660,10 @@
       "isActive": true,
       "issuedAt": "2025-11-30T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-804151f02d41",
+      "id": "adv-4aadeb6428f7",
       "externalId": "fra-1733063",
       "slug": "fra-derailment-cn-justice-il-2025-11-30",
       "railroad": "CN",
@@ -4674,10 +4674,10 @@
       "isActive": true,
       "issuedAt": "2025-11-30T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-ea6f30adc057",
+      "id": "adv-6d7e0446e79e",
       "externalId": "fra-190233",
       "slug": "fra-derailment-amtrak-national-railroad-passenger-corporation-justice-il-2025-11",
       "railroad": "Amtrak (National Railroad Passenger Corporation)",
@@ -4688,10 +4688,10 @@
       "isActive": true,
       "issuedAt": "2025-11-30T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-a693cd0ffc2d",
+      "id": "adv-d211da8535b8",
       "externalId": "fra-GRW0025F",
       "slug": "fra-derailment-gary-railway-company-gary-in-2025-11-30",
       "railroad": "Gary Railway Company",
@@ -4702,10 +4702,10 @@
       "isActive": true,
       "issuedAt": "2025-11-30T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-a35d268ec8ca",
+      "id": "adv-5b48f4e85457",
       "externalId": "fra-161812",
       "slug": "fra-derailment-ns-north-kansas-city-mo-2025-11-30",
       "railroad": "NS",
@@ -4716,10 +4716,10 @@
       "isActive": true,
       "issuedAt": "2025-11-30T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-3c498abc3552",
+      "id": "adv-3fb0670c6764",
       "externalId": "fra-14978",
       "slug": "fra-derailment-belt-railway-company-of-chicago-bedford-park-il-2025-11-29",
       "railroad": "Belt Railway Company Of Chicago",
@@ -4730,10 +4730,10 @@
       "isActive": true,
       "issuedAt": "2025-11-29T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-1c51b3595b3e",
+      "id": "adv-bb2d33b30a6a",
       "externalId": "fra-1733020",
       "slug": "fra-other-impacts-cn-harvey-il-2025-11-29",
       "railroad": "CN",
@@ -4744,10 +4744,10 @@
       "isActive": true,
       "issuedAt": "2025-11-29T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-86670bd7bcd3",
+      "id": "adv-51d5928aaa10",
       "externalId": "fra-1733020",
       "slug": "fra-other-impacts-cn-harvey-il-2025-11-29",
       "railroad": "CN",
@@ -4758,10 +4758,10 @@
       "isActive": true,
       "issuedAt": "2025-11-29T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-14df79152b2b",
+      "id": "adv-8b3e6b14fe82",
       "externalId": "fra-1125HL031",
       "slug": "fra-derailment-up-perry-ks-2025-11-29",
       "railroad": "UP",
@@ -4772,10 +4772,10 @@
       "isActive": true,
       "issuedAt": "2025-11-29T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-070d67bc9dea",
+      "id": "adv-92e4e567070e",
       "externalId": "fra-20251725",
       "slug": "fra-other-describe-in-narrative-brightline-train-hallandale-fl-2025-11-29",
       "railroad": "Brightline Train",
@@ -4786,10 +4786,10 @@
       "isActive": true,
       "issuedAt": "2025-11-29T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-8e8b0bd7c89c",
+      "id": "adv-a143dabf2fbc",
       "externalId": "fra-X55112925",
       "slug": "fra-other-describe-in-narrative-florida-east-coast-railway-company-hallandale-fl",
       "railroad": "Florida East Coast Railway Company",
@@ -4800,10 +4800,10 @@
       "isActive": true,
       "issuedAt": "2025-11-29T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-61551809bcf5",
+      "id": "adv-b1bbbaf2c602",
       "externalId": "fra-000228353",
       "slug": "fra-derailment-csx-greenwood-sc-2025-11-28",
       "railroad": "CSX",
@@ -4814,10 +4814,10 @@
       "isActive": true,
       "issuedAt": "2025-11-28T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-0ef57bf98219",
+      "id": "adv-27dcf9b08e5a",
       "externalId": "fra-RD1125115",
       "slug": "fra-derailment-bnsf-temple-tx-2025-11-27",
       "railroad": "BNSF",
@@ -4828,10 +4828,10 @@
       "isActive": true,
       "issuedAt": "2025-11-27T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-30f9da299c4a",
+      "id": "adv-f007c196fd9c",
       "externalId": "fra-RD1125115",
       "slug": "fra-derailment-bnsf-temple-tx-2025-11-27",
       "railroad": "BNSF",
@@ -4842,10 +4842,10 @@
       "isActive": true,
       "issuedAt": "2025-11-27T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-115003fd548b",
+      "id": "adv-3ad49639a1f1",
       "externalId": "fra-20252978",
       "slug": "fra-derailment-indiana-harbor-belt-railroad-company-east-chicago-in-2025-11-27",
       "railroad": "Indiana Harbor Belt Railroad Company",
@@ -4856,10 +4856,10 @@
       "isActive": true,
       "issuedAt": "2025-11-27T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-e6e169010cde",
+      "id": "adv-67afc62689d1",
       "externalId": "fra-250109",
       "slug": "fra-derailment-wheeling-lake-erie-railway-company-canton-oh-2025-11-26",
       "railroad": "Wheeling & Lake Erie Railway Company",
@@ -4870,10 +4870,10 @@
       "isActive": true,
       "issuedAt": "2025-11-26T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-17880fd328c7",
+      "id": "adv-9298f0c711b4",
       "externalId": "fra-1125HO030",
       "slug": "fra-derailment-up-houston-tx-2025-11-26",
       "railroad": "UP",
@@ -4884,10 +4884,10 @@
       "isActive": true,
       "issuedAt": "2025-11-26T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-43e802c8f673",
+      "id": "adv-c02950de8cbd",
       "externalId": "fra-KS1125117",
       "slug": "fra-derailment-bnsf-kansas-city-ks-2025-11-25",
       "railroad": "BNSF",
@@ -4898,10 +4898,10 @@
       "isActive": true,
       "issuedAt": "2025-11-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-2576eba6b69f",
+      "id": "adv-6db24943b547",
       "externalId": "fra-KS1125117",
       "slug": "fra-derailment-bnsf-kansas-city-ks-2025-11-25",
       "railroad": "BNSF",
@@ -4912,10 +4912,10 @@
       "isActive": true,
       "issuedAt": "2025-11-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-d99f998b8e6e",
+      "id": "adv-b96c5eef0de4",
       "externalId": "fra-R11252501",
       "slug": "fra-derailment-reading-blue-mountain-northern-railroad-commission-cressona-pa-20",
       "railroad": "READING BLUE MOUNTAIN & NORTHERN RAILROAD COMMISSION",
@@ -4926,10 +4926,10 @@
       "isActive": true,
       "issuedAt": "2025-11-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-37332118a6bc",
+      "id": "adv-a472f8750387",
       "externalId": "fra-86810",
       "slug": "fra-other-impacts-metro-north-commuter-railroad-company-croton-on-hudson-ny-2025",
       "railroad": "Metro North Commuter Railroad Company",
@@ -4940,10 +4940,10 @@
       "isActive": true,
       "issuedAt": "2025-11-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-02bff9f9ef4b",
+      "id": "adv-0db0cdcd2baa",
       "externalId": "fra-190157",
       "slug": "fra-obstruction-amtrak-national-railroad-passenger-corporation-north-little-rock",
       "railroad": "Amtrak (National Railroad Passenger Corporation)",
@@ -4954,10 +4954,10 @@
       "isActive": true,
       "issuedAt": "2025-11-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-0e1bba9e1f89",
+      "id": "adv-03f6e698ddc4",
       "externalId": "fra-251125005",
       "slug": "fra-hwy-rail-crossing-grand-elk-railroad-llc-portage-mi-2025-11-25",
       "railroad": "Grand Elk Railroad, LLC",
@@ -4968,10 +4968,10 @@
       "isActive": true,
       "issuedAt": "2025-11-25T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-117505ad15fb",
+      "id": "adv-c214ed7ec82d",
       "externalId": "fra-1732888",
       "slug": "fra-derailment-cn-harvey-il-2025-11-24",
       "railroad": "CN",
@@ -4982,10 +4982,10 @@
       "isActive": true,
       "issuedAt": "2025-11-24T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-44ca96acaf92",
+      "id": "adv-8e2038215ec0",
       "externalId": "fra-KS1125114",
       "slug": "fra-derailment-bnsf-etter-tx-2025-11-24",
       "railroad": "BNSF",
@@ -4996,10 +4996,10 @@
       "isActive": true,
       "issuedAt": "2025-11-24T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-9f83619cb9c3",
+      "id": "adv-ff1b41d0a9a0",
       "externalId": "fra-BER342825O",
       "slug": "fra-derailment-berkshire-eastern-railway-ayer-ma-2025-11-23",
       "railroad": "BERKSHIRE & EASTERN RAILWAY",
@@ -5010,10 +5010,10 @@
       "isActive": true,
       "issuedAt": "2025-11-23T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-d882fa3e2cf8",
+      "id": "adv-2a6ec1237ba7",
       "externalId": "fra-000228336",
       "slug": "fra-other-describe-in-narrative-csx-philadelphia-pa-2025-11-23",
       "railroad": "CSX",
@@ -5024,10 +5024,10 @@
       "isActive": true,
       "issuedAt": "2025-11-23T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-7859c8045064",
+      "id": "adv-0e38db2e0969",
       "externalId": "fra-000228307",
       "slug": "fra-derailment-csx-ayer-ma-2025-11-23",
       "railroad": "CSX",
@@ -5038,10 +5038,10 @@
       "isActive": true,
       "issuedAt": "2025-11-23T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-9a2969d1a761",
+      "id": "adv-9290eb1ca504",
       "externalId": "fra-CH1125113",
       "slug": "fra-other-describe-in-narrative-bnsf-elwood-il-2025-11-23",
       "railroad": "BNSF",
@@ -5052,10 +5052,10 @@
       "isActive": true,
       "issuedAt": "2025-11-23T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-a1b6f9e2836f",
+      "id": "adv-a314aa4e676d",
       "externalId": "fra-CH1125113",
       "slug": "fra-other-describe-in-narrative-bnsf-elwood-il-2025-11-23",
       "railroad": "BNSF",
@@ -5066,10 +5066,10 @@
       "isActive": true,
       "issuedAt": "2025-11-23T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-fd1316733f8d",
+      "id": "adv-1041ff8f62cd",
       "externalId": "fra-161772",
       "slug": "fra-hwy-rail-crossing-ns-dalton-ga-2025-11-22",
       "railroad": "NS",
@@ -5080,10 +5080,10 @@
       "isActive": true,
       "issuedAt": "2025-11-22T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-ae8302053048",
+      "id": "adv-d881d57598f4",
       "externalId": "fra-SW1125112",
       "slug": "fra-derailment-bnsf-flagstaff-az-2025-11-22",
       "railroad": "BNSF",
@@ -5094,10 +5094,10 @@
       "isActive": true,
       "issuedAt": "2025-11-22T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-cec120021e3f",
+      "id": "adv-6015402e23ed",
       "externalId": "fra-KYL329325D",
       "slug": "fra-derailment-kyle-railroad-company-cawker-city-ks-2025-11-22",
       "railroad": "Kyle Railroad Company",
@@ -5108,10 +5108,10 @@
       "isActive": true,
       "issuedAt": "2025-11-22T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-d24e07d438bf",
+      "id": "adv-0bce83c7e065",
       "externalId": "fra-1125RM012",
       "slug": "fra-obstruction-up-ogden-ut-2025-11-21",
       "railroad": "UP",
@@ -5122,10 +5122,10 @@
       "isActive": true,
       "issuedAt": "2025-11-21T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-c05eb6a53302",
+      "id": "adv-258da7be948c",
       "externalId": "fra-1125HL022",
       "slug": "fra-derailment-up-kansas-city-ks-2025-11-21",
       "railroad": "UP",
@@ -5136,10 +5136,10 @@
       "isActive": true,
       "issuedAt": "2025-11-21T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-07b8766aa44b",
+      "id": "adv-0a66a71613fd",
       "externalId": "fra-161750",
       "slug": "fra-other-impacts-ns-elkhart-in-2025-11-21",
       "railroad": "NS",
@@ -5150,10 +5150,10 @@
       "isActive": true,
       "issuedAt": "2025-11-21T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-f080bbf6b830",
+      "id": "adv-5a97b5c5eb66",
       "externalId": "fra-U25112161",
       "slug": "fra-derailment-kansas-city-terminal-railway-company-kansas-city-ks-2025-11-21",
       "railroad": "Kansas City Terminal Railway Company",
@@ -5164,10 +5164,10 @@
       "isActive": true,
       "issuedAt": "2025-11-21T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-87049b347f64",
+      "id": "adv-d73078f45d2a",
       "externalId": "fra-161750",
       "slug": "fra-other-impacts-ns-elkhart-in-2025-11-21",
       "railroad": "NS",
@@ -5178,10 +5178,10 @@
       "isActive": true,
       "issuedAt": "2025-11-21T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-94a790526202",
+      "id": "adv-044bf415a462",
       "externalId": "fra-161750",
       "slug": "fra-other-impacts-ns-elkhart-in-2025-11-21",
       "railroad": "NS",
@@ -5192,10 +5192,10 @@
       "isActive": true,
       "issuedAt": "2025-11-21T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-79a2c90b29be",
+      "id": "adv-4ed56eb45abe",
       "externalId": "fra-CUO329525D",
       "slug": "fra-derailment-columbus-ohio-river-railroad-newark-oh-2025-11-21",
       "railroad": "Columbus & Ohio River Railroad",
@@ -5206,10 +5206,10 @@
       "isActive": true,
       "issuedAt": "2025-11-21T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-2e37ea10b772",
+      "id": "adv-be879f7ce202",
       "externalId": "fra-190072",
       "slug": "fra-other-describe-in-narrative-amtrak-national-railroad-passenger-corporation-p",
       "railroad": "Amtrak (National Railroad Passenger Corporation)",
@@ -5220,10 +5220,10 @@
       "isActive": true,
       "issuedAt": "2025-11-21T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-42b5473bbf2d",
+      "id": "adv-abea22fea376",
       "externalId": "fra-9419003090",
       "slug": "fra-hwy-rail-crossing-northeast-illinois-regional-commuter-rail-corp-metra-chica",
       "railroad": "NORTHEAST ILLINOIS REGIONAL COMMUTER RAIL CORP. -- METRA",
@@ -5234,10 +5234,10 @@
       "isActive": true,
       "issuedAt": "2025-11-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-96f121af5fc7",
+      "id": "adv-76a86214fccb",
       "externalId": "fra-R11202502",
       "slug": "fra-derailment-reading-blue-mountain-northern-railroad-commission-tamaqua-pa-202",
       "railroad": "READING BLUE MOUNTAIN & NORTHERN RAILROAD COMMISSION",
@@ -5248,10 +5248,10 @@
       "isActive": true,
       "issuedAt": "2025-11-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-69c816c71327",
+      "id": "adv-35015f83c286",
       "externalId": "fra-000228261",
       "slug": "fra-derailment-csx-lakeland-fl-2025-11-20",
       "railroad": "CSX",
@@ -5262,10 +5262,10 @@
       "isActive": true,
       "issuedAt": "2025-11-20T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-da295907b61c",
+      "id": "adv-c4203185f18a",
       "externalId": "fra-1732669",
       "slug": "fra-other-impacts-cn-proctor-mn-2025-11-19",
       "railroad": "CN",
@@ -5276,10 +5276,10 @@
       "isActive": true,
       "issuedAt": "2025-11-19T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-bb4d9333d399",
+      "id": "adv-25da496023a0",
       "externalId": "fra-1732669",
       "slug": "fra-other-impacts-cn-proctor-mn-2025-11-19",
       "railroad": "CN",
@@ -5290,10 +5290,10 @@
       "isActive": true,
       "issuedAt": "2025-11-19T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-794edf8cba5d",
+      "id": "adv-bb1a083efc0d",
       "externalId": "fra-000228231",
       "slug": "fra-derailment-csx-cumberland-md-2025-11-19",
       "railroad": "CSX",
@@ -5304,10 +5304,10 @@
       "isActive": true,
       "issuedAt": "2025-11-19T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-c90e4558f1d6",
+      "id": "adv-5790d58e92e8",
       "externalId": "fra-20251675",
       "slug": "fra-hwy-rail-crossing-brightline-train-north-miami-fl-2025-11-19",
       "railroad": "Brightline Train",
@@ -5318,10 +5318,10 @@
       "isActive": true,
       "issuedAt": "2025-11-19T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "adv-6a64c85ee110",
+      "id": "adv-6ef1305bfd82",
       "externalId": "fra-X54111925",
       "slug": "fra-hwy-rail-crossing-florida-east-coast-railway-company-north-miami-fl-2025-11-",
       "railroad": "Florida East Coast Railway Company",
@@ -5332,12 +5332,12 @@
       "isActive": true,
       "issuedAt": "2025-11-19T00:00:00.000Z",
       "expiresAt": null,
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     }
   ],
   "regulatory": [
     {
-      "id": "reg-399bae4ebd5d",
+      "id": "reg-10e3dc79f146",
       "externalId": "stb-26-04",
       "agency": "STB",
       "updateType": "Notice",
@@ -5348,10 +5348,10 @@
       "docketNumber": "26-04",
       "slug": "chairman-fuchs-provides-updates-on-outstanding-proceedings-stb-26-04",
       "publishedAt": "2026-02-06T00:00:00.000Z",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "reg-1b32c91d90a3",
+      "id": "reg-dd07ae31abe0",
       "externalId": "stb-26-03",
       "agency": "STB",
       "updateType": "Notice",
@@ -5362,10 +5362,10 @@
       "docketNumber": "26-03",
       "slug": "public-advisory-regarding-partial-lapse-in-appropriations-stb-26-03",
       "publishedAt": "2026-02-02T00:00:00.000Z",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "reg-86c731810381",
+      "id": "reg-9767a7168a4e",
       "externalId": "stb-26-02",
       "agency": "STB",
       "updateType": "Notice",
@@ -5376,10 +5376,10 @@
       "docketNumber": "26-02",
       "slug": "stb-finds-up-ns-merger-application-is-incomplete-stb-26-02",
       "publishedAt": "2026-01-16T00:00:00.000Z",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "reg-1707ce0723d2",
+      "id": "reg-a0c349c5e769",
       "externalId": "stb-26-01",
       "agency": "STB",
       "updateType": "Notice",
@@ -5390,10 +5390,10 @@
       "docketNumber": "26-01",
       "slug": "stb-proposes-to-eliminate-barriers-to-competition-by-repealing-regulations-at-49",
       "publishedAt": "2026-01-07T00:00:00.000Z",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "reg-e26ee678bd15",
+      "id": "reg-9b0440689894",
       "externalId": "stb-25-38",
       "agency": "STB",
       "updateType": "Notice",
@@ -5404,10 +5404,10 @@
       "docketNumber": "25-38",
       "slug": "stb-receives-major-merger-application-from-union-pacific-and-norfolk-southern-se",
       "publishedAt": "2025-12-19T00:00:00.000Z",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "reg-2c2caf166d56",
+      "id": "reg-b4c605e85848",
       "externalId": "stb-25-37",
       "agency": "STB",
       "updateType": "Notice",
@@ -5418,10 +5418,10 @@
       "docketNumber": "25-37",
       "slug": "michelle-a-schultz-confirmed-to-second-term-stb-25-37",
       "publishedAt": "2025-12-18T00:00:00.000Z",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "reg-b38158a971fe",
+      "id": "reg-737b621bc432",
       "externalId": "stb-25-36",
       "agency": "STB",
       "updateType": "Notice",
@@ -5432,10 +5432,10 @@
       "docketNumber": "25-36",
       "slug": "stb-approves-fortress-investment-group-acquisition-of-two-shortline-rail-carrier",
       "publishedAt": "2025-11-26T00:00:00.000Z",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "reg-b3759aeffffe",
+      "id": "reg-ec8f65832ecb",
       "externalId": "stb-25-35",
       "agency": "STB",
       "updateType": "Notice",
@@ -5446,10 +5446,10 @@
       "docketNumber": "25-35",
       "slug": "public-advisory-regarding-materials-previously-due-to-the-surface-transportation",
       "publishedAt": "2025-11-13T00:00:00.000Z",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "reg-170c7cbcc72f",
+      "id": "reg-f6dff2f4a0c3",
       "externalId": "stb-25-34",
       "agency": "STB",
       "updateType": "Notice",
@@ -5460,10 +5460,10 @@
       "docketNumber": "25-34",
       "slug": "public-advisory-regarding-lapse-in-appropriations-stb-25-34",
       "publishedAt": "2025-10-01T00:00:00.000Z",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     },
     {
-      "id": "reg-c08422ee4ade",
+      "id": "reg-499f2c521b7b",
       "externalId": "stb-25-33",
       "agency": "STB",
       "updateType": "Notice",
@@ -5474,7 +5474,7 @@
       "docketNumber": "25-33",
       "slug": "stb-proposes-to-eliminate-unneeded-data-collection-and-strengthen-service-reliab",
       "publishedAt": "2025-09-30T00:00:00.000Z",
-      "createdAt": "2026-02-26T06:32:46.000Z"
+      "createdAt": "2026-02-26T08:49:31.000Z"
     }
   ],
   "freightTrends": [
@@ -5849,5 +5849,5 @@
       "cassFreight": 1.124
     }
   ],
-  "scrapedAt": "2026-02-26T06:32:46.000Z"
+  "scrapedAt": "2026-02-26T08:49:31.000Z"
 }
