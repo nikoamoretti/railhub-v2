@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getIndustryStats, getLatestMetrics, getActiveAdvisories } from '@/lib/industry/queries'
+import { getIndustryStats, getLatestMetrics, getActiveAdvisories, getLatestFuelSurcharges } from '@/lib/industry/queries'
 import { IndustryStatsBar } from '@/components/industry/industry-stats'
 import { DataFreshness } from '@/components/industry/data-freshness'
 import { MetricCard } from '@/components/industry/metric-card'
@@ -14,10 +14,11 @@ export const metadata: Metadata = {
 }
 
 export default async function IndustryPage() {
-  const [stats, metrics, { advisories }] = await Promise.all([
+  const [stats, metrics, { advisories }, fuelSurcharges] = await Promise.all([
     getIndustryStats(),
     getLatestMetrics(),
     getActiveAdvisories({ page: 1 }),
+    getLatestFuelSurcharges(),
   ])
 
   // Show top metrics (one per type, first railroad)
@@ -28,7 +29,16 @@ export default async function IndustryPage() {
     return true
   }).slice(0, 4)
 
-  const topAdvisories = advisories.slice(0, 3)
+  const topAdvisories = advisories.slice(0, 6)
+
+  // Deduplicate fuel surcharges: one row per railroad (carload)
+  const fuelByRailroad = new Map<string, typeof fuelSurcharges[0]>()
+  for (const s of fuelSurcharges) {
+    if (s.trafficType === 'Carload' && !fuelByRailroad.has(s.railroad)) {
+      fuelByRailroad.set(s.railroad, s)
+    }
+  }
+  const topFuel = [...fuelByRailroad.values()].slice(0, 6)
 
   return (
     <main>
@@ -54,18 +64,24 @@ export default async function IndustryPage() {
         {/* Quick links */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           {[
-            { href: '/industry/metrics', label: 'Service Metrics', desc: 'Train speed, dwell time, carloads' },
-            { href: '/industry/fuel-surcharges', label: 'Fuel Surcharges', desc: 'Carrier rate comparison' },
-            { href: '/industry/advisories', label: 'Advisories', desc: 'Embargoes & service alerts' },
-            { href: '/regulatory', label: 'Regulatory', desc: 'STB, FRA, PHMSA updates' },
+            { href: '/industry/metrics', label: 'Service Metrics', desc: 'Train speed, dwell time, carloads', icon: '📊', accent: 'var(--badge-blue-text)', accentBg: 'var(--badge-blue-bg)' },
+            { href: '/industry/fuel-surcharges', label: 'Fuel Surcharges', desc: 'Carrier rate comparison', icon: '⛽', accent: 'var(--badge-green-text)', accentBg: 'var(--badge-green-bg)' },
+            { href: '/industry/advisories', label: 'Advisories', desc: 'Embargoes & service alerts', icon: '⚠️', accent: 'var(--badge-orange-text)', accentBg: 'var(--badge-orange-bg)' },
+            { href: '/regulatory', label: 'Regulatory', desc: 'STB, FRA, PHMSA updates', icon: '📋', accent: 'var(--badge-purple-text)', accentBg: 'var(--badge-purple-bg)' },
           ].map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-xl border p-5 transition hover:border-[var(--accent)] hover:shadow-md"
+              className="rounded-xl border p-5 transition hover:shadow-lg group"
               style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-default)' }}
             >
-              <h3 className="font-semibold" style={{ color: 'var(--text-primary)' }}>{link.label}</h3>
+              <div
+                className="w-10 h-10 rounded-lg flex items-center justify-center text-lg mb-3"
+                style={{ background: link.accentBg }}
+              >
+                {link.icon}
+              </div>
+              <h3 className="font-semibold group-hover:underline" style={{ color: link.accent }}>{link.label}</h3>
               <p className="text-sm mt-1" style={{ color: 'var(--text-tertiary)' }}>{link.desc}</p>
             </Link>
           ))}
@@ -83,6 +99,37 @@ export default async function IndustryPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {topMetrics.map((m) => (
                 <MetricCard key={m.id} metric={m} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Fuel Surcharges snapshot */}
+        {topFuel.length > 0 && (
+          <section className="mb-10">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-semibold" style={{ color: 'var(--text-primary)' }}>Fuel Surcharges</h2>
+              <Link href="/industry/fuel-surcharges" className="text-sm font-medium" style={{ color: 'var(--accent-text)' }}>
+                View all &rarr;
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+              {topFuel.map((s) => (
+                <div
+                  key={s.railroad}
+                  className="rounded-xl border p-4 text-center"
+                  style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-default)' }}
+                >
+                  <p className="text-xs font-medium uppercase tracking-wider mb-1" style={{ color: 'var(--text-tertiary)' }}>
+                    {s.railroad}
+                  </p>
+                  <p className="text-2xl font-bold" style={{ color: 'var(--badge-green-text)' }}>
+                    {s.surchargeRate}%
+                  </p>
+                  <p className="text-[10px] mt-1" style={{ color: 'var(--text-muted)' }}>
+                    Carload
+                  </p>
+                </div>
               ))}
             </div>
           </section>

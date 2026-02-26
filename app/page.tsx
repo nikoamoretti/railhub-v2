@@ -19,7 +19,7 @@ interface SearchParams {
   page?: string
 }
 
-const ITEMS_PER_PAGE = 48
+const ITEMS_PER_PAGE = 24
 
 const facilities_typed = facilitiesData as Facility[]
 

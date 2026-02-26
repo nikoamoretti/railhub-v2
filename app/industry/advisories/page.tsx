@@ -58,7 +58,8 @@ export default async function AdvisoriesPage({ searchParams }: PageProps) {
 
       <div className="max-w-7xl mx-auto px-4 py-6">
         {/* Type filters */}
-        <div className="flex flex-wrap gap-2 mb-3">
+        <div className="flex flex-wrap items-center gap-2 mb-3">
+          <span className="text-xs font-medium uppercase tracking-wider mr-1" style={{ color: 'var(--text-muted)' }}>Type</span>
           <Link
             href={railroad ? `/industry/advisories?railroad=${railroad}` : '/industry/advisories'}
             className="px-3 py-1.5 rounded-full text-sm transition"
@@ -99,7 +100,8 @@ export default async function AdvisoriesPage({ searchParams }: PageProps) {
         </div>
 
         {/* Railroad filters */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap items-center gap-2 mb-6">
+          <span className="text-xs font-medium uppercase tracking-wider mr-1" style={{ color: 'var(--text-muted)' }}>Railroad</span>
           <Link
             href={advisoryType ? `/industry/advisories?type=${advisoryType}` : '/industry/advisories'}
             className="px-3 py-1.5 rounded-full text-sm transition"

@@ -1,16 +1,25 @@
 import Link from 'next/link'
-import type { ServiceAdvisory } from '@/lib/industry/types'
+import type { ServiceAdvisory, AdvisoryType } from '@/lib/industry/types'
 import { AdvisoryBadge } from './advisory-badge'
 import { formatRelativeTime } from '@/lib/industry/format'
+
+const TYPE_CARD_CLASS: Record<AdvisoryType, string> = {
+  EMBARGO: 'advisory-card-embargo',
+  SERVICE_ALERT: 'advisory-card-service-alert',
+  WEATHER_ADVISORY: 'advisory-card-weather',
+  MAINTENANCE_NOTICE: 'advisory-card-maintenance',
+}
 
 interface AdvisoryCardProps {
   advisory: ServiceAdvisory
 }
 
 export function AdvisoryCard({ advisory }: AdvisoryCardProps) {
+  const cardClass = TYPE_CARD_CLASS[advisory.advisoryType] || 'advisory-card-service-alert'
+
   return (
     <Link href={`/industry/advisories/${advisory.slug}`} className="block">
-      <article className="facility-card advisory-card">
+      <article className={`facility-card ${cardClass}`}>
         <div className="flex items-start justify-between gap-2">
           <div className="flex flex-wrap gap-1.5">
             <AdvisoryBadge type={advisory.advisoryType} />
