@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import facilitiesData from '../public/facilities.json'
+import jobsData from '../public/jobs.json'
 import type { Facility } from '@/lib/types'
 import { getStateName } from '@/lib/states'
 import { getTypeLabel, getBadgeStyle } from '@/lib/facility-types'
@@ -7,6 +8,7 @@ import { SearchFilters } from '@/components/search-filters'
 import { FacilityCard } from '@/components/facility-card'
 import { Stats } from '@/components/stats'
 import { Pagination } from '@/components/pagination'
+import { RAILROAD_REGISTRY } from '@/lib/railroads'
 
 interface SearchParams {
   q?: string
@@ -156,52 +158,77 @@ export default async function Home({ searchParams }: PageProps) {
         Skip to results
       </a>
 
-      <header className="py-10 px-4" style={{ background: 'linear-gradient(135deg, rgba(230,81,0,0.1) 0%, transparent 50%, rgba(230,81,0,0.05) 100%)' }}>
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-2">
-            <span aria-hidden="true">🚂 </span>Railhub
-          </h1>
-          <p className="text-lg mb-1" style={{ color: 'var(--text-secondary)' }}>Free Rail Freight Directory</p>
-          <p className="text-sm mb-5 max-w-xl mx-auto" style={{ color: 'var(--text-tertiary)' }}>
-            Search {facilities_typed.length.toLocaleString()} rail-served facilities across North America.
-            Find transload locations, team tracks, storage, and more.
-          </p>
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Link
-              href="/map"
-              className="px-5 py-2.5 rounded-lg text-sm font-medium transition hover:opacity-90"
-              style={{ backgroundColor: 'var(--accent)', color: 'var(--text-on-accent)' }}
-            >
-              View Map
-            </Link>
-            <Link
-              href="/states"
-              className="px-5 py-2.5 rounded-lg text-sm font-medium border transition hover:opacity-80"
-              style={{
-                backgroundColor: 'var(--accent-muted)',
-                borderColor: 'var(--accent-border)',
-                color: 'var(--accent-text)',
-              }}
-            >
-              Browse by State
-            </Link>
-            <a
-              href="#search-input"
-              className="px-5 py-2.5 rounded-lg text-sm font-medium border transition hover:opacity-80"
-              style={{
-                backgroundColor: 'var(--accent-muted)',
-                borderColor: 'var(--accent-border)',
-                color: 'var(--accent-text)',
-              }}
-            >
-              Search Facilities
-            </a>
+      <header className="py-12 sm:py-16 px-4 hero-gradient">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-16">
+          {/* Left — text + CTAs */}
+          <div className="flex-1 text-center lg:text-left">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05]">
+              <span className="gradient-text">Railhub</span>
+            </h1>
+            <p className="text-xl sm:text-2xl font-medium mt-3" style={{ color: 'var(--accent-text)' }}>
+              Free Rail Freight Directory
+            </p>
+            <p className="text-base mt-3 max-w-lg leading-relaxed mx-auto lg:mx-0" style={{ color: 'var(--text-secondary)' }}>
+              Search {facilities_typed.length.toLocaleString()} rail-served facilities across North America.
+              Find transload locations, team tracks, storage, and more.
+            </p>
+            <div className="flex items-center justify-center lg:justify-start gap-3 mt-6">
+              <Link
+                href="/map"
+                className="px-6 py-3 rounded-lg text-sm font-semibold transition hover:opacity-90 shadow-lg shadow-orange-900/20"
+                style={{ backgroundColor: 'var(--accent)', color: 'var(--text-on-accent)' }}
+              >
+                View Map
+              </Link>
+              <Link
+                href="/states"
+                className="px-5 py-3 rounded-lg text-sm font-medium border transition hover:opacity-80"
+                style={{
+                  backgroundColor: 'var(--accent-muted)',
+                  borderColor: 'var(--accent-border)',
+                  color: 'var(--accent-text)',
+                }}
+              >
+                Browse by State
+              </Link>
+              <a
+                href="#search-input"
+                className="px-5 py-3 rounded-lg text-sm font-medium transition hover:underline hidden sm:inline-flex"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                Search &darr;
+              </a>
+            </div>
           </div>
-          <Stats {...stats} />
+
+          {/* Right — key stats */}
+          <div className="grid grid-cols-2 gap-3 w-full max-w-xs lg:max-w-sm flex-shrink-0">
+            {[
+              { value: facilities_typed.length.toLocaleString(), label: 'Facilities', color: 'var(--accent-text)' },
+              { value: states.length.toString(), label: 'States', color: 'var(--badge-blue-text)' },
+              { value: RAILROAD_REGISTRY.length.toString(), label: 'Railroads', color: 'var(--badge-purple-text)' },
+              { value: (jobsData as unknown[]).length.toLocaleString(), label: 'Open Jobs', color: 'var(--badge-green-text)' },
+            ].map(stat => (
+              <div
+                key={stat.label}
+                className="rounded-xl border p-4 text-center"
+                style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-default)' }}
+              >
+                <div className="text-2xl sm:text-3xl font-bold" style={{ color: stat.color }}>
+                  {stat.value}
+                </div>
+                <div className="text-xs mt-1 font-medium" style={{ color: 'var(--text-secondary)' }}>
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </header>
 
       <div className="max-w-7xl mx-auto px-4 py-6">
+        <Stats {...stats} />
+
         <SearchFilters
           states={states}
           railroads={railroads}

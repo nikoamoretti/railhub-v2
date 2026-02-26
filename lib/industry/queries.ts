@@ -3,6 +3,7 @@ import type { RailServiceMetric, FuelSurcharge, RegulatoryUpdate, ServiceAdvisor
 
 const metrics = industryData.metrics as RailServiceMetric[]
 const fuelSurcharges = industryData.fuelSurcharges as FuelSurcharge[]
+const advisories = ((industryData as Record<string, unknown>).advisories || []) as ServiceAdvisory[]
 const regulatory = industryData.regulatory as RegulatoryUpdate[]
 
 export const ITEMS_PER_PAGE = 20
@@ -83,18 +84,32 @@ export async function getFuelSurchargeHistory(railroad: string, weeks: number = 
 }
 
 // ── Service Advisories ────────────────────────────────
-// No advisories in static data yet (requires BNSF/CSX HTML scraping)
 
 export async function getActiveAdvisories(filters?: {
   railroad?: string
   advisoryType?: string
   page?: number
 }): Promise<{ advisories: ServiceAdvisory[]; total: number }> {
-  return { advisories: [], total: 0 }
+  let filtered = advisories.filter(a => a.isActive)
+
+  if (filters?.railroad) {
+    filtered = filtered.filter(a => a.railroad === filters.railroad)
+  }
+  if (filters?.advisoryType) {
+    filtered = filtered.filter(a => a.advisoryType === filters.advisoryType)
+  }
+
+  filtered.sort((a, b) => b.issuedAt.localeCompare(a.issuedAt))
+
+  const page = Math.max(1, filters?.page || 1)
+  const skip = (page - 1) * ITEMS_PER_PAGE
+  const paged = filtered.slice(skip, skip + ITEMS_PER_PAGE)
+
+  return { advisories: paged, total: filtered.length }
 }
 
 export async function getAdvisoryBySlug(slug: string): Promise<ServiceAdvisory | null> {
-  return null
+  return advisories.find(a => a.slug === slug) || null
 }
 
 // ── Regulatory Updates ────────────────────────────────
@@ -123,10 +138,11 @@ export async function getRegulatoryBySlug(slug: string) {
 // ── Dashboard Stats ──────────────────────────────────
 
 export async function getIndustryStats(): Promise<IndustryStats> {
+  const active = advisories.filter(a => a.isActive)
   return {
     totalMetrics: metrics.length,
-    totalAdvisories: 0,
-    activeEmbargoes: 0,
+    totalAdvisories: active.length,
+    activeEmbargoes: active.filter(a => a.advisoryType === 'EMBARGO').length,
     lastUpdated: industryData.scrapedAt ? new Date(industryData.scrapedAt) : null,
   }
 }

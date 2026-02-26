@@ -4,6 +4,7 @@ Fetches from USDA (Socrata), EIA, FRA, and STB.
 Writes to public/industry.json.
 """
 
+import hashlib
 import json
 import re
 import uuid
@@ -291,7 +292,241 @@ def fetch_eia_fuel_surcharges() -> list[dict]:
     return records
 
 
-# --- Source 3a: FRA Safety ---
+# --- Source 3: Service Advisories (BNSF + CSX) ---
+
+US_STATES = {
+    'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA',
+    'KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ',
+    'NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT',
+    'VA','WA','WV','WI','WY',
+}
+
+ADVISORY_TYPE_KEYWORDS = {
+    "EMBARGO": ["embargo"],
+    "WEATHER_ADVISORY": ["weather", "storm", "flood", "hurricane", "winter", "ice", "tornado"],
+    "MAINTENANCE_NOTICE": ["maintenance", "track work", "outage", "planned"],
+}
+
+
+def classify_advisory(title: str) -> str:
+    lower = title.lower()
+    for atype, keywords in ADVISORY_TYPE_KEYWORDS.items():
+        if any(kw in lower for kw in keywords):
+            return atype
+    return "SERVICE_ALERT"
+
+
+def extract_area(title: str) -> str | None:
+    import re as _re
+    m = _re.search(r'\b([A-Z]{2})\b', title)
+    if m and m.group(1) in US_STATES:
+        return m.group(1)
+    for region in ['Midwest', 'Southwest', 'Southeast', 'Northeast', 'Northwest', 'Pacific', 'Gulf', 'Central']:
+        if region in title:
+            return region
+    return None
+
+
+def hash_string(s: str) -> str:
+    return hashlib.md5(s.encode()).hexdigest()[:12]
+
+
+def strip_html(html_text: str) -> str:
+    return re.sub(r'<[^>]+>', '', html_text).strip()
+
+
+def fetch_bnsf_advisories() -> list[dict]:
+    """Scrape BNSF customer notifications — targets actual notification.page links."""
+    print("[BNSF Advisory] Fetching customer notifications...")
+    url = "https://www.bnsf.com/news-media/customer-notifications.html"
+    try:
+        resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0 railhub-scraper"}, timeout=30)
+        resp.raise_for_status()
+        html = resp.text
+    except Exception as exc:
+        print(f"  [BNSF Advisory] ERROR: {exc}")
+        return []
+
+    advisories = []
+    seen = set()
+
+    # BNSF notification links follow pattern: notification.page?notId=...
+    for m in re.finditer(
+        r'<a[^>]*href="([^"]*notification\.page\?notId=[^"]+)"[^>]*>(.*?)</a>',
+        html, re.IGNORECASE | re.DOTALL,
+    ):
+        href, title_html = m.group(1), m.group(2)
+        title = strip_html(title_html).strip()
+        if not title or len(title) < 15:
+            continue
+
+        # Deduplicate by notId
+        not_id = re.search(r'notId=([^&"]+)', href)
+        key = not_id.group(1) if not_id else title
+        if key in seen:
+            continue
+        seen.add(key)
+
+        # Skip routine/noise items — keep derailments, weather, embargoes, major service changes
+        lower = title.lower()
+        skip_patterns = [
+            'det auction', 'cot auction', 'shuttle auction', 'shuttle trips per month',
+            'shuttle miles per day', 'direct det auction', 'upcoming det', 'upcoming shuttle',
+            'network update for', 'weekly surface transportation board',
+            'rule change effective', 'tariff', 'price list',
+        ]
+        if any(p in lower for p in skip_patterns):
+            continue
+
+        # Extract date from title
+        date_str = None
+        for fmt_pat, fmt_str in [
+            (r'(\w+ \d{1,2},?\s*\d{4})', '%B %d %Y'),
+            (r'(\d{1,2}/\d{1,2}/\d{4})', '%m/%d/%Y'),
+        ]:
+            dm = re.search(fmt_pat, title)
+            if dm:
+                try:
+                    parsed = datetime.strptime(dm.group(1).replace(',', ''), fmt_str)
+                    date_str = parsed.strftime('%Y-%m-%d')
+                    break
+                except ValueError:
+                    pass
+
+        advisories.append({
+            "id": f"adv-{short_uuid()}",
+            "externalId": f"bnsf-{key}",
+            "slug": slugify(f"bnsf-{title}"),
+            "railroad": "BNSF",
+            "advisoryType": classify_advisory(title),
+            "title": title,
+            "description": title,
+            "affectedArea": extract_area(title),
+            "isActive": True,
+            "issuedAt": f"{date_str}T00:00:00.000Z" if date_str else NOW_ISO,
+            "expiresAt": None,
+            "createdAt": NOW_ISO,
+        })
+
+    print(f"[BNSF Advisory] Found {len(advisories)} notifications")
+    return advisories
+
+
+def fetch_csx_advisories() -> list[dict]:
+    """Scrape CSX embargoes and service bulletins."""
+    print("[CSX Advisory] Fetching embargoes and bulletins...")
+    advisories = []
+    seen = set()
+    date_pattern = re.compile(r'(\d{1,2}[-/]\d{1,2}[-/]\d{2,4}|\w+ \d{1,2},?\s*\d{4})')
+
+    pages = [
+        ("https://www.csx.com/index.cfm/customers/news/embargoes/", "EMBARGO"),
+        ("https://www.csx.com/index.cfm/customers/news/service-bulletins1/", "SERVICE_ALERT"),
+    ]
+
+    for page_url, default_type in pages:
+        try:
+            resp = requests.get(page_url, headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0",
+                "Accept": "text/html",
+            }, timeout=30)
+            if resp.status_code != 200:
+                print(f"  [CSX Advisory] {page_url}: HTTP {resp.status_code}")
+                continue
+            html = resp.text
+            if len(html) > 500_000:
+                print(f"  [CSX Advisory] HTML too large, skipping")
+                continue
+        except Exception as exc:
+            print(f"  [CSX Advisory] ERROR: {exc}")
+            continue
+
+        entries = []
+
+        # Pattern 1: table rows (embargo page — structured data)
+        for m in re.finditer(r'<tr[^>]*>(.*?)</tr>', html, re.IGNORECASE | re.DOTALL):
+            cells = re.findall(r'<td[^>]*>(.*?)</td>', m.group(1), re.IGNORECASE | re.DOTALL)
+            if len(cells) < 2:
+                continue
+            title = strip_html(cells[0]).strip()
+            if not title or len(title) < 3:
+                continue
+            # Skip header rows
+            if re.search(r'embargo\s*number|header|^#$|^no\.?$', title, re.IGNORECASE):
+                continue
+
+            date_text = strip_html(cells[1]).strip() if len(cells) > 1 else ""
+            area_text = strip_html(cells[2]).strip() if len(cells) > 2 else ""
+            desc_text = strip_html(cells[3]).strip() if len(cells) > 3 else ""
+            expires_text = strip_html(cells[4]).strip() if len(cells) > 4 else ""
+
+            dm = date_pattern.search(date_text)
+            em = date_pattern.search(expires_text)
+
+            entries.append({
+                "title": title,
+                "description": desc_text or title,
+                "date": dm.group(1) if dm else None,
+                "area": area_text or None,
+                "expires": em.group(1) if em else None,
+            })
+
+        # Pattern 2: links to specific bulletin/embargo detail pages
+        if not entries:
+            for m in re.finditer(r'<a[^>]*href="(/index\.cfm/customers/[^"]*)"[^>]*>(.*?)</a>', html, re.IGNORECASE | re.DOTALL):
+                href, text = m.group(1), strip_html(m.group(2)).strip()
+                if not text or len(text) < 20:
+                    continue
+                # Skip generic nav links and non-advisory pages
+                lower = text.lower()
+                skip_nav = [
+                    'customer news', 'service bulletins', 'subscribe', 'aar embargo',
+                    'overview', 'performance measures', 'business development',
+                    'environmental', 'short line', 'publications', 'tariff',
+                    'value-added', 'value - added', 'awards', 'regional railroad',
+                ]
+                if any(skip in lower for skip in skip_nav):
+                    continue
+
+                dm = date_pattern.search(text)
+                entries.append({
+                    "title": text[:300],
+                    "description": text[:300],
+                    "date": dm.group(1) if dm else None,
+                    "area": None,
+                    "expires": None,
+                })
+
+        for entry in entries:
+            key = entry["title"]
+            if key in seen:
+                continue
+            seen.add(key)
+
+            atype = classify_advisory(entry["title"])
+            if atype == "SERVICE_ALERT":
+                atype = default_type
+
+            advisories.append({
+                "id": f"adv-{short_uuid()}",
+                "externalId": f"csx-{hash_string(entry['title'] + (entry.get('date') or ''))}",
+                "slug": slugify(f"csx-{entry['title']}"),
+                "railroad": "CSX",
+                "advisoryType": atype,
+                "title": entry["title"],
+                "description": entry.get("description") or entry["title"],
+                "affectedArea": entry.get("area") or extract_area(entry["title"]),
+                "isActive": True,
+                "issuedAt": NOW_ISO,
+                "expiresAt": None,
+                "createdAt": NOW_ISO,
+            })
+
+    print(f"[CSX Advisory] Found {len(advisories)} entries")
+    return advisories
+
+
+# --- Source 4a: FRA Safety ---
 
 def fetch_fra_incidents() -> list[dict]:
     print("[FRA] Fetching accident data...")
@@ -382,7 +617,7 @@ def fetch_fra_incidents() -> list[dict]:
     return records
 
 
-# --- Source 3b: STB News ---
+# --- Source 4b: STB News ---
 
 def fetch_stb_news() -> list[dict]:
     print("[STB] Scraping latest news...")
@@ -508,6 +743,10 @@ def main() -> None:
     metrics = fetch_usda_metrics()
     fuel_surcharges = fetch_eia_fuel_surcharges()
 
+    bnsf_advisories = fetch_bnsf_advisories()
+    csx_advisories = fetch_csx_advisories()
+    advisories = bnsf_advisories + csx_advisories
+
     fra_records = fetch_fra_incidents()
     stb_records = fetch_stb_news()
     regulatory = fra_records + stb_records
@@ -515,6 +754,7 @@ def main() -> None:
     payload = {
         "metrics": metrics,
         "fuelSurcharges": fuel_surcharges,
+        "advisories": advisories,
         "regulatory": regulatory,
         "scrapedAt": NOW_ISO,
     }
@@ -526,6 +766,7 @@ def main() -> None:
     print(f"\n=== Done ===")
     print(f"  metrics:       {len(metrics)}")
     print(f"  fuelSurcharges:{len(fuel_surcharges)}")
+    print(f"  advisories:    {len(advisories)} ({len(bnsf_advisories)} BNSF + {len(csx_advisories)} CSX)")
     print(f"  regulatory:    {len(regulatory)} ({len(fra_records)} FRA + {len(stb_records)} STB)")
     print(f"  output:        {output_path}")
 

@@ -8,6 +8,7 @@ import { JobCard } from '@/components/jobs/job-card'
 import { SearchFilters } from '@/components/search-filters'
 import { Pagination } from '@/components/pagination'
 import { TYPE_LABEL_MAP_LOWER } from '@/lib/facility-types'
+import { RailroadMark } from '@/components/railroad-mark'
 
 const ITEMS_PER_PAGE = 48
 
@@ -115,10 +116,7 @@ export default async function RailroadPage({ params, searchParams }: PageProps) 
           </nav>
 
           <div className="flex items-start gap-4">
-            <div
-              className="w-1 self-stretch rounded-full flex-shrink-0"
-              style={{ backgroundColor: rr.meta.accentColor }}
-            />
+            <RailroadMark shortName={rr.meta.shortName} accentColor={rr.meta.accentColor} size="lg" />
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <span className="badge" style={{

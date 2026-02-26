@@ -127,10 +127,11 @@ body {
   border: 0;
 }
 
-/* Facility card */
+/* Facility card — base for all card types */
 .facility-card {
   background: var(--bg-card);
   border: 1px solid var(--border-default);
+  border-left: 3px solid var(--border-default);
   border-radius: 12px;
   padding: 20px;
   transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
@@ -139,8 +140,42 @@ body {
 }
 .facility-card:hover {
   border-color: var(--accent);
+  border-left-color: var(--accent);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Job card variant — green accent */
+.job-card {
+  border-left-color: rgba(74, 222, 128, 0.35);
+}
+.job-card:hover {
+  border-color: #4ade80;
+  border-left-color: #4ade80;
+}
+
+/* Advisory card variant — yellow accent */
+.advisory-card {
+  border-left-color: rgba(250, 204, 21, 0.35);
+}
+.advisory-card:hover {
+  border-color: #facc15;
+  border-left-color: #facc15;
+}
+
+/* Regulatory card variant — purple accent */
+.regulatory-card {
+  border-left-color: rgba(167, 139, 250, 0.35);
+}
+.regulatory-card:hover {
+  border-color: #a78bfa;
+  border-left-color: #a78bfa;
+}
+
+/* Railroad card variant — color set via inline style */
+.railroad-card {
+  border-left-width: 3px;
+  border-left-style: solid;
 }
 
 /* Badge base */
@@ -198,6 +233,21 @@ body {
 /* Page header gradient */
 .page-header-gradient {
   background: linear-gradient(135deg, var(--accent-muted) 0%, transparent 50%, rgba(230, 81, 0, 0.05) 100%);
+}
+
+/* Hero */
+.hero-gradient {
+  background:
+    radial-gradient(circle at 1px 1px, var(--border-subtle) 1px, transparent 0) 0 0 / 24px 24px,
+    linear-gradient(135deg, rgba(230, 81, 0, 0.12) 0%, transparent 50%, rgba(230, 81, 0, 0.04) 100%);
+}
+
+.gradient-text {
+  color: var(--accent);
+  background: linear-gradient(135deg, #ff7043 0%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Skeleton loading */

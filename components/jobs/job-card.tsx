@@ -30,7 +30,7 @@ export function JobCard({ job }: JobCardProps) {
 
   return (
     <Link href={`/jobs/${job.slug}`} className="block">
-      <article className="facility-card">
+      <article className="facility-card job-card">
         {/* Row 1: Badges */}
         <div className="flex items-start justify-between gap-2">
           <div className="flex flex-wrap gap-1.5">

@@ -10,7 +10,7 @@ interface AdvisoryCardProps {
 export function AdvisoryCard({ advisory }: AdvisoryCardProps) {
   return (
     <Link href={`/industry/advisories/${advisory.slug}`} className="block">
-      <article className="facility-card">
+      <article className="facility-card advisory-card">
         <div className="flex items-start justify-between gap-2">
           <div className="flex flex-wrap gap-1.5">
             <AdvisoryBadge type={advisory.advisoryType} />

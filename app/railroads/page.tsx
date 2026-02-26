@@ -1,15 +1,62 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getRailroadIndex } from '@/lib/railroads/queries'
+import { RailroadMark } from '@/components/railroad-mark'
 
 export const metadata: Metadata = {
   title: 'Railroads — Class I & Regional Carriers | Railhub',
   description: 'Browse Class I railroads and regional carriers. Find facilities, job openings, and service areas for BNSF, UP, CSX, NS, CN, CPKC, and more.',
 }
 
-const cardStyle = {
-  backgroundColor: 'var(--bg-card)',
-  borderColor: 'var(--border-default)',
+function RailroadCard({ rr }: { rr: ReturnType<typeof getRailroadIndex>[number] }) {
+  return (
+    <Link
+      key={rr.meta.slug}
+      href={`/railroad/${rr.meta.slug}`}
+      className="facility-card railroad-card"
+      style={{ borderLeftColor: `${rr.meta.accentColor}60` }}
+    >
+      <div className="flex items-start gap-3">
+        <RailroadMark shortName={rr.meta.shortName} accentColor={rr.meta.accentColor} />
+        <div className="min-w-0">
+          <div className="font-bold text-lg leading-tight" style={{ color: 'var(--text-primary)' }}>
+            {rr.meta.shortName}
+          </div>
+          <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            {rr.meta.name}
+          </div>
+        </div>
+      </div>
+
+      <p className="text-xs mt-3 line-clamp-2" style={{ color: 'var(--text-tertiary)' }}>
+        {rr.meta.description}
+      </p>
+
+      <div className="card-divider" />
+
+      <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
+        <span>
+          <span className="font-semibold" style={{ color: 'var(--accent-text)' }}>
+            {rr.facilityCount.toLocaleString()}
+          </span> facilities
+        </span>
+        {rr.jobCount > 0 && (
+          <span>
+            <span className="font-semibold" style={{ color: 'var(--badge-green-text)' }}>
+              {rr.jobCount}
+            </span> jobs
+          </span>
+        )}
+        <span>{rr.stateCount} states</span>
+      </div>
+
+      {rr.topStates.length > 0 && (
+        <div className="mt-2 text-xs" style={{ color: 'var(--text-muted)' }}>
+          Top: {rr.topStates.map(s => s.code).join(', ')}
+        </div>
+      )}
+    </Link>
+  )
 }
 
 export default function RailroadsPage() {
@@ -40,99 +87,22 @@ export default function RailroadsPage() {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 py-8">
-        {/* Class I */}
         <section>
           <h2 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>
             Class I Railroads
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {class1.map(rr => (
-              <Link
-                key={rr.meta.slug}
-                href={`/railroad/${rr.meta.slug}`}
-                className="rounded-xl border p-5 transition hover:border-[var(--accent)] hover:shadow-md"
-                style={cardStyle}
-              >
-                <div
-                  className="w-10 h-1 rounded-full mb-3"
-                  style={{ backgroundColor: rr.meta.accentColor }}
-                />
-                <div className="font-bold text-lg" style={{ color: 'var(--text-primary)' }}>
-                  {rr.meta.shortName}
-                </div>
-                <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  {rr.meta.name}
-                </div>
-                <p className="text-xs mt-2 line-clamp-2" style={{ color: 'var(--text-tertiary)' }}>
-                  {rr.meta.description}
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  <span>
-                    <span className="font-semibold" style={{ color: 'var(--accent-text)' }}>
-                      {rr.facilityCount.toLocaleString()}
-                    </span> facilities
-                  </span>
-                  {rr.jobCount > 0 && (
-                    <span>
-                      <span className="font-semibold" style={{ color: 'var(--accent-text)' }}>
-                        {rr.jobCount}
-                      </span> jobs
-                    </span>
-                  )}
-                  <span>{rr.stateCount} states</span>
-                </div>
-
-                {rr.topStates.length > 0 && (
-                  <div className="mt-2 text-xs" style={{ color: 'var(--text-muted)' }}>
-                    Top: {rr.topStates.map(s => s.code).join(', ')}
-                  </div>
-                )}
-              </Link>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {class1.map(rr => <RailroadCard key={rr.meta.slug} rr={rr} />)}
           </div>
         </section>
 
-        {/* Regionals */}
         {regionals.length > 0 && (
           <section className="mt-10">
             <h2 className="text-xl font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>
               Regional & Short Line Carriers
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {regionals.map(rr => (
-                <Link
-                  key={rr.meta.slug}
-                  href={`/railroad/${rr.meta.slug}`}
-                  className="rounded-xl border p-5 transition hover:border-[var(--accent)] hover:shadow-md"
-                  style={cardStyle}
-                >
-                  <div
-                    className="w-10 h-1 rounded-full mb-3"
-                    style={{ backgroundColor: rr.meta.accentColor }}
-                  />
-                  <div className="font-bold text-lg" style={{ color: 'var(--text-primary)' }}>
-                    {rr.meta.shortName}
-                  </div>
-                  <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                    {rr.meta.name}
-                  </div>
-                  <div className="mt-3 flex gap-4 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                    <span>
-                      <span className="font-semibold" style={{ color: 'var(--accent-text)' }}>
-                        {rr.facilityCount.toLocaleString()}
-                      </span> facilities
-                    </span>
-                    {rr.jobCount > 0 && (
-                      <span>
-                        <span className="font-semibold" style={{ color: 'var(--accent-text)' }}>
-                          {rr.jobCount}
-                        </span> jobs
-                      </span>
-                    )}
-                  </div>
-                </Link>
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {regionals.map(rr => <RailroadCard key={rr.meta.slug} rr={rr} />)}
             </div>
           </section>
         )}

@@ -10,7 +10,7 @@ interface RegulatoryCardProps {
 export function RegulatoryCard({ update }: RegulatoryCardProps) {
   return (
     <Link href={`/regulatory/${update.slug}`} className="block">
-      <article className="facility-card">
+      <article className="facility-card regulatory-card">
         <div className="flex items-start justify-between gap-2">
           <div className="flex flex-wrap gap-1.5">
             <AgencyBadge agency={update.agency} />

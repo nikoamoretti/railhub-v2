@@ -1,16 +1,2 @@
 {
-  "crons": [
-    {
-      "path": "/api/cron/scrape-jobs",
-      "schedule": "0 6 * * *"
-    },
-    {
-      "path": "/api/cron/scrape-industry",
-      "schedule": "0 8 * * *"
-    },
-    {
-      "path": "/api/cron/scrape-regulatory",
-      "schedule": "0 10 * * *"
-    }
-  ]
 }

@@ -1,0 +1,74 @@
+name: Update Data
+
+on:
+  schedule:
+    # Jobs: 6 AM UTC daily (10 PM PST)
+    - cron: '0 6 * * *'
+    # Industry: 8 AM UTC daily (12 AM PST)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+    inputs:
+      scraper:
+        description: 'Which scraper to run'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - jobs
+          - industry
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 pandas jobspy
+
+      - name: Determine which scrapers to run
+        id: which
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "target=${{ inputs.scraper }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 6 * * *" ]; then
+            echo "target=jobs" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 8 * * *" ]; then
+            echo "target=industry" >> "$GITHUB_OUTPUT"
+          else
+            echo "target=all" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run jobs scraper
+        if: steps.which.outputs.target == 'jobs' || steps.which.outputs.target == 'all'
+        run: python scripts/scrape-jobs.py --direct-only
+        continue-on-error: true
+
+      - name: Run industry scraper
+        if: steps.which.outputs.target == 'industry' || steps.which.outputs.target == 'all'
+        run: python scripts/scrape-industry.py
+        continue-on-error: true
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet public/jobs.json public/industry.json || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/jobs.json public/industry.json
+          git commit -m "chore: update scraped data ($(date -u +%Y-%m-%d))"
+          git push
