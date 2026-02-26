@@ -29,12 +29,17 @@ export function MetricCard({ metric }: MetricCardProps) {
           </p>
         </div>
         {metric.changePercent != null && (
-          <span
-            className="text-sm font-semibold px-2 py-0.5 rounded-full"
-            style={{ color: trendColor }}
-          >
-            {metric.changePercent >= 0 ? '+' : ''}{metric.changePercent.toFixed(1)}%
-          </span>
+          <div className="text-right">
+            <span
+              className="text-sm font-semibold px-2 py-0.5 rounded-full"
+              style={{ color: trendColor }}
+            >
+              {metric.changePercent >= 0 ? '+' : ''}{metric.changePercent.toFixed(1)}%
+            </span>
+            <p className="text-[10px] mt-0.5" style={{ color: 'var(--text-muted)' }}>
+              vs prev. week
+            </p>
+          </div>
         )}
       </div>
       <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>

@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 }
 
 const VALID_TYPES = new Set(['EMBARGO', 'SERVICE_ALERT', 'WEATHER_ADVISORY', 'MAINTENANCE_NOTICE'])
+const CLASS_I_RAILROADS = ['BNSF', 'CSX', 'NS', 'UP', 'CN', 'CPKC'] as const
 
 interface PageProps {
   searchParams: Promise<{ [key: string]: string | undefined }>
@@ -30,6 +31,12 @@ export default async function AdvisoriesPage({ searchParams }: PageProps) {
     getAllActiveAdvisories(),
   ])
   const totalPages = Math.ceil(total / ITEMS_PER_PAGE)
+
+  // Count advisories per railroad for filter pills
+  const rrCounts = new Map<string, number>()
+  for (const a of allAdvisories) {
+    rrCounts.set(a.railroad, (rrCounts.get(a.railroad) || 0) + 1)
+  }
 
   return (
     <main>
@@ -50,10 +57,10 @@ export default async function AdvisoriesPage({ searchParams }: PageProps) {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 py-6">
-        {/* Filters */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        {/* Type filters */}
+        <div className="flex flex-wrap gap-2 mb-3">
           <Link
-            href="/industry/advisories"
+            href={railroad ? `/industry/advisories?railroad=${railroad}` : '/industry/advisories'}
             className="px-3 py-1.5 rounded-full text-sm transition"
             style={{
               background: !advisoryType ? 'var(--accent-muted)' : 'var(--bg-card)',
@@ -69,21 +76,62 @@ export default async function AdvisoriesPage({ searchParams }: PageProps) {
             { type: 'SERVICE_ALERT', label: 'Service Alerts' },
             { type: 'WEATHER_ADVISORY', label: 'Weather' },
             { type: 'MAINTENANCE_NOTICE', label: 'Maintenance' },
-          ].map((f) => (
-            <Link
-              key={f.type}
-              href={`/industry/advisories?type=${f.type}`}
-              className="px-3 py-1.5 rounded-full text-sm transition"
-              style={{
-                background: advisoryType === f.type ? 'var(--accent-muted)' : 'var(--bg-card)',
-                color: advisoryType === f.type ? 'var(--accent-text)' : 'var(--text-secondary)',
-                border: '1px solid',
-                borderColor: advisoryType === f.type ? 'var(--accent-border)' : 'var(--border-default)',
-              }}
-            >
-              {f.label}
-            </Link>
-          ))}
+          ].map((f) => {
+            const href = railroad
+              ? `/industry/advisories?type=${f.type}&railroad=${railroad}`
+              : `/industry/advisories?type=${f.type}`
+            return (
+              <Link
+                key={f.type}
+                href={href}
+                className="px-3 py-1.5 rounded-full text-sm transition"
+                style={{
+                  background: advisoryType === f.type ? 'var(--accent-muted)' : 'var(--bg-card)',
+                  color: advisoryType === f.type ? 'var(--accent-text)' : 'var(--text-secondary)',
+                  border: '1px solid',
+                  borderColor: advisoryType === f.type ? 'var(--accent-border)' : 'var(--border-default)',
+                }}
+              >
+                {f.label}
+              </Link>
+            )
+          })}
+        </div>
+
+        {/* Railroad filters */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          <Link
+            href={advisoryType ? `/industry/advisories?type=${advisoryType}` : '/industry/advisories'}
+            className="px-3 py-1.5 rounded-full text-sm transition"
+            style={{
+              background: !railroad ? 'var(--accent-muted)' : 'var(--bg-card)',
+              color: !railroad ? 'var(--accent-text)' : 'var(--text-secondary)',
+              border: '1px solid',
+              borderColor: !railroad ? 'var(--accent-border)' : 'var(--border-default)',
+            }}
+          >
+            All Railroads
+          </Link>
+          {CLASS_I_RAILROADS.filter(rr => rrCounts.has(rr)).map((rr) => {
+            const href = advisoryType
+              ? `/industry/advisories?type=${advisoryType}&railroad=${rr}`
+              : `/industry/advisories?railroad=${rr}`
+            return (
+              <Link
+                key={rr}
+                href={href}
+                className="px-3 py-1.5 rounded-full text-sm transition"
+                style={{
+                  background: railroad === rr ? 'var(--accent-muted)' : 'var(--bg-card)',
+                  color: railroad === rr ? 'var(--accent-text)' : 'var(--text-secondary)',
+                  border: '1px solid',
+                  borderColor: railroad === rr ? 'var(--accent-border)' : 'var(--border-default)',
+                }}
+              >
+                {rr} ({rrCounts.get(rr)})
+              </Link>
+            )
+          })}
         </div>
 
         {/* Map + Filtered Card Grid */}
@@ -96,7 +144,7 @@ export default async function AdvisoriesPage({ searchParams }: PageProps) {
           <div className="text-center py-20">
             <p className="text-lg font-medium mb-2" style={{ color: 'var(--text-primary)' }}>No active advisories</p>
             <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-              {advisoryType ? 'Try removing the filter to see all advisories.' : 'Advisories will appear after the cron jobs run.'}
+              {advisoryType || railroad ? 'Try removing filters to see all advisories.' : 'Advisories will appear after the cron jobs run.'}
             </p>
           </div>
         )}
