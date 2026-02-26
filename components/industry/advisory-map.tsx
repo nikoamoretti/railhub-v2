@@ -176,11 +176,12 @@ export function AdvisoryMap({ advisories, selectedState, onStateSelect }: Adviso
     [stateMap, selectedState, onStateSelect]
   )
 
-  // Re-render GeoJSON when stateMap or selectedState changes
+  // Re-render GeoJSON when advisories or selectedState changes
   // react-leaflet GeoJSON doesn't re-render on prop change, so we use a key
+  // Include first advisory ID to catch filter changes even when length is the same
   const geoKey = useMemo(
-    () => `${advisories.length}-${selectedState || 'none'}`,
-    [advisories.length, selectedState]
+    () => `${advisories.length}-${advisories[0]?.id || 'empty'}-${advisories[0]?.advisoryType || ''}-${selectedState || 'none'}`,
+    [advisories, selectedState]
   )
 
   return (
