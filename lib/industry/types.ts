@@ -118,3 +118,14 @@ export interface IndustryStats {
   activeEmbargoes: number
   lastUpdated: Date | null
 }
+
+export interface FreightTrendPoint {
+  date: string
+  carloads: number | null
+  carloadsSA: number | null
+  intermodal: number | null
+  intermodalSA: number | null
+  tsiFreight: number | null
+  ppiRail: number | null
+  cassFreight: number | null
+}

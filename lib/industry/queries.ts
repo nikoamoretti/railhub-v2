@@ -1,10 +1,11 @@
 import industryData from '@/public/industry.json'
-import type { RailServiceMetric, FuelSurcharge, RegulatoryUpdate, ServiceAdvisory, MetricWithTrend, IndustryStats } from './types'
+import type { RailServiceMetric, FuelSurcharge, RegulatoryUpdate, ServiceAdvisory, MetricWithTrend, IndustryStats, FreightTrendPoint } from './types'
 
 const metrics = industryData.metrics as RailServiceMetric[]
 const fuelSurcharges = industryData.fuelSurcharges as FuelSurcharge[]
 const advisories = ((industryData as Record<string, unknown>).advisories || []) as ServiceAdvisory[]
 const regulatory = industryData.regulatory as RegulatoryUpdate[]
+const freightTrends = ((industryData as Record<string, unknown>).freightTrends || []) as FreightTrendPoint[]
 
 export const ITEMS_PER_PAGE = 20
 
@@ -139,6 +140,12 @@ export async function getRegulatoryUpdates(filters?: {
 
 export async function getRegulatoryBySlug(slug: string) {
   return regulatory.find(u => u.slug === slug) || null
+}
+
+// ── Freight Trends ────────────────────────────────────
+
+export async function getFreightTrends(): Promise<FreightTrendPoint[]> {
+  return [...freightTrends].sort((a, b) => a.date.localeCompare(b.date))
 }
 
 // ── Dashboard Stats ──────────────────────────────────

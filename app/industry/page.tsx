@@ -67,6 +67,7 @@ export default async function IndustryPage() {
             { href: '/industry/metrics', label: 'Service Metrics', desc: 'Train speed, dwell time, carloads', icon: '📊', accent: 'var(--badge-blue-text)', accentBg: 'var(--badge-blue-bg)' },
             { href: '/industry/fuel-surcharges', label: 'Fuel Surcharges', desc: 'Carrier rate comparison', icon: '⛽', accent: 'var(--badge-green-text)', accentBg: 'var(--badge-green-bg)' },
             { href: '/industry/advisories', label: 'Advisories', desc: 'Embargoes & service alerts', icon: '⚠️', accent: 'var(--badge-orange-text)', accentBg: 'var(--badge-orange-bg)' },
+            { href: '/industry/freight-trends', label: 'Freight Trends', desc: 'Carloads, intermodal & indices', icon: '📈', accent: 'var(--badge-cyan-text)', accentBg: 'var(--badge-cyan-bg)' },
             { href: '/regulatory', label: 'Regulatory', desc: 'STB, FRA, PHMSA updates', icon: '📋', accent: 'var(--badge-purple-text)', accentBg: 'var(--badge-purple-bg)' },
           ].map((link) => (
             <Link

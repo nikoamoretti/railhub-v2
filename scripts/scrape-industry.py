@@ -1,10 +1,12 @@
 """
 Rail industry data scraper.
-Fetches from USDA (Socrata), EIA, FRA, and STB.
+Fetches from USDA (Socrata), EIA, FRA, STB, BTS, and FRED.
 Writes to public/industry.json.
 """
 
+import csv
 import hashlib
+import io
 import json
 import re
 import uuid
@@ -986,6 +988,119 @@ def fetch_stb_news() -> list[dict]:
     return records
 
 
+# --- Source 5: Freight Trends (BTS + FRED) ---
+
+def _fetch_fred_csv(series_id: str, start_year: int) -> dict:
+    """Fetch a FRED CSV series and return {YYYY-MM: value} dict."""
+    url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}&cosd={start_year}-01-01"
+    try:
+        resp = requests.get(url, timeout=30)
+        resp.raise_for_status()
+    except Exception as exc:
+        print(f"  [FRED] ERROR fetching {series_id}: {exc}")
+        return {}
+
+    result = {}
+    reader = csv.reader(io.StringIO(resp.text))
+    next(reader, None)  # skip header
+    for row in reader:
+        if len(row) < 2:
+            continue
+        date_str, value_str = row[0], row[1]
+        if value_str == ".":
+            continue
+        # Normalize to YYYY-MM (both APIs have monthly data)
+        month_key = date_str[:7]
+        try:
+            result[month_key] = float(value_str)
+        except ValueError:
+            continue
+    return result
+
+
+def scrape_freight_trends() -> list:
+    """Merge BTS freight volume (Socrata) and FRED economic series into monthly records."""
+    print("[FreightTrends] Fetching BTS and FRED data...")
+
+    start_year = datetime.now(timezone.utc).year - 3
+
+    # --- BTS Socrata ---
+    bts_url = "https://data.bts.gov/resource/bw6n-ddqk.json"
+    bts_params = {
+        "$select": "obs_date,rail_frt_carloads,rail_frt_carloads_d11,rail_frt_intermodal,rail_frt_intermodal_d11,tsi_freight",
+        "$order": "obs_date DESC",
+        "$limit": 36,
+    }
+    try:
+        resp = requests.get(bts_url, params=bts_params, timeout=30)
+        resp.raise_for_status()
+        bts_rows = resp.json()
+    except Exception as exc:
+        print(f"  [BTS] ERROR: {exc}")
+        bts_rows = []
+
+    print(f"  BTS rows: {len(bts_rows)}")
+
+    # --- FRED series ---
+    ppi_rail = _fetch_fred_csv("PCU48214821", start_year)
+    cass_freight = _fetch_fred_csv("FRGSHPUSM649NCIS", start_year)
+    print(f"  FRED PPI Rail: {len(ppi_rail)} months, Cass Freight: {len(cass_freight)} months")
+
+    # --- Merge by month key (YYYY-MM) ---
+    merged = {}
+
+    for row in bts_rows:
+        raw_date = row.get("obs_date", "")
+        date = raw_date[:10]  # strip "T00:00:00.000" suffix
+        if not date:
+            continue
+        month_key = date[:7]
+        merged[month_key] = {
+            "date": date,
+            "carloads": safe_float(row.get("rail_frt_carloads")),
+            "carloadsSA": safe_float(row.get("rail_frt_carloads_d11")),
+            "intermodal": safe_float(row.get("rail_frt_intermodal")),
+            "intermodalSA": safe_float(row.get("rail_frt_intermodal_d11")),
+            "tsiFreight": safe_float(row.get("tsi_freight")),
+            "ppiRail": None,
+            "cassFreight": None,
+        }
+
+    for month_key, value in ppi_rail.items():
+        if month_key in merged:
+            merged[month_key]["ppiRail"] = value
+        else:
+            merged[month_key] = {
+                "date": f"{month_key}-01",
+                "carloads": None,
+                "carloadsSA": None,
+                "intermodal": None,
+                "intermodalSA": None,
+                "tsiFreight": None,
+                "ppiRail": value,
+                "cassFreight": None,
+            }
+
+    for month_key, value in cass_freight.items():
+        if month_key in merged:
+            merged[month_key]["cassFreight"] = value
+        else:
+            merged[month_key] = {
+                "date": f"{month_key}-01",
+                "carloads": None,
+                "carloadsSA": None,
+                "intermodal": None,
+                "intermodalSA": None,
+                "tsiFreight": None,
+                "ppiRail": None,
+                "cassFreight": value,
+            }
+
+    trends = sorted(merged.values(), key=lambda r: r["date"], reverse=True)
+    print(f"  Freight trends: {len(trends)} months")
+    return trends
+
+
 # --- Main ---
 
 def main() -> None:
@@ -1012,11 +1127,14 @@ def main() -> None:
     stb_records = fetch_stb_news()
     regulatory = stb_records
 
+    freight_trends = scrape_freight_trends()
+
     payload = {
         "metrics": metrics,
         "fuelSurcharges": fuel_surcharges,
         "advisories": advisories,
         "regulatory": regulatory,
+        "freightTrends": freight_trends,
         "scrapedAt": NOW_ISO,
     }
 
@@ -1033,6 +1151,7 @@ def main() -> None:
     print(f"  fuelSurcharges:{len(fuel_surcharges)}")
     print(f"  advisories:    {len(advisories)} ({counts})")
     print(f"  regulatory:    {len(regulatory)} ({len(stb_records)} STB)")
+    print(f"  freightTrends: {len(freight_trends)} months")
     print(f"  output:        {output_path}")
 
 

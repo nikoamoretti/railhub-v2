@@ -170,6 +170,7 @@ export function Footer() {
                 { href: '/industry/metrics', label: 'Service Metrics' },
                 { href: '/industry/fuel-surcharges', label: 'Fuel Surcharges' },
                 { href: '/industry/advisories', label: 'Advisories' },
+                { href: '/industry/freight-trends', label: 'Freight Trends' },
                 { href: '/regulatory', label: 'Regulatory' },
               ].map(link => (
                 <li key={link.href}>
