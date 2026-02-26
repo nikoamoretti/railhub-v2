@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getActiveAdvisories, ITEMS_PER_PAGE } from '@/lib/industry/queries'
+import { getActiveAdvisories, getAllActiveAdvisories, ITEMS_PER_PAGE } from '@/lib/industry/queries'
 import { AdvisoryCard } from '@/components/industry/advisory-card'
+import { AdvisoryMapSection } from '@/components/industry/advisory-map-section'
 import { Pagination } from '@/components/pagination'
 import type { AdvisoryType } from '@/lib/industry/types'
 
@@ -24,7 +25,10 @@ export default async function AdvisoriesPage({ searchParams }: PageProps) {
   const railroad = params.railroad || undefined
   const page = Math.max(1, parseInt(params.page || '1', 10) || 1)
 
-  const { advisories, total } = await getActiveAdvisories({ railroad, advisoryType, page })
+  const [{ advisories, total }, allAdvisories] = await Promise.all([
+    getActiveAdvisories({ railroad, advisoryType, page }),
+    getAllActiveAdvisories(),
+  ])
   const totalPages = Math.ceil(total / ITEMS_PER_PAGE)
 
   return (
@@ -82,12 +86,11 @@ export default async function AdvisoriesPage({ searchParams }: PageProps) {
           ))}
         </div>
 
-        {/* Results */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {advisories.map((a) => (
-            <AdvisoryCard key={a.id} advisory={a} />
-          ))}
-        </div>
+        {/* Map + Filtered Card Grid */}
+        <AdvisoryMapSection
+          allAdvisories={allAdvisories}
+          advisories={advisories}
+        />
 
         {advisories.length === 0 && (
           <div className="text-center py-20">

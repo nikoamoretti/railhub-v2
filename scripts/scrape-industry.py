@@ -20,18 +20,28 @@ NOW_ISO = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
 
 RAILROAD_MAP = {
     "BNSF": "BNSF",
+    "BNSF Railway": "BNSF",
+    "BNSF Railway Company": "BNSF",
     "Union Pacific": "UP",
+    "Union Pacific Railroad Company": "UP",
     "UP": "UP",
     "CSX": "CSX",
     "CSXT": "CSX",
     "CSX Transportation": "CSX",
+    "CSX Transportation Inc.": "CSX",
     "Norfolk Southern": "NS",
+    "Norfolk Southern Railway Company": "NS",
+    "Norfolk Southern Combined Railroad Subsidiaries": "NS",
     "NS": "NS",
     "Canadian National": "CN",
+    "CANADIAN NATIONAL RAILWAY": "CN",
+    "Canadian National Railway Company": "CN",
     "CN": "CN",
     "Canadian Pacific Kansas City": "CPKC",
+    "Canadian Pacific Railway": "CPKC",
     "CPKC": "CPKC",
     "KCS": "CPKC",
+    "Kansas City Southern": "CPKC",
 }
 
 USDA_BASE = "https://agtransport.usda.gov/resource/{id}.json"
@@ -335,8 +345,21 @@ def strip_html(html_text: str) -> str:
     return re.sub(r'<[^>]+>', '', html_text).strip()
 
 
+def _parse_date(text):
+    """Try to parse a date string into YYYY-MM-DD."""
+    if not text:
+        return None
+    text = text.strip().replace(",", "")
+    for fmt in ("%b %d %Y", "%B %d %Y", "%m/%d/%Y", "%m-%d-%Y"):
+        try:
+            return datetime.strptime(text, fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            pass
+    return None
+
+
 def fetch_bnsf_advisories() -> list[dict]:
-    """Scrape BNSF customer notifications — targets actual notification.page links."""
+    """Scrape BNSF customer notifications with dates from listing page."""
     print("[BNSF Advisory] Fetching customer notifications...")
     url = "https://www.bnsf.com/news-media/customer-notifications.html"
     try:
@@ -347,51 +370,43 @@ def fetch_bnsf_advisories() -> list[dict]:
         print(f"  [BNSF Advisory] ERROR: {exc}")
         return []
 
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html, "html.parser")
+
     advisories = []
     seen = set()
 
-    # BNSF notification links follow pattern: notification.page?notId=...
-    for m in re.finditer(
-        r'<a[^>]*href="([^"]*notification\.page\?notId=[^"]+)"[^>]*>(.*?)</a>',
-        html, re.IGNORECASE | re.DOTALL,
-    ):
-        href, title_html = m.group(1), m.group(2)
-        title = strip_html(title_html).strip()
+    skip_patterns = [
+        'det auction', 'cot auction', 'shuttle auction', 'shuttle trips per month',
+        'shuttle miles per day', 'direct det auction', 'upcoming det', 'upcoming shuttle',
+        'network update for', 'weekly surface transportation board',
+        'rule change effective', 'tariff', 'price list',
+    ]
+
+    # Each notification is in a .media-asset-copy div: <h3><a href="...notId=...">Title</a></h3><p class="date">Feb 25, 2026</p>
+    for container in soup.find_all("div", class_="media-asset-copy"):
+        link = container.find("a", href=re.compile(r"notification\.page\?notId="))
+        if not link:
+            continue
+
+        href = link.get("href", "")
+        title = link.get_text(strip=True)
         if not title or len(title) < 15:
             continue
 
-        # Deduplicate by notId
-        not_id = re.search(r'notId=([^&"]+)', href)
-        key = not_id.group(1) if not_id else title
+        not_id_m = re.search(r"notId=([^&\"]+)", href)
+        key = not_id_m.group(1) if not_id_m else title
         if key in seen:
             continue
         seen.add(key)
 
-        # Skip routine/noise items — keep derailments, weather, embargoes, major service changes
         lower = title.lower()
-        skip_patterns = [
-            'det auction', 'cot auction', 'shuttle auction', 'shuttle trips per month',
-            'shuttle miles per day', 'direct det auction', 'upcoming det', 'upcoming shuttle',
-            'network update for', 'weekly surface transportation board',
-            'rule change effective', 'tariff', 'price list',
-        ]
         if any(p in lower for p in skip_patterns):
             continue
 
-        # Extract date from title
-        date_str = None
-        for fmt_pat, fmt_str in [
-            (r'(\w+ \d{1,2},?\s*\d{4})', '%B %d %Y'),
-            (r'(\d{1,2}/\d{1,2}/\d{4})', '%m/%d/%Y'),
-        ]:
-            dm = re.search(fmt_pat, title)
-            if dm:
-                try:
-                    parsed = datetime.strptime(dm.group(1).replace(',', ''), fmt_str)
-                    date_str = parsed.strftime('%Y-%m-%d')
-                    break
-                except ValueError:
-                    pass
+        # Get date from sibling <p class="date"> element
+        date_el = container.find("p", class_="date")
+        date_str = _parse_date(date_el.get_text(strip=True)) if date_el else None
 
         advisories.append({
             "id": f"adv-{short_uuid()}",
@@ -562,6 +577,223 @@ def fetch_csx_advisories() -> list[dict]:
                 })
 
     print(f"[CSX Advisory] Found {len(advisories)} entries")
+    return advisories
+
+
+def fetch_ns_advisories() -> list[dict]:
+    """Scrape Norfolk Southern customer alerts."""
+    print("[NS Advisory] Fetching customer alerts...")
+    url = "https://www.norfolksouthern.com/en/customer-alerts"
+    try:
+        resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0 railhub-scraper"}, timeout=30)
+        resp.raise_for_status()
+        html = resp.text
+    except Exception as exc:
+        print(f"  [NS Advisory] ERROR: {exc}")
+        return []
+
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html, "html.parser")
+
+    advisories = []
+    seen = set()
+    skip_paths = {
+        "/en/customer-alerts", "/en/customer-alerts/service-alerts",
+        "/en/customer-alerts/facility-alerts", "/en/customer-alerts/tariff-alerts",
+    }
+
+    for link in soup.find_all("a", href=True):
+        href = link["href"]
+        if "/customer-alerts/" not in href:
+            continue
+        if href.rstrip("/") in skip_paths or href in seen:
+            continue
+        raw_text = link.get_text(strip=True)
+        if len(raw_text) < 15:
+            continue
+        seen.add(href)
+
+        # Strip leading category tag first (e.g. "IntermodalFebruary 25, 2026Title...")
+        title = raw_text
+        for cat in ["Intermodal", "Agriculture & Forest", "Industrial", "Coal", "Automotive"]:
+            if title.startswith(cat):
+                title = title[len(cat):].strip()
+                break
+
+        # Parse date — text starts with "Feb 25, 2026Title..." or "February 25, 2026Title..."
+        MONTHS_PAT = r"(?:January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Oct|Nov|Dec)"
+        date_str = None
+        dm = re.match(rf"({MONTHS_PAT}\s+\d{{1,2}},?\s*\d{{4}})", title)
+        if dm:
+            date_str = _parse_date(dm.group(1))
+            title = title[dm.end():].strip()
+
+        # Extract actual title (before description body)
+        # NS concatenates title + body text — try to split at a sentence boundary
+        sentences = re.split(r"(?<=[.!?])\s+", title, maxsplit=1)
+        short_title = sentences[0] if sentences else title
+        if len(short_title) > 120:
+            short_title = short_title[:117] + "..."
+        description = title if len(title) > len(short_title) else short_title
+
+        # Determine advisory type from URL path
+        if "/tariff-alerts/" in href:
+            atype = "SERVICE_ALERT"
+        elif "/facility-alerts/" in href:
+            atype = "MAINTENANCE_NOTICE"
+        else:
+            atype = classify_advisory(short_title)
+
+        advisories.append({
+            "id": f"adv-{short_uuid()}",
+            "externalId": f"ns-{hash_string(href)}",
+            "slug": slugify(f"ns-{short_title}"),
+            "railroad": "NS",
+            "advisoryType": atype,
+            "title": short_title,
+            "description": description[:500],
+            "affectedArea": extract_area(short_title),
+            "isActive": True,
+            "issuedAt": f"{date_str}T00:00:00.000Z" if date_str else NOW_ISO,
+            "expiresAt": None,
+            "createdAt": NOW_ISO,
+        })
+
+    print(f"[NS Advisory] Found {len(advisories)} entries")
+    return advisories
+
+
+def fetch_up_advisories() -> list[dict]:
+    """Scrape Union Pacific embargoes and customer news via FlareSolverr (JS-rendered)."""
+    print("[UP Advisory] Fetching embargoes...")
+
+    import os
+    flare_url = os.environ.get("FLARESOLVERR_URL", "http://localhost:8191/v1")
+
+    from bs4 import BeautifulSoup
+
+    advisories = []
+    seen = set()
+
+    # UP embargo list is JS-rendered — needs FlareSolverr
+    try:
+        resp = requests.post(
+            flare_url,
+            headers={"Content-Type": "application/json"},
+            json={"cmd": "request.get", "url": "https://www.up.com/customers/embargo/list/index.htm", "maxTimeout": 60000},
+            timeout=120,
+        )
+        data = resp.json()
+        if data.get("status") == "ok":
+            html = data["solution"]["response"]
+            print(f"  [UP Advisory] Embargo page: {len(html)} chars via FlareSolverr")
+        else:
+            print(f"  [UP Advisory] FlareSolverr error: {data.get('message', '')}")
+            html = ""
+    except Exception as exc:
+        print(f"  [UP Advisory] FlareSolverr unavailable ({exc}), trying static page...")
+        # Fallback: try the static page — table will be empty but we can get any static content
+        try:
+            html = requests.get(
+                "https://www.up.com/customers/embargo/list/index.htm",
+                headers={"User-Agent": "Mozilla/5.0 railhub-scraper"}, timeout=30,
+            ).text
+        except Exception:
+            html = ""
+
+    if html:
+        soup = BeautifulSoup(html, "html.parser")
+        # UP embargo table: headers = Dates, Customers, Commodities, Locations, Reason, Embargo Number, AAR Link
+        for table in soup.find_all("table"):
+            rows = table.find_all("tr")
+            for row in rows[1:]:  # skip header
+                cells = row.find_all("td")
+                if len(cells) < 6:
+                    continue
+                dates = cells[0].get_text(strip=True)
+                customers = cells[1].get_text(strip=True)
+                commodities = cells[2].get_text(strip=True)
+                locations = cells[3].get_text(strip=True)
+                reason = cells[4].get_text(strip=True)
+                embargo_num = cells[5].get_text(strip=True)
+
+                if not embargo_num or embargo_num in seen:
+                    continue
+                seen.add(embargo_num)
+
+                title = f"Embargo {embargo_num}"
+                if reason:
+                    title += f" — {reason}"
+                description = f"Embargo {embargo_num}."
+                if locations:
+                    description += f" Locations: {locations}."
+                if commodities and commodities.lower() not in ("all", ""):
+                    description += f" Commodities: {commodities}."
+
+                # Parse date
+                issued_iso = NOW_ISO
+                dm = re.search(r"(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})", dates)
+                if dm:
+                    for fmt in ("%m/%d/%Y", "%m-%d-%Y", "%m/%d/%y"):
+                        try:
+                            issued_iso = datetime.strptime(dm.group(1), fmt).strftime("%Y-%m-%dT00:00:00.000Z")
+                            break
+                        except ValueError:
+                            pass
+
+                advisories.append({
+                    "id": f"adv-{short_uuid()}",
+                    "externalId": f"up-{embargo_num}",
+                    "slug": slugify(f"up-embargo-{embargo_num}"),
+                    "railroad": "UP",
+                    "advisoryType": "EMBARGO",
+                    "title": title,
+                    "description": description,
+                    "affectedArea": extract_area(locations) if locations else None,
+                    "isActive": True,
+                    "issuedAt": issued_iso,
+                    "expiresAt": None,
+                    "createdAt": NOW_ISO,
+                })
+
+    # Also scrape UP customer news (static HTML, no JS needed)
+    try:
+        news_resp = requests.get(
+            "https://www.up.com/customers/announcements/customernews/index.htm",
+            headers={"User-Agent": "Mozilla/5.0 railhub-scraper"}, timeout=30,
+        )
+        news_resp.raise_for_status()
+        news_html = news_resp.text
+    except Exception:
+        news_html = ""
+
+    if news_html:
+        news_soup = BeautifulSoup(news_html, "html.parser")
+        for link in news_soup.find_all("a", href=True):
+            href = link["href"]
+            if "/customernews/" not in href or href.rstrip("/").endswith("customernews"):
+                continue
+            title = link.get_text(strip=True)
+            if len(title) < 15 or title in seen:
+                continue
+            seen.add(title)
+
+            advisories.append({
+                "id": f"adv-{short_uuid()}",
+                "externalId": f"up-{hash_string(title)}",
+                "slug": slugify(f"up-{title}"),
+                "railroad": "UP",
+                "advisoryType": classify_advisory(title),
+                "title": title[:200],
+                "description": title[:500],
+                "affectedArea": extract_area(title),
+                "isActive": True,
+                "issuedAt": NOW_ISO,
+                "expiresAt": None,
+                "createdAt": NOW_ISO,
+            })
+
+    print(f"[UP Advisory] Found {len(advisories)} entries")
     return advisories
 
 
@@ -772,8 +1004,10 @@ def main() -> None:
 
     bnsf_advisories = fetch_bnsf_advisories()
     csx_advisories = fetch_csx_advisories()
+    ns_advisories = fetch_ns_advisories()
+    up_advisories = fetch_up_advisories()
     fra_incidents = fetch_fra_incidents()
-    advisories = bnsf_advisories + csx_advisories + fra_incidents
+    advisories = bnsf_advisories + csx_advisories + ns_advisories + up_advisories + fra_incidents
 
     stb_records = fetch_stb_news()
     regulatory = stb_records
@@ -790,10 +1024,14 @@ def main() -> None:
     with open(output_path, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, indent=2, ensure_ascii=False)
 
+    counts = (
+        f"{len(bnsf_advisories)} BNSF + {len(csx_advisories)} CSX + "
+        f"{len(ns_advisories)} NS + {len(up_advisories)} UP + {len(fra_incidents)} FRA"
+    )
     print(f"\n=== Done ===")
     print(f"  metrics:       {len(metrics)}")
     print(f"  fuelSurcharges:{len(fuel_surcharges)}")
-    print(f"  advisories:    {len(advisories)} ({len(bnsf_advisories)} BNSF + {len(csx_advisories)} CSX + {len(fra_incidents)} FRA)")
+    print(f"  advisories:    {len(advisories)} ({counts})")
     print(f"  regulatory:    {len(regulatory)} ({len(stb_records)} STB)")
     print(f"  output:        {output_path}")
 

@@ -108,6 +108,12 @@ export async function getActiveAdvisories(filters?: {
   return { advisories: paged, total: filtered.length }
 }
 
+export async function getAllActiveAdvisories(): Promise<ServiceAdvisory[]> {
+  return advisories
+    .filter(a => a.isActive)
+    .sort((a, b) => b.issuedAt.localeCompare(a.issuedAt))
+}
+
 export async function getAdvisoryBySlug(slug: string): Promise<ServiceAdvisory | null> {
   return advisories.find(a => a.slug === slug) || null
 }
