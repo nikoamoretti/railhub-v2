@@ -413,37 +413,61 @@ def fetch_bnsf_advisories() -> list[dict]:
 
 
 
-def fetch_csx_advisories() -> list[dict]:
-    """Scrape CSX embargoes and service bulletins via cloudscraper (bypasses Cloudflare)."""
-    print("[CSX Advisory] Fetching embargoes and bulletins via cloudscraper...")
+def _fetch_csx_page(url: str) -> str:
+    """Fetch a CSX page, bypassing Cloudflare.
 
+    Strategy: cloudscraper first (works locally / residential IPs),
+    then FlareSolverr (works in CI / datacenter IPs).
+    """
+    # --- Try cloudscraper ---
     try:
         import cloudscraper
-    except ImportError:
-        print("  [CSX Advisory] cloudscraper not installed — pip install cloudscraper")
-        return []
+        scraper = cloudscraper.create_scraper(
+            browser={"browser": "chrome", "platform": "linux", "desktop": True},
+            delay=2,
+        )
+        resp = scraper.get(url, timeout=30)
+        resp.raise_for_status()
+        if "Attention Required" not in resp.text and len(resp.text) > 10000:
+            print(f"  [CSX] cloudscraper OK: {len(resp.text)} chars")
+            return resp.text
+        print("  [CSX] cloudscraper got Cloudflare challenge, trying FlareSolverr...")
+    except Exception as exc:
+        print(f"  [CSX] cloudscraper failed ({exc}), trying FlareSolverr...")
+
+    # --- Fallback: FlareSolverr ---
+    import os
+    flare_url = os.environ.get("FLARESOLVERR_URL", "http://localhost:8191/v1")
+    try:
+        resp = requests.post(
+            flare_url,
+            headers={"Content-Type": "application/json"},
+            json={"cmd": "request.get", "url": url, "maxTimeout": 60000},
+            timeout=120,
+        )
+        data = resp.json()
+        if data.get("status") == "ok":
+            html = data["solution"]["response"]
+            print(f"  [CSX] FlareSolverr OK: {len(html)} chars")
+            return html
+        print(f"  [CSX] FlareSolverr error: {data.get('message', 'unknown')}")
+    except Exception as exc:
+        print(f"  [CSX] FlareSolverr unavailable ({exc})")
+
+    return ""
+
+
+def fetch_csx_advisories() -> list[dict]:
+    """Scrape CSX embargoes and service bulletins (Cloudflare-protected)."""
+    print("[CSX Advisory] Fetching embargoes and bulletins...")
 
     from bs4 import BeautifulSoup
 
-    scraper = cloudscraper.create_scraper(
-        browser={"browser": "chrome", "platform": "linux", "desktop": True},
-        delay=2,
-    )
     advisories = []
     seen = set()
 
     # --- Embargoes ---
-    try:
-        resp = scraper.get(
-            "https://www.csx.com/index.cfm/customers/news/embargoes/", timeout=30,
-        )
-        resp.raise_for_status()
-        html = resp.text
-        print(f"  [CSX Advisory] Embargoes page: {len(html)} chars")
-    except Exception as exc:
-        print(f"  [CSX Advisory] Embargoes ERROR: {exc}")
-        html = ""
-
+    html = _fetch_csx_page("https://www.csx.com/index.cfm/customers/news/embargoes/")
     if html:
         soup = BeautifulSoup(html, "html.parser")
         main = soup.find(id="content_main")
@@ -460,9 +484,7 @@ def fetch_csx_advisories() -> list[dict]:
                         fields[key.strip()] = val.strip()
 
                 embargo_num = fields.get("Embargo Number", "")
-                if not embargo_num:
-                    continue
-                if embargo_num in seen:
+                if not embargo_num or embargo_num in seen:
                     continue
                 seen.add(embargo_num)
 
@@ -473,7 +495,6 @@ def fetch_csx_advisories() -> list[dict]:
                 cause_detail = fields.get("Cause Detail", "")
                 commodities = fields.get("Commodities", "")
 
-                # Parse dates (MM-DD-YYYY)
                 issued_iso = NOW_ISO
                 expires_iso = None
                 for raw, target in [(eff_date, "issued"), (exp_date, "expires")]:
@@ -511,17 +532,7 @@ def fetch_csx_advisories() -> list[dict]:
                 })
 
     # --- Service Bulletins ---
-    try:
-        resp2 = scraper.get(
-            "https://www.csx.com/index.cfm/customers/news/service-bulletins1/", timeout=30,
-        )
-        resp2.raise_for_status()
-        html2 = resp2.text
-        print(f"  [CSX Advisory] Bulletins page: {len(html2)} chars")
-    except Exception as exc:
-        print(f"  [CSX Advisory] Bulletins ERROR: {exc}")
-        html2 = ""
-
+    html2 = _fetch_csx_page("https://www.csx.com/index.cfm/customers/news/service-bulletins1/")
     if html2:
         soup2 = BeautifulSoup(html2, "html.parser")
         main2 = soup2.find(id="content_main")
@@ -531,9 +542,7 @@ def fetch_csx_advisories() -> list[dict]:
                 if "/service-bulletins1/" not in href or href.rstrip("/").endswith("service-bulletins1"):
                     continue
                 title = link.get_text(strip=True)
-                if not title or len(title) < 15:
-                    continue
-                if title in seen:
+                if not title or len(title) < 15 or title in seen:
                     continue
                 seen.add(title)
 
