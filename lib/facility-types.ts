@@ -38,6 +38,9 @@ export const FACILITY_TYPES = [
   { value: 'LOADPLAN', label: 'Load Planning' },
   { value: 'YARDMGMT', label: 'Yard Management' },
   { value: 'DEMURRAGESOFT', label: 'Demurrage Software' },
+  { value: 'CLASSI', label: 'Class I Railroad' },
+  { value: 'CARHIRE', label: 'Car Hire/Per Diem' },
+  { value: 'AEI', label: 'AEI Hardware' },
 ] as const
 
 export const TYPE_LABEL_MAP: Record<string, string> =

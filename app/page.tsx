@@ -168,9 +168,20 @@ export default async function Home({ searchParams }: PageProps) {
           </p>
           <div className="flex items-center justify-center gap-3 mb-6">
             <Link
-              href="/states"
+              href="/map"
               className="px-5 py-2.5 rounded-lg text-sm font-medium transition hover:opacity-90"
               style={{ backgroundColor: 'var(--accent)', color: 'var(--text-on-accent)' }}
+            >
+              View Map
+            </Link>
+            <Link
+              href="/states"
+              className="px-5 py-2.5 rounded-lg text-sm font-medium border transition hover:opacity-80"
+              style={{
+                backgroundColor: 'var(--accent-muted)',
+                borderColor: 'var(--accent-border)',
+                color: 'var(--accent-text)',
+              }}
             >
               Browse by State
             </Link>

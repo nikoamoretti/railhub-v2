@@ -1,11 +1,27 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+const primaryLinks = [
+  { href: '/map', label: 'Map' },
+  { href: '/states', label: 'Browse States' },
+  { href: '/jobs', label: 'Jobs' },
+  { href: '/industry', label: 'Industry Data' },
+  { href: '/resources', label: 'Resources' },
+]
+
+const moreLinks = [
+  { href: '/organizations', label: 'Organizations' },
+  { href: '/cross-border', label: 'Cross-Border' },
+  { href: '/real-estate', label: 'Real Estate' },
+]
+
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const [moreOpen, setMoreOpen] = useState(false)
+  const moreRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -17,12 +33,26 @@ export function Navbar() {
     return () => document.removeEventListener('keydown', handleKey)
   }, [open])
 
-  const links = [
-    { href: '/states', label: 'Browse States' },
-    { href: '/jobs', label: 'Jobs' },
-    { href: '/industry', label: 'Industry Data' },
-    { href: '/resources', label: 'Resources' },
-  ]
+  // Close "More" dropdown when clicking outside
+  useEffect(() => {
+    if (!moreOpen) return
+    const handleClick = (e: MouseEvent) => {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false)
+      }
+    }
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMoreOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    document.addEventListener('keydown', handleKey)
+    return () => {
+      document.removeEventListener('mousedown', handleClick)
+      document.removeEventListener('keydown', handleKey)
+    }
+  }, [moreOpen])
+
+  const isMoreActive = moreLinks.some(l => pathname === l.href)
 
   return (
     <nav
@@ -46,7 +76,7 @@ export function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden sm:flex items-center gap-6">
-          {links.map(link => (
+          {primaryLinks.map(link => (
             <Link
               key={link.href}
               href={link.href}
@@ -58,6 +88,51 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+
+          {/* More dropdown */}
+          <div ref={moreRef} className="relative">
+            <button
+              onClick={() => setMoreOpen(!moreOpen)}
+              className="text-sm font-medium transition hover:opacity-80 flex items-center gap-1"
+              style={{
+                color: isMoreActive ? 'var(--accent-text)' : 'var(--text-secondary)',
+              }}
+              aria-expanded={moreOpen}
+              aria-haspopup="true"
+            >
+              More
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+                className={`transition-transform ${moreOpen ? 'rotate-180' : ''}`}
+              >
+                <path d="M3 4.5L6 7.5L9 4.5" />
+              </svg>
+            </button>
+
+            {moreOpen && (
+              <div
+                className="absolute right-0 top-full mt-2 w-48 rounded-lg border shadow-lg py-1"
+                style={{
+                  backgroundColor: 'var(--bg-elevated)',
+                  borderColor: 'var(--border-default)',
+                }}
+              >
+                {moreLinks.map(link => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMoreOpen(false)}
+                    className="block px-4 py-2 text-sm font-medium transition hover:opacity-80"
+                    style={{
+                      color: pathname === link.href ? 'var(--accent-text)' : 'var(--text-secondary)',
+                      backgroundColor: pathname === link.href ? 'var(--accent-muted)' : 'transparent',
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile hamburger */}
@@ -96,7 +171,7 @@ export function Navbar() {
             borderColor: 'var(--border-subtle)',
           }}
         >
-          {links.map(link => (
+          {[...primaryLinks, ...moreLinks].map(link => (
             <Link
               key={link.href}
               href={link.href}

@@ -1,4 +1,5 @@
 scripts/.enrich_cache.db
+scripts/.geocode_cache.db
 scripts/enrichment_report.json
 public/facilities_enriched.json
 public/facilities.json.backup

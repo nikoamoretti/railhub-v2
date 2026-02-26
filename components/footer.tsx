@@ -25,7 +25,7 @@ export function Footer() {
       style={{ backgroundColor: 'var(--bg-elevated)', borderColor: 'var(--border-subtle)' }}
     >
       <div className="max-w-7xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-6 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-8">
           {/* Top States */}
           <div>
             <h3 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: 'var(--text-tertiary)' }}>
@@ -132,6 +132,30 @@ export function Footer() {
                   All resources
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Explore */}
+          <div>
+            <h3 className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: 'var(--text-tertiary)' }}>
+              Explore
+            </h3>
+            <ul className="space-y-2">
+              {[
+                { href: '/organizations', label: 'Organizations' },
+                { href: '/cross-border', label: 'Cross-Border' },
+                { href: '/real-estate', label: 'Real Estate' },
+              ].map(link => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm transition hover:underline"
+                    style={{ color: 'var(--text-secondary)' }}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
