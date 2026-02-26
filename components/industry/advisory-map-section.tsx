@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import dynamic from 'next/dynamic'
-import type { ServiceAdvisory } from '@/lib/industry/types'
+import type { ServiceAdvisory, AdvisoryType } from '@/lib/industry/types'
 import { AdvisoryCard } from './advisory-card'
 import { STATE_NAMES } from '@/lib/industry/regions'
 
@@ -34,20 +34,36 @@ interface AdvisoryMapSectionProps {
   allAdvisories: ServiceAdvisory[]
   /** Paginated advisories for the card grid (before state filter) */
   advisories: ServiceAdvisory[]
+  /** Active type filter from URL */
+  activeType?: AdvisoryType
+  /** Active railroad filter from URL */
+  activeRailroad?: string
 }
 
-export function AdvisoryMapSection({ allAdvisories, advisories }: AdvisoryMapSectionProps) {
+export function AdvisoryMapSection({ allAdvisories, advisories, activeType, activeRailroad }: AdvisoryMapSectionProps) {
   const [selectedState, setSelectedState] = useState<string | null>(null)
+
+  // Filter advisories for the map based on active URL filters
+  const mapAdvisories = useMemo(() => {
+    let filtered = allAdvisories
+    if (activeType) {
+      filtered = filtered.filter(a => a.advisoryType === activeType)
+    }
+    if (activeRailroad) {
+      filtered = filtered.filter(a => a.railroad === activeRailroad)
+    }
+    return filtered
+  }, [allAdvisories, activeType, activeRailroad])
 
   // When a state is selected, filter the card grid to only that state's advisories
   const filteredAdvisories = useMemo(() => {
     if (!selectedState) return advisories
-    return allAdvisories.filter(a => {
+    return mapAdvisories.filter(a => {
       if (!a.affectedArea) return false
       const codes = a.affectedArea.split(',').map(s => s.trim().toUpperCase())
       return codes.includes(selectedState)
     })
-  }, [selectedState, advisories, allAdvisories])
+  }, [selectedState, advisories, mapAdvisories])
 
   const stateLabel = selectedState ? STATE_NAMES[selectedState] || selectedState : null
 
@@ -56,7 +72,7 @@ export function AdvisoryMapSection({ allAdvisories, advisories }: AdvisoryMapSec
       {/* Map */}
       <div className="mb-6">
         <AdvisoryMap
-          advisories={allAdvisories}
+          advisories={mapAdvisories}
           selectedState={selectedState}
           onStateSelect={setSelectedState}
         />

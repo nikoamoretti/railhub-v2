@@ -145,6 +145,8 @@ export default async function AdvisoriesPage({ searchParams }: PageProps) {
         <AdvisoryMapSection
           allAdvisories={allAdvisories}
           advisories={advisories}
+          activeType={advisoryType}
+          activeRailroad={railroad}
         />
 
         {advisories.length === 0 && (
