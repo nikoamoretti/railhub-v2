@@ -98,7 +98,7 @@ def current_monday_iso() -> str:
     return f"{monday.isoformat()}T00:00:00.000Z"
 
 
-def safe_float(val) -> float | None:
+def safe_float(val):
     try:
         return float(val)
     except (TypeError, ValueError):
@@ -316,7 +316,7 @@ def classify_advisory(title: str) -> str:
     return "SERVICE_ALERT"
 
 
-def extract_area(title: str) -> str | None:
+def extract_area(title: str):
     import re as _re
     m = _re.search(r'\b([A-Z]{2})\b', title)
     if m and m.group(1) in US_STATES:
@@ -412,123 +412,154 @@ def fetch_bnsf_advisories() -> list[dict]:
     return advisories
 
 
+
 def fetch_csx_advisories() -> list[dict]:
-    """Scrape CSX embargoes and service bulletins."""
-    print("[CSX Advisory] Fetching embargoes and bulletins...")
+    """Scrape CSX embargoes and service bulletins via cloudscraper (bypasses Cloudflare)."""
+    print("[CSX Advisory] Fetching embargoes and bulletins via cloudscraper...")
+
+    try:
+        import cloudscraper
+    except ImportError:
+        print("  [CSX Advisory] cloudscraper not installed — pip install cloudscraper")
+        return []
+
+    from bs4 import BeautifulSoup
+
+    scraper = cloudscraper.create_scraper(
+        browser={"browser": "chrome", "platform": "linux", "desktop": True},
+        delay=2,
+    )
     advisories = []
     seen = set()
-    date_pattern = re.compile(r'(\d{1,2}[-/]\d{1,2}[-/]\d{2,4}|\w+ \d{1,2},?\s*\d{4})')
 
-    pages = [
-        ("https://www.csx.com/index.cfm/customers/news/embargoes/", "EMBARGO"),
-        ("https://www.csx.com/index.cfm/customers/news/service-bulletins1/", "SERVICE_ALERT"),
-    ]
+    # --- Embargoes ---
+    try:
+        resp = scraper.get(
+            "https://www.csx.com/index.cfm/customers/news/embargoes/", timeout=30,
+        )
+        resp.raise_for_status()
+        html = resp.text
+        print(f"  [CSX Advisory] Embargoes page: {len(html)} chars")
+    except Exception as exc:
+        print(f"  [CSX Advisory] Embargoes ERROR: {exc}")
+        html = ""
 
-    for page_url, default_type in pages:
-        try:
-            resp = requests.get(page_url, headers={
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0",
-                "Accept": "text/html",
-            }, timeout=30)
-            if resp.status_code != 200:
-                print(f"  [CSX Advisory] {page_url}: HTTP {resp.status_code}")
-                continue
-            html = resp.text
-            if len(html) > 500_000:
-                print(f"  [CSX Advisory] HTML too large, skipping")
-                continue
-        except Exception as exc:
-            print(f"  [CSX Advisory] ERROR: {exc}")
-            continue
-
-        entries = []
-
-        # Pattern 1: table rows (embargo page — structured data)
-        for m in re.finditer(r'<tr[^>]*>(.*?)</tr>', html, re.IGNORECASE | re.DOTALL):
-            cells = re.findall(r'<td[^>]*>(.*?)</td>', m.group(1), re.IGNORECASE | re.DOTALL)
-            if len(cells) < 2:
-                continue
-            title = strip_html(cells[0]).strip()
-            if not title or len(title) < 3:
-                continue
-            # Skip header rows
-            if re.search(r'embargo\s*number|header|^#$|^no\.?$', title, re.IGNORECASE):
-                continue
-
-            date_text = strip_html(cells[1]).strip() if len(cells) > 1 else ""
-            area_text = strip_html(cells[2]).strip() if len(cells) > 2 else ""
-            desc_text = strip_html(cells[3]).strip() if len(cells) > 3 else ""
-            expires_text = strip_html(cells[4]).strip() if len(cells) > 4 else ""
-
-            dm = date_pattern.search(date_text)
-            em = date_pattern.search(expires_text)
-
-            entries.append({
-                "title": title,
-                "description": desc_text or title,
-                "date": dm.group(1) if dm else None,
-                "area": area_text or None,
-                "expires": em.group(1) if em else None,
-            })
-
-        # Pattern 2: links to specific bulletin/embargo detail pages
-        if not entries:
-            for m in re.finditer(r'<a[^>]*href="(/index\.cfm/customers/[^"]*)"[^>]*>(.*?)</a>', html, re.IGNORECASE | re.DOTALL):
-                href, text = m.group(1), strip_html(m.group(2)).strip()
-                if not text or len(text) < 20:
+    if html:
+        soup = BeautifulSoup(html, "html.parser")
+        main = soup.find(id="content_main")
+        if main:
+            blocks = re.split(r"(?=CSXT-CSX TRANSPORTATION)", main.get_text())
+            for block in blocks:
+                if "Embargo Number" not in block:
                     continue
-                # Skip generic nav links and non-advisory pages
-                lower = text.lower()
-                skip_nav = [
-                    'customer news', 'service bulletins', 'subscribe', 'aar embargo',
-                    'overview', 'performance measures', 'business development',
-                    'environmental', 'short line', 'publications', 'tariff',
-                    'value-added', 'value - added', 'awards', 'regional railroad',
-                ]
-                if any(skip in lower for skip in skip_nav):
-                    continue
+                fields = {}
+                for line in block.split("\n"):
+                    line = line.strip()
+                    if ":" in line:
+                        key, _, val = line.partition(":")
+                        fields[key.strip()] = val.strip()
 
-                dm = date_pattern.search(text)
-                entries.append({
-                    "title": text[:300],
-                    "description": text[:300],
-                    "date": dm.group(1) if dm else None,
-                    "area": None,
-                    "expires": None,
+                embargo_num = fields.get("Embargo Number", "")
+                if not embargo_num:
+                    continue
+                if embargo_num in seen:
+                    continue
+                seen.add(embargo_num)
+
+                status = fields.get("Status", "Effective")
+                eff_date = fields.get("Effective Date", "")
+                exp_date = fields.get("Expiration Date", "")
+                cause = fields.get("Cause", "")
+                cause_detail = fields.get("Cause Detail", "")
+                commodities = fields.get("Commodities", "")
+
+                # Parse dates (MM-DD-YYYY)
+                issued_iso = NOW_ISO
+                expires_iso = None
+                for raw, target in [(eff_date, "issued"), (exp_date, "expires")]:
+                    if raw:
+                        try:
+                            parsed = datetime.strptime(raw, "%m-%d-%Y")
+                            iso = parsed.strftime("%Y-%m-%dT00:00:00.000Z")
+                            if target == "issued":
+                                issued_iso = iso
+                            else:
+                                expires_iso = iso
+                        except ValueError:
+                            pass
+
+                title = f"Embargo {embargo_num}"
+                if cause:
+                    title += f" — {cause}"
+                description = f"Embargo {embargo_num} ({status}). {cause_detail}".strip()
+                if commodities and commodities != "Target All Commodities":
+                    description += f" Commodities: {commodities}"
+
+                advisories.append({
+                    "id": f"adv-{short_uuid()}",
+                    "externalId": f"csx-{embargo_num}",
+                    "slug": slugify(f"csx-embargo-{embargo_num}"),
+                    "railroad": "CSX",
+                    "advisoryType": "EMBARGO",
+                    "title": title,
+                    "description": description,
+                    "affectedArea": None,
+                    "isActive": status.lower() == "effective",
+                    "issuedAt": issued_iso,
+                    "expiresAt": expires_iso,
+                    "createdAt": NOW_ISO,
                 })
 
-        for entry in entries:
-            key = entry["title"]
-            if key in seen:
-                continue
-            seen.add(key)
+    # --- Service Bulletins ---
+    try:
+        resp2 = scraper.get(
+            "https://www.csx.com/index.cfm/customers/news/service-bulletins1/", timeout=30,
+        )
+        resp2.raise_for_status()
+        html2 = resp2.text
+        print(f"  [CSX Advisory] Bulletins page: {len(html2)} chars")
+    except Exception as exc:
+        print(f"  [CSX Advisory] Bulletins ERROR: {exc}")
+        html2 = ""
 
-            atype = classify_advisory(entry["title"])
-            if atype == "SERVICE_ALERT":
-                atype = default_type
+    if html2:
+        soup2 = BeautifulSoup(html2, "html.parser")
+        main2 = soup2.find(id="content_main")
+        if main2:
+            for link in main2.find_all("a", href=True):
+                href = link["href"]
+                if "/service-bulletins1/" not in href or href.rstrip("/").endswith("service-bulletins1"):
+                    continue
+                title = link.get_text(strip=True)
+                if not title or len(title) < 15:
+                    continue
+                if title in seen:
+                    continue
+                seen.add(title)
 
-            advisories.append({
-                "id": f"adv-{short_uuid()}",
-                "externalId": f"csx-{hash_string(entry['title'] + (entry.get('date') or ''))}",
-                "slug": slugify(f"csx-{entry['title']}"),
-                "railroad": "CSX",
-                "advisoryType": atype,
-                "title": entry["title"],
-                "description": entry.get("description") or entry["title"],
-                "affectedArea": entry.get("area") or extract_area(entry["title"]),
-                "isActive": True,
-                "issuedAt": NOW_ISO,
-                "expiresAt": None,
-                "createdAt": NOW_ISO,
-            })
+                advisories.append({
+                    "id": f"adv-{short_uuid()}",
+                    "externalId": f"csx-{hash_string(title)}",
+                    "slug": slugify(f"csx-{title}"),
+                    "railroad": "CSX",
+                    "advisoryType": classify_advisory(title),
+                    "title": title,
+                    "description": title,
+                    "affectedArea": extract_area(title),
+                    "isActive": True,
+                    "issuedAt": NOW_ISO,
+                    "expiresAt": None,
+                    "createdAt": NOW_ISO,
+                })
 
     print(f"[CSX Advisory] Found {len(advisories)} entries")
     return advisories
 
 
-# --- Source 4a: FRA Safety ---
+# --- Source 4: FRA Safety Incidents → Advisories ---
 
 def fetch_fra_incidents() -> list[dict]:
+    """FRA safety incidents are operational safety events — belong in advisories, not regulatory."""
     print("[FRA] Fetching accident data...")
     url = "https://data.transportation.gov/resource/85tf-25kj.json"
     params = {
@@ -546,7 +577,6 @@ def fetch_fra_incidents() -> list[dict]:
 
     records = []
     for row in rows:
-        # Actual field names from FRA Form 54 Socrata dataset
         incident_number = (
             row.get("accidentnumber")
             or row.get("incidentkey")
@@ -562,6 +592,7 @@ def fetch_fra_incidents() -> list[dict]:
             or row.get("railroad")
             or "Unknown Railroad"
         )
+        railroad_short = normalize_railroad(railroad_name) or railroad_name
         city = row.get("station") or row.get("city_name") or row.get("city") or "Unknown City"
         state = (
             row.get("stateabbr")
@@ -578,38 +609,25 @@ def fetch_fra_incidents() -> list[dict]:
         injured = row.get("totalpersonsinjured") or row.get("total_injured") or row.get("injured") or "0"
         damage = row.get("totaldamagecost") or row.get("total_damage") or row.get("damage") or "0"
 
-        summary = (
+        description = (
             f"Incident on {date_raw}: {killed} fatalities, "
             f"{injured} injuries. Estimated damage: ${damage}"
         )
 
-        narrative = row.get("narrative") or ""
-        narrative1 = row.get("narrative1") or ""
-        content = f"{narrative} {narrative1}".strip()
-
-        # documentUrl — some rows include a url dict
-        url_field = row.get("url")
-        doc_url = None
-        if isinstance(url_field, dict):
-            doc_url = url_field.get("url")
-        elif isinstance(url_field, str):
-            doc_url = url_field
-
-        slug = slugify(f"{title}-{external_id}")
-        published_at = f"{date_raw}T00:00:00.000Z" if date_raw else NOW_ISO
+        slug = slugify(f"fra-{incident_type}-{railroad_short}-{city}-{state}-{date_raw}")
 
         records.append({
-            "id": f"reg-{short_uuid()}",
+            "id": f"adv-{short_uuid()}",
             "externalId": external_id,
-            "agency": "FRA",
-            "updateType": "Safety Alert",
-            "title": title,
-            "summary": summary,
-            "content": content,
-            "documentUrl": doc_url,
-            "docketNumber": None,
             "slug": slug,
-            "publishedAt": published_at,
+            "railroad": railroad_short,
+            "advisoryType": "SERVICE_ALERT",
+            "title": title,
+            "description": description,
+            "affectedArea": state if state and len(state) == 2 else None,
+            "isActive": True,
+            "issuedAt": f"{date_raw}T00:00:00.000Z" if date_raw else NOW_ISO,
+            "expiresAt": None,
             "createdAt": NOW_ISO,
         })
 
@@ -745,11 +763,11 @@ def main() -> None:
 
     bnsf_advisories = fetch_bnsf_advisories()
     csx_advisories = fetch_csx_advisories()
-    advisories = bnsf_advisories + csx_advisories
+    fra_incidents = fetch_fra_incidents()
+    advisories = bnsf_advisories + csx_advisories + fra_incidents
 
-    fra_records = fetch_fra_incidents()
     stb_records = fetch_stb_news()
-    regulatory = fra_records + stb_records
+    regulatory = stb_records
 
     payload = {
         "metrics": metrics,
@@ -766,8 +784,8 @@ def main() -> None:
     print(f"\n=== Done ===")
     print(f"  metrics:       {len(metrics)}")
     print(f"  fuelSurcharges:{len(fuel_surcharges)}")
-    print(f"  advisories:    {len(advisories)} ({len(bnsf_advisories)} BNSF + {len(csx_advisories)} CSX)")
-    print(f"  regulatory:    {len(regulatory)} ({len(fra_records)} FRA + {len(stb_records)} STB)")
+    print(f"  advisories:    {len(advisories)} ({len(bnsf_advisories)} BNSF + {len(csx_advisories)} CSX + {len(fra_incidents)} FRA)")
+    print(f"  regulatory:    {len(regulatory)} ({len(stb_records)} STB)")
     print(f"  output:        {output_path}")
 
 

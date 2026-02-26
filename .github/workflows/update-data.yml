@@ -33,8 +33,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pip install requests beautifulsoup4 pandas jobspy
+        run: pip install requests beautifulsoup4 pandas jobspy cloudscraper
 
       - name: Determine which scrapers to run
         id: which
