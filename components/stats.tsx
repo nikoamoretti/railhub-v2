@@ -35,7 +35,7 @@ export function Stats({ counts, totalCount }: StatsProps) {
   }
 
   return (
-    <div className="stats-bar flex flex-wrap justify-center gap-2 mt-6" role="group" aria-label="Filter by facility type">
+    <div className="stats-bar flex flex-wrap justify-center gap-2 mt-8" role="group" aria-label="Filter by facility type">
       {topTypes.map(([type, count]) => {
         const isActive = activeType === type.toLowerCase()
         return (
