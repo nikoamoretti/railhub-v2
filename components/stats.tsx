@@ -35,42 +35,46 @@ export function Stats({ counts, totalCount }: StatsProps) {
   }
 
   return (
-    <div className="stats-bar flex flex-wrap justify-center gap-3 mt-8" role="group" aria-label="Filter by facility type">
+    <div className="stats-bar flex flex-wrap justify-center gap-2 mt-6" role="group" aria-label="Filter by facility type">
       {topTypes.map(([type, count]) => {
         const isActive = activeType === type.toLowerCase()
         return (
           <button
             key={type}
             onClick={() => handleBadgeClick(type)}
-            className="backdrop-blur rounded-lg px-5 py-3 transition-all duration-150 cursor-pointer border"
+            className="rounded-full px-4 py-2 text-sm font-medium transition-all duration-150 cursor-pointer border"
             style={{
-              backgroundColor: isActive ? 'var(--accent-muted)' : 'var(--bg-overlay)',
-              borderColor: isActive ? 'var(--accent)' : 'transparent',
+              backgroundColor: isActive ? 'var(--accent-muted)' : 'var(--bg-card)',
+              borderColor: isActive ? 'var(--accent)' : 'var(--border-default)',
+              color: isActive ? 'var(--accent-text)' : 'var(--text-secondary)',
             }}
             aria-pressed={isActive}
             title={`Filter by ${getTypeLabel(type)}`}
           >
-            <div className="text-2xl font-bold" style={{ color: isActive ? 'var(--accent-text)' : 'var(--accent)' }}>
+            <span className="font-bold" style={{ color: isActive ? 'var(--accent-text)' : 'var(--text-primary)' }}>
               {count.toLocaleString()}
-            </div>
-            <div className="text-xs" style={{ color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)' }}>
-              {getTypeLabel(type)}
-            </div>
+            </span>
+            {' '}
+            {getTypeLabel(type)}
           </button>
         )
       })}
       <button
         onClick={handleTotalClick}
-        className="backdrop-blur rounded-lg px-5 py-3 border-2 transition-all duration-150 cursor-pointer"
+        className="rounded-full px-4 py-2 text-sm font-medium transition-all duration-150 cursor-pointer border"
         style={{
-          backgroundColor: !activeType ? 'var(--accent-muted)' : 'var(--bg-overlay)',
-          borderColor: !activeType ? 'var(--accent-border)' : 'transparent',
+          backgroundColor: !activeType ? 'var(--accent-muted)' : 'var(--bg-card)',
+          borderColor: !activeType ? 'var(--accent-border)' : 'var(--border-default)',
+          color: !activeType ? 'var(--accent-text)' : 'var(--text-secondary)',
         }}
         aria-pressed={!activeType}
         title="Show all facilities"
       >
-        <div className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>{totalCount.toLocaleString()}</div>
-        <div className="text-xs" style={{ color: 'var(--text-secondary)' }}>Total Locations</div>
+        <span className="font-bold" style={{ color: !activeType ? 'var(--accent-text)' : 'var(--text-primary)' }}>
+          {totalCount.toLocaleString()}
+        </span>
+        {' '}
+        Total
       </button>
     </div>
   )

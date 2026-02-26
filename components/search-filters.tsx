@@ -14,7 +14,7 @@ interface SearchFiltersProps {
 }
 
 const SORT_OPTIONS = [
-  { value: '', label: 'Default' },
+  { value: '', label: 'Sort' },
   { value: 'name_asc', label: 'Name A-Z' },
   { value: 'name_desc', label: 'Name Z-A' },
   { value: 'state', label: 'State' },
@@ -124,6 +124,19 @@ export function SearchFilters({ states, railroads, totalResults, filteredResults
             </select>
           </div>
 
+          <div>
+            <label htmlFor="sort-by" className="sr-only">Sort by</label>
+            <select
+              id="sort-by"
+              value={currentSort}
+              onChange={(e) => router.push(buildUrl({ sort: e.target.value || null }))}
+              className={selectClass}
+              style={selectStyle}
+            >
+              {SORT_OPTIONS.map((o) => <option key={o.value} value={o.value} style={optionStyle}>{o.label}</option>)}
+            </select>
+          </div>
+
           <button
             type="submit"
             className="px-5 py-2.5 rounded-lg transition hover:opacity-90 text-sm font-medium"
@@ -131,20 +144,6 @@ export function SearchFilters({ states, railroads, totalResults, filteredResults
           >
             Search
           </button>
-        </div>
-
-        {/* Row 2: Sort */}
-        <div className="flex items-center gap-2 mt-3 pt-3" style={{ borderTop: '1px solid var(--border-subtle)' }}>
-          <label htmlFor="sort-by" className="text-xs" style={{ color: 'var(--text-tertiary)' }}>Sort by:</label>
-          <select
-            id="sort-by"
-            value={currentSort}
-            onChange={(e) => router.push(buildUrl({ sort: e.target.value || null }))}
-            className="text-xs px-2 py-1.5 border rounded-md focus:ring-2 focus:outline-none"
-            style={selectStyle}
-          >
-            {SORT_OPTIONS.map((o) => <option key={o.value} value={o.value} style={optionStyle}>{o.label}</option>)}
-          </select>
         </div>
       </form>
 
